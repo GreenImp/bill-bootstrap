@@ -255,6 +255,17 @@ ol, ul{list-style:none;}
  * ========================================================================== */
 
 /**
+ * 1. Ensures that images are sensibly sized and do not overflow the page width
+ * 2. Nicer image resizing in IE 8
+ */
+img{
+	max-width:100%; /* 1 */
+	height:auto; /* 1 */
+	vertical-align:middle;
+	-ms-interpolation-mode:bicubic; /* 2 */
+}
+
+/**
  * Removes border when inside an 'a' element in IE 8/9.
  */
 a img{border:0}
@@ -289,13 +300,14 @@ legend{
 }
 
 /**
- * 1. Corrects font size not being inherited in all browsers.
+ * Corrects font size not being inherited in all browsers.
  */
 button,
 input,
 select,
 textarea{
 	font-size:100%;
+	vertical-align:middle;
 }
 
 /*
@@ -328,6 +340,13 @@ input[type="submit"] {
 button[disabled],
 input[disabled]{
 	cursor:default;
+}
+
+label,
+select,
+input[type="radio"],
+input[type="checkbox"]{
+  cursor:pointer;
 }
 
 /**
