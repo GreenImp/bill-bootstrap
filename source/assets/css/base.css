@@ -1,0 +1,46 @@
+/**
+ * Base stylesheet
+ *
+ * This contains any base settings, such as some default classes
+ * 
+ * Author: GreenImp Web
+ * Date Created: 10/01/13 21:51
+ */
+
+body{
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	line-height:20px;
+	color:#333;
+	background-color:#fff;
+}
+
+/**
+ * A simple class name for creating 'lead' paragraphs,
+ * usually to be used for an article
+ */
+p.lead{
+	margin-bottom:1.2em;
+	font-size:1.4em;
+	font-weight:200;
+	line-height:1.4em;
+}
+
+/**
+ * Clear fix for floated elements.
+ * Assign this class to the parent of a floated element,
+ * to make it encapsulated it properly.
+ */
+.clearfix:after{
+	content:"";
+	display:table;
+	clear:both;
+}
+
+/**
+ * A hidden element
+ */
+.hidden{
+	display:none;
+	visibility:hidden;
+}

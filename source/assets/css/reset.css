@@ -1,5 +1,8 @@
 /**
- * CSS reset
+ * Reset stylesheet
+ *
+ * This contains all of the general reset styles for creating
+ * a base site.
  *
  * Author: GreenImp Web
  * Date Created: 09/01/2013 22:50
@@ -48,6 +51,8 @@ del{
 	text-decoration:line-through;
 }
 
+a{text-decoration:none;}
+
 /**
  * Addresses 'outline' inconsistency between Chrome and other browsers.
  */
@@ -60,6 +65,14 @@ a:focus{outline:thin dotted;}
 a:active,
 a:hover{
 	outline:0;
+	text-decoration:underline;
+}
+
+hr{
+	margin:1em 0;
+	border:none;
+	border-top:1px solid #eee;
+	border-bottom:1px solid #fff;
 }
 
 
@@ -111,7 +124,16 @@ audio:not([controls]){
 
 /**
  * Defines some default font sizes and margins
+ * 1. enhances readability of text
  */
+h1, h2, h3
+h4, h5, h6{
+	color:inherit;
+	font-family:inherit;
+	font-weight:bold;
+	text-rendering:optimizelegibility; /* 1 */
+}
+
 h1{
 	font-size:2em;
 	margin:0.67em 0;
@@ -145,8 +167,11 @@ h6{
 /**
  * Addresses styling not present in IE 8/9, Safari 5, and Chrome.
  */
-abbr[title], dfn[title]{
+abbr[title],
+abbr[data-original-title],
+dfn[title]{
 	border-bottom:1px dotted;
+	cursor:help;
 }
 
 /**
@@ -170,10 +195,13 @@ q:before, q:after{
 	content:none;
 }
 
+address{font-style:italic;}
+
 
 /**
  * Addresses styling not present in Safari 5 and Chrome.
  */
+em,
 dfn{
 	font-style:italic;
 }
@@ -201,17 +229,20 @@ code,
 kbd,
 pre,
 samp{
-	font-family:monospace, serif;
 	font-size:1em;
+	font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
 }
+
+code{white-space:nowrap;}
 
 /**
  * Improves readability of pre-formatted text in all browsers.
  */
 pre{
+	word-break:break-all;
+	word-wrap:break-word;
 	white-space:pre;
 	white-space:pre-wrap;
-	word-wrap:break-word;
 }
 
 small{
@@ -307,6 +338,7 @@ input,
 select,
 textarea{
 	font-size:100%;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	vertical-align:middle;
 }
 
@@ -409,6 +441,18 @@ textarea{
  * Collapse table borders so that they don't double in thickness
  */
 table{
+	max-width:100%;
 	border-collapse:collapse;
 	border-spacing:0;
+}
+
+table th{
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+
+table td{
+	text-align:left;
+	vertical-align:top;
 }
