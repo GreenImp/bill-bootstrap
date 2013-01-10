@@ -24,7 +24,8 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video{
+time, mark, audio, video,
+button, input, select, textarea{
 	margin:0;
 	padding:0;
 	border:0;
@@ -155,8 +156,8 @@ b, strong{
 	font-weight:bold;
 }
 
-blockquote {
-	margin:1em 40px;
+blockquote{
+	margin:1em 3%;
 }
 
 /**
@@ -247,29 +248,6 @@ sub{
  */
 ol, ul{list-style:none;}
 
-/**
- * Sets default margins on list elements
- */
-dl,
-menu,
-ol,
-ul{
-	margin:1em 0;
-}
-
-dd{
-	margin:0 0 0 40px;
-}
-
-/**
- *Sets default padding on list elements
- */
-menu,
-ol,
-ul{
-	padding: 0 0 0 40px;
-}
-
 
 
 /* ==========================================================================
@@ -304,29 +282,20 @@ fieldset{
 }
 
 /**
- * 1. Corrects color not being inherited in IE 8/9.
- * 2. Corrects text not wrapping in Firefox 3.
+ * Corrects text not wrapping in Firefox 3.
  */
 legend{
-	border:0; /* 1 */
-	padding:0;
-	white-space:normal; /* 2 */
+	white-space:normal;
 }
 
 /**
  * 1. Corrects font size not being inherited in all browsers.
- * 2. Addresses margins set differently in Firefox 3+, Safari 5,
- * and Chrome.
- * 3. Improves appearance and consistency in all browsers.
  */
 button,
 input,
 select,
 textarea{
-	font-size: 100%; /* 1 */
-	margin: 0; /* 2 */
-	vertical-align:baseline; /* 3 */
-	*vertical-align:middle; /* 3 */
+	font-size:100%;
 }
 
 /*
@@ -377,7 +346,7 @@ input[type="radio"]{
  * 2. Addresses 'box-sizing' set to 'border-box' in Safari 5 and Chrome
  * (include '-moz' to future-proof).
  */
-input[type="search"] {
+input[type="search"]{
 	-webkit-appearance:textfield; /* 1 */
 	-moz-box-sizing:content-box;
 	-webkit-box-sizing:content-box; /* 2 */
