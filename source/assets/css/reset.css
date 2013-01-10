@@ -13,6 +13,21 @@
  * ========================================================================== */
 
 /**
+ * Change box model for all elements.
+ * This means that the padding and border of elements
+ * will NOT be included in the elements width/height.
+ * See the following for more:
+ * http://css-tricks.com/box-sizing/
+ * http://paulirish.com/2012/box-sizing-border-box-ftw/
+ * (let's face it, if Paul Irish thinks it's good, then it probably is)
+ */
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/**
  * Base reset for elements
  */
 html, body, div, span, applet, object, iframe,
