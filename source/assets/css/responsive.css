@@ -67,7 +67,29 @@
 }
 
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
+
+/* ==========================================================================
+ * Retina display media queries
+ * ========================================================================== */
+/* 1.25 dpr */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.25),
+		only screen and (min-resolution: 120dpi){
+    /* Retina-specific stuff here */
+}
+
+/* 1.3 dpr */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.3),
+		only screen and (min-resolution: 124.8dpi){
+    /* Retina-specific stuff here */
+}
+
+/* 1.5 dpr */
+@media	only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min-resolution: 144dpi){
+    /* Retina-specific stuff here */
+}
+
+@media	only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (min-resolution: 192dpi) {
+	/* Retina-specific stuff here */
 }
