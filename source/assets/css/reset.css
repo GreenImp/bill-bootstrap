@@ -340,6 +340,18 @@ svg:not(:root){
 	overflow:hidden;
 }
 
+/**
+ * Not sure what this fixes, but obviously something on Google maps
+ */
+#googlemap img,
+#map_canvas embed,
+#map_canvas img,
+#map_canvas object,
+object,
+embed{
+	max-width:none;
+}
+
 
 
 /* ==========================================================================
