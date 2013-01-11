@@ -1,2 +1,6 @@
+# www.robotstxt.org/
+# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
+
+# Grant full access to the site, for all user agents
 User-agent: *
 Allow: /
