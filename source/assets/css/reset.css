@@ -84,10 +84,11 @@ a:hover{
 }
 
 hr{
+	display:block;
 	margin:1em 0;
+	padding:0;
 	border:none;
-	border-top:1px solid #eee;
-	border-bottom:1px solid #fff;
+	border-top:1px solid #ccc;
 }
 
 
@@ -283,6 +284,21 @@ sub{
 	bottom:-0.25em;
 }
 
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection{
+	background:#b3d4fc;
+	text-shadow:none;
+}
+
+::selection{
+	background:#b3d4fc;
+	text-shadow:none;
+}
+
 
 
 /* ==========================================================================
@@ -302,13 +318,14 @@ ol, ul{list-style:none;}
 
 /**
  * 1. Ensures that images are sensibly sized and do not overflow the page width
+ * 2. Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  * 2. Nicer image resizing in IE 8
  */
 img{
 	max-width:100%; /* 1 */
 	height:auto; /* 1 */
-	vertical-align:middle;
-	-ms-interpolation-mode:bicubic; /* 2 */
+	vertical-align:middle; /* 2 */
+	-ms-interpolation-mode:bicubic; /* 3 */
 }
 
 /**
@@ -333,9 +350,9 @@ svg:not(:root){
  * Define consistent border, margin, and padding.
  */
 fieldset{
-	border:1px solid #c0c0c0;
-	margin:0 2px;
-	padding:0.35em 0.625em 0.75em;
+	border:0;
+	margin:0;
+	padding:0;
 }
 
 /**
@@ -440,10 +457,12 @@ input::-moz-focus-inner{
 /**
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
+ * 3. Allow only vertical resizing of textareas.
  */
 textarea{
 	overflow:auto; /* 1 */
 	vertical-align:top; /* 2 */
+	resize:vertical; /* 3 */
 }
 
 

@@ -32,15 +32,22 @@ p.lead{
  * to make it encapsulated it properly.
  */
 .clearfix:after{
-	content:"";
+	content:" ";
 	display:table;
 	clear:both;
 }
 
 /**
- * A hidden element
+ * Hide from both screenreaders and browsers: h5bp.com/u
  */
 .hidden{
-	display:none;
+	display:none !important;
 	visibility:hidden;
+}
+
+/**
+ * Hide visually and from screenreaders, but maintain layout
+ */
+.invisible{
+    visibility:hidden;
 }
