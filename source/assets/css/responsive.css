@@ -69,6 +69,219 @@
 
 
 /* ==========================================================================
+ * Grid layout
+ * ========================================================================== */
+
+/**
+ * The main site container
+ */
+.container,
+.ship{
+	padding:0 20px;
+}
+
+/**
+ * A row
+ */
+.row,
+.deck{
+	margin:0 auto;
+	width:100%;
+	min-width:200px;
+	max-width:100%;
+}
+
+.row:after,
+.deck:after{
+	content:" ";
+	display:table;
+	clear:both;
+}
+
+/**
+ * A row within a row
+ */
+.row .row,
+.deck .deck{
+	width:auto;
+	min-width:0;
+}
+
+/**
+ * Columns
+ */
+.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol,
+.row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvencol,
+.deck .oneplank, .deck .twoplank, .deck .threeplank, .deck .fourplank, .deck .fiveplank, .deck .sixplank,
+.deck .sevenplank, .deck .eightplank, .deck .nineplank, .deck .tenplank, .deck .elevenplank, .deck .twelveplank,
+.deck .onecol, .deck .twocol, .deck .threecol, .deck .fourcol, .deck .fivecol, .deck .sixcol,
+.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .row .elevencol, .row .twelvencol,
+.row .oneplank, .row .twoplank, .row .threeplank, .row .fourplank, .row .fiveplank, .row .sixplank,
+.row .sevenplank, .row .eightplank, .row .nineplank, .row .tenplank, .row .elevenplank, .row .twelveplank{
+	float:left;
+	margin-right:3.8%;
+	min-height:1px;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/**
+ * setting individual column widths
+ */
+.row .onecol,
+.deck .oneplank,
+.deck .onecol,
+.row .oneplank{
+	width:4.85%;
+}
+
+.row .twocol,
+.deck .twoplank,
+.deck .twocol,
+.row .twoplank{
+	width:13.45%;
+}
+
+.row .threecol,
+.deck .threeplank,
+.deck .threecol,
+.row .threeplank{
+	width:22.05%;
+}
+
+.row .fourcol,
+.deck .fourplank,
+.deck .fourcol,
+.row .fourplank{
+	width:30.75%;
+}
+
+.row .fivecol,
+.deck .fiveplank,
+.deck .fivecol,
+.row .fiveplank{
+	width:39.45%;
+}
+
+.row .sixcol,
+.deck .sixplank,
+.deck .sixcol,
+.row .sixplank{
+	width:48%;
+}
+
+.row .sevencol,
+.deck .sevenplank,
+.deck .sevencol,
+.row .sevenplank{
+	width:56.75%;
+}
+
+.row .eightcol,
+.deck .eightplank,
+.deck .eightcol,
+.row .eightplank{
+	width:65.4%;
+}
+
+.row .ninecol,
+.deck .nineplank,
+.deck .ninecol,
+.row .nineplank{
+	width: 74.05%;
+}
+
+.row .tencol,
+.deck .tenplank,
+.deck .tencol,
+.row .tenplank{
+	width:82.7%;
+}
+
+.row .elevencol,
+.deck .elevenplank,
+.deck .elevencol,
+.row .elevenplank{
+	width:91.35%;
+}
+
+.row .twelvecol,
+.deck .twelveplank,
+.deck .twelvecol,
+.row .twelveplank{
+	margin:0;
+	width:100%;
+}
+
+/**
+ * No margin on the last column (otherwise it won't fit on the row)
+ */
+.row .onecol.last, .row .twocol.last, .row .threecol.last, .row .fourcol.last, .row .fivecol.last, .row .sixcol.last,
+.row .sevencol.last, .row .eightcol.last, .row .ninecol.last, .row .tencol.last, .row .elevencol.last,
+.deck .oneplank.last, .deck .twoplank.last, .deck .threeplank.last, .deck .fourplank.last, .deck .fiveplank.last, .deck .sixplank.last,
+.deck .sevenplank.last, .deck .eightplank.last, .deck .nineplank.last, .deck .tenplank.last, .deck .elevenplank.last,
+.deck .onecol.last, .deck .twocol.last, .deck .threecol.last, .deck .fourcol.last, .deck .fivecol.last, .deck .sixcol.last,
+.deck .sevencol.last, .deck .eightcol.last, .deck .ninecol.last, .deck .tencol.last, .deck .elevencol.last,
+.row .oneplank.last, .row .twoplank.last, .row .threeplank.last, .row .fourplank.last, .row .fiveplank.last, .row .sixplank.last,
+.row .sevenplank.last, .row .eightplank.last, .row .nineplank.last, .row .tenplank.last, .row .elevenplank.last{
+	margin:0;
+}
+
+
+.row img, .row object, .row embed,
+.deck img, .deck object, .deck embed{
+	max-width:100%;
+}
+
+.row img,
+.deck img{
+	height:auto;
+}
+
+
+@media only screen and (max-width: 1023px){
+	body{
+		font-size:0.8em;
+		line-height:1.5em;
+	}
+}
+
+@media handheld, only screen and (max-width: 767px) {
+	body{
+		font-size:16px;
+		-webkit-text-size-adjust:none;
+		-ms-text-size-adjust:none;
+	}
+
+	body, .container, .ship, .row, .plank{
+		width:100%;
+		min-width:0;
+		margin-left:0;
+		margin-right:0;
+		padding-left:0;
+		padding-right:0;
+	}
+
+	.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol,
+	.row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvencol,
+	.deck .oneplank, .deck .twoplank, .deck .threeplank, .deck .fourplank, .deck .fiveplank, .deck .sixplank,
+	.deck .sevenplank, .deck .eightplank, .deck .nineplank, .deck .tenplank, .deck .elevenplank, .deck .twelveplank,
+	.deck .onecol, .deck .twocol, .deck .threecol, .deck .fourcol, .deck .fivecol, .deck .sixcol,
+	.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .row .elevencol, .row .twelvencol,
+	.row .oneplank, .row .twoplank, .row .threeplank, .row .fourplank, .row .fiveplank, .row .sixplank,
+	.row .sevenplank, .row .eightplank, .row .nineplank, .row .tenplank, .row .elevenplank, .row .twelveplank{
+		width:auto;
+		float:none;
+		margin-left:0;
+		margin-right:0;
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
+
+
+/* ==========================================================================
  * Retina display media queries
  * ========================================================================== */
 /* 1.25 dpr */
