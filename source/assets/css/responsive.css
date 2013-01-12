@@ -87,7 +87,7 @@
 .deck{
 	margin:0 auto;
 	width:100%;
-	min-width:200px;
+	min-width:755px;
 	max-width:100%;
 }
 
@@ -115,7 +115,7 @@
 .deck .oneplank, .deck .twoplank, .deck .threeplank, .deck .fourplank, .deck .fiveplank, .deck .sixplank,
 .deck .sevenplank, .deck .eightplank, .deck .nineplank, .deck .tenplank, .deck .elevenplank, .deck .twelveplank,
 .deck .onecol, .deck .twocol, .deck .threecol, .deck .fourcol, .deck .fivecol, .deck .sixcol,
-.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .row .elevencol, .row .twelvencol,
+.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .deck .elevencol, .deck .twelvencol,
 .row .oneplank, .row .twoplank, .row .threeplank, .row .fourplank, .row .fiveplank, .row .sixplank,
 .row .sevenplank, .row .eightplank, .row .nineplank, .row .tenplank, .row .elevenplank, .row .twelveplank{
 	float:left;
@@ -140,21 +140,21 @@
 .deck .twoplank,
 .deck .twocol,
 .row .twoplank{
-	width:13.45%;
+	width:13.5%;
 }
 
 .row .threecol,
 .deck .threeplank,
 .deck .threecol,
 .row .threeplank{
-	width:22.05%;
+	width:22.15%;
 }
 
 .row .fourcol,
 .deck .fourplank,
 .deck .fourcol,
 .row .fourplank{
-	width:30.75%;
+	width:30.8%;
 }
 
 .row .fivecol,
@@ -168,7 +168,7 @@
 .deck .sixplank,
 .deck .sixcol,
 .row .sixplank{
-	width:48%;
+	width:48.1%;
 }
 
 .row .sevencol,
