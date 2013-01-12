@@ -30,8 +30,13 @@
 			border:1px solid #00f;
 		}
 
-		.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol,
-		.oneplank, .twoplank, .threeplank, .fourplank, .fiveplank, .sixplank, .sevenplank, .eightplank, .nineplank, .tenplank, .elevenplank{
+		.row, .deck{
+			border:1px solid #666;
+			background:#c60f13;
+		}
+
+		.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol,
+		.oneplank, .twoplank, .threeplank, .fourplank, .fiveplank, .sixplank, .sevenplank, .eightplank, .nineplank, .tenplank, .elevenplank, .twelveplank{
 			color:#000;
 			text-align:center;
 			background:#ccc;
@@ -63,19 +68,85 @@
 	</section>
 
 	<section class="container">
-		<div class="row">
+		<div class="deck">
 			<article class="oneplank">1</article>
-			<article class="oneplank">2</article>
-			<article class="oneplank">3</article>
-			<article class="oneplank">4</article>
-			<article class="oneplank">5</article>
-			<article class="oneplank">6</article>
-			<article class="oneplank">7</article>
-			<article class="oneplank">8</article>
-			<article class="oneplank">9</article>
-			<article class="oneplank">10</article>
-			<article class="oneplank">11</article>
-			<article class="oneplank last">12</article>
+			<article class="onecol">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank">1</article>
+			<article class="oneplank last">1</article>
+		</div>
+
+		<div class="row">
+			<article class="twoplank">2</article>
+			<article class="twocol">2</article>
+			<article class="twoplank">2</article>
+			<article class="twoplank">2</article>
+			<article class="twoplank">2</article>
+			<article class="twoplank last">2</article>
+		</div>
+
+		<div class="row">
+			<article class="fourplank">4</article>
+			<article class="fourcol">4</article>
+			<article class="fourplank last">4</article>
+		</div>
+
+		<div class="deck">
+			<article class="threeplank">3</article>
+			<article class="threecol">3</article>
+			<article class="threecol">3</article>
+			<article class="threeplank last">3</article>
+		</div>
+
+		<div class="row">
+			<article class="twocol">2</article>
+			<article class="fivecol">5</article>
+			<article class="twoplank">2</article>
+			<article class="threecol last">3</article>
+		</div>
+
+		<div class="row">
+			<article class="sixcol">6</article>
+			<article class="sixplank last">6</article>
+		</div>
+
+		<div class="row">
+			<article class="sevencol">7</article>
+			<article class="threeplank">3</article>
+			<article class="twoplank last">2</article>
+		</div>
+
+		<div class="deck">
+			<article class="twoplank">2</article>
+			<article class="eightcol">8</article>
+			<article class="twoplank last">2</article>
+		</div>
+
+		<div class="deck">
+			<article class="onecol">1</article>
+			<article class="ninecol">9</article>
+			<article class="twoplank last">2</article>
+		</div>
+
+		<div class="row">
+			<article class="tenplank">10</article>
+			<article class="twoplank last">2</article>
+		</div>
+
+		<div class="deck">
+			<article class="elevenplank">11</article>
+			<article class="onecol last">1</article>
+		</div>
+
+		<div class="deck">
+			<article class="twelveplank">12</article>
 		</div>
 	</section>
 
