@@ -1,16 +1,35 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]><html lang="en" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
 	<title>Bootstrap test page</title>
-	<meta http-equiv="Content-Type" content="text/html">
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<meta name="author" content="GreenImp Web - greenimp.co.uk">
 
 	<link href="source/assets/css/reset.css" rel="stylesheet" media="all">
 	<link href="source/assets/css/base.css" rel="stylesheet" media="all">
+	<link href="source/assets/css/responsive.css" rel="stylesheet" media="all">
 	<link href="source/assets/css/print.css" rel="stylesheet" media="print">
+
+	<script src="source/assets/resources/modernizr-2.6.2.min.js"></script>
+
+	<style>
+		.js-warning{display:none;}
+		.no-js .js-warning{
+			display:block;
+			background:#f0f;
+		}
+
+		section{
+			border:1px solid #000;
+		}
+		figure{
+			border:1px solid #00f;
+		}
+	</style>
 </head>
 
 <body>
@@ -25,5 +44,17 @@
 
 		<p>A field set</p>
 	</fieldset>
+
+	<section>
+		<h2>Section title</h2>
+
+		<p>blah blah blah</p>
+
+		<figure>
+			<img src="" alt="image">
+		</figure>
+	</section>
+
+	<div class="js-warning">You need JS!</div>
 </body>
 </html>
