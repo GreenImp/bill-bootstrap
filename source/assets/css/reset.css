@@ -465,12 +465,14 @@ input::-moz-focus-inner{
  * 1. Removes default vertical scrollbar in IE 8/9.
  * 2. Improves readability and alignment in all browsers.
  * 3. Allow only vertical resizing of textareas.
+ * 4. Ensure that height cannot be too small for text to be visible
  */
 textarea{
 	overflow:auto; /* 1 */
 	vertical-align:top; /* 2 */
 	resize:vertical; /* 3 */
 	height:auto;
+	min-height:2.5em;
 }
 
 
