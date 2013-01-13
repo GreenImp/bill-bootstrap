@@ -38,10 +38,15 @@
 		}
 
 		.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol,
-		.oneplank, .twoplank, .threeplank, .fourplank, .fiveplank, .sixplank, .sevenplank, .eightplank, .nineplank, .tenplank, .elevenplank, .twelveplank{
+		.oneplank, .twoplank, .threeplank, .fourplank, .fiveplank, .sixplank, .sevenplank, .eightplank, .nineplank, .tenplank, .elevenplank, .twelveplank,
+
+		.column, .plank{
 			color:#000;
 			text-align:center;
 			background:#ccc;
+			border:1px dotted #0f0;
+			border-top:none;
+			border-bottom:none;
 		}
 	</style>
 </head>
@@ -51,110 +56,127 @@
 
 	<p>Use this to test the CSS/JS.</p>
 
-	<a href="http://google.com" target="_blank" title="A link">Google</a>
-
-	<fieldset>
-		<legend>Meow</legend>
-
-		<p>A field set</p>
-	</fieldset>
-
 	<section>
-		<h2>Section title</h2>
+		<h2>What device?</h2>
 
-		<p>blah blah blah</p>
-
-		<figure>
-			<img src="" alt="image">
-		</figure>
-	</section>
-
-	<section>
 		<div class="visible-desktop">DESKTOP</div>
 		<div class="visible-tablet">TABLET</div>
 		<div class="visible-phone">PHONE</div>
 	</section>
 
 	<section class="container">
+		<h2>Basic Grid Layouts</h2>
+
 		<div class="deck">
-			<article class="oneplank">1</article>
-			<article class="onecol">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank">1</article>
-			<article class="oneplank last">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
+			<article class="column one">1</article>
 		</div>
 
 		<div class="row">
-			<article class="twoplank">2</article>
-			<article class="twocol">2</article>
-			<article class="twoplank">2</article>
-			<article class="twoplank">2</article>
-			<article class="twoplank">2</article>
-			<article class="twoplank last">2</article>
-		</div>
-
-		<div class="row">
-			<article class="fourplank">4</article>
-			<article class="fourcol">4</article>
-			<article class="fourplank last">4</article>
+			<article class="column two">2</article>
+			<article class="column two">2</article>
+			<article class="column two">2</article>
+			<article class="column two">2</article>
+			<article class="column two">2</article>
+			<article class="column two">2</article>
 		</div>
 
 		<div class="deck">
-			<article class="threeplank">3</article>
-			<article class="threecol">3</article>
-			<article class="threecol">3</article>
-			<article class="threeplank last">3</article>
+			<article class="column three">3</article>
+			<article class="column three">3</article>
+			<article class="column three">3</article>
+			<article class="column three">3</article>
 		</div>
 
 		<div class="row">
-			<article class="twocol">2</article>
-			<article class="fivecol">5</article>
-			<article class="twoplank">2</article>
-			<article class="threecol last">3</article>
+			<article class="column four">4</article>
+			<article class="column four">4</article>
+			<article class="column four">4</article>
 		</div>
 
 		<div class="row">
-			<article class="sixcol">6</article>
-			<article class="sixplank last">6</article>
+			<article class="column two">2</article>
+			<article class="column five">5</article>
+			<article class="column three">3</article>
+			<article class="column two">2</article>
 		</div>
 
 		<div class="row">
-			<article class="sevencol">7</article>
-			<article class="threeplank">3</article>
-			<article class="twoplank last">2</article>
-		</div>
-
-		<div class="deck">
-			<article class="twoplank">2</article>
-			<article class="eightcol">8</article>
-			<article class="twoplank last">2</article>
-		</div>
-
-		<div class="deck">
-			<article class="onecol">1</article>
-			<article class="ninecol">9</article>
-			<article class="twoplank last">2</article>
+			<article class="column six">6</article>
+			<article class="column six">6</article>
 		</div>
 
 		<div class="row">
-			<article class="tenplank">10</article>
-			<article class="twoplank last">2</article>
+			<article class="column seven">7</article>
+			<article class="column three">3</article>
+			<article class="column two">2</article>
 		</div>
 
 		<div class="deck">
-			<article class="elevenplank">11</article>
-			<article class="onecol last">1</article>
+			<article class="column two">2</article>
+			<article class="column eight">8</article>
+			<article class="column two">2</article>
 		</div>
 
 		<div class="deck">
-			<article class="twelveplank">12</article>
+			<article class="column one">1</article>
+			<article class="column nine">9</article>
+			<article class="column two">2</article>
+		</div>
+
+		<div class="row">
+			<article class="column ten">10</article>
+			<article class="column two">2</article>
+		</div>
+
+		<div class="deck">
+			<article class="column eleven">11</article>
+			<article class="column one">1</article>
+		</div>
+
+		<div class="deck">
+			<article class="column twelve">12</article>
+		</div>
+	</section>
+
+	<section class="container">
+		<h2>Centered columns</h2>
+
+		<div class="deck">
+			<article class="plank one center">1</article>
+		</div>
+
+		<div class="deck">
+			<article class="plank ten center">10</article>
+		</div>
+	</section>
+
+	<section class="ship">
+		<h2>Offset columns</h2>
+
+		<div class="deck">
+			<article class="column two">2</article>
+			<article class="plank two offset-eight">2 (offset 8)</article>
+		</div>
+
+		<div class="deck">
+			<article class="column five offset-two">2 (offset 2)</article>
+			<article class="plank four offset-one">4 (offset 1)</article>
+		</div>
+
+		<div class="deck">
+			<article class="column eight offset-one">8 (offset 1)</article>
+			<article class="plank one offset-two">1 (offset 2)</article>
 		</div>
 	</section>
 

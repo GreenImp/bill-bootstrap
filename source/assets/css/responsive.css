@@ -110,16 +110,12 @@
 /**
  * Columns
  */
-.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol,
-.row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvencol,
-.deck .oneplank, .deck .twoplank, .deck .threeplank, .deck .fourplank, .deck .fiveplank, .deck .sixplank,
-.deck .sevenplank, .deck .eightplank, .deck .nineplank, .deck .tenplank, .deck .elevenplank, .deck .twelveplank,
-.deck .onecol, .deck .twocol, .deck .threecol, .deck .fourcol, .deck .fivecol, .deck .sixcol,
-.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .deck .elevencol, .deck .twelvencol,
-.row .oneplank, .row .twoplank, .row .threeplank, .row .fourplank, .row .fiveplank, .row .sixplank,
-.row .sevenplank, .row .eightplank, .row .nineplank, .row .tenplank, .row .elevenplank, .row .twelveplank{
+.row .column,
+.deck .plank,
+.deck .column,
+.row .plank{
 	float:left;
-	margin-right:3.8%;
+	margin:0;
 	min-height:1px;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -129,106 +125,186 @@
 /**
  * setting individual column widths
  */
-.row .onecol,
-.deck .oneplank,
-.deck .onecol,
-.row .oneplank{
-	width:4.85%;
+.row .column.one,
+.deck .plank.one,
+.deck .column.one,
+.row .plank.one{
+	width:8.333333333%;
 }
 
-.row .twocol,
-.deck .twoplank,
-.deck .twocol,
-.row .twoplank{
-	width:13.5%;
+.row .column.two,
+.deck .plank.two,
+.deck .column.two,
+.row .plank.two{
+	width:16.666666667%;
 }
 
-.row .threecol,
-.deck .threeplank,
-.deck .threecol,
-.row .threeplank{
-	width:22.15%;
+.row .column.three,
+.deck .plank.three,
+.deck .column.three,
+.row .plank.three{
+	width:25%;
 }
 
-.row .fourcol,
-.deck .fourplank,
-.deck .fourcol,
-.row .fourplank{
-	width:30.8%;
+.row .column.four,
+.deck .plank.four,
+.deck .column.four,
+.row .plank.four{
+	width:33.333333333%;
 }
 
-.row .fivecol,
-.deck .fiveplank,
-.deck .fivecol,
-.row .fiveplank{
-	width:39.45%;
+.row .column.five,
+.deck .plank.five,
+.deck .column.five,
+.row .plank.five{
+	width:41.666666665%;
 }
 
-.row .sixcol,
-.deck .sixplank,
-.deck .sixcol,
-.row .sixplank{
-	width:48.1%;
+.row .column.six,
+.deck .plank.six,
+.deck .column.six,
+.row .plank.six{
+	width:50%;
 }
 
-.row .sevencol,
-.deck .sevenplank,
-.deck .sevencol,
-.row .sevenplank{
-	width:56.75%;
+.row .column.seven,
+.deck .plank.seven,
+.deck .column.seven,
+.row .plank.seven{
+	width:58.333333331%;
 }
 
-.row .eightcol,
-.deck .eightplank,
-.deck .eightcol,
-.row .eightplank{
-	width:65.4%;
+.row .column.eight,
+.deck .plank.eight,
+.deck .column.eight,
+.row .plank.eight{
+	width:66.666666664%;
 }
 
-.row .ninecol,
-.deck .nineplank,
-.deck .ninecol,
-.row .nineplank{
-	width: 74.05%;
+.row .column.nine,
+.deck .plank.nine,
+.deck .column.nine,
+.row .plank.nine{
+	width:74.999999997%;
 }
 
-.row .tencol,
-.deck .tenplank,
-.deck .tencol,
-.row .tenplank{
-	width:82.7%;
+.row .column.ten,
+.deck .plank.ten,
+.deck .column.ten,
+.row .plank.ten{
+	width:83.33333333%;
 }
 
-.row .elevencol,
-.deck .elevenplank,
-.deck .elevencol,
-.row .elevenplank{
-	width:91.35%;
+.row .column.eleven,
+.deck .plank.eleven,
+.deck .column.eleven,
+.row .plank.eleven{
+	width:91.666666663%;
 }
 
-.row .twelvecol,
-.deck .twelveplank,
-.deck .twelvecol,
-.row .twelveplank{
-	margin:0;
+.row .column.twelve,
+.deck .plank.twelve,
+.deck .column.twelve,
+.row .plank.twelve{
 	width:100%;
 }
 
 /**
- * No margin on the last column (otherwise it won't fit on the row)
+ * Column offsets
  */
-.row .onecol.last, .row .twocol.last, .row .threecol.last, .row .fourcol.last, .row .fivecol.last, .row .sixcol.last,
-.row .sevencol.last, .row .eightcol.last, .row .ninecol.last, .row .tencol.last, .row .elevencol.last,
-.deck .oneplank.last, .deck .twoplank.last, .deck .threeplank.last, .deck .fourplank.last, .deck .fiveplank.last, .deck .sixplank.last,
-.deck .sevenplank.last, .deck .eightplank.last, .deck .nineplank.last, .deck .tenplank.last, .deck .elevenplank.last,
-.deck .onecol.last, .deck .twocol.last, .deck .threecol.last, .deck .fourcol.last, .deck .fivecol.last, .deck .sixcol.last,
-.deck .sevencol.last, .deck .eightcol.last, .deck .ninecol.last, .deck .tencol.last, .deck .elevencol.last,
-.row .oneplank.last, .row .twoplank.last, .row .threeplank.last, .row .fourplank.last, .row .fiveplank.last, .row .sixplank.last,
-.row .sevenplank.last, .row .eightplank.last, .row .nineplank.last, .row .tenplank.last, .row .elevenplank.last{
-	margin:0;
+.row .column.offset-one,
+.deck .plank.offset-one,
+.deck .column.offset-one,
+.row .plank.offset-one{
+	margin-left:8.333333333%;
+}
+
+.row .column.offset-two,
+.deck .plank.offset-two,
+.deck .column.offset-two,
+.row .plank.offset-two{
+	margin-left:16.666666667%;
+}
+
+.row .column.offset-three,
+.deck .plank.offset-three,
+.deck .column.offset-three,
+.row .plank.offset-three{
+	margin-left:25%;
+}
+
+.row .column.offset-four,
+.deck .plank.offset-four,
+.deck .column.offset-four,
+.row .plank.offset-four{
+	margin-left:33.333333333%;
+}
+
+.row .column.offset-five,
+.deck .plank.offset-five,
+.deck .column.offset-five,
+.row .plank.offset-five{
+	margin-left:41.666666665%;
+}
+
+.row .column.offset-six,
+.deck .plank.offset-six,
+.deck .column.offset-six,
+.row .plank.offset-six{
+	margin-left:50%;
+}
+
+.row .column.offset-seven,
+.deck .plank.offset-seven,
+.deck .column.offset-seven,
+.row .plank.offset-seven{
+	margin-left:58.333333331%;
+}
+
+.row .column.offset-eight,
+.deck .plank.offset-eight,
+.deck .column.offset-eight,
+.row .plank.offset-eight{
+	margin-left:66.666666664%;
+}
+
+.row .column.offset-nine,
+.deck .plank.offset-nine,
+.deck .column.offset-nine,
+.row .plank.offset-nine{
+	margin-left:74.999999997%;
+}
+
+.row .column.offset-ten,
+.deck .plank.offset-ten,
+.deck .column.offset-ten,
+.row .plank.offset-ten{
+	margin-left:83.33333333%;
+}
+
+.row .column.offset-eleven,
+.deck .plank.offset-eleven,
+.deck .column.offset-eleven,
+.row .plank.offset-eleven{
+	margin-left:91.666666663%;
 }
 
 
+/**
+ * Allow centering of a column
+ */
+.row .column.center,
+.deck .plank.center,
+.deck .column.center,
+.row .plank.center{
+	float:none;
+	margin:0 auto;
+}
+
+
+/**
+ * Stop images, objects etc overflowing the content
+ */
 .row img, .row object, .row embed,
 .deck img, .deck object, .deck embed{
 	max-width:100%;
@@ -240,6 +316,9 @@
 }
 
 
+/**
+ * Media queries for handling smaller screen sizes
+ */
 @media only screen and (max-width: 1023px){
 	body{
 		font-size:0.8em;
@@ -263,18 +342,14 @@
 		padding-right:0;
 	}
 
-	.row .onecol, .row .twocol, .row .threecol, .row .fourcol, .row .fivecol, .row .sixcol,
-	.row .sevencol, .row .eightcol, .row .ninecol, .row .tencol, .row .elevencol, .row .twelvencol,
-	.deck .oneplank, .deck .twoplank, .deck .threeplank, .deck .fourplank, .deck .fiveplank, .deck .sixplank,
-	.deck .sevenplank, .deck .eightplank, .deck .nineplank, .deck .tenplank, .deck .elevenplank, .deck .twelveplank,
-	.deck .onecol, .deck .twocol, .deck .threecol, .deck .fourcol, .deck .fivecol, .deck .sixcol,
-	.deck .sevencol, .deck .eightcol, .deck .ninecol, .deck .tencol, .row .elevencol, .row .twelvencol,
-	.row .oneplank, .row .twoplank, .row .threeplank, .row .fourplank, .row .fiveplank, .row .sixplank,
-	.row .sevenplank, .row .eightplank, .row .nineplank, .row .tenplank, .row .elevenplank, .row .twelveplank{
-		width:auto;
-		float:none;
-		margin-left:0;
-		margin-right:0;
+	.row .column,
+	.deck .plank,
+	.deck .column,
+	.row .plank{
+		width:auto !important;
+		float:none !important;
+		margin-left:0 !important;
+		margin-right:0 !important;
 		padding-left:20px;
 		padding-right:20px;
 	}
