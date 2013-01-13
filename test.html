@@ -42,7 +42,6 @@
 
 		.column, .plank{
 			color:#000;
-			text-align:center;
 			background:#ccc;
 			border:1px dotted #0f0;
 			border-top:none;
@@ -194,141 +193,161 @@
 
 	<h2 id="forms">Forms</h2>
 
-	<form action="" method="post">
-		<fieldset>
-			<label for="formText">Text input</label>
-			<input type="text" name="textInput" value="" placeholder="Placeholder" id="formText">
-		</fieldset>
+	<form action="" method="post" class="ship">
+		<section class="deck">
+			<div class="plank six">
+				<fieldset>
+					<legend>Basic Inputs</legend>
 
-		<fieldset>
-			<label for="formPassword">Password input</label>
-			<input type="password" name="passwordInput" value="" placeholder="Placeholder" id="formPassword">
-		</fieldset>
+					<label for="formText">Text input</label>
+					<input type="text" name="textInput" value="" placeholder="Placeholder" id="formText">
 
-		<fieldset>
-			<label for="formEmail">Email input</label>
-			<input type="email" name="emailInput" value="" placeholder="Placeholder" id="formEmail">
-		</fieldset>
+					<label for="formPassword">Password input</label>
+					<input type="password" name="passwordInput" value="" placeholder="Placeholder" id="formPassword">
 
-		<fieldset>
-			<label for="formNumber">Number input</label>
-			<input type="number" name="numberInput" value="" placeholder="Placeholder" id="formNumber">
-		</fieldset>
+					<label for="formNumber">Number input</label>
+					<input type="number" name="numberInput" value="" placeholder="Placeholder" id="formNumber">
 
-		<fieldset>
-			<label for="formDate">Date input</label>
-			<input type="date" name="dateInput" value="" placeholder="Placeholder" id="formDate">
-		</fieldset>
+					<label for="formEmail">Email input</label>
+					<input type="email" name="emailInput" value="" placeholder="Placeholder" id="formEmail">
 
-		<fieldset>
-			<label for="formDatetime">Datetime input</label>
-			<input type="datetime" name="datetimeInput" value="" placeholder="Placeholder" id="formDatetime">
-		</fieldset>
+					<label for="formTel">Tel input</label>
+					<input type="tel" name="telInput" value="" placeholder="Placeholder" id="formTel">
 
-		<fieldset>
-			<label for="formTime">Time input</label>
-			<input type="time" name="timeInput" value="" placeholder="Placeholder" id="formTime">
-		</fieldset>
+					<label for="formUrl">URL input</label>
+					<input type="url" name="urlInput" value="" placeholder="Placeholder" id="formUrl">
 
-		<fieldset>
-			<label for="formTel">Tel input</label>
-			<input type="tel" name="telInput" value="" placeholder="Placeholder" id="formTel">
-		</fieldset>
+					<label for="formSearch">Search input</label>
+					<input type="search" name="searchInput" value="" placeholder="Placeholder" id="formSearch">
 
-		<fieldset>
-			<label for="formUrl">URL input</label>
-			<input type="url" name="urlInput" value="" placeholder="Placeholder" id="formUrl">
-		</fieldset>
-
-		<fieldset>
-			<label for="formSearch">Search input</label>
-			<input type="search" name="searchInput" value="" placeholder="Placeholder" id="formSearch">
-		</fieldset>
-
-		<fieldset>
-			<label for="formColor">Colour input</label>
-			<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
-		</fieldset>
-
-		<fieldset>
-			<label for="formTextarea">Textarea</label>
-			<textarea name="textarea" cols="30" rows="4" placeholder="Placeholder" id="formTextarea"></textarea>
-		</fieldset>
-
-		<fieldset>
-			<label for="checkbox1">
-				<input type="checkbox" name="checkbox1" value="1" id="checkbox1">
-				Checkbox 1
-			</label>
-
-			<label for="checkbox2">
-				<input type="checkbox" name="checkbox2" value="2" id="checkbox2">
-				Checkbox 1
-			</label>
-		</fieldset>
-
-		<fieldset>
-			<label for="radio1">
-				<input type="radio" name="radio" value="1" id="radio1">
-				Radio 1
-			</label>
-
-			<label for="radio2">
-				<input type="radio" name="radio" value="2" id="radio2">
-				Radio 1
-			</label>
-		</fieldset>
-
-		<fieldset>
-			<label for="formSelect">Select</label>
-			<select id="formSelect">
-				<option value="">Select...</option>
-				<option value="1">value 1</option>
-				<option value="2">value 2</option>
-				<option value="3" selected>value 3</option>
-				<option value="4">value 4</option>
-			</select>
-		</fieldset>
-
-		<fieldset>
-			<label for="formDisabled">Disabled input</label>
-			<input type="text" name="disabledInput" value="Disabled text" placeholder="Placeholder" disabled id="formDisabled">
-		</fieldset>
-
-		<fieldset>
-			<label for="formReadonly">Readonly input</label>
-			<input type="text" name="readonlyInput" value="Readonly text" placeholder="Placeholder" readonly id="formReadonly">
-		</fieldset>
-
-		<fieldset>
-			<label for="formSelectDisabled">Select</label>
-			<select disabled id="formSelectisabled">
-				<option value="">Select...</option>
-				<option value="1" selected>value 1</option>
-				<option value="2">value 2</option>
-				<option value="3">value 3</option>
-				<option value="4">value 4</option>
-			</select>
-		</fieldset>
-
-		<fieldset class="buttons">
-			<div>
-				<input type="submit" name="submitBtn" value="submit">
-				<input type="button" name="buttonBtn" value="button">
-				<input type="reset" name="resetBtn" value="reset">
+					<label for="formTextarea">Textarea</label>
+					<textarea name="textarea" cols="30" rows="4" placeholder="Placeholder" id="formTextarea"></textarea>
+				</fieldset>
 			</div>
 
-			<div>
-				<button type="submit">button (submit)</button>
-				<button type="button">button (button)</button>
-				<button type="reset">button (reset)</button>
+			<div class="plank six">
+				<fieldset>
+					<legend>Date Inputs</legend>
+
+					<label for="formDate">Date input</label>
+					<input type="date" name="dateInput" value="" placeholder="Placeholder" id="formDate">
+
+					<label for="formDatetime">Datetime input</label>
+					<input type="datetime" name="datetimeInput" value="" placeholder="Placeholder" id="formDatetime">
+
+					<label for="formTime">Time input</label>
+					<input type="time" name="timeInput" value="" placeholder="Placeholder" id="formTime">
+				</fieldset>
+
+				<fieldset>
+					<legend>Fancy Inputs</legend>
+
+					<label for="formColor">Colour input</label>
+					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
+				</fieldset>
+			</div>
+		</section>
+
+		<section class="deck">
+			<div class="plank six">
+				<fieldset>
+					<legend>Checkboxes</legend>
+
+					<label for="checkbox1">
+						<input type="checkbox" name="checkbox1" value="1" id="checkbox1">
+						Checkbox 1
+					</label>
+
+					<label for="checkbox2">
+						<input type="checkbox" name="checkbox2" value="2" id="checkbox2">
+						Checkbox 1
+					</label>
+				</fieldset>
+
+				<fieldset>
+					<legend>Radio Buttons</legend>
+
+					<label for="radio1">
+						<input type="radio" name="radio" value="1" id="radio1">
+						Radio 1
+					</label>
+
+					<label for="radio2">
+						<input type="radio" name="radio" value="2" id="radio2">
+						Radio 1
+					</label>
+				</fieldset>
 			</div>
 
-			<div>
-				<input type="submit" name="submitBtnDisabled" value="submit disabled" disabled>
-				<button type="submit" disabled>button (submit) disabled</button>
+			<div class="plank six">
+				<fieldset>
+					<legend>Select Field</legend>
+
+					<label for="formSelect">Select</label>
+					<select id="formSelect">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+				</fieldset>
 			</div>
-		</fieldset>
+		</section>
+
+		<section class="deck">
+			<div class="plank six">
+				<fieldset>
+					<legend>Disabled Inputs</legend>
+
+					<label for="formDisabled">Disabled input</label>
+					<input type="text" name="disabledInput" value="Disabled text" placeholder="Placeholder" disabled id="formDisabled">
+
+					<label for="formSelectDisabled">Select</label>
+					<select disabled id="formSelectDisabled">
+						<option value="">Select...</option>
+						<option value="1" selected>value 1</option>
+						<option value="2">value 2</option>
+						<option value="3">value 3</option>
+						<option value="4">value 4</option>
+					</select>
+				</fieldset>
+			</div>
+
+			<div class="plank six">
+				<fieldset>
+					<legend>Readonly Inputs</legend>
+
+					<label for="formReadonly">Readonly input</label>
+					<input type="text" name="readonlyInput" value="Readonly text" placeholder="Placeholder" readonly id="formReadonly">
+				</fieldset>
+			</div>
+		</section>
+
+		<section class="deck">
+			<div class="plank twelve">
+				<fieldset>
+					<legend>Buttons</legend>
+
+					<div>
+						<input type="submit" name="submitBtn" value="submit">
+						<input type="button" name="buttonBtn" value="button">
+						<input type="reset" name="resetBtn" value="reset">
+					</div>
+
+					<div>
+						<button type="submit">button (submit)</button>
+						<button type="button">button (button)</button>
+						<button type="reset">button (reset)</button>
+					</div>
+
+					<div>
+						<input type="submit" name="submitBtnDisabled" value="submit disabled" disabled>
+						<button type="submit" disabled>button (submit) disabled</button>
+					</div>
+				</fieldset>
+			</div>
+		</section>
 	</form>
 
 

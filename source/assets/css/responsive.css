@@ -116,6 +116,7 @@
 .row .plank{
 	float:left;
 	margin:0;
+	padding:0 1%;
 	min-height:1px;
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
