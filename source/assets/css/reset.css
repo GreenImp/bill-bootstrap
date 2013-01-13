@@ -375,13 +375,13 @@ legend{
 }
 
 /**
- * Corrects font size not being inherited in all browsers.
+ * 1. Corrects font size not being inherited in all browsers.
  */
 button,
 input,
 select,
 textarea{
-	font-size:100%;
+	font-size:100%; /* 1 */
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	vertical-align:middle;
 }
@@ -438,14 +438,9 @@ input[type="radio"]{
 
 /**
  * 1. Addresses 'appearance' set to 'searchfield' in Safari 5 and Chrome.
- * 2. Addresses 'box-sizing' set to 'border-box' in Safari 5 and Chrome
- * (include '-moz' to future-proof).
  */
 input[type="search"]{
 	-webkit-appearance:textfield; /* 1 */
-	-moz-box-sizing:content-box;
-	-webkit-box-sizing:content-box; /* 2 */
-	box-sizing:content-box;
 }
 
 /**
@@ -475,6 +470,7 @@ textarea{
 	overflow:auto; /* 1 */
 	vertical-align:top; /* 2 */
 	resize:vertical; /* 3 */
+	height:auto;
 }
 
 

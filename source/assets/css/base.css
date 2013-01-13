@@ -15,6 +15,185 @@ body{
 	background-color:#fff;
 }
 
+
+
+/* ==========================================================================
+ * Forms
+ * ========================================================================== */
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+textarea,
+select{
+	display:block;
+	padding:6px;
+	width:100%;
+	color:#3c3c3c;
+	background:#fff;
+	border:1px solid #cccccc;
+	border-radius:2px;
+	box-shadow:0 1px 2px rgba(0, 0, 0, 0.1) inset;
+
+	-webkit-transition:all 0.15s linear;
+	-moz-transition:all 0.15s linear;
+	-o-transition:all 0.15s linear;
+	transition:all 0.15s linear;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=date]:focus,
+input[type=datetime]:focus,
+input[type=number]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+textarea:focus,
+select:focus{
+	background:#fafafa;
+	border-color:#b3b3b3;
+}
+
+input[type=text]:hover,
+input[type=email]:hover,
+input[type=password]:hover,
+input[type=date]:hover,
+input[type=datetime]:hover,
+input[type=number]:hover,
+input[type=search]:hover,
+input[type=tel]:hover,
+input[type=time]:hover,
+input[type=url]:hover,
+textarea:hover,
+select:hover{
+	background:#fafafa;
+}
+
+input[type=text][disabled],
+input[type=email][disabled],
+input[type=password][disabled],
+input[type=date][disabled],
+input[type=datetime][disabled],
+input[type=number][disabled],
+input[type=search][disabled],
+input[type=tel][disabled],
+input[type=time][disabled],
+input[type=url][disabled],
+textarea[disabled],
+select[disabled]{
+	color:#888;
+	text-shadow:0 1px rgba(255, 255, 255, .75);
+	background-color:#ddd;
+}
+
+input[type=text][readonly],
+input[type=email][readonly],
+input[type=password][readonly],
+input[type=date][readonly],
+input[type=datetime][readonly],
+input[type=number][readonly],
+input[type=search][readonly],
+input[type=tel][readonly],
+input[type=time][readonly],
+input[type=url][readonly],
+textarea[readonly],
+select[readonly]{
+	color:#707070;
+}
+
+/*input::-webkit-input-placeholder,
+input:hover::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder{
+   color:#a9a9a9;
+}
+input:-moz-placeholder,
+input:hover:-moz-placeholder,
+input:focus:-moz-placeholder{
+   color:#a9a9a9;
+}
+input:-ms-input-placeholder,
+input:hover:-ms-input-placeholder,
+input:focus:-ms-input-placeholder{
+   color:#a9a9a9;
+}*/
+
+input[type=submit],
+input[type=reset],
+input[type=button],
+button,
+.button{
+	display:inline-block;
+	padding:8px 10px;
+	color:#444;
+	font-size:0.9em;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0 1px rgba(255, 255, 255, .75);
+	line-height:normal;
+	background:#eee;
+	background-image:-moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
+	background-image:-webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
+	background-image:-o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
+	background-image:-ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
+	background-image:linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	border:1px solid #aaa;
+	border-top-color:#ccc;
+	border-left-color:#ccc;
+	border-radius:3px;
+
+	-webkit-transition:background-color 0.15s ease-in-out 0s;
+	-moz-transition:background-color 0.15s ease-in-out 0s;
+	-o-transition:background-color 0.15s ease-in-out 0s;
+	transition:background-color 0.15s ease-in-out 0s;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover,
+input[type=button]:hover,
+button:hover,
+.button:hover,
+input[type=submit]:focus,
+input[type=reset]:focus,
+input[type=button]:focus,
+button:focus,
+.button:focus{
+	background-color:#fff;
+}
+
+input[type=submit]:active,
+input[type=reset]:active,
+input[type=button]:active,
+button:active,
+.button:active{
+	background:#ddd;
+}
+
+input[type=submit][disabled],
+input[type=reset][disabled],
+input[type=button][disabled],
+button[disabled],
+.button[disabled]{
+	color:#888;
+	background:#ccc;
+}
+
+
+
+/* ==========================================================================
+ * Classes
+ * ========================================================================== */
+
 /**
  * A simple class name for creating 'lead' paragraphs,
  * usually to be used for an article
