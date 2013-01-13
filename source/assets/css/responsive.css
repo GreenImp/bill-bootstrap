@@ -76,9 +76,7 @@
  * The main site container
  */
 .container,
-.ship{
-	padding:0 20px;
-}
+.ship{}
 
 /**
  * A row
