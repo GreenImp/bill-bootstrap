@@ -1,13 +1,5 @@
 /**
- * Copyright GreenImp Web - greenimp.co.uk
- * This page cannot be used without permission
- * 
- * Author: GreenImp Web
- * Date Created: 10/01/13 22:36
- */
-
-/**
- * Not quite sure - something to do with determining
+ * Not quite sure what this does - something to do with determining
  * the correct width on the device, in IE
  */
 @-ms-viewport{
@@ -124,168 +116,39 @@
 /**
  * setting individual column widths
  */
-.row .column.one,
-.deck .plank.one,
-.deck .column.one,
-.row .plank.one{
-	width:8.333333333%;
-}
-
-.row .column.two,
-.deck .plank.two,
-.deck .column.two,
-.row .plank.two{
-	width:16.666666667%;
-}
-
-.row .column.three,
-.deck .plank.three,
-.deck .column.three,
-.row .plank.three{
-	width:25%;
-}
-
-.row .column.four,
-.deck .plank.four,
-.deck .column.four,
-.row .plank.four{
-	width:33.333333333%;
-}
-
-.row .column.five,
-.deck .plank.five,
-.deck .column.five,
-.row .plank.five{
-	width:41.666666665%;
-}
-
-.row .column.six,
-.deck .plank.six,
-.deck .column.six,
-.row .plank.six{
-	width:50%;
-}
-
-.row .column.seven,
-.deck .plank.seven,
-.deck .column.seven,
-.row .plank.seven{
-	width:58.333333331%;
-}
-
-.row .column.eight,
-.deck .plank.eight,
-.deck .column.eight,
-.row .plank.eight{
-	width:66.666666664%;
-}
-
-.row .column.nine,
-.deck .plank.nine,
-.deck .column.nine,
-.row .plank.nine{
-	width:74.999999997%;
-}
-
-.row .column.ten,
-.deck .plank.ten,
-.deck .column.ten,
-.row .plank.ten{
-	width:83.33333333%;
-}
-
-.row .column.eleven,
-.deck .plank.eleven,
-.deck .column.eleven,
-.row .plank.eleven{
-	width:91.666666663%;
-}
-
-.row .column.twelve,
-.deck .plank.twelve,
-.deck .column.twelve,
-.row .plank.twelve{
-	width:100%;
+@for $i from 1 through $grid-columns {
+	@each $r in $row-names {
+	    @each $c in $column-names {
+			.#{$r} .#{$c}.#{nth($column-numbers, $i)}{
+				width:100%/($grid-columns/$i);
+			}
+		}
+	}
+/*.row .column.#{nth($column-numbers, $i)},
+.deck .plank.#{nth($column-numbers, $i)},
+.deck .column.#{nth($column-numbers, $i)},
+.row .plank.#{nth($column-numbers, $i)}{
+	width:100%/($grid-columns/$i);
+}*/
 }
 
 /**
  * Column offsets
  */
-.row .column.offset-one,
-.deck .plank.offset-one,
-.deck .column.offset-one,
-.row .plank.offset-one{
-	margin-left:8.333333333%;
-}
-
-.row .column.offset-two,
-.deck .plank.offset-two,
-.deck .column.offset-two,
-.row .plank.offset-two{
-	margin-left:16.666666667%;
-}
-
-.row .column.offset-three,
-.deck .plank.offset-three,
-.deck .column.offset-three,
-.row .plank.offset-three{
-	margin-left:25%;
-}
-
-.row .column.offset-four,
-.deck .plank.offset-four,
-.deck .column.offset-four,
-.row .plank.offset-four{
-	margin-left:33.333333333%;
-}
-
-.row .column.offset-five,
-.deck .plank.offset-five,
-.deck .column.offset-five,
-.row .plank.offset-five{
-	margin-left:41.666666665%;
-}
-
-.row .column.offset-six,
-.deck .plank.offset-six,
-.deck .column.offset-six,
-.row .plank.offset-six{
-	margin-left:50%;
-}
-
-.row .column.offset-seven,
-.deck .plank.offset-seven,
-.deck .column.offset-seven,
-.row .plank.offset-seven{
-	margin-left:58.333333331%;
-}
-
-.row .column.offset-eight,
-.deck .plank.offset-eight,
-.deck .column.offset-eight,
-.row .plank.offset-eight{
-	margin-left:66.666666664%;
-}
-
-.row .column.offset-nine,
-.deck .plank.offset-nine,
-.deck .column.offset-nine,
-.row .plank.offset-nine{
-	margin-left:74.999999997%;
-}
-
-.row .column.offset-ten,
-.deck .plank.offset-ten,
-.deck .column.offset-ten,
-.row .plank.offset-ten{
-	margin-left:83.33333333%;
-}
-
-.row .column.offset-eleven,
-.deck .plank.offset-eleven,
-.deck .column.offset-eleven,
-.row .plank.offset-eleven{
-	margin-left:91.666666663%;
+@for $i from 1 through $grid-columns - 1 {
+	@each $r in $row-names {
+	    @each $c in $column-names {
+			.#{$r} .#{$c}.offset-#{nth($column-numbers, $i)}{
+				margin-left:100%/($grid-columns/$i);
+			}
+		}
+	}
+/*.row .column.offset-#{nth($column-numbers, $i)},
+.deck .plank.offset-#{nth($column-numbers, $i)},
+.deck .column.offset-#{nth($column-numbers, $i)},
+.row .plank.offset-#{nth($column-numbers, $i)}{
+	margin-left:100%/($grid-columns/$i);
+}*/
 }
 
 
@@ -304,7 +167,16 @@
 /**
  * Stop images, objects etc overflowing the content
  */
-.row img, .row object, .row embed,
+@each $r in $row-names {
+	.#{$r} img, .#{$r} object, .#{$r} embed{
+		max-width:100%;
+	}
+
+	.#{$r} img{
+		height:auto;
+	}
+}
+/*.row img, .row object, .row embed,
 .deck img, .deck object, .deck embed{
 	max-width:100%;
 }
@@ -312,7 +184,7 @@
 .row img,
 .deck img{
 	height:auto;
-}
+}*/
 
 
 /**
