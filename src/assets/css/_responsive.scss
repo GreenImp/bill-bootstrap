@@ -71,6 +71,16 @@
 .ship{}
 
 /**
+ * Fixed size for adaptive layouts
+ */
+.container.adapt,
+.ship.adapt{
+	margin:0 auto;
+	width:960px;
+}
+
+
+/**
  * A row
  */
 .row,
@@ -79,6 +89,13 @@
 	width:100%;
 	min-width:755px;
 	max-width:100%;
+}
+
+.container.adapt .row,
+.container.adapt .deck,
+.ship.adapt .row,
+.ship.adapt .deck{
+	min-width:0;
 }
 
 .row:after,
@@ -199,6 +216,16 @@
 /**
  * Media queries for handling smaller screen sizes
  */
+@media (min-width: 1200px){
+	/**
+	 * Fixed size for adaptive layouts
+	 */
+	.container.adapt,
+	.ship.adapt{
+		width:1170px;
+	}
+}
+
 @media only screen and (max-width: 1023px){
 	body{
 		font-size:0.8em;
@@ -206,7 +233,17 @@
 	}
 }
 
-@media handheld, only screen and (max-width: 767px) {
+@media (min-width: 768px) and (max-width: 979px){
+	/**
+	 * Fixed size for adaptive layouts
+	 */
+	.container.adapt,
+	.ship.adapt{
+		width:724px;
+	}
+}
+
+@media handheld, only screen and (max-width: 767px){
 	body{
 		font-size:16px;
 		-webkit-text-size-adjust:none;
@@ -220,6 +257,14 @@
 		margin-right:0;
 		padding-left:0;
 		padding-right:0;
+	}
+
+	/**
+	 * Fixed size for adaptive layouts
+	 */
+	.container.adapt,
+	.ship.adapt{
+		width:auto;
 	}
 
 	.row .column,
