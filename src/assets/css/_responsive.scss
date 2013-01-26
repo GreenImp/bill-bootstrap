@@ -152,6 +152,15 @@
 }
 
 
+@each $r in $row-names {
+    @each $c in $column-names {
+		.#{$r} .#{$c}:last-child{
+			float:right;
+		}
+	}
+}
+
+
 /**
  * Allow centering of a column
  */
