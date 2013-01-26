@@ -428,9 +428,13 @@ input[type="radio"]{
 
 /**
  * 1. Addresses 'appearance' set to 'searchfield' in Safari 5 and Chrome.
+ * 2. appearance textfield doesn't enable full styling in IOS5 and we are
+ * left with a very large border radius. appearance 'none' fixes this and
+ * allows us to style it correctly
  */
 input[type="search"]{
-	-webkit-appearance:textfield; /* 1 */
+	//-webkit-appearance:textfield; /* 1 */
+	-webkit-appearance:none; /* 2 */
 }
 
 /**
