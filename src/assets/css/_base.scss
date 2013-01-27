@@ -186,6 +186,25 @@ button[disabled],
  * ========================================================================== */
 
 /**
+ * Old browser notification
+ */
+#browserNotice{
+	position:fixed;
+	top:0;
+	left:0;
+	padding:10px 20px;
+	width:100%;
+	color:#fff;
+	background:#595555;
+	border-bottom:2px solid #3D3939;
+}
+
+#browserNotice p{
+	margin:0;
+}
+
+
+/**
  * A simple class name for creating 'lead' paragraphs,
  * usually to be used for an article
  */
