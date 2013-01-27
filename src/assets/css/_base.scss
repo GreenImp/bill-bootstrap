@@ -159,6 +159,7 @@ input[type=reset]:focus,
 input[type=button]:focus,
 button:focus,
 .button:focus{
+	text-decoration:none;
 	background-color:#fff;
 }
 
@@ -167,6 +168,7 @@ input[type=reset]:active,
 input[type=button]:active,
 button:active,
 .button:active{
+	text-decoration:none;
 	background:#ddd;
 }
 
@@ -176,6 +178,7 @@ input[type=button][disabled],
 button[disabled],
 .button[disabled]{
 	color:#888;
+	text-decoration:none;
 	background:#ccc;
 }
 
@@ -192,15 +195,20 @@ button[disabled],
 	position:fixed;
 	top:0;
 	left:0;
-	padding:10px 20px;
+	padding:10px 0;
 	width:100%;
 	color:#fff;
-	background:#595555;
+	font-size:1.2em;
+	background:#2B4141;
 	border-bottom:2px solid #3D3939;
 }
 
 #browserNotice p{
 	margin:0;
+}
+
+#browserNotice .button{
+	margin-top:15px;
 }
 
 
