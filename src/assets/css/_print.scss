@@ -6,20 +6,22 @@
 		box-shadow:none !important;
 	}
 
-	a,
-	a:visited{
+	a{
 		text-decoration:underline;
-	}
 
-	a[href]:after{
-		content:" (" attr(href) ")";
-	}
+		&:visited{
+			text-decoration:underline;
+		}
 
-	a[href^="javascript:"]:after,
-	a[href^="#"]:after{
-		content:'';
-	}
+		&[href]:after{
+			content:" (" attr(href) ")";
+		}
 
+		&[href^="javascript:"]:after,
+		&[href^="#"]:after{
+			content:'';
+		}
+	}
 
 	abbr[title]:after{
 		content:" (" attr(title) ")";
