@@ -88,12 +88,12 @@ button,
 	text-shadow:0 1px rgba(255, 255, 255, .75);
 	line-height:normal;
 	background:#eee;
-	background-image:-moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-	background-image:-webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-	background-image:-o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-	background-image:-ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-	background-image:linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+	background-image:-moz-linear-gradient(top, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
+	background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.2)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+	background-image:-webkit-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+	background-image:-o-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* Opera11.10+ */
+	background-image:-ms-linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+	background-image:linear-gradient(top, rgba(255,255,255,0.2) 0%,rgba(0,0,0,0.2) 100%); /* W3C */
 	border:1px solid #aaa;
 	border-top-color:#ccc;
 	border-left-color:#ccc;
@@ -114,10 +114,43 @@ button,
 		background:#ddd;
 	}
 
+	/**
+	 * Confirmation buttons
+	 */
+	&.confirm:not([disabled]){
+		color:#F2F2F2;
+		text-shadow:0 1px #407C00;
+		background-color:#55AA00;
+		border-color:#4D9B00;
+		border-top-color:#66CC00;
+		border-left-color:#66CC00;
+
+		&:hover, &:focus{
+			background-color:#65C400;
+		}
+	}
+
+	&.cancel:not([disabled]){
+		color:#fff;
+		text-shadow:0 1px #A0090C;
+		background-color:#D11013;
+		border-color:#AF0E10;
+		border-top-color:#BC0F0F;
+		border-left-color:#BC0F0F;
+
+		&:hover, &:focus{
+			background-color:#E51212;
+		}
+	}
+
+	/**
+	 * Disabled buttons
+	 */
 	&[disabled]{
 		color:#888;
 		text-decoration:none;
 		background:#ccc;
+		cursor:auto;
 	}
 }
 
