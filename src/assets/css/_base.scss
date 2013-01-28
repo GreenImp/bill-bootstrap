@@ -61,21 +61,6 @@ select{
 	}
 }
 
-/*input::-webkit-input-placeholder,
-input:hover::-webkit-input-placeholder,
-input:focus::-webkit-input-placeholder{
-   color:#a9a9a9;
-}
-input:-moz-placeholder,
-input:hover:-moz-placeholder,
-input:focus:-moz-placeholder{
-   color:#a9a9a9;
-}
-input:-ms-input-placeholder,
-input:hover:-ms-input-placeholder,
-input:focus:-ms-input-placeholder{
-   color:#a9a9a9;
-}*/
 [placeholder]{
 	&::-webkit-input-placeholder{
 		color:#a9a9a9;
@@ -145,7 +130,11 @@ button,
 		border-left-color:#66CC00;
 
 		&:hover, &:focus{
-			background-color:#65C400;
+			background-color:#5EBC00;
+		}
+
+		&:active{
+			background:#55AA00;
 		}
 	}
 
@@ -159,6 +148,10 @@ button,
 
 		&:hover, &:focus{
 			background-color:#E51212;
+		}
+
+		&:active{
+			background:#D11013;
 		}
 	}
 
