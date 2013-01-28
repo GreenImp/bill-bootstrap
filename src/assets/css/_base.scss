@@ -1,7 +1,7 @@
 body{
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:14px;
-	line-height:20px;
+	font-family:$font-family;
+	font-size:$font-size;
+	line-height:$line-height;
 	color:#333;
 	background-color:#fff;
 }
@@ -171,6 +171,33 @@ button:active,
 	text-decoration:none;
 	background:#ddd;
 }
+
+
+input[type=submit].confirm,
+input[type=reset].confirm,
+input[type=button].confirm,
+button.confirm,
+.button.confirm{
+	text-shadow:0 1px rgba(101, 196, 0, .75);
+	background-color:#55AA00;
+	border-color:#4D9B00;
+	border-top-color:#66CC00;
+	border-left-color:#66CC00;
+}
+
+input[type=submit].confirm:hover,
+input[type=reset].confirm:hover,
+input[type=button].confirm:hover,
+button.confirm:hover,
+.button.confirm:hover,
+input[type=submit].confirm:focus,
+input[type=reset].confirm:focus,
+input[type=button].confirm:focus,
+button.confirm:focus,
+.button.confirm:focus{
+	background-color:#65C400;
+}
+
 
 input[type=submit][disabled],
 input[type=reset][disabled],
