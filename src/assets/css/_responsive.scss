@@ -68,15 +68,18 @@
  * The main site container
  */
 .container,
-.ship{}
+.ship{
+	/**
+	 * Fixed size for adaptive layouts
+	 */
+	&.adapt{
+		margin:0 auto;
+		width:960px;
 
-/**
- * Fixed size for adaptive layouts
- */
-.container.adapt,
-.ship.adapt{
-	margin:0 auto;
-	width:960px;
+		.row, .deck{
+			min-width:0;
+		}
+	}
 }
 
 
@@ -89,128 +92,85 @@
 	width:100%;
 	min-width:755px;
 	max-width:100%;
-}
 
-.container.adapt .row,
-.container.adapt .deck,
-.ship.adapt .row,
-.ship.adapt .deck{
-	min-width:0;
-}
+	/**
+	 * Clear the floated elements inside
+	 */
+	&:after{
+		content:" ";
+		display:table;
+		clear:both;
+	}
 
-.row:after,
-.deck:after{
-	content:" ";
-	display:table;
-	clear:both;
-}
+	/**
+	 * A row within a row
+	 */
+	.row, .deck{
+		width:auto;
+		min-width:0;
+	}
 
-/**
- * A row within a row
- */
-.row .row,
-.deck .deck{
-	width:auto;
-	min-width:0;
-}
+	/**
+	 * Columns
+	 */
+	.column, .plank{
+		float:left;
+		margin:0;
+		padding:0 1%;
+		min-height:1px;
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
 
-/**
- * Columns
- */
-.row .column,
-.deck .plank,
-.deck .column,
-.row .plank{
-	float:left;
-	margin:0;
-	padding:0 1%;
-	min-height:1px;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	box-sizing:border-box;
-}
 
-/**
- * setting individual column widths
- */
-@for $i from 1 through $grid-columns {
-	@each $r in $row-names {
-	    @each $c in $column-names {
-			.#{$r} .#{$c}.#{nth($column-numbers, $i)}{
+		/**
+		 * Setting individual column widths
+		 */
+		@for $i from 1 through $grid-columns {
+			&.#{nth($column-numbers, $i)}{
 				width:100%/($grid-columns/$i);
 			}
 		}
-	}
-/*.row .column.#{nth($column-numbers, $i)},
-.deck .plank.#{nth($column-numbers, $i)},
-.deck .column.#{nth($column-numbers, $i)},
-.row .plank.#{nth($column-numbers, $i)}{
-	width:100%/($grid-columns/$i);
-}*/
-}
 
-/**
- * Column offsets
- */
-@for $i from 1 through $grid-columns - 1 {
-	@each $r in $row-names {
-	    @each $c in $column-names {
-			.#{$r} .#{$c}.offset-#{nth($column-numbers, $i)}{
+		/**
+		 * Column offsets
+		 */
+		@for $i from 1 through $grid-columns - 1 {
+			&.offset-#{nth($column-numbers, $i)}{
 				margin-left:100%/($grid-columns/$i);
 			}
 		}
-	}
-/*.row .column.offset-#{nth($column-numbers, $i)},
-.deck .plank.offset-#{nth($column-numbers, $i)},
-.deck .column.offset-#{nth($column-numbers, $i)},
-.row .plank.offset-#{nth($column-numbers, $i)}{
-	margin-left:100%/($grid-columns/$i);
-}*/
-}
 
 
-@each $r in $row-names {
-    @each $c in $column-names {
-		.#{$r} .#{$c}:last-child{
+		/**
+		 * Allow centering of a column
+		 */
+		&.center{
+			float:none;
+			margin:0 auto;
+
+		}
+
+		/**
+		 * Float the last column right.
+		 * This fixes rounding issues in browsers, where
+		 * the last column doesn't line up with the right-hand-side
+		 */
+		&:last-child{
 			float:right;
 		}
 	}
-}
 
 
-/**
- * Allow centering of a column
- */
-.row .column.center,
-.deck .plank.center,
-.deck .column.center,
-.row .plank.center{
-	float:none;
-	margin:0 auto;
-}
-
-
-/**
- * Stop images, objects etc overflowing the content
- */
-@each $r in $row-names {
-	.#{$r} img, .#{$r} object, .#{$r} embed{
+	/**
+	 * Stop images, objects etc overflowing the content
+	 */
+	img, object, embed{
 		max-width:100%;
 	}
 
-	.#{$r} img{
-		height:auto;
-	}
+	img{height:auto;}
 }
-/*.row img, .row object, .row embed,
-.deck img, .deck object, .deck embed{
-	max-width:100%;
-}
-
-.row img,
-.deck img{
-	height:auto;
-}*/
 
 
 /**
@@ -267,16 +227,15 @@
 		width:auto;
 	}
 
-	.row .column,
-	.deck .plank,
-	.deck .column,
-	.row .plank{
-		width:auto !important;
-		float:none !important;
-		margin-left:0 !important;
-		margin-right:0 !important;
-		padding-left:20px;
-		padding-right:20px;
+	.row, .deck{
+		.column, .plank{
+			width:auto !important;
+			float:none !important;
+			margin-left:0 !important;
+			margin-right:0 !important;
+			padding-left:20px;
+			padding-right:20px;
+		}
 	}
 }
 

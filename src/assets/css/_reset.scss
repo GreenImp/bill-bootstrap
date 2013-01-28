@@ -56,22 +56,26 @@ del{
 	text-decoration:line-through;
 }
 
-a{text-decoration:none;}
+a{
+	text-decoration:none;
 
-/**
- * Addresses 'outline' inconsistency between Chrome and other browsers.
- */
-a:focus{outline:thin dotted;}
+	/**
+	 * Addresses 'outline' inconsistency between Chrome and other browsers.
+	 */
+	&:focus{outline:thin dotted;}
 
-/**
- * Improves readability when focused and also mouse hovered in all browsers.
- * Plus, it looks silly with an outline
- */
-a:active,
-a:hover{
-	outline:0;
-	text-decoration:underline;
+	/**
+	 * Improves readability when focused and also mouse hovered in all browsers.
+	 * Plus, it looks silly with an outline
+	 */
+	&:active,
+	&:hover{
+		outline:0;
+		text-decoration:underline;
+	}
 }
+
+
 
 hr{
 	display:block;
@@ -194,11 +198,13 @@ blockquote{
 /**
  * Remove quotes
  */
-blockquote, q{quotes:none;}
-blockquote:before, blockquote:after,
-q:before, q:after{
-	content:'';
-	content:none;
+blockquote, q{
+	quotes:none;
+
+	&:before, &:after{
+		content:'';
+		content:none;
+	}
 }
 
 address{font-style:italic;}
@@ -231,10 +237,8 @@ pre{
 /**
  * Corrects font family set oddly in Safari 4/5 and Chrome.
  */
-code,
-kbd,
-pre,
-samp{
+code, kbd,
+pre, samp{
 	font-size:1em;
 	font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
 }
@@ -376,13 +380,29 @@ textarea{
 	vertical-align:middle;
 }
 
-/*
-* Addresses Firefox 3+ setting 'line-height' on 'input' using '!important' in
-* the UA stylesheet.
-*/
+
 button,
 input{
+	/*
+	* Addresses Firefox 3+ setting 'line-height' on 'input' using '!important' in
+	* the UA stylesheet.
+	*/
 	line-height:normal;
+
+	/**
+	 * Re-set default cursor for disabled elements.
+	 */
+	&[disabled]{
+		cursor:default;
+	}
+
+	/**
+	 * Removes inner padding and border in Firefox 3+.
+	 */
+	&::-moz-focus-inner{
+		border:0;
+		padding:0;
+	}
 }
 
 /**
@@ -400,13 +420,6 @@ input[type="submit"] {
 	cursor:pointer; /* 3 */
 }
 
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-input[disabled]{
-	cursor:default;
-}
 
 label,
 select,
@@ -415,45 +428,39 @@ input[type="checkbox"]{
   cursor:pointer;
 }
 
-/**
- * 1. Addresses box sizing set to content-box in IE 8/9.
- * 2. Removes excess padding in IE 8/9.
- */
 
-input[type="checkbox"],
-input[type="radio"]{
-	box-sizing:border-box; /* 1 */
-	padding:0; /* 2 */
+input{
+	/**
+	 * 1. Addresses box sizing set to content-box in IE 8/9.
+	 * 2. Removes excess padding in IE 8/9.
+	 */
+	&[type="checkbox"],
+	&[type="radio"]{
+		box-sizing:border-box; /* 1 */
+		padding:0; /* 2 */
+	}
+
+	/**
+	 * 1. Addresses 'appearance' set to 'searchfield' in Safari 5 and Chrome.
+	 * 2. appearance textfield doesn't enable full styling in IOS5 and we are
+	 * left with a very large border radius. appearance 'none' fixes this and
+	 * allows us to style it correctly
+	 */
+	&[type="search"]{
+		//-webkit-appearance:textfield; /* 1 */
+		-webkit-appearance:none; /* 2 */
+
+		/**
+		 * Removes inner padding and search cancel button in Safari 5 and Chrome
+		 * on OS X.
+		 */
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-decoration{
+			-webkit-appearance:none;
+		}
+	}
 }
 
-/**
- * 1. Addresses 'appearance' set to 'searchfield' in Safari 5 and Chrome.
- * 2. appearance textfield doesn't enable full styling in IOS5 and we are
- * left with a very large border radius. appearance 'none' fixes this and
- * allows us to style it correctly
- */
-input[type="search"]{
-	//-webkit-appearance:textfield; /* 1 */
-	-webkit-appearance:none; /* 2 */
-}
-
-/**
- * Removes inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration{
-	-webkit-appearance:none;
-}
-
-/**
- * Removes inner padding and border in Firefox 3+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner{
-	border:0;
-	padding:0;
-}
 
 /**
  * 1. Removes default vertical scrollbar in IE 8/9.
@@ -482,15 +489,15 @@ table{
 	max-width:100%;
 	border-collapse:collapse;
 	border-spacing:0;
-}
 
-table th{
-	font-weight:bold;
-	text-align:center;
-	vertical-align:middle;
-}
+	th{
+		font-weight:bold;
+		text-align:center;
+		vertical-align:middle;
+	}
 
-table td{
-	text-align:left;
-	vertical-align:top;
+	td{
+		text-align:left;
+		vertical-align:top;
+	}
 }

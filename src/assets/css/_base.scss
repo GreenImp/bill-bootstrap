@@ -37,69 +37,25 @@ select{
 	-moz-transition:all 0.15s linear;
 	-o-transition:all 0.15s linear;
 	transition:all 0.15s linear;
-}
 
-input[type=text]:focus,
-input[type=email]:focus,
-input[type=password]:focus,
-input[type=date]:focus,
-input[type=datetime]:focus,
-input[type=number]:focus,
-input[type=search]:focus,
-input[type=tel]:focus,
-input[type=time]:focus,
-input[type=url]:focus,
-textarea:focus,
-select:focus{
-	background:#fafafa;
-	border-color:#b3b3b3;
-}
+	&:focus{
+		background:#fafafa;
+		border-color:#b3b3b3;
+	}
 
-input[type=text]:hover,
-input[type=email]:hover,
-input[type=password]:hover,
-input[type=date]:hover,
-input[type=datetime]:hover,
-input[type=number]:hover,
-input[type=search]:hover,
-input[type=tel]:hover,
-input[type=time]:hover,
-input[type=url]:hover,
-textarea:hover,
-select:hover{
-	background:#fafafa;
-}
+	&:hover{
+		background:#fafafa;
+	}
 
-input[type=text][disabled],
-input[type=email][disabled],
-input[type=password][disabled],
-input[type=date][disabled],
-input[type=datetime][disabled],
-input[type=number][disabled],
-input[type=search][disabled],
-input[type=tel][disabled],
-input[type=time][disabled],
-input[type=url][disabled],
-textarea[disabled],
-select[disabled]{
-	color:#888;
-	text-shadow:0 1px rgba(255, 255, 255, .75);
-	background-color:#ddd;
-}
+	&[disabled]{
+		color:#888;
+		text-shadow:0 1px rgba(255, 255, 255, .75);
+		background-color:#ddd;
+	}
 
-input[type=text][readonly],
-input[type=email][readonly],
-input[type=password][readonly],
-input[type=date][readonly],
-input[type=datetime][readonly],
-input[type=number][readonly],
-input[type=search][readonly],
-input[type=tel][readonly],
-input[type=time][readonly],
-input[type=url][readonly],
-textarea[readonly],
-select[readonly]{
-	color:#707070;
+	&[readonly]{
+		color:#707070;
+	}
 }
 
 /*input::-webkit-input-placeholder,
@@ -147,39 +103,22 @@ button,
 	-moz-transition:background-color 0.15s ease-in-out 0s;
 	-o-transition:background-color 0.15s ease-in-out 0s;
 	transition:background-color 0.15s ease-in-out 0s;
-}
 
-input[type=submit]:hover,
-input[type=reset]:hover,
-input[type=button]:hover,
-button:hover,
-.button:hover,
-input[type=submit]:focus,
-input[type=reset]:focus,
-input[type=button]:focus,
-button:focus,
-.button:focus{
-	text-decoration:none;
-	background-color:#fff;
-}
+	&:hover, &:focus{
+		text-decoration:none;
+		background-color:#fff;
+	}
 
-input[type=submit]:active,
-input[type=reset]:active,
-input[type=button]:active,
-button:active,
-.button:active{
-	text-decoration:none;
-	background:#ddd;
-}
+	&:active{
+		text-decoration:none;
+		background:#ddd;
+	}
 
-input[type=submit][disabled],
-input[type=reset][disabled],
-input[type=button][disabled],
-button[disabled],
-.button[disabled]{
-	color:#888;
-	text-decoration:none;
-	background:#ccc;
+	&[disabled]{
+		color:#888;
+		text-decoration:none;
+		background:#ccc;
+	}
 }
 
 
@@ -201,14 +140,14 @@ button[disabled],
 	font-size:1.2em;
 	background:#2B4141;
 	border-bottom:2px solid #3D3939;
-}
 
-#browserNotice p{
-	margin:0;
-}
+	p{
+		margin:0;
+	}
 
-#browserNotice .button{
-	margin-top:15px;
+	.button{
+		margin-top:15px;
+	}
 }
 
 
