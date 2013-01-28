@@ -12,6 +12,9 @@ body{
  * Forms
  * ========================================================================== */
 
+/**
+ * General form fields
+ */
 input[type=text],
 input[type=email],
 input[type=password],
@@ -73,7 +76,23 @@ input:hover:-ms-input-placeholder,
 input:focus:-ms-input-placeholder{
    color:#a9a9a9;
 }*/
+[placeholder]{
+	&::-webkit-input-placeholder{
+		color:#a9a9a9;
+	}
 
+	&:-moz-placeholder{
+		color:#a9a9a9;
+	}
+
+	&:-ms-input-placeholder{
+		color:#a9a9a9;
+	}
+}
+
+/**
+ * Form buttons
+ */
 input[type=submit],
 input[type=reset],
 input[type=button],
