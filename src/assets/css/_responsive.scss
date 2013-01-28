@@ -69,11 +69,20 @@
  */
 .container,
 .ship{
+	margin:0 auto;
+
+	/**
+	 * Allow the container to be constrained
+	 * and only increase to a max size of 1140px;
+	 */
+	&.constrain{
+		max-width:1440px;
+	}
+
 	/**
 	 * Fixed size for adaptive layouts
 	 */
 	&.adapt{
-		margin:0 auto;
 		width:960px;
 
 		.row, .deck{
