@@ -155,9 +155,8 @@
 		 * Allow centering of a column
 		 */
 		&.center{
-			float:none;
+			float:none !important;
 			margin:0 auto;
-
 		}
 
 		/**
