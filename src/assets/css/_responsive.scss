@@ -146,6 +146,7 @@
 		 */
 		@for $i from 1 through $grid-columns - 1 {
 			&.offset-#{nth($column-numbers, $i)}{
+				float:left !important;
 				margin-left:100%/($grid-columns/$i);
 			}
 		}
