@@ -11,6 +11,16 @@ input[type=url],
 textarea,
 select{
 	&.error{
-		border-color:#f00;
+		color:#DD3737;
+		font-weight:bold;
+		background-color:#FCE5E5;
+		border-color:#DD3737;
+	}
+
+	&.valid{
+		color:#4ABF4C;
+		font-weight:bold;
+		background:#E5FFE5;
+		border-color:#4ABF4C;
 	}
 }
