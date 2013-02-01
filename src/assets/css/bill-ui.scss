@@ -1,26 +1,60 @@
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
-input[type=datetime],
-input[type=number],
-input[type=search],
-input[type=tel],
-input[type=time],
-input[type=url],
-textarea,
-select{
-	&.error{
-		color:#DD3737;
-		font-weight:bold;
-		background-color:#FCE5E5;
-		border-color:#DD3737;
-	}
+/* ==========================================================================
+ * Forms
+ * ========================================================================== */
 
-	&.valid{
-		color:#4ABF4C;
-		font-weight:bold;
-		background:#E5FFE5;
+/**
+ * Valid fields
+ */
+.valid input,
+.valid textarea,
+.valid select,
+input.valid,
+textarea.valid,
+select.valid{
+	background-color:#E7F9E3;
+	border-color:#4ABF4C;
+
+	&:focus, &:hover{
+		background-color:#E7F9E3;
 		border-color:#4ABF4C;
 	}
+}
+
+.valid label,
+label.valid{
+	color:#4ABF4C;
+}
+
+
+/**
+ * Fields containing errors
+ */
+.error input,
+.error textarea,
+.error select,
+input.error,
+textarea.error,
+select.error,
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid{
+	background-color:#FCE5E5;
+	border-color:#DD1115;
+
+	&:focus, &:hover{
+		background-color:#FCE5E5;
+		border-color:#DD1115;
+	}
+}
+
+.error label,
+label.error{
+	color:#DD1115;
+}
+
+
+label.required:after{
+	content:'*';
+	position:relative;
+	left:0.25em;
 }
