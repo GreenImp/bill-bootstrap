@@ -377,6 +377,7 @@ select,
 textarea{
 	font-size:100%; /* 1 */
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align:left;
 	vertical-align:middle;
 }
 
@@ -418,6 +419,7 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance:button; /* 2 */
 	cursor:pointer; /* 3 */
+	text-align:center;
 }
 
 
