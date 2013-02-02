@@ -52,9 +52,19 @@ label.error{
 	color:#DD1115;
 }
 
-
+/**
+ * Adds an asterisk on labels for required fields
+ */
 label.required:after{
 	content:'*';
 	position:relative;
 	left:0.25em;
+	margin-right:0.25em;
+}
+
+/**
+ * allows labels to be right-aligned
+ */
+label.right{
+	text-align:right;
 }
