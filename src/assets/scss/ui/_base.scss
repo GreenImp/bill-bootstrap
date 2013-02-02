@@ -81,11 +81,11 @@ label.right{
 	display:block;
 	margin-bottom:12px;
 	padding:6px;
-	color:darken($background-colour, 70%);
+	color:darken($notice-background, 60%);
 	font-weight:bold;
-	text-shadow:0 1px $background-colour;
+	text-shadow:0 1px lighten($notice-background, 15%);
 	background:$notice-background;
-	border:1px solid darken($background-colour, 15%);
+	border:1px solid darken($notice-background, 15%);
 	border-radius:4px;
 
 	&.error{
@@ -104,6 +104,26 @@ label.right{
 		background:$notice-background;
 		text-shadow:0 -1px darken($notice-background, 15%);
 		border-color:darken($notice-background, 15%);
+	}
+
+	&.info{
+		$notice-background:#4A8ECE;
+
+		color:#fff;
+		background:$notice-background;
+		text-shadow:0 -1px darken($notice-background, 15%);
+		border-color:darken($notice-background, 15%);
+	}
+
+	&.fixed{
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		border-radius:0;
 	}
 
 

@@ -59,6 +59,8 @@
 		<a href="#grids">Grid Layouts</a>
 		|
 		<a href="#forms">Forms</a>
+		|
+		<a href="#notices">Notices</a>
 	</nav>
 
 	<section>
@@ -332,10 +334,6 @@
 				<fieldset class="error">
 					<legend>Error Fields</legend>
 
-					<div class="notice error">
-						<p>There was an error below, please check it, ya plonker!</p>
-					</div>
-
 					<label for="formTextError">Text input</label>
 					<input type="text" name="textInputError" value="" placeholder="Placeholder" id="formTextError">
 
@@ -375,14 +373,6 @@
 			<div class="plank six">
 				<fieldset class="valid">
 					<legend>Valid Fields</legend>
-
-					<div class="notice">
-						<p>This is a notice...</p>
-					</div>
-
-					<div class="notice success">
-						<p>Success, all is okay, don't worry.</p>
-					</div>
 
 					<label for="formTextValid">Text input</label>
 					<input type="text" name="textInputValid" value="" placeholder="Placeholder" id="formTextValid" class="valid">
@@ -462,6 +452,51 @@
 			</div>
 		</section>
 	</form>
+
+
+	<h2 id="notices">Notices</h2>
+
+	<div class="ship">
+		<h3>Normal Notices</h3>
+
+		<section class="deck">
+			<div class="plank six">
+				<div class="notice">
+					<p>This is a notice...</p>
+				</div>
+
+				<div class="notice info">
+					<p>Some information...</p>
+				</div>
+			</div>
+
+			<div class="plank six">
+				<div class="notice success">
+					<p>Success, all is okay, don't worry.</p>
+				</div>
+
+				<div class="notice error">
+					<p>There was an error below, please check it, ya plonker!</p>
+				</div>
+			</div>
+		</section>
+
+		<h3>Fixed Notices</h3>
+
+		<section class="deck">
+			<div class="plank six">
+				<p>The fixed notice, that is stuck to the top of the page, is placed just beneath me...</p>
+
+				<div class="notice fixed">
+					<p>
+						This is a fixed notice that always stays at the top of the screen. In the markup, I'm actually down by the <a href="#notices">notices</a>.
+					</p>
+				</div>
+			</div>
+
+			<div class="plank six"></div>
+		</section>
+	</div>
 
 
 	<div class="js-warning">You need JS!</div>
