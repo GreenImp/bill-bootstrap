@@ -89,32 +89,21 @@ label.right{
 	border-radius:4px;
 
 	&.error{
-		$notice-background:#CC0A0D;
-
 		color:#fff;
-		background:$notice-background;
-		text-shadow:0 -1px darken($notice-background, 15%);
-		border-color:darken($notice-background, 15%);
+		@include box-mixin(#CC0A0D);
 	}
 
 	&.success{
-		$notice-background:#62AD17;;
-
 		color:#fff;
-		background:$notice-background;
-		text-shadow:0 -1px darken($notice-background, 15%);
-		border-color:darken($notice-background, 15%);
+		@include box-mixin(#62AD17);
 	}
 
 	&.info{
-		$notice-background:#4A8ECE;
-
 		color:#fff;
-		background:$notice-background;
-		text-shadow:0 -1px darken($notice-background, 15%);
-		border-color:darken($notice-background, 15%);
+		@include box-mixin(#4A8ECE);
 	}
 
+	// a fixed position notice
 	&.fixed{
 		position:fixed;
 		top:0;
@@ -134,5 +123,15 @@ label.right{
 
 	p{
 		margin:5px 0;
+	}
+
+	a{
+		color:darken($notice-background, 80%);
+	}
+
+	&.error a,
+	&.success a,
+	&.info a{
+		color:rgba(255, 255, 255, 0.8);
 	}
 }
