@@ -68,3 +68,51 @@ label.required:after{
 label.right{
 	text-align:right;
 }
+
+
+
+/* ==========================================================================
+ * Notice boxes
+ * ========================================================================== */
+
+.notice{
+	$notice-background:darken($background-colour, 10%);
+
+	display:block;
+	margin-bottom:12px;
+	padding:6px;
+	color:darken($background-colour, 70%);
+	font-weight:bold;
+	text-shadow:0 1px $background-colour;
+	background:$notice-background;
+	border:1px solid darken($background-colour, 15%);
+	border-radius:4px;
+
+	&.error{
+		$notice-background:#CC0A0D;
+
+		color:#fff;
+		background:$notice-background;
+		text-shadow:0 -1px darken($notice-background, 15%);
+		border-color:darken($notice-background, 15%);
+	}
+
+	&.success{
+		$notice-background:#62AD17;;
+
+		color:#fff;
+		background:$notice-background;
+		text-shadow:0 -1px darken($notice-background, 15%);
+		border-color:darken($notice-background, 15%);
+	}
+
+
+	h1, h2, h3,
+	h4, h5, h6{
+		margin:0;
+	}
+
+	p{
+		margin:5px 0;
+	}
+}

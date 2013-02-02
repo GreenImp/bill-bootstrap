@@ -25,7 +25,7 @@
 			background:#f0f;
 		}
 
-		section{
+		/*section{
 			margin:10px 0;
 			border:1px solid #000;
 		}
@@ -44,7 +44,7 @@
 			border:1px dotted #0f0;
 			border-top:none;
 			border-bottom:none;
-		}
+		}*/
 	</style>
 </head>
 
@@ -332,6 +332,10 @@
 				<fieldset class="error">
 					<legend>Error Fields</legend>
 
+					<div class="notice error">
+						<p>There was an error below, please check it, ya plonker!</p>
+					</div>
+
 					<label for="formTextError">Text input</label>
 					<input type="text" name="textInputError" value="" placeholder="Placeholder" id="formTextError">
 
@@ -371,6 +375,14 @@
 			<div class="plank six">
 				<fieldset class="valid">
 					<legend>Valid Fields</legend>
+
+					<div class="notice">
+						<p>This is a notice...</p>
+					</div>
+
+					<div class="notice success">
+						<p>Success, all is okay, don't worry.</p>
+					</div>
 
 					<label for="formTextValid">Text input</label>
 					<input type="text" name="textInputValid" value="" placeholder="Placeholder" id="formTextValid" class="valid">
