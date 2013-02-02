@@ -1,0 +1,13 @@
+/*!
+ * Author: GreenImp Web
+ * Date Created: 24/01/13 23:05
+ */
+
+// include the base settings (font sizes, colours etc)
+@import "_settings";
+
+@import "base/_reset";		// general reset
+@import "base/_responsive";	// responsive layout
+@import "base/_print";		// print stylsheet
+
+@import "base/_base";		// some base styles
