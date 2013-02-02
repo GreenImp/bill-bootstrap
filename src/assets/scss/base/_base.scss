@@ -3,7 +3,7 @@ body{
 	font-size:$font-size;
 	line-height:$line-height;
 	color:#333;
-	background-color:#fff;
+	background-color:$background-colour;
 }
 
 
@@ -107,6 +107,7 @@ input[type=button],
 button,
 .button{
 	display:inline-block;
+	margin-bottom:12px;
 	padding:7px 10px;
 	color:#444;
 	font-size:0.85em;
