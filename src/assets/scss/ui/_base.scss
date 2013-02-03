@@ -34,14 +34,16 @@ label.valid{
 .error select,
 input.error,
 textarea.error,
-select.error,
-input:focus:invalid,
-textarea:focus:invalid,
-select:focus:invalid{
+select.error{
 	background-color:#FCE5E5;
 	border-color:#DD1115;
 
 	&:focus, &:hover{
+		background-color:#FCE5E5;
+		border-color:#DD1115;
+	}
+
+	&:focus:invalid{
 		background-color:#FCE5E5;
 		border-color:#DD1115;
 	}
