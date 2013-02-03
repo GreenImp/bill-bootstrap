@@ -1,0 +1,10 @@
+/**
+ * Sets the background colour to that of $background-colour
+ * and the border to the same, darker by 15%.
+ * A text shadow is also applied of the colour, darker by 15%.
+ */
+@mixin box-mixin($background-colour){
+	background:$background-colour;
+	text-shadow:0 -1px darken($background-colour, 15%);
+	border-color:darken($background-colour, 15%);
+}
