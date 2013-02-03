@@ -1,0 +1,139 @@
+/* ==========================================================================
+ * Forms
+ * ========================================================================== */
+
+/**
+ * Valid fields
+ */
+.valid input,
+.valid textarea,
+.valid select,
+input.valid,
+textarea.valid,
+select.valid{
+	background-color:#E7F9E3;
+	border-color:#4ABF4C;
+
+	&:focus, &:hover{
+		background-color:#E7F9E3;
+		border-color:#4ABF4C;
+	}
+}
+
+.valid label,
+label.valid{
+	color:#4ABF4C;
+}
+
+
+/**
+ * Fields containing errors
+ */
+.error input,
+.error textarea,
+.error select,
+input.error,
+textarea.error,
+select.error{
+	background-color:#FCE5E5;
+	border-color:#DD1115;
+
+	&:focus, &:hover{
+		background-color:#FCE5E5;
+		border-color:#DD1115;
+	}
+
+	&:focus:invalid{
+		background-color:#FCE5E5;
+		border-color:#DD1115;
+	}
+}
+
+.error label,
+label.error{
+	color:#DD1115;
+}
+
+/**
+ * Adds an asterisk on labels for required fields
+ */
+label.required:after{
+	content:'*';
+	position:relative;
+	left:0.25em;
+	margin-right:0.25em;
+}
+
+/**
+ * allows labels to be right-aligned
+ */
+label.right{
+	text-align:right;
+}
+
+
+
+/* ==========================================================================
+ * Notice boxes
+ * ========================================================================== */
+
+.notice{
+	$notice-background:darken($background-colour, 10%);
+
+	display:block;
+	margin-bottom:12px;
+	padding:6px;
+	color:darken($notice-background, 60%);
+	font-weight:bold;
+	text-shadow:0 1px lighten($notice-background, 15%);
+	background:$notice-background;
+	border:1px solid darken($notice-background, 15%);
+	border-radius:4px;
+
+	&.error{
+		color:#fff;
+		@include box-mixin(#CC0A0D);
+	}
+
+	&.success{
+		color:#fff;
+		@include box-mixin(#62AD17);
+	}
+
+	&.info{
+		color:#fff;
+		@include box-mixin(#4A8ECE);
+	}
+
+	// a fixed position notice
+	&.fixed{
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		border-top:none;
+		border-left:none;
+		border-right:none;
+		border-radius:0;
+	}
+
+
+	h1, h2, h3,
+	h4, h5, h6{
+		margin:0;
+	}
+
+	p{
+		margin:5px 0;
+	}
+
+	a{
+		color:darken($notice-background, 80%);
+	}
+
+	&.error a,
+	&.success a,
+	&.info a{
+		color:rgba(255, 255, 255, 0.8);
+	}
+}

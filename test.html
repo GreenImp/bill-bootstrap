@@ -11,6 +11,7 @@
 	<meta name="author" content="GreenImp Web - greenimp.co.uk">
 
 	<link href="dist/assets/css/bill.min.css" rel="stylesheet" media="all">
+	<link href="dist/assets/css/bill-ui.min.css" rel="stylesheet" media="all">
 	<script src="dist/assets/resources/modernizr-2.6.2.min.js"></script>
 
 	<style>
@@ -24,7 +25,7 @@
 			background:#f0f;
 		}
 
-		section{
+		/*section{
 			margin:10px 0;
 			border:1px solid #000;
 		}
@@ -43,7 +44,7 @@
 			border:1px dotted #0f0;
 			border-top:none;
 			border-bottom:none;
-		}
+		}*/
 	</style>
 </head>
 
@@ -58,6 +59,8 @@
 		<a href="#grids">Grid Layouts</a>
 		|
 		<a href="#forms">Forms</a>
+		|
+		<a href="#notices">Notices</a>
 	</nav>
 
 	<section>
@@ -201,8 +204,14 @@
 				<fieldset>
 					<legend>Basic Inputs</legend>
 
-					<label for="formText">Text input</label>
-					<input type="text" name="textInput" value="" placeholder="Placeholder" id="formText">
+					<div class="row">
+						<div class="column two">
+							<label for="formText" class="right required">Text input</label>
+						</div>
+						<div class="column ten">
+							<input type="text" name="textInput" value="" placeholder="Placeholder" required id="formText">
+						</div>
+					</div>
 
 					<label for="formPassword">Password input</label>
 					<input type="password" name="passwordInput" value="" placeholder="Placeholder" id="formPassword">
@@ -227,30 +236,6 @@
 				</fieldset>
 			</div>
 
-			<div class="plank six">
-				<fieldset>
-					<legend>Date Inputs</legend>
-
-					<label for="formDate">Date input</label>
-					<input type="date" name="dateInput" value="" placeholder="Placeholder" id="formDate">
-
-					<label for="formDatetime">Datetime input</label>
-					<input type="datetime" name="datetimeInput" value="" placeholder="Placeholder" id="formDatetime">
-
-					<label for="formTime">Time input</label>
-					<input type="time" name="timeInput" value="" placeholder="Placeholder" id="formTime">
-				</fieldset>
-
-				<fieldset>
-					<legend>Fancy Inputs</legend>
-
-					<label for="formColor">Colour input</label>
-					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
-				</fieldset>
-			</div>
-		</section>
-
-		<section class="deck">
 			<div class="plank six">
 				<fieldset>
 					<legend>Checkboxes</legend>
@@ -279,9 +264,7 @@
 						Radio 1
 					</label>
 				</fieldset>
-			</div>
 
-			<div class="plank six">
 				<fieldset>
 					<legend>Select Field</legend>
 
@@ -293,6 +276,26 @@
 						<option value="3" selected>value 3</option>
 						<option value="4">value 4</option>
 					</select>
+				</fieldset>
+
+				<fieldset>
+					<legend>Date Inputs</legend>
+
+					<label for="formDate">Date input</label>
+					<input type="date" name="dateInput" value="" placeholder="Placeholder" id="formDate">
+
+					<label for="formDatetime">Datetime input</label>
+					<input type="datetime" name="datetimeInput" value="" placeholder="Placeholder" id="formDatetime">
+
+					<label for="formTime">Time input</label>
+					<input type="time" name="timeInput" value="" placeholder="Placeholder" id="formTime">
+				</fieldset>
+
+				<fieldset>
+					<legend>Fancy Inputs</legend>
+
+					<label for="formColor">Colour input</label>
+					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
 				</fieldset>
 			</div>
 		</section>
@@ -322,6 +325,88 @@
 
 					<label for="formReadonly">Readonly input</label>
 					<input type="text" name="readonlyInput" value="Readonly text" placeholder="Placeholder" readonly id="formReadonly">
+				</fieldset>
+			</div>
+		</section>
+
+		<section class="deck">
+			<div class="plank six">
+				<fieldset class="error">
+					<legend>Error Fields</legend>
+
+					<label for="formTextError">Text input</label>
+					<input type="text" name="textInputError" value="" placeholder="Placeholder" id="formTextError">
+
+					<label for="formNumberError">Number input</label>
+					<input type="number" name="numberInputError" value="" placeholder="Placeholder" id="formNumberError">
+
+					<label for="formTextareaError">Textarea</label>
+					<textarea name="textareaError" cols="30" rows="4" placeholder="Placeholder" id="formTextareaError" class="error"></textarea>
+
+					<label for="checkboxError">
+						<input type="checkbox" name="checkboxError" value="1" id="checkboxError" class="error">
+						Checkbox
+					</label>
+
+					<label for="radioError">
+						<input type="radio" name="radioError" value="1" id="radioError" class="error">
+						Radio
+					</label>
+
+					<label for="formSelectError">Select</label>
+					<select id="formSelectError" class="error">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+
+					<label for="formDateError">Date input</label>
+					<input type="date" name="dateInputError" value="" placeholder="Placeholder" id="formDateError" class="error">
+
+					<label for="formColorError">Colour input</label>
+					<input type="color" name="colorInputError" value="" placeholder="Placeholder" id="formColorError" class="error">
+				</fieldset>
+			</div>
+
+			<div class="plank six">
+				<fieldset class="valid">
+					<legend>Valid Fields</legend>
+
+					<label for="formTextValid">Text input</label>
+					<input type="text" name="textInputValid" value="" placeholder="Placeholder" id="formTextValid" class="valid">
+
+					<label for="formNumberValid">Number input</label>
+					<input type="number" name="numberInputValid" value="" placeholder="Placeholder" id="formNumberValid" class="valid">
+
+					<label for="formTextareaValid">Textarea</label>
+					<textarea name="textareaValid" cols="30" rows="4" placeholder="Placeholder" id="formTextareaValid" class="valid"></textarea>
+
+					<label for="checkboxValid">
+						<input type="checkbox" name="checkboxValid" value="1" id="checkboxValid" class="valid">
+						Checkbox
+					</label>
+
+					<label for="radioValid">
+						<input type="radio" name="radioValid" value="1" id="radioValid" class="valid">
+						Radio
+					</label>
+
+					<label for="formSelectValid">Select</label>
+					<select id="formSelectValid" class="valid">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+
+					<label for="formDateValid">Date input</label>
+					<input type="date" name="dateInputValid" value="" placeholder="Placeholder" id="formDateValid" class="valid">
+
+					<label for="formColorValid">Colour input</label>
+					<input type="color" name="colorInputValid" value="" placeholder="Placeholder" id="formColorValid" class="valid">
 				</fieldset>
 			</div>
 		</section>
@@ -367,6 +452,51 @@
 			</div>
 		</section>
 	</form>
+
+
+	<h2 id="notices">Notices</h2>
+
+	<div class="ship">
+		<h3>Normal Notices</h3>
+
+		<section class="deck">
+			<div class="plank six">
+				<div class="notice">
+					<p>This is a notice... <a href="#">Link</a></p>
+				</div>
+
+				<div class="notice info">
+					<p>Some information... <a href="#">Link</a></p>
+				</div>
+			</div>
+
+			<div class="plank six">
+				<div class="notice success">
+					<p>Success, all is okay, don't worry. <a href="#">Link</a></p>
+				</div>
+
+				<div class="notice error">
+					<p>There was an error below, please check it, ya plonker! <a href="#">Link</a></p>
+				</div>
+			</div>
+		</section>
+
+		<h3>Fixed Notices</h3>
+
+		<section class="deck">
+			<div class="plank six">
+				<p>The fixed notice, that is stuck to the top of the page, is placed just beneath me...</p>
+
+				<div class="notice fixed">
+					<p>
+						This is a fixed notice that always stays at the top of the screen. In the markup, I'm actually down by the <a href="#notices">notices</a>.
+					</p>
+				</div>
+			</div>
+
+			<div class="plank six"></div>
+		</section>
+	</div>
 
 
 	<div class="js-warning">You need JS!</div>
