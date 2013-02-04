@@ -127,6 +127,7 @@ blockquote, q{
 	position:relative;
 	font-family:Georgia, Times, "Times New Roman", serif;
 	background:#f6f6f6;
+	background:darken($background-colour, 3.5%);
 
 	&:before,
 	&:after{
@@ -163,6 +164,12 @@ blockquote{
 		bottom:0;
 	}
 
+	/**
+	 * Changes background of inner quotes, so more visible
+	 */
+	q{
+		background:darken($background-colour, 1%);
+	}
 
 	/**
 	 * Removes margin from p tags, so as not to add too much spacing
