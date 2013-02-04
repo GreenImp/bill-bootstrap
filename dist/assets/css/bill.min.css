@@ -175,12 +175,12 @@ blockquote {
 /**
  * Remove quotes
  */
-blockquote, q {
+blockquote {
   quotes: none; }
-  blockquote:before, blockquote:after, q:before, q:after {
+  blockquote:before, blockquote:after {
     content: '';
     content: none; }
-  blockquote cite, q cite {
+  blockquote cite {
     font-style: italic; }
 
 address {

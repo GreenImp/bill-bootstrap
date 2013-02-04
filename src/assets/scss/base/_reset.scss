@@ -199,7 +199,7 @@ blockquote{
 /**
  * Remove quotes
  */
-blockquote, q{
+blockquote{
 	quotes:none;
 
 	&:before, &:after{
