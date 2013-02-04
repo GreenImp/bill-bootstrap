@@ -74,6 +74,52 @@ label.right{
 
 
 /* ==========================================================================
+ * Tables
+ * ========================================================================== */
+
+/**
+ * 1. Border collapse needs to be separate (not collapse),
+ * otherwise we can't have border radius.
+ * 2. Adds some spacing between the cells
+ */
+table{
+	width:100%;
+	border-collapse:separate; /* 1 */
+	border-spacing:2px; /* 2 */
+	border:1px solid darken($background-colour, 20%);
+	border-radius:3px;
+
+	caption{
+		margin:8px 0;
+		font-size:1.2em;
+	}
+
+	th, td{
+		padding:4px 8px;
+	}
+
+	> thead > tr > th,
+	> tfoot > tr > th{
+		font-size:1.1em;
+		background:darken($background-colour, 10%);
+	}
+
+	> tbody > tr{
+		> th{
+			text-align:left;
+			background:darken($background-colour, 8%);
+		}
+
+		// Zebra striping
+		&:nth-child(even) td{
+			background:darken($background-colour, 5%);
+		}
+	}
+}
+
+
+
+/* ==========================================================================
  * Notice boxes
  * ========================================================================== */
 
