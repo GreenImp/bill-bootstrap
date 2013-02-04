@@ -192,6 +192,22 @@ q{
 	&:after{
 		font-weight:bold;
 	}
+
+	/**
+	 * Make it so that quotes, within quotes look okay
+	 */
+	q{
+		margin:0;
+		padding:0;
+		font-style:italic;
+
+		&:before,
+		&:after{
+			content:"'";
+			position:static;
+			font-style:normal;
+		}
+	}
 }
 
 
