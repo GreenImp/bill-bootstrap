@@ -120,6 +120,83 @@ table{
 
 
 /* ==========================================================================
+ * Quotes
+ * ========================================================================== */
+
+blockquote, q{
+	position:relative;
+	font-family:Georgia, Times, "Times New Roman", serif;
+	background:#f6f6f6;
+
+	&:before,
+	&:after{
+		position:absolute;
+		top:0.5em;
+		line-height:0;
+	}
+
+	&:before{
+		content:'\201C';
+		right:99%;
+	}
+
+	&:after{
+		content:'\201D';
+		left:99%;
+	}
+}
+
+blockquote{
+	padding:8px 10px;
+	font-size:1.1em;
+
+	/**
+	 * Add quotation marks around the quote
+	 */
+	&:before,
+	&:after{
+		font-size:3em;
+	}
+
+	&:after{
+		top:auto;
+		bottom:0;
+	}
+
+
+	/**
+	 * Removes margin from p tags, so as not to add too much spacing
+	 */
+	p{
+		margin:0;
+	}
+
+
+	cite{
+		display:block;
+		margin:5px 0 0 5px;
+		font-size:0.9em;
+
+		&:before{
+			content:'\2014 \2009';
+		}
+	}
+}
+
+q{
+	display:inline-block;
+	margin:0 6px;
+	padding:0 4px;
+
+	&:before,
+	&:after{
+		font-weight:bold;
+	}
+}
+
+
+
+/* ==========================================================================
  * Notice boxes
  * ========================================================================== */
 
