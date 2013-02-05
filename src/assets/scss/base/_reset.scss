@@ -245,10 +245,8 @@ pre{
 code, kbd,
 pre, samp{
 	font-size:1em;
-	font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-family:Monaco, Menlo, Consolas, courier, "Courier New", monospace;
 }
-
-code{white-space:nowrap;}
 
 /**
  * Improves readability of pre-formatted text in all browsers.
