@@ -10,25 +10,54 @@
 /* ==========================================================================
  * Font Formatting
  * ========================================================================== */
-code {
+code, pre,
+samp, kbd {
   padding: 0 4px;
+  line-height: 1em; }
+
+code {
   color: #333;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 1em;
   background: #E0F1F9; }
-  code.block {
-    display: block;
-    margin: 12px 0;
-    padding: 8px 6px;
-    max-width: 100%;
-    white-space: nowrap;
-    overflow: auto; }
 
 pre {
-  padding: 8px;
+  padding: 8px 6px;
   background: #f2f2f2; }
+  pre code, pre samp {
+    display: block;
+    padding: 8px 6px;
+    font-size: 1em; }
 
+samp {
+  color: #fff;
+  background: #222; }
+  samp.block {
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap; }
+
+kbd {
+  display: inline-block;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 0 white;
+  line-height: 1.4;
+  background-color: #f7f7f7;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset; }
+
+/*code, samp{
+	&.block{
+		display:block;
+		margin:12px 0;
+		padding:8px 6px;
+		max-width:100%;
+		overflow:auto;
+	}
+}*/
 /* ==========================================================================
  * Forms
  * ========================================================================== */

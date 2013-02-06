@@ -212,11 +212,8 @@ pre {
  */
 code, kbd,
 pre, samp {
-  font-size: 1em;
-  font-family: Monaco, Menlo, Consolas, courier, "Courier New", monospace; }
-
-code {
-  font-family: courier, "Courier New", Monaco, Menlo, Consolas, monospace; }
+  font-size: 0.85em;
+  font-family: Pragmata, Menlo, "DejaVu LGC Sans Mono", "DejaVu Sans Mono", Consolas, "Everson Mono", "Lucida Console", "Andale Mono", "Nimbus Mono L", "Liberation Mono", FreeMono, "Osaka Monospaced", Courier, "New Courier", monospace; }
 
 /**
  * Improves readability of pre-formatted text in all browsers.

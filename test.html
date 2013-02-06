@@ -644,6 +644,30 @@
 	<div class="ship">
 		<section class="deck">
 			<div class="plank six">
+				<h3>Pre Tag</h3>
+
+				<pre>This is pre-formatted text. &lt;
+It keeps line breaks and
+				text indents.
+
+It also acknowledges        spaces between   words.
+					This is a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long line</pre>
+
+
+				<h3>Samp Tag (Sample output from computer program)</h3>
+
+				<samp>Last login: Wed Feb  6 15:26:40 on ttys000
+computer-name:~ user$ cd /var/www/
+computer-name:/var/www/ user$ </samp>
+
+				<pre><samp>Last login: Wed Feb  6 15:26:40 on ttys000
+computer-name:~ user$ cd /var/www/
+computer-name:/var/www/ user$ </samp></pre>
+			</div>
+
+			<div class="plank six">
+				<h3>Code Tag</h3>
+
 				<code>This is some code
 				&lt;?php
 					if($i == 42){
@@ -651,7 +675,7 @@
 					}
 				?&gt;</code>
 
-				<code class="block">This is some code<br><br>
+				<pre><code>This is some code<br><br>
 				&lt;?php<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;if($i == 42){<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo 'Tis the meaning of life!';<br>
@@ -661,16 +685,18 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo $i;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo 'This is a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long line';<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				?&gt;</code>
+				?&gt;</code></pre>
+			</div>
+		</section>
+
+		<section class="deck">
+			<div class="plank six">
 			</div>
 
 			<div class="plank six">
-				<pre>This is pre-formatted text. &lt;
-It keeps line breaks and
-				text indents.
+				<h3>Kbd Tag (Input that a user should press on their keyboard)</h3>
 
-It also acknowledges        spaces between   words.
-					This is a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long line</pre>
+				<kbd>q</kbd><kbd>w</kbd><kbd>e</kbd><kbd>r</kbd><kbd>t</kbd><kbd>y</kbd>
 			</div>
 		</section>
 	</div>
