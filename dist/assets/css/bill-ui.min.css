@@ -13,28 +13,26 @@
 code, pre,
 samp, kbd {
   padding: 0 4px;
-  line-height: 1em; }
+  line-height: 1.2em; }
 
 code {
   color: #333;
   background: #E0F1F9; }
+
+samp {
+  color: #fff;
+  background: #222; }
 
 pre {
   padding: 8px 6px;
   background: #f2f2f2; }
   pre code, pre samp {
     display: block;
+    margin: -8px -6px;
     padding: 8px 6px;
-    font-size: 1em; }
-
-samp {
-  color: #fff;
-  background: #222; }
-  samp.block {
-    word-break: break-all;
-    word-wrap: break-word;
+    font-size: 1em;
     white-space: pre;
-    white-space: pre-wrap; }
+    overflow: auto; }
 
 kbd {
   display: inline-block;
