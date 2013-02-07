@@ -29,16 +29,14 @@ pre {
   pre code, pre samp {
     display: block;
     margin: -8px -6px;
-    padding: 8px 6px;
-    font-size: 1em;
-    white-space: pre;
-    overflow: auto; }
-  pre code {
     padding: 0 6px;
     font-size: 12px;
     line-height: 20px;
+    white-space: pre;
+    overflow: auto; }
+  pre code {
     border: 1px solid #cccccc;
-    background: #ffffff;
+    background: #fff;
     /* Old browsers */
     background: -moz-repeating-linear-gradient(top, white 0, white 20px, whitesmoke 20px, whitesmoke 40px);
     /* FF3.6+ */
@@ -49,8 +47,20 @@ pre {
     background: -ms-repeating-linear-gradient(top, white 0, white 20px, whitesmoke 20px, whitesmoke 40px);
     /* IE10+ */
     background: repeating-linear-gradient(to bottom, white 0, white 20px, whitesmoke 20px, whitesmoke 40px);
-    /* W3C */
-    background-repeat: repeat; }
+    /* W3C */ }
+  pre samp {
+    background: #000;
+    /* Old browsers */
+    background: -moz-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
+    /* FF3.6+ */
+    background: -webkit-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
+    /* Opera 11.10+ */
+    background: -ms-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
+    /* IE10+ */
+    background: repeating-linear-gradient(to bottom, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
+    /* W3C */ }
 
 kbd {
   display: inline-block;

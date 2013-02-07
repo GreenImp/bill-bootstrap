@@ -25,24 +25,30 @@ pre{
 	code, samp{
 		display:block;
 		margin:-8px -6px;
-		padding:8px 6px;
-		font-size:1em;
+		padding:0 6px;
+		font-size:12px;
+		line-height:20px;
 		white-space:pre;
 		overflow:auto;
 	}
 
 	code{
-		padding:0 6px;
-		font-size:12px;
-		line-height:20px;
 		border:1px solid #ccc;
-		background:#ffffff; /* Old browsers */
+		background:#fff; /* Old browsers */
 		background:-moz-repeating-linear-gradient(top,  #ffffff 0, #ffffff 20px, #f5f5f5 20px, #f5f5f5 40px); /* FF3.6+ */
 		background:-webkit-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* Chrome10+,Safari5.1+ */
 		background:-o-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* Opera 11.10+ */
 		background:-ms-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* IE10+ */
 		background:repeating-linear-gradient(to bottom,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* W3C */
-		background-repeat:repeat;
+	}
+
+	samp{
+		background:#000; /* Old browsers */
+		background:-moz-repeating-linear-gradient(top,  #000 0, #000 20px, #2B2B2B 20px, #2B2B2B 40px); /* FF3.6+ */
+		background:-webkit-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Chrome10+,Safari5.1+ */
+		background:-o-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Opera 11.10+ */
+		background:-ms-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* IE10+ */
+		background:repeating-linear-gradient(to bottom,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* W3C */
 	}
 }
 
