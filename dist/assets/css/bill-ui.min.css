@@ -24,14 +24,16 @@ samp {
   background: #222; }
 
 pre {
-  padding: 8px 6px;
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 20px;
   background: #f2f2f2; }
   pre code, pre samp {
     display: block;
     margin: -8px -6px;
     padding: 0 6px;
-    font-size: 12px;
-    line-height: 20px;
+    font-size: inherit;
+    line-height: inherit;
     white-space: pre;
     overflow: auto; }
   pre code {
