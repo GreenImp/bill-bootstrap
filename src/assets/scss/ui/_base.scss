@@ -32,6 +32,18 @@ pre{
 		white-space:pre;
 		overflow:auto;
 	}
+
+	code{
+		padding:0 6px;
+		line-height:2em;
+		background: #ffffff; /* Old browsers */
+		background: -moz-repeating-linear-gradient(top,  #ffffff 0, #ffffff 2em, #f5f5f5 2em, #f5f5f5 4em); /* FF3.6+ */
+		background: -webkit-repeating-linear-gradient(top,  #ffffff 0,#ffffff 2em,#f5f5f5 2em,#f5f5f5 4em); /* Chrome10+,Safari5.1+ */
+		background: -o-repeating-linear-gradient(top,  #ffffff 0,#ffffff 2em,#f5f5f5 2em,#f5f5f5 4em); /* Opera 11.10+ */
+		background: -ms-repeating-linear-gradient(top,  #ffffff 0,#ffffff 2em,#f5f5f5 2em,#f5f5f5 4em); /* IE10+ */
+		background: repeating-linear-gradient(to bottom,  #ffffff 0,#ffffff 2em,#f5f5f5 2em,#f5f5f5 4em); /* W3C */
+		background-repeat:repeat;
+	}
 }
 
 kbd{
