@@ -243,7 +243,8 @@ pre{
  * Corrects font family set oddly in Safari 4/5 and Chrome.
  */
 code, kbd,
-pre, samp{
+pre, samp,
+var{
 	font-size:0.85em;
 	font-family:Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono', Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L', 'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier', monospace;
 }

@@ -2,13 +2,13 @@
  * Font Formatting
  * ========================================================================== */
 
-code, pre,
-samp, kbd{
+code, samp,
+kbd, var{
 	padding:0 4px;
 	line-height:1.2em;
 }
 
-code{
+code, var{
 	color:#333;
 	background:#E0F1F9;
 }
@@ -73,16 +73,6 @@ kbd{
 		box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #f6f6f6 inset
 	}
 }
-
-/*code, samp{
-	&.block{
-		display:block;
-		margin:12px 0;
-		padding:8px 6px;
-		max-width:100%;
-		overflow:auto;
-	}
-}*/
 
 
 
