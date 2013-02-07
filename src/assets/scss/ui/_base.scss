@@ -15,7 +15,7 @@ code, var{
 
 samp{
 	color:#fff;
-	background:#222;
+	background:#000;
 }
 
 pre{
@@ -30,6 +30,7 @@ pre{
 		padding:0 6px;
 		font-size:inherit;
 		line-height:inherit;
+		word-wrap:normal;
 		white-space:pre;
 		overflow:auto;
 	}
@@ -45,7 +46,6 @@ pre{
 	}
 
 	samp{
-		background:#000; /* Old browsers */
 		background:-moz-repeating-linear-gradient(top,  #000 0, #000 20px, #2B2B2B 20px, #2B2B2B 40px); /* FF3.6+ */
 		background:-webkit-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Chrome10+,Safari5.1+ */
 		background:-o-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Opera 11.10+ */

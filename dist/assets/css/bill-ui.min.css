@@ -21,7 +21,7 @@ code, var {
 
 samp {
   color: #fff;
-  background: #222; }
+  background: #000; }
 
 pre {
   padding: 4px 6px;
@@ -34,6 +34,7 @@ pre {
     padding: 0 6px;
     font-size: inherit;
     line-height: inherit;
+    word-wrap: normal;
     white-space: pre;
     overflow: auto; }
   pre code {
@@ -51,8 +52,6 @@ pre {
     background: repeating-linear-gradient(to bottom, white 0, white 20px, whitesmoke 20px, whitesmoke 40px);
     /* W3C */ }
   pre samp {
-    background: #000;
-    /* Old browsers */
     background: -moz-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
     /* FF3.6+ */
     background: -webkit-repeating-linear-gradient(top, black 0, black 20px, #2b2b2b 20px, #2b2b2b 40px);
