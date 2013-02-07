@@ -55,8 +55,12 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */ }
 
-del {
+del,
+s {
   text-decoration: line-through; }
+
+ins {
+  text-decoration: underline; }
 
 a {
   text-decoration: none;
