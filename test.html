@@ -69,6 +69,8 @@
 		<a href="#text-format">Formatted Text</a>
 		|
 		<a href="#quotes">Quotes</a>
+		|
+		<a href="#misc">Miscellaneous</a>
 	</nav>
 
 	<section>
@@ -243,6 +245,19 @@
 					<label for="formTextarea">Textarea</label>
 					<textarea name="textarea" cols="30" rows="4" placeholder="Placeholder" id="formTextarea"></textarea>
 				</fieldset>
+
+				<fieldset>
+					<legend>Select Field</legend>
+
+					<label for="formSelect">Select</label>
+					<select id="formSelect">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+				</fieldset>
 			</div>
 
 			<div class="plank six">
@@ -275,19 +290,6 @@
 				</fieldset>
 
 				<fieldset>
-					<legend>Select Field</legend>
-
-					<label for="formSelect">Select</label>
-					<select id="formSelect">
-						<option value="">Select...</option>
-						<option value="1">value 1</option>
-						<option value="2">value 2</option>
-						<option value="3" selected>value 3</option>
-						<option value="4">value 4</option>
-					</select>
-				</fieldset>
-
-				<fieldset>
 					<legend>Date Inputs</legend>
 
 					<label for="formDate">Date input</label>
@@ -305,6 +307,9 @@
 
 					<label for="formColor">Colour input</label>
 					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
+
+					<label for="formColor">Keygen</label>
+					<keygen name="keygen" challenge="challenge string">
 				</fieldset>
 			</div>
 		</section>
@@ -735,7 +740,7 @@ computer-name:/var/www/ user$ </samp></pre>
 
 	<div class="container">
 		<section class="row">
-			<div class="column three">
+			<div class="column four">
 				<h3>Progress elements</h3>
 
 				<dl>
@@ -752,7 +757,8 @@ computer-name:/var/www/ user$ </samp></pre>
 					<dd><progress value="0.4" max="0.7"></progress></dd>
 				</dl>
 			</div>
-			<div class="column three">
+
+			<div class="column four">
 				<h3>Meter elements</h3>
 
 				<dl>
@@ -774,6 +780,15 @@ computer-name:/var/www/ user$ </samp></pre>
 					<dt>Optimum value</dt>
 					<dd><meter optimum="0.8" value="0.5">0.5</meter></dd>
 				</dl>
+			</div>
+
+			<div class="column four">
+				<h3>Figures</h3>
+
+				<figure>
+					<img src="http://placehold.it/350x150" alt="placeholder">
+					<figcaption>A simple placeholder image from <a href="http://placehold.it">placehold.it</a></figcaption>
+				</figure>
 			</div>
 		</section>
 	</div>

@@ -241,6 +241,21 @@ q {
   background: #f6f6f6; }
 
 /* ==========================================================================
+ * Misc
+ * ========================================================================== */
+figure {
+  margin-bottom: 12px; }
+  figure img {
+    margin-left: auto;
+    margin-right: auto; }
+  figure figcaption {
+    margin-top: 6px;
+    color: #4d4d4d;
+    font-size: 0.95em;
+    font-style: italic;
+    text-align: center; }
+
+/* ==========================================================================
  * Notice boxes
  * ========================================================================== */
 .notice {
