@@ -448,6 +448,14 @@ table {
     text-align: left;
     vertical-align: top; }
 
+/* ==========================================================================
+ * Progress/Meters
+ * ========================================================================== */
+progress,
+meter {
+  width: 100%;
+  font-size: 12px; }
+
 /**
  * Not quite sure what this does - something to do with determining
  * the correct width on the device, in IE
