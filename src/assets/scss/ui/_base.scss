@@ -263,6 +263,29 @@ q{background:darken($background-colour, 3.5%);}
 
 
 /* ==========================================================================
+ * Misc
+ * ========================================================================== */
+
+figure{
+	margin-bottom:12px;
+
+	img{
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	figcaption{
+		margin-top:6px;
+		color:lighten($font-colour, 10%);
+		font-size:0.95em;
+		font-style:italic;
+		text-align:center;
+	}
+}
+
+
+
+/* ==========================================================================
  * Notice boxes
  * ========================================================================== */
 

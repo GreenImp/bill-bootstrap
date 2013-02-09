@@ -69,6 +69,8 @@
 		<a href="#text-format">Formatted Text</a>
 		|
 		<a href="#quotes">Quotes</a>
+		|
+		<a href="#misc">Miscellaneous</a>
 	</nav>
 
 	<section>
@@ -243,6 +245,19 @@
 					<label for="formTextarea">Textarea</label>
 					<textarea name="textarea" cols="30" rows="4" placeholder="Placeholder" id="formTextarea"></textarea>
 				</fieldset>
+
+				<fieldset>
+					<legend>Select Field</legend>
+
+					<label for="formSelect">Select</label>
+					<select id="formSelect">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+				</fieldset>
 			</div>
 
 			<div class="plank six">
@@ -275,19 +290,6 @@
 				</fieldset>
 
 				<fieldset>
-					<legend>Select Field</legend>
-
-					<label for="formSelect">Select</label>
-					<select id="formSelect">
-						<option value="">Select...</option>
-						<option value="1">value 1</option>
-						<option value="2">value 2</option>
-						<option value="3" selected>value 3</option>
-						<option value="4">value 4</option>
-					</select>
-				</fieldset>
-
-				<fieldset>
 					<legend>Date Inputs</legend>
 
 					<label for="formDate">Date input</label>
@@ -305,6 +307,9 @@
 
 					<label for="formColor">Colour input</label>
 					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
+
+					<label for="formColor">Keygen</label>
+					<keygen name="keygen" challenge="challenge string">
 				</fieldset>
 			</div>
 		</section>
@@ -726,6 +731,64 @@ computer-name:/var/www/ user$ </samp></pre>
 
 			<div class="column six">
 				<p>This paragraph contains <q>inline quotes</q>. But Forest's mom thinks that life is <q>...like a box of <q>chocolates</q></q>. I've no idea why.</p>
+			</div>
+		</section>
+	</div>
+
+
+	<h2 id="misc">Miscellaneous</h2>
+
+	<div class="container">
+		<section class="row">
+			<div class="column four">
+				<h3>Progress elements</h3>
+
+				<dl>
+					<dt>Indeterminate</dt>
+					<dd><progress max="100"></progress></dd>
+
+					<dt>Progress: 0%</dt>
+					<dd><progress value="0" max="10"></progress></dd>
+
+					<dt>Progress: 100%</dt>
+					<dd><progress value="3254" max="3254"></progress></dd>
+
+					<dt>Progress: 57%</dt>
+					<dd><progress value="0.4" max="0.7"></progress></dd>
+				</dl>
+			</div>
+
+			<div class="column four">
+				<h3>Meter elements</h3>
+
+				<dl>
+					<dt>Empty</dt>
+					<dd><meter value="0">0</meter></dd>
+
+					<dt>Full</dt>
+					<dd><meter value="1">1</meter></dd>
+
+					<dt>A bit</dt>
+					<dd><meter value="0.36" max="0.41" min="0.34">0.36</meter></dd>
+
+					<dt>Preferred usage</dt>
+					<dd><meter value="120" high="200" low="100" max="250" min="50">120</meter></dd>
+
+					<dt>Too much traffic</dt>
+					<dd><meter value="9216" high="8192" low="2048" max="10240" min="1024">9216</meter></dd>
+
+					<dt>Optimum value</dt>
+					<dd><meter optimum="0.8" value="0.5">0.5</meter></dd>
+				</dl>
+			</div>
+
+			<div class="column four">
+				<h3>Figures</h3>
+
+				<figure>
+					<img src="http://placehold.it/350x150" alt="placeholder">
+					<figcaption>A simple placeholder image from <a href="http://placehold.it">placehold.it</a></figcaption>
+				</figure>
 			</div>
 		</section>
 	</div>
