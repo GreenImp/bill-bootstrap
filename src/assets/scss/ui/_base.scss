@@ -323,6 +323,7 @@ q{background:darken($background-colour, 3.5%);}
 	&.error a,
 	&.success a,
 	&.info a{
+		color:#fff;
 		color:rgba(255, 255, 255, 0.8);
 	}
 }
