@@ -104,6 +104,13 @@
 	max-width:100%;
 
 	/**
+	 * Allow rows to be collapsed (removes padding)
+	 */
+	&.collapse{
+		padding:0;
+	}
+
+	/**
 	 * Clear the floated elements inside
 	 */
 	&:after{
@@ -152,6 +159,13 @@
 			}
 		}
 
+
+		/**
+		 * Allow columns to be collapsed (removes padding)
+		 */
+		&.collapse{
+			padding:0;
+		}
 
 		/**
 		 * Allow centering of a column
