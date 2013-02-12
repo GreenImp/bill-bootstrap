@@ -322,6 +322,7 @@ figure{
 		position:fixed;
 		top:0;
 		left:0;
+		z-index:999;
 		width:100%;
 		border-top:none;
 		border-left:none;
@@ -346,6 +347,7 @@ figure{
 	&.error a,
 	&.success a,
 	&.info a{
+		color:#fff;
 		color:rgba(255, 255, 255, 0.8);
 	}
 }

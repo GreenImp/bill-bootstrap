@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
+<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Bootstrap test page</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta name="author" content="GreenImp Web - greenimp.co.uk">
+
+	<link href="dist/assets/css/bill.min.css" rel="stylesheet" media="all">
+	<link href="dist/assets/css/bill-ui.min.css" rel="stylesheet" media="all">
+	<script src="dist/assets/resources/modernizr-2.6.2.min.js"></script>
+
+	<style>
+		html{width:100%;}
+
+		pre code{
+			max-height:220px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>UI Testing</h1>
+
+		<p>Use this to test the CSS/JS.</p>
+
+		<nav>
+			<a href="#device">What device?</a>
+		</nav>
+
+		<section class="row">
+			<div class="column six">
+				<p>Accordion with containing div and inner h2/article elements:</p>
+				<pre><code>&lt;div class="accordion"&gt;
+	&lt;h2&gt;Title 1&lt;/h2&gt;
+	&lt;article&gt;
+		content...
+	&lt;/article&gt;
+
+	&lt;h2&gt;Title 2&lt;/h2&gt;
+	&lt;article&gt;
+		content...
+	&lt;/article&gt;
+&lt;/div&gt;</code></pre>
+
+				<div class="accordion">
+					<h2 class="title">Title 1</h2>
+					<article class="content">
+						<p>
+							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+							ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+							amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+							odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+						</p>
+					</article>
+
+					<h2 class="title">Title 2</h2>
+					<article class="content">
+						<p>
+							Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+							purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+							velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+							suscipit faucibus urna.
+						</p>
+					</article>
+
+					<h2 class="title">Title 3</h2>
+					<article class="content">
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+							Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+							ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+							lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+						</p>
+					</article>
+				</div>
+			</div>
+
+			<div class="column six">
+				<p>Accordion with containing ul and inner h2/div elements:</p>
+				<pre><code>&lt;ul class="accordion"&gt;
+	&lt;li&gt;
+		&lt;h2&gt;Title 1&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+
+	&lt;li&gt;
+		&lt;h2&gt;Title 2&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+				<ul class="accordion">
+					<li>
+						<h2>Title 1</h2>
+
+						<div>
+							<p>
+								Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+								ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+								amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+								odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+							</p>
+						</div>
+					</li>
+
+					<li>
+						<h2>Title 2</h2>
+
+						<div>
+							<p>
+								Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+								purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+								velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+								suscipit faucibus urna.
+							</p>
+						</div>
+					</li>
+
+					<li>
+						<h2>Title 3</h2>
+
+						<div>
+							<p>
+								Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+								Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+								ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+								lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script src="dist/assets/js/bill.min.js"></script>
+	<script>
+		(function($, document){
+			$('body').browserNotice();
+		})(jQuery, document);
+	</script>
+</body>
+</html>
