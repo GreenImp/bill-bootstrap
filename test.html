@@ -60,9 +60,17 @@
 		|
 		<a href="#forms">Forms</a>
 		|
-		<a href="#notices">Notices</a>
+		<a href="#lists">Lists</a>
 		|
 		<a href="#tables">Tables</a>
+		|
+		<a href="#notices">Notices</a>
+		|
+		<a href="#text-format">Formatted Text</a>
+		|
+		<a href="#quotes">Quotes</a>
+		|
+		<a href="#misc">Miscellaneous</a>
 	</nav>
 
 	<section>
@@ -73,6 +81,7 @@
 		<div class="visible-phone">PHONE</div>
 	</section>
 
+	<hr>
 
 	<h2 id="grids">Grid Layouts</h2>
 
@@ -236,6 +245,19 @@
 					<label for="formTextarea">Textarea</label>
 					<textarea name="textarea" cols="30" rows="4" placeholder="Placeholder" id="formTextarea"></textarea>
 				</fieldset>
+
+				<fieldset>
+					<legend>Select Field</legend>
+
+					<label for="formSelect">Select</label>
+					<select id="formSelect">
+						<option value="">Select...</option>
+						<option value="1">value 1</option>
+						<option value="2">value 2</option>
+						<option value="3" selected>value 3</option>
+						<option value="4">value 4</option>
+					</select>
+				</fieldset>
 			</div>
 
 			<div class="plank six">
@@ -268,19 +290,6 @@
 				</fieldset>
 
 				<fieldset>
-					<legend>Select Field</legend>
-
-					<label for="formSelect">Select</label>
-					<select id="formSelect">
-						<option value="">Select...</option>
-						<option value="1">value 1</option>
-						<option value="2">value 2</option>
-						<option value="3" selected>value 3</option>
-						<option value="4">value 4</option>
-					</select>
-				</fieldset>
-
-				<fieldset>
 					<legend>Date Inputs</legend>
 
 					<label for="formDate">Date input</label>
@@ -298,6 +307,9 @@
 
 					<label for="formColor">Colour input</label>
 					<input type="color" name="colorInput" value="" placeholder="Placeholder" id="formColor">
+
+					<label for="formColor">Keygen</label>
+					<keygen name="keygen" challenge="challenge string">
 				</fieldset>
 			</div>
 		</section>
@@ -456,6 +468,58 @@
 	</form>
 
 
+	<h2 id="lists">Lists</h2>
+
+	<div class="container">
+		<section class="row">
+			<div class="column six">
+				<p>Below is an un-ordered list</p>
+
+				<ul>
+					<li>List Item 1</li>
+					<li>
+						List Item 2
+
+						<ul>
+							<li>List Item 2 - 1</li>
+							<li>List Item 2 - 2</li>
+							<li>List Item 2 - 3
+
+								<ul>
+									<li>List Item 2 - 3 - 1</li>
+									<li>List Item 2 - 3 - 2</li>
+									<li>List Item 2 - 3 - 3</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>List Item 3</li>
+					<li>List Item 4</li>
+				</ul>
+			</div>
+
+			<div class="column six">
+				<p>Below is an ordered list</p>
+
+				<ol>
+					<li>List Item 1</li>
+					<li>
+						List Item 2
+
+						<ol>
+							<li>List Item 2 - 1</li>
+							<li>List Item 2 - 2</li>
+							<li>List Item 2 - 3</li>
+						</ol>
+					</li>
+					<li>List Item 3</li>
+					<li>List Item 4</li>
+				</ol>
+			</div>
+		</section>
+	</div>
+
+
 	<h2 id="tables">Tables</h2>
 
 	<div class="ship">
@@ -577,6 +641,155 @@
 			</div>
 
 			<div class="plank six"></div>
+		</section>
+	</div>
+
+
+	<h2 id="text-format">Formatted Text</h2>
+
+	<div class="ship">
+		<section class="deck">
+			<div class="plank six">
+				<h3>Pre Tag</h3>
+
+				<pre>This is pre-formatted text. &lt;
+It keeps line breaks and
+				text indents.
+
+It also acknowledges        spaces between   words.
+					This is a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long line</pre>
+
+
+				<h3>Samp Tag (Sample output from computer program)</h3>
+
+				<samp>Last login: Wed Feb  6 15:26:40 on ttys000
+computer-name:~ user$ cd /var/www/
+computer-name:/var/www/ user$ </samp>
+
+				<pre><samp>Last login: Wed Feb  6 15:26:40 on ttys000
+computer-name:~ user$ cd /var/www/
+computer-name:/var/www/ user$ </samp></pre>
+			</div>
+
+			<div class="plank six">
+				<h3>Code Tag</h3>
+
+				<p>Here we have a code snippet <code>&lt;?php echo 'Hello World'; ?&gt;</code>, which is inline.</p>
+
+				<pre><code>This is some code
+&lt;?php
+	if($i == 42){
+		echo 'Tis the meaning of life!';
+	}
+
+	while($i &lt; 3675.78; $i += 0.025){
+		echo $i;
+		echo 'This is a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really long line';
+	}
+?&gt;</code></pre>
+
+
+				<h3>Var tag (data is a variable)</h3>
+
+				<p>The following is a <var>variable</var>.</p>
+
+
+				<h3>Kbd Tag (Input that a user should press on their keyboard)</h3>
+
+				<kbd>q</kbd><kbd>w</kbd><kbd>e</kbd><kbd>r</kbd><kbd>t</kbd><kbd>y</kbd>
+
+				<kbd>ctrl</kbd>+<kbd>f5</kbd>
+			</div>
+		</section>
+
+		<section class="row">
+			<div class="column six">
+				<p>The text has been <del>deleted</del>.</p>
+				<p>The text has been <ins>inserted</ins>.</p>
+			</div>
+
+			<div class="column six">
+				<p>This text is <mark>Imported and has been marked</mark>.</p>
+				<p>This text is <s>outdated</s>.</p>
+			</div>
+		</section>
+	</div>
+
+
+	<h2 id="quotes">Quotes</h2>
+
+	<div class="container">
+		<section class="row">
+			<div class="column six">
+				<p>The below is a blockquote</p>
+
+				<blockquote>
+					My mom always said, <q>Life's like a box of chocolates; ya' never know what ya' gonna' get.</q>
+					<cite>Forest Gump</cite>
+				</blockquote>
+			</div>
+
+			<div class="column six">
+				<p>This paragraph contains <q>inline quotes</q>. But Forest's mom thinks that life is <q>...like a box of <q>chocolates</q></q>. I've no idea why.</p>
+			</div>
+		</section>
+	</div>
+
+
+	<h2 id="misc">Miscellaneous</h2>
+
+	<div class="container">
+		<section class="row">
+			<div class="column four">
+				<h3>Progress elements</h3>
+
+				<dl>
+					<dt>Indeterminate</dt>
+					<dd><progress max="100"></progress></dd>
+
+					<dt>Progress: 0%</dt>
+					<dd><progress value="0" max="10"></progress></dd>
+
+					<dt>Progress: 100%</dt>
+					<dd><progress value="3254" max="3254"></progress></dd>
+
+					<dt>Progress: 57%</dt>
+					<dd><progress value="0.4" max="0.7"></progress></dd>
+				</dl>
+			</div>
+
+			<div class="column four">
+				<h3>Meter elements</h3>
+
+				<dl>
+					<dt>Empty</dt>
+					<dd><meter value="0">0</meter></dd>
+
+					<dt>Full</dt>
+					<dd><meter value="1">1</meter></dd>
+
+					<dt>A bit</dt>
+					<dd><meter value="0.36" max="0.41" min="0.34">0.36</meter></dd>
+
+					<dt>Preferred usage</dt>
+					<dd><meter value="120" high="200" low="100" max="250" min="50">120</meter></dd>
+
+					<dt>Too much traffic</dt>
+					<dd><meter value="9216" high="8192" low="2048" max="10240" min="1024">9216</meter></dd>
+
+					<dt>Optimum value</dt>
+					<dd><meter optimum="0.8" value="0.5">0.5</meter></dd>
+				</dl>
+			</div>
+
+			<div class="column four">
+				<h3>Figures</h3>
+
+				<figure>
+					<img src="http://placehold.it/350x150" alt="placeholder">
+					<figcaption>A simple placeholder image from <a href="http://placehold.it">placehold.it</a></figcaption>
+				</figure>
+			</div>
 		</section>
 	</div>
 

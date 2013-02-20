@@ -52,8 +52,13 @@ html{
 	-ms-text-size-adjust:100%; /* 2 */
 }
 
-del{
+del,
+s{
 	text-decoration:line-through;
+}
+
+ins{
+	text-decoration:underline;
 }
 
 a{
@@ -199,12 +204,16 @@ blockquote{
 /**
  * Remove quotes
  */
-blockquote, q{
+blockquote{
 	quotes:none;
 
 	&:before, &:after{
 		content:'';
 		content:none;
+	}
+
+	cite{
+		font-style:italic;
 	}
 }
 
@@ -239,12 +248,11 @@ pre{
  * Corrects font family set oddly in Safari 4/5 and Chrome.
  */
 code, kbd,
-pre, samp{
-	font-size:1em;
-	font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
+pre, samp,
+var{
+	font-size:0.85em;
+	font-family:Pragmata, Menlo, 'DejaVu LGC Sans Mono', 'DejaVu Sans Mono', Consolas, 'Everson Mono', 'Lucida Console', 'Andale Mono', 'Nimbus Mono L', 'Liberation Mono', FreeMono, 'Osaka Monospaced', Courier, 'New Courier', monospace;
 }
-
-code{white-space:nowrap;}
 
 /**
  * Improves readability of pre-formatted text in all browsers.
@@ -490,7 +498,6 @@ textarea{
  */
 table{
 	margin-bottom:12px;
-	min-width:300px;
 	max-width:100%;
 	border-collapse:collapse;
 	border-spacing:0;
@@ -509,4 +516,16 @@ table{
 		text-align:left;
 		vertical-align:top;
 	}
+}
+
+
+
+/* ==========================================================================
+ * Progress/Meters
+ * ========================================================================== */
+
+progress,
+	meter{
+	width:100%;
+	font-size:12px;
 }
