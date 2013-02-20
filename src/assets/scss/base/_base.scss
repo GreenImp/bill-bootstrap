@@ -2,8 +2,32 @@ body{
 	font-family:$font-family;
 	font-size:$font-size;
 	line-height:$line-height;
-	color:#333;
+	color:$font-colour;
 	background-color:$background-colour;
+}
+
+
+
+.row,
+.deck{
+	ul{
+		list-style:disc outside;
+		margin:4px 0 12px 20px;
+
+		ul{
+			list-style:circle;
+		}
+	}
+
+	ol{
+		list-style:decimal outside;
+		margin:4px 0 12px 20px;
+	}
+
+	ul li,
+	ol li{
+		margin:2px 0;
+	}
 }
 
 
@@ -107,6 +131,7 @@ input[type=button],
 button,
 .button{
 	display:inline-block;
+	vertical-align:top;
 	margin-bottom:12px;
 	padding:7px 10px;
 	color:#444;
@@ -203,6 +228,7 @@ button,
 	position:fixed;
 	top:0;
 	left:0;
+	z-index:999;
 	padding:10px 0;
 	width:100%;
 	color:#fff;

@@ -1,4 +1,82 @@
 /* ==========================================================================
+ * Font Formatting
+ * ========================================================================== */
+
+code, samp,
+kbd, var{
+	padding:0 4px;
+	line-height:1.2em;
+}
+
+code, var{
+	color:#333;
+	background:#E0F1F9;
+}
+
+samp{
+	color:#fff;
+	background:#000;
+}
+
+pre{
+	padding:4px 6px;
+	font-size:12px;
+	line-height:20px;
+	background:darken($background-colour, 5%);
+
+	code, samp{
+		display:block;
+		margin:-8px -6px;
+		padding:0 6px;
+		font-size:inherit;
+		line-height:inherit;
+		word-wrap:normal;
+		white-space:pre;
+		overflow:auto;
+	}
+
+	code{
+		border:1px solid #ccc;
+		background:#fff; /* Old browsers */
+		background:-moz-repeating-linear-gradient(top,  #ffffff 0, #ffffff 20px, #f5f5f5 20px, #f5f5f5 40px); /* FF3.6+ */
+		background:-webkit-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* Chrome10+,Safari5.1+ */
+		background:-o-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* Opera 11.10+ */
+		background:-ms-repeating-linear-gradient(top,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* IE10+ */
+		background:repeating-linear-gradient(to bottom,  #ffffff 0,#ffffff 20px,#f5f5f5 20px,#f5f5f5 40px); /* W3C */
+	}
+
+	samp{
+		background:-moz-repeating-linear-gradient(top,  #000 0, #000 20px, #2B2B2B 20px, #2B2B2B 40px); /* FF3.6+ */
+		background:-webkit-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Chrome10+,Safari5.1+ */
+		background:-o-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* Opera 11.10+ */
+		background:-ms-repeating-linear-gradient(top,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* IE10+ */
+		background:repeating-linear-gradient(to bottom,  #000 0,#000 20px,#2B2B2B 20px,#2B2B2B 40px); /* W3C */
+	}
+}
+
+kbd{
+	display:inline-block;
+	margin:0 0.1em;
+	padding:0.1em 0.6em;
+	color:#333;
+	font-family:Arial, Helvetica, sans-serif;
+	text-shadow:0 1px 0 #fff;
+	line-height:1.4;
+	background-color:#f7f7f7;
+	border:1px solid #ccc;
+	border-radius:3px;
+	box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	cursor:default;
+
+	&:hover{
+		background-color:#f0f0f0;
+		box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #f6f6f6 inset
+	}
+}
+
+
+
+/* ==========================================================================
  * Forms
  * ========================================================================== */
 
@@ -112,8 +190,96 @@ table{
 
 		// Zebra striping
 		&:nth-child(even) td{
-			background:darken($background-colour, 5%);
+			background:darken($background-colour, 4%);
 		}
+	}
+}
+
+
+
+/* ==========================================================================
+ * Quotes
+ * ========================================================================== */
+
+blockquote{
+	position:relative;
+	padding:8px 10px;
+	font-size:1.1em;
+	font-family:Georgia, Times, "Times New Roman", serif;
+	background:darken($background-colour, 3.5%);
+
+	/**
+	 * Add quotation marks around the quote
+	 */
+	&:before,
+	&:after{
+		position:absolute;
+		font-size:3em;
+		line-height:0;
+	}
+
+	&:before{
+		content:'\201C';
+		top:0.5em;
+		right:99%;
+	}
+
+	&:after{
+		content:'\201D';
+		left:99%;
+		top:auto;
+		bottom:0;
+	}
+
+
+	/**
+	 * Changes background of inner quotes, so more visible
+	 */
+	q{
+		background:darken($background-colour, 1%);
+	}
+
+	/**
+	 * Removes margin from p tags, so as not to add too much spacing
+	 */
+	p{
+		margin:0;
+	}
+
+
+	cite{
+		display:block;
+		margin:5px 0 0 5px;
+		font-size:0.9em;
+
+		&:before{
+			content:'\2014 \2009';
+		}
+	}
+}
+
+q{background:darken($background-colour, 3.5%);}
+
+
+
+/* ==========================================================================
+ * Misc
+ * ========================================================================== */
+
+figure{
+	margin-bottom:12px;
+
+	img{
+		margin-left:auto;
+		margin-right:auto;
+	}
+
+	figcaption{
+		margin-top:6px;
+		color:lighten($font-colour, 10%);
+		font-size:0.95em;
+		font-style:italic;
+		text-align:center;
 	}
 }
 
@@ -156,6 +322,7 @@ table{
 		position:fixed;
 		top:0;
 		left:0;
+		z-index:999;
 		width:100%;
 		border-top:none;
 		border-left:none;
@@ -180,6 +347,7 @@ table{
 	&.error a,
 	&.success a,
 	&.info a{
+		color:#fff;
 		color:rgba(255, 255, 255, 0.8);
 	}
 }
