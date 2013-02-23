@@ -5,40 +5,48 @@
 .accordion{
 	margin:12px 0;
 	border:1px solid darken($background-colour, 10%);
-	border-top:none;
+
+	.title{
+		margin:0;
+		padding:10px;
+		background:darken($background-colour, 5%);
+		border-top:1px solid darken($background-colour, 10%);
+		cursor:pointer;
+		-webkit-transition:all 0.15s linear;
+		-moz-transition:all 0.15s linear;
+		-o-transition:all 0.15s linear;
+		transition:all 0.15s linear;
+
+		&:first-child{
+			border-top:none;
+		}
+
+		&:hover{
+			background:darken($background-colour, 8%);
+		}
+
+		&.active{
+			background:darken($background-colour, 10%);
+		}
+	}
+
+	.content{
+		padding:0 1em;
+		background:lighten($background-colour, 2%);
+		overflow:hidden; /* fixes margin issues in p tags */
+	}
 }
 
 /**
  * Remove list styles on accordion lists
  */
-ul.accordion{
+ul.accordion,
+ol.accordion{
 	list-style:none;
 	margin:12px 0;
 	padding:0;
-}
 
-.accordion .title{
-	margin:0;
-	padding:10px;
-	background:darken($background-colour, 5%);
-	border-top:1px solid darken($background-colour, 10%);
-	cursor:pointer;
-	-webkit-transition:all 0.15s linear;
-	-moz-transition:all 0.15s linear;
-	-o-transition:all 0.15s linear;
-	transition:all 0.15s linear;
-
-	&:hover{
-		background:darken($background-colour, 8%);
+	> li{
+		margin:0;
 	}
-
-	&.active{
-		background:darken($background-colour, 10%);
-	}
-}
-
-.accordion .content{
-	padding:0 1em;
-	background:lighten($background-colour, 2%);
-	overflow:hidden; /* fixes margin issues in p tags */
 }

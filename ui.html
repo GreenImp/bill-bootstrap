@@ -30,8 +30,11 @@
 		<p>Use this to test the CSS/JS.</p>
 
 		<nav>
-			<a href="#device">What device?</a>
+			<a href="#accordion">Accordion</a>
 		</nav>
+
+
+		<h2 id="accordion">Accordion</h2>
 
 		<section class="row">
 			<div class="column six">
@@ -147,7 +150,7 @@
 	<script src="dist/assets/js/bill.min.js"></script>
 	<script>
 		(function($, document){
-			$('body').browserNotice();
+			$(document).bill('browserNotice');
 		})(jQuery, document);
 	</script>
 </body>
