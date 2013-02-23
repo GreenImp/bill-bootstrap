@@ -126,6 +126,12 @@ methods.accordion = function(userOptions){
 
 				return false;
 			});
+
+			// if accordion is not collapsible, we must always have one pane open
+			// trigger the click event on the first element
+			if(!options.collapsible){
+				$(titles.get(0)).triggerHandler('click');
+			}
 		}else if(userOptions){
 			// accordion already exists, but options have been updated
 			accordion.data('bill', $.extend(data || {}, {accordion:options}));
