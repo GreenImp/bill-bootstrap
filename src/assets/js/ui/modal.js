@@ -6,15 +6,11 @@
  */
 
 
-/*> jquery.nyroModal.custom.min.js */
+/*> jquery.fancybox-1.3.4_patch.js */
+methods.modal = $.fn.fancybox;
 
-//methods.modal = $.fn.nyroModal;
-//methods.modal = 'hi';
-methods.modal = $.fn.nyroModal;
-
-$('.modal').nyroModal();
-
-// call the accordion functionality
-//console.log(methods);
-//console.log(methods.modal);
-//$('.modal').bill('modal');
+// call the modal functionality
+$('.modal').bill('modal', {
+	cyclic:true,
+	titlePosition:'float'
+});
