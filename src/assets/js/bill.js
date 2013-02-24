@@ -31,4 +31,5 @@
 
 /*> browserNotice.js */
 /*> ui/accordion.js */
+/*> ui/modal.js */
 })(jQuery, window, document);
