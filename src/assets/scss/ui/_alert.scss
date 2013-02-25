@@ -1,0 +1,56 @@
+/* ==========================================================================
+ * Alert
+ * ========================================================================== */
+
+.alertBox{
+	display:block;
+	margin-bottom:12px;
+	max-width:600px;
+	min-width:200px;
+	max-height:90%;
+	color:#333;
+	background:#fff;
+	border:1px solid #aaa;
+	box-shadow:0 2px 15px rgba(0, 0, 0, 0.2);
+	overflow:auto;
+
+	&.float{
+		position:fixed;
+		top:50%;
+		left:50%;
+		margin:0 0 0 -100px;
+		z-index:999;
+	}
+
+	> .content{
+		padding:12px 20px;
+		overflow:hidden;
+	}
+
+	> .buttons{
+		padding:12px 20px 0;
+		text-align:right;
+		background:#eee;
+		border-top:1px solid #aaa;
+		box-shadow:0 1px 0 #fff inset;
+
+		input[type=submit],
+		input[type=reset],
+		input[type=button],
+		button,
+		.button{
+			margin-left:10px;
+		}
+	}
+}
+
+#alertOverlay{
+	position:fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background:#fff;
+	background:rgba(255,255,255,0.8);
+	z-index:998;
+}

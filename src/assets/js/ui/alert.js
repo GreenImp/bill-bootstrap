@@ -1,11 +1,13 @@
 methods.alert = function(type, msg, val, callback){
 	if(msg){
-		var dialogueBox = $('<div id="popUp">' +	// the pop-up box
+		var dialogueBox = $('<div class="alertBox float">' +	// the pop-up box
 				'<div class="content"></div>' +
 				'<div class="buttons"></div>' +
 			'</div>'),
+			overlay = ($('#alertOverlay').length > 0) ? $('#alertOverlay') : $('<div id="alertOverlay"></div>'),
 			content = '',							// the pop-up content
-			buttons = [];							// the pop-up buttons
+			buttons = [],							// the pop-up buttons
+			animSpeed = 400;
 
 		// check the pop-up type
 		type = type.toLowerCase();
@@ -71,11 +73,40 @@ methods.alert = function(type, msg, val, callback){
 			buttonBox.append('<button type="button" value="' + this.value + '" class="' + (this.class || '') + '">' + this.label + '</button>');
 		});
 
+		// add the dialogue and set it's position
+		dialogueBox
+				.appendTo('body')					// add the dialogue box to the document body
+				.css({margin:0, left:0, top:0})		// remove existing margin/positioning
+				.css({								// add our own
+					left:($(window).width()/2) - (dialogueBox.outerWidth()/2),
+					top:($(window).height()/2) - (dialogueBox.outerHeight()/2)
+				})
+				.hide()
+				.fadeIn(animSpeed);
+		// add the overlay
+		overlay.appendTo('body').stop(true, true).hide().fadeIn(animSpeed/2);
+
+		/**
+		 * re-position the dialogue when the screen size changes
+		 */
+		$(window).on('resize', function(){
+			dialogueBox
+					.css({margin:0, left:0, top:0})		// remove existing margin/positioning
+					.css({								// add our own
+						left:($(window).width()/2) - (dialogueBox.outerWidth()/2),
+						top:($(window).height()/2) - (dialogueBox.outerHeight()/2)
+					});
+		});
+
+
 		// add click events for the buttons
 		buttonBox.children('button').on('click', function(){
 			// hide the dialogue box and remove it
-			dialogueBox.stop(true, true).fadeOut(function(){
+			dialogueBox.stop(true, true).fadeOut(animSpeed, function(){
 				dialogueBox.remove();
+			});
+			overlay.fadeOut(animSpeed/2, function(){
+				overlay.remove();
 			});
 
 			// fire the callback function
@@ -93,40 +124,34 @@ methods.alert = function(type, msg, val, callback){
 				callback.apply(window, [value]);
 			}
 		});
-
-		// add the dialogue box to the document body
-		dialogueBox.appendTo('body');
-	}else{
-		// no message defined
-
-		if($.isFunction(callback)){
-			// trigger the callback function, with a value of null
-			callback.apply(window, [null]);
-		}else{
-			// no callback function, just return null
-			return null;
-		}
+	}else if($.isFunction(callback)){
+		// no message defined, but we have a callback
+		// trigger the callback function, with a return value of null
+		callback.apply(window, [null]);
 	}
+
+	// return 'this' to allow chain-ability
+	return this;
 };
 
 
 /**
  * Overwrites alert functionality
  */
-window.alert = function(msg, callback){
+/*window.alert = function(msg, callback){
 	return $('body').bill('alert', 'alert', msg, null, callback);
-};
+};*/
 
 /**
  * Overwrites confirm functionality
  */
-window.confirm = function(msg, callback){
+/*window.confirm = function(msg, callback){
 	return $('body').bill('alert', 'confirm', msg, null, callback);
-};
+};*/
 
 /**
  * Overwrites prompt functionality
  */
-window.prompt = function(msg, val, callback){
+/*window.prompt = function(msg, val, callback){
 	return $('body').bill('alert', 'prompt', msg, val, null, callback);
-};
+};*/
