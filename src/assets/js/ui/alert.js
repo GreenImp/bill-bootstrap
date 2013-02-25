@@ -37,12 +37,12 @@ methods.alert = function(type, msg, val, callback){
 					{
 						label:'cancel',
 						value:false,
-						class:'cancel'
+						'class':'cancel'
 					},
 					{
 						label:'OK',
 						value:true,
-						class:'confirm'
+						'class':'confirm'
 					}
 				];
 			break;
@@ -56,12 +56,12 @@ methods.alert = function(type, msg, val, callback){
 					{
 						label:'cancel',
 						value:null,
-						class:'cancel'
+						'class':'cancel'
 					},
 					{
 						label:'OK',
 						value:true,
-						class:'confirm'
+						'class':'confirm'
 					}
 				];
 			break;
@@ -74,7 +74,7 @@ methods.alert = function(type, msg, val, callback){
 					{
 						label:'OK',
 						value:true,
-						class:'confirm'
+						'class':'confirm'
 					}
 				];
 			break;
@@ -85,7 +85,7 @@ methods.alert = function(type, msg, val, callback){
 
 		// add any buttons to the pop-up
 		$.each(buttons, function(){
-			buttonHtml += '<button type="button" value="' + this.value + '" class="' + (this.class || '') + '">' + this.label + '</button>';
+			buttonHtml += '<button type="button" value="' + this.value + '" class="' + (this['class'] || '') + '">' + this.label + '</button>';
 		});
 		buttonBox.append(buttonHtml);
 
