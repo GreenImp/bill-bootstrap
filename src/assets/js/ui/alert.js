@@ -18,7 +18,7 @@ methods.alert = function(type, msg, val, callback){
 				buttons = [
 					{
 						label:'cancel',
-						value:null,
+						value:false,
 						class:'cancel'
 					},
 					{
@@ -83,7 +83,7 @@ methods.alert = function(type, msg, val, callback){
 				var value = null;
 				if(type == 'prompt'){
 					// we're on a prompt dialogue - check for inputted value
-					val = ($(this).val() != 'null') ? dialogueBox.find('> .content input[type=text][name=value]').val() || null : null;
+					value = ($(this).val() != 'null') ? dialogueBox.find('> .content input[type=text][name=value]').val() || null : null;
 				}else{
 					// normal pop-up - get the button value
 					value = $(this).val();
