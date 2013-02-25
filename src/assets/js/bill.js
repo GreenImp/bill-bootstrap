@@ -30,6 +30,7 @@
 	};
 
 /*> browserNotice.js */
+/*> ui/alert.js */
 /*> ui/accordion.js */
 /*> ui/modal.js */
 })(jQuery, window, document);
