@@ -1,13 +1,29 @@
+var alertQueue = [];
+
 methods.alert = function(type, msg, val, callback){
 	if(msg){
-		var dialogueBox = $('<div class="alertBox float">' +	// the pop-up box
+		if($('#alertPopup').length > 0){
+			// alert dialogue already exists - add this to the queue
+			alertQueue.push({
+				type:type,
+				msg:msg,
+				val:val,
+				callback:callback
+			});
+
+			return this;
+		}
+
+		var dialogueBox = $('<div id="alertPopup" class="alertBox float">' +										// the pop-up box
 				'<div class="content"></div>' +
 				'<div class="buttons"></div>' +
 			'</div>'),
-			overlay = ($('#alertOverlay').length > 0) ? $('#alertOverlay') : $('<div id="alertOverlay"></div>'),
-			content = '',							// the pop-up content
-			buttons = [],							// the pop-up buttons
-			animSpeed = 400;
+			overlay = ($('#alertOverlay').length > 0) ? $('#alertOverlay') : $('<div id="alertOverlay"></div>'),	// the overlay
+			buttonBox = dialogueBox.children('.buttons'),															// the button container
+			buttonHtml = '',																						// HTML markup for buttons
+			content = '',																							// the pop-up content
+			buttons = [],																							// the pop-up buttons
+			animSpeed = 400;																						// the animation speed
 
 		// check the pop-up type
 		type = type.toLowerCase();
@@ -68,10 +84,10 @@ methods.alert = function(type, msg, val, callback){
 		dialogueBox.children('.content').html(content);
 
 		// add any buttons to the pop-up
-		var buttonBox = dialogueBox.children('.buttons');
 		$.each(buttons, function(){
-			buttonBox.append('<button type="button" value="' + this.value + '" class="' + (this.class || '') + '">' + this.label + '</button>');
+			buttonHtml += '<button type="button" value="' + this.value + '" class="' + (this.class || '') + '">' + this.label + '</button>';
 		});
+		buttonBox.append(buttonHtml);
 
 		// add the dialogue and set it's position
 		dialogueBox
@@ -104,7 +120,15 @@ methods.alert = function(type, msg, val, callback){
 			// hide the dialogue box and remove it
 			dialogueBox.stop(true, true).fadeOut(animSpeed, function(){
 				dialogueBox.remove();
+
+				// check the alert queue for our next alert
+				if(alertQueue.length > 0){
+					// next alert specified - trigger it
+					var alert = alertQueue.shift();
+					$('body').bill('alert', alert.type, alert.msg, alert.val, alert.callback);
+				}
 			});
+			// hide and remove the overlay
 			overlay.fadeOut(animSpeed/2, function(){
 				overlay.remove();
 			});
