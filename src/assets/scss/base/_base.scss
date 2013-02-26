@@ -74,7 +74,7 @@ select{
 
 	&[disabled]{
 		color:#888;
-		text-shadow:0 1px rgba(255, 255, 255, .75);
+		text-shadow:0 1px rgba(255, 255, 255, 0.75);
 		background-color:#ddd;
 		cursor:auto;
 	}
@@ -146,7 +146,7 @@ button,
 	/**
 	 * Confirmation buttons
 	 */
-	&.confirm:not([disabled]){
+	&.confirm{
 		color:#F2F2F2;
 		text-shadow:0 1px #407C00;
 		background-color:#55AA00;
@@ -163,7 +163,7 @@ button,
 		}
 	}
 
-	&.cancel:not([disabled]){
+	&.cancel{
 		color:#fff;
 		text-shadow:0 1px #A0090C;
 		background-color:#D11013;
@@ -183,10 +183,17 @@ button,
 	/**
 	 * Disabled buttons
 	 */
-	&[disabled]{
+	&[disabled],
+	&[disabled]:hover,
+	&[disabled]:focus,
+	&[disabled]:active{
 		color:#888;
 		text-decoration:none;
+		text-shadow:0 1px rgba(255, 255, 255, .75);
 		background:#ccc;
+		border:1px solid #aaa;
+		border-top-color:#ccc;
+		border-left-color:#ccc;
 		cursor:auto;
 	}
 }
