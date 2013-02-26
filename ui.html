@@ -37,6 +37,8 @@
 			<a href="#accordion">Accordion</a>
 			|
 			<a href="#modal">Modal Dialogue</a>
+			|
+			<a href="#alerts">Alerts</a>
 		</nav>
 
 
@@ -199,6 +201,21 @@
 				</div>
 			</div>
 		</section>
+
+
+		<section class="row">
+			<div class="column six">
+				<h2 id="alerts">Alert Boxes</h2>
+
+				<p><a href="#" title="Opens a simple alert" onclick="$(document).bill('alert', 'alert', 'this is an alert'); return false;">Open an alert</a></p>
+
+				<p><a href="#" title="Opens a confirm dialogue" onclick="$(document).bill('alert', 'confirm', 'confirm me'); return false;">Open confirm dialogue</a></p>
+
+				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest?', 'To seek the holy grail...'); return false;">Prompt me</a></p>
+
+				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...'); return false;">Prompt me MORE</a></p>
+			</div>
+		</section>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -207,11 +224,11 @@
 		(function($, document){
 			$(document).bill('browserNotice');
 
-			$(document)
+			/*$(document)
 					.bill('alert', 'alert', 'this is an alert')
 					.bill('alert', 'confirm', 'confirm me')
 					.bill('alert', 'prompt', 'What is your quest?', 'To seek the holy grail...')
-					.bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...');
+					.bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...');*/
 		})(jQuery, document);
 	</script>
 </body>
