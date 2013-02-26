@@ -376,10 +376,17 @@ ol{
 	}
 }
 
-/*dl {
-   dt { font-weight: bold; }
-   dd { margin-bottom: 10px; }
- }*/
+
+dl{
+	margin:4px 0 12px;
+
+	dt{
+		font-weight:bold;
+	}
+	dd{
+		margin-bottom:10px;
+	}
+}
 
 
 
