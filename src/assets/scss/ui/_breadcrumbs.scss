@@ -5,11 +5,6 @@
 /* remove list styles on breadcrumb UL elemetns */
 ul.breadcrumbs{
 	list-style:none;
-	margin:0 0 12px;
-
-	li{
-		margin:0;
-	}
 }
 
 span.breadcrumbs{
@@ -18,10 +13,11 @@ span.breadcrumbs{
 }
 
 .breadcrumbs{
-	padding:8px 10px;
+	margin:0 0 12px;
+	padding:0 10px;
 	color:darken($font-colour, 10%);
 	font-size:0.85em;
-	line-height:100%;
+	line-height:2.5em;
 	background:darken($background-colour, 5%);
 	border:1px solid darken($background-colour, 15%);
 	border-radius:2px;
@@ -31,6 +27,7 @@ span.breadcrumbs{
 	> li, > span,
 	> div, > a{
 		float:left;
+		margin:0;
 		padding:0 8px 0 0;
 
 		/* add the separator */
