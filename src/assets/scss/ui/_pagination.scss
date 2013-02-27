@@ -1,0 +1,59 @@
+/* ==========================================================================
+ * Breadcrumbs
+ * ========================================================================== */
+
+/* remove list styles on pagination UL elements */
+ul.pagination{
+	list-style:none;
+	overflow:hidden;
+
+	li{
+		float:left;
+		margin:0;
+		padding:0;
+	}
+}
+
+span.pagination{
+	display:inline-block;
+	vertical-align:top;
+}
+
+.pagination{
+	margin:0 0 12px;
+	padding:0;
+
+	a,
+	span{
+		display:inline-block;
+		vertical-align:top;
+		margin:0 2px;
+		padding:0 4px;
+		color:darken($font-colour, 10%);
+		text-decoration:none;
+		background:darken($background-colour, 5%);
+		border:1px solid darken($background-colour, 15%);
+	}
+
+	a{
+		&:hover,
+		&:focus{
+			background:darken($background-colour, 1%);
+		}
+	}
+
+	.previous, .next,
+	.previous a, .next a,
+	.previous span, .next span{}
+
+	.current, .active,
+	.current a, .active a,
+	.current span, .active span{}
+
+	.disabled,
+	.disabled a,
+	.disabled span{
+		color:darken($background-colour, 15%);
+		text-shadow:0 1px rgba(255, 255, 255, 0.75);
+	}
+}
