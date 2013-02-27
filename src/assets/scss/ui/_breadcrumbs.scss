@@ -2,6 +2,69 @@
  * Breadcrumbs
  * ========================================================================== */
 
-.breadcrumbs{
+/* remove list styles on breadcrumb UL elemetns */
+ul.breadcrumbs{
+	list-style:none;
+	margin:0 0 12px;
 
+	li{
+		margin:0;
+	}
+}
+
+span.breadcrumbs{
+	display:inline-block;
+	vertical-align:top;
+}
+
+.breadcrumbs{
+	padding:8px 10px;
+	color:darken($font-colour, 10%);
+	font-size:0.85em;
+	line-height:100%;
+	background:darken($background-colour, 5%);
+	border:1px solid darken($background-colour, 15%);
+	border-radius:2px;
+	overflow:hidden;
+
+	/* the inner items */
+	> li, > span,
+	> div, > a{
+		float:left;
+		padding:0 8px 0 0;
+
+		/* add the separator */
+		&:before{
+			content:'/';
+			padding-right:8px;
+			color:darken($background-colour, 35%);
+			text-decoration:none;
+		}
+
+		&:first-child:before{
+			content:'';
+			display:none;
+		}
+
+
+		&.current, &.current a{
+			color:inherit;
+		}
+
+		&.disabled, &.disabled a{
+			color:darken($background-colour, 35%);
+			text-decoration:none;
+			cursor:auto;
+		}
+	}
+
+	&.arrow,
+	&.chevron{
+		> li, > span,
+		> div, > a{
+			&:before{
+				content:'>';
+			}
+		}
+	}
 }
