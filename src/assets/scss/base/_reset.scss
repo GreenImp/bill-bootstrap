@@ -419,9 +419,11 @@ svg:not(:root){
 }
 
 /**
- * Not sure what this fixes, but obviously something on Google maps
+ * Removes max-width on Google map images,
+ * otherwise it breaks the functionality
  */
 #googlemap img,
+.gmap img,
 #map_canvas embed,
 #map_canvas img,
 #map_canvas object,
