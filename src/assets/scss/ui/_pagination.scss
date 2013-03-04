@@ -11,6 +11,54 @@ ul.pagination{
 		float:left;
 		margin:0;
 		padding:0;
+
+
+		&.current,
+		&.active{
+			a,
+			span{
+				font-size:1.1em;
+				font-weight:bold;
+				text-decoration:none;
+			}
+		}
+
+		&.previous{
+			a:before,
+			span:before{
+				content:'\003C\00a0';
+			}
+		}
+
+		&.next{
+			a:after,
+			span:after{
+				content:'\00a0\003E';
+			}
+		}
+
+		&.first{
+			a:before,
+			span:before{
+				content:'\00AB\00a0';
+			}
+		}
+
+		&.last:after{
+			a:after,
+			span:after{
+				content:'\00a0\00BB';
+			}
+		}
+
+		&.disabled{
+			a,
+			span{
+				color:darken($background-colour, 35%);
+				text-decoration:none;
+				text-shadow:0 1px rgba(255, 255, 255, 0.75);
+			}
+		}
 	}
 }
 
@@ -30,14 +78,6 @@ span.pagination{
 		vertical-align:bottom;
 		margin:0 2px;
 		padding:0 4px;
-
-		&:first-child{
-			margin-left:0;
-		}
-
-		&:last-child{
-			margin-right:0;
-		}
 
 
 		&.current,
