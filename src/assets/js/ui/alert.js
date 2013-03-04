@@ -2,6 +2,9 @@ var alertQueue = [];
 
 methods.alert = function(type, msg, val, callback){
 	if(msg){
+		callback = $.isFunction(callback) ? callback : ($.isFunction(val) ? val : null);
+		val = !$.isFunction(val) ? val : null;
+
 		if($('#alertPopup').length > 0){
 			// alert dialogue already exists - add this to the queue
 			alertQueue.push({
