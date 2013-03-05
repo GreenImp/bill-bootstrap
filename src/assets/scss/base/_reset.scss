@@ -315,7 +315,7 @@ sub{
 
 ul, ol{
 	list-style-position:outside;
-	margin:4px 0 12px 20px;
+	margin:4px 0 $default-vertical-spacing 20px;
 
 	&.no-bullet{list-style:none;}
 
@@ -378,7 +378,7 @@ ol{
 
 
 dl{
-	margin:4px 0 12px;
+	margin:4px 0 $default-vertical-spacing;
 
 	dt{
 		font-weight:bold;
@@ -574,7 +574,7 @@ textarea{
  * Collapse table borders so that they don't double in thickness
  */
 table{
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	max-width:100%;
 	border-collapse:collapse;
 	border-spacing:0;

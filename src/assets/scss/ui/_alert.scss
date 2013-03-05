@@ -4,7 +4,7 @@
 
 .alertBox{
 	display:block;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	max-width:600px;
 	min-width:200px;
 	max-height:90%;
