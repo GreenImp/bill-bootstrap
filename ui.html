@@ -207,21 +207,25 @@
 		</section>
 
 
-		<h2 id="alerts">Alert Boxes</h2>
-
-		<p>Check the console log to see what value each alert returns.</p>
-
 		<section class="row">
 			<div class="column six">
+				<h2 id="alerts">Alert Boxes</h2>
+
+				<p>Check the console log to see what value each alert returns.</p>
+
 				<p><a href="#" title="Opens a simple alert" onclick="$(document).bill('alert', 'alert', 'this is an alert', function(val){console.log(val)}); return false;">Open an alert</a></p>
 
 				<p><a href="#" title="Opens a confirm dialogue" onclick="$(document).bill('alert', 'confirm', 'confirm me', function(val){console.log(val)}); return false;">Open confirm dialogue</a></p>
-			</div>
 
-			<div class="column six">
 				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest?', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me</a></p>
 
 				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me MORE</a></p>
+			</div>
+
+			<div class="column six">
+				<h2 id="#tooltips">Tooltips</h2>
+
+				<a href="#" title="This is a tooltip - blah blah blah" class="tooltip">Tooltip 1</a>
 			</div>
 		</section>
 
