@@ -267,7 +267,7 @@ q{background:darken($background-colour, 3.5%);}
  * ========================================================================== */
 
 figure{
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 
 	img{
 		margin-left:auto;
@@ -293,7 +293,7 @@ figure{
 	$notice-background:darken($background-colour, 10%);
 
 	display:block;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	padding:6px;
 	color:darken($notice-background, 60%);
 	font-weight:bold;

@@ -8,37 +8,13 @@ body{
 
 
 
-.row,
-.deck{
-	ul{
-		list-style:disc outside;
-		margin:4px 0 12px 20px;
-
-		ul{
-			list-style:circle;
-		}
-	}
-
-	ol{
-		list-style:decimal outside;
-		margin:4px 0 12px 20px;
-	}
-
-	ul li,
-	ol li{
-		margin:2px 0;
-	}
-}
-
-
-
 /* ==========================================================================
  * Forms
  * ========================================================================== */
 
 fieldset{
 	margin:18px 0;
-	padding:12px;
+	padding:$default-padding;
 	border:1px solid #ddd;
 	border-radius:3px;
 
@@ -73,7 +49,7 @@ input[type=url],
 textarea,
 select{
 	display:block;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	padding:6px;
 	width:100%;
 	color:#3c3c3c;
@@ -85,6 +61,7 @@ select{
 	-webkit-transition:all 0.15s linear;
 	-moz-transition:all 0.15s linear;
 	-o-transition:all 0.15s linear;
+	-ms-transition:all 0.15s linear;
 	transition:all 0.15s linear;
 
 	&:focus{
@@ -98,7 +75,7 @@ select{
 
 	&[disabled]{
 		color:#888;
-		text-shadow:0 1px rgba(255, 255, 255, .75);
+		text-shadow:0 1px rgba(255, 255, 255, 0.75);
 		background-color:#ddd;
 		cursor:auto;
 	}
@@ -132,7 +109,7 @@ button,
 .button{
 	display:inline-block;
 	vertical-align:top;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	padding:7px 10px;
 	color:#444;
 	font-size:0.85em;
@@ -155,6 +132,7 @@ button,
 	-webkit-transition:background-color 0.15s ease-in-out 0s;
 	-moz-transition:background-color 0.15s ease-in-out 0s;
 	-o-transition:background-color 0.15s ease-in-out 0s;
+	-ms-transition:background-color 0.15s ease-in-out 0s;
 	transition:background-color 0.15s ease-in-out 0s;
 
 	&:hover, &:focus{
@@ -170,7 +148,7 @@ button,
 	/**
 	 * Confirmation buttons
 	 */
-	&.confirm:not([disabled]){
+	&.confirm{
 		color:#F2F2F2;
 		text-shadow:0 1px #407C00;
 		background-color:#55AA00;
@@ -187,7 +165,7 @@ button,
 		}
 	}
 
-	&.cancel:not([disabled]){
+	&.cancel{
 		color:#fff;
 		text-shadow:0 1px #A0090C;
 		background-color:#D11013;
@@ -207,10 +185,17 @@ button,
 	/**
 	 * Disabled buttons
 	 */
-	&[disabled]{
+	&[disabled],
+	&[disabled]:hover,
+	&[disabled]:focus,
+	&[disabled]:active{
 		color:#888;
 		text-decoration:none;
+		text-shadow:0 1px rgba(255, 255, 255, 0.75);
 		background:#ccc;
+		border:1px solid #aaa;
+		border-top-color:#ccc;
+		border-left-color:#ccc;
 		cursor:auto;
 	}
 }
@@ -229,7 +214,7 @@ button,
 	top:0;
 	left:0;
 	z-index:999;
-	padding:10px 0;
+	padding:$default-padding 0;
 	width:100%;
 	color:#fff;
 	font-size:1.2em;
