@@ -61,6 +61,7 @@ select{
 	-webkit-transition:all 0.15s linear;
 	-moz-transition:all 0.15s linear;
 	-o-transition:all 0.15s linear;
+	-ms-transition:all 0.15s linear;
 	transition:all 0.15s linear;
 
 	&:focus{
@@ -131,6 +132,7 @@ button,
 	-webkit-transition:background-color 0.15s ease-in-out 0s;
 	-moz-transition:background-color 0.15s ease-in-out 0s;
 	-o-transition:background-color 0.15s ease-in-out 0s;
+	-ms-transition:background-color 0.15s ease-in-out 0s;
 	transition:background-color 0.15s ease-in-out 0s;
 
 	&:hover, &:focus{
