@@ -14,7 +14,7 @@ body{
 
 fieldset{
 	margin:18px 0;
-	padding:12px;
+	padding:$default-padding;
 	border:1px solid #ddd;
 	border-radius:3px;
 
@@ -49,7 +49,7 @@ input[type=url],
 textarea,
 select{
 	display:block;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	padding:6px;
 	width:100%;
 	color:#3c3c3c;
@@ -109,7 +109,7 @@ button,
 .button{
 	display:inline-block;
 	vertical-align:top;
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	padding:7px 10px;
 	color:#444;
 	font-size:0.85em;
@@ -214,7 +214,7 @@ button,
 	top:0;
 	left:0;
 	z-index:999;
-	padding:10px 0;
+	padding:$default-padding 0;
 	width:100%;
 	color:#fff;
 	font-size:1.2em;
