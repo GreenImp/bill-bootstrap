@@ -10,10 +10,12 @@ methods.tooltip = function(userOptions){
 	return this.each(function(){
 		var elm = $(this);
 
-		if(!elm.attr('data-tooltip')){
-			elm.attr('data-tooltip', elm.attr('title'));
+		if(elm.removeAttr('title')){
+			if(!elm.attr('data-tooltip')){
+				elm.attr('data-tooltip', elm.attr('title'));
+			}
+			elm.removeAttr('title');
 		}
-		elm.removeAttr('title');
 	});
 };
 

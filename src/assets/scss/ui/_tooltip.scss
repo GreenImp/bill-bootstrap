@@ -1,0 +1,11 @@
+/* ======oltips====================================================================
+ * To
+ * ========================================================================== */
+
+.tooltip[data-tooltip]:hover:after{
+	content:attr(data-tooltip);
+	position:absolute;
+	left:0;
+	top:100%;
+	white-space:nowrap;
+}
