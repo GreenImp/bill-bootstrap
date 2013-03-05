@@ -3,7 +3,7 @@
  * ========================================================================== */
 
 .accordion{
-	margin:12px 0;
+	margin:$default-vertical-spacing 0;
 	border:1px solid darken($background-colour, 10%);
 
 	.title{
@@ -43,7 +43,7 @@
 ul.accordion,
 ol.accordion{
 	list-style:none;
-	margin:12px 0;
+	margin:$default-vertical-spacing 0;
 	padding:0;
 
 	> li{

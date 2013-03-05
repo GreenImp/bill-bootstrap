@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
 <!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -37,6 +38,14 @@
 			<a href="#accordion">Accordion</a>
 			|
 			<a href="#modal">Modal Dialogue</a>
+			|
+			<a href="#alerts">Alerts</a>
+			|
+			<a href="#alerts">Breadcrumbs</a>
+			|
+			<a href="#pagination">Pagination</a>
+			|
+			<a href="#panels">Panels</a>
 		</nav>
 
 
@@ -45,17 +54,6 @@
 		<section class="row">
 			<div class="column six">
 				<p>Accordion with containing div and inner h2/article elements:</p>
-				<pre><code>&lt;div class="accordion"&gt;
-	&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
-	&lt;article class="content"&gt;
-		content...
-	&lt;/article&gt;
-
-	&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
-	&lt;article class="content"&gt;
-		content...
-	&lt;/article&gt;
-&lt;/div&gt;</code></pre>
 
 				<div class="accordion">
 					<h2 class="title">Title 1</h2>
@@ -88,25 +86,25 @@
 						</p>
 					</article>
 				</div>
+
+
+				<h3>Code</h3>
+
+				<pre><code>&lt;div class="accordion"&gt;
+	&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
+	&lt;article class="content"&gt;
+		content...
+	&lt;/article&gt;
+
+	&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
+	&lt;article class="content"&gt;
+		content...
+	&lt;/article&gt;
+&lt;/div&gt;</code></pre>
 			</div>
 
 			<div class="column six">
 				<p>Accordion with containing ul and inner h2/div elements:</p>
-				<pre><code>&lt;ul class="accordion"&gt;
-	&lt;li&gt;
-		&lt;h2&gt;Title 1&lt;/h2&gt;
-		&lt;div&gt;
-			content...
-		&lt;/div&gt;
-	&lt;/li&gt;
-
-	&lt;li&gt;
-		&lt;h2&gt;Title 2&lt;/h2&gt;
-		&lt;div&gt;
-			content...
-		&lt;/div&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
 
 				<ul class="accordion">
 					<li>
@@ -148,6 +146,25 @@
 						</div>
 					</li>
 				</ul>
+
+
+				<h3>Code</h3>
+
+				<pre><code>&lt;ul class="accordion"&gt;
+	&lt;li&gt;
+		&lt;h2&gt;Title 1&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+
+	&lt;li&gt;
+		&lt;h2&gt;Title 2&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 			</div>
 		</section>
 
@@ -199,12 +216,164 @@
 				</div>
 			</div>
 		</section>
+
+
+		<section class="row">
+			<div class="column six">
+				<h2 id="alerts">Alert Boxes</h2>
+
+				<p>Check the console log to see what value each alert returns.</p>
+
+				<p><a href="#" title="Opens a simple alert" onclick="$(document).bill('alert', 'alert', 'this is an alert', function(val){console.log(val)}); return false;">Open an alert</a></p>
+
+				<p><a href="#" title="Opens a confirm dialogue" onclick="$(document).bill('alert', 'confirm', 'confirm me', function(val){console.log(val)}); return false;">Open confirm dialogue</a></p>
+
+				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest?', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me</a></p>
+
+				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me MORE</a></p>
+			</div>
+
+			<div class="column six"></div>
+		</section>
+
+
+		<section class="row">
+			<div class="column six">
+				<h2 id="breadcrumbs">Breadcrumbs</h2>
+
+				<ul class="breadcrumbs">
+					<li><a href="#">Item 1</a></li>
+					<li class="disabled"><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li class="current">Item 4</li>
+				</ul>
+
+				<ul class="breadcrumbs arrow">
+					<li><a href="#">Item 1</a></li>
+					<li class="disabled"><a href="#">Item 2</a></li>
+					<li><a href="#">Item 3</a></li>
+					<li class="current">Item 4</li>
+				</ul>
+
+				<span class="breadcrumbs">
+					<a href="#">Item 1</a>
+					<a href="#" class="disabled">Item 2</a>
+					<a href="#">Item 3</a>
+					<a href="#" class="current">Item 4</a>
+				</span>
+
+				<span class="breadcrumbs">
+					<span><a href="#">Item 1</a></span>
+					<span class="disabled"><a href="#">Item 2</a></span>
+					<span><a href="#">Item 3</a></span>
+					<span class="current"><a href="#">Item 4</a></span>
+				</span>
+			</div>
+
+			<div class="column six">
+				<h2 id="pagination">Pagination</h2>
+
+				<div class="pagination">
+					<a href="#" class="first">First</a><a href="#" class="previous">Prev</a><a href="#">
+						1
+					</a><a href="#">
+						2
+					</a><span class="current">
+						3
+					</span><a href="#">
+						4
+					</a><a href="#" class="disabled">
+						5
+					</a>...<a href="#">
+						10
+					</a><a href="#" class="next">Next</a><a href="#" class="last">Last</a>
+				</div>
+
+				<ul class="pagination">
+					<li class="first disabled">
+						<span>First</span>
+					</li>
+					<li class="previous disabled">
+						<span>Prev</span>
+					</li>
+
+					<li>...</li>
+					<li>
+						<a href="#">3</a>
+					</li>
+					<li>
+						<span>4</span>
+					</li>
+					<li>
+						<a href="#">5</a>
+					</li>
+					<li class="disabled">
+						<span>6</span>
+					</li>
+					<li>
+						...
+					</li>
+
+					<li class="next disabled">
+						<span>Next</span>
+					</li>
+					<li class="last disabled">
+						<span>Last</span>
+					</li>
+				</ul>
+
+				<div class="pagination block">
+					<a href="#" class="first">First</a><a href="#" class="previous">Prev</a><a href="#">
+						1
+					</a><a href="#">
+						2
+					</a><span class="current">
+						3
+					</span><a href="#">
+						4
+					</a><a href="#" class="disabled">
+						5
+					</a>...<a href="#">
+						10
+					</a><a href="#" class="next">Next</a><a href="#" class="last">Last</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="row">
+			<div class="column six collapse">
+				<div class="column six">
+					<h2 id="panels">Panels</h2>
+
+					<div class="panel">
+						<h3>Normal Panel</h3>
+
+						<p>This is a normal panel.</p>
+
+						<p>Ain't it purdy?</p>
+					</div>
+				</div>
+
+				<div class="column six">
+					<h2>Init Bruv</h2>
+
+					<div class="panel feature">
+						<h3>Feature Panel</h3>
+
+						<p>This is a feature panel.</p>
+
+						<p>Ain't it purdy?</p>
+					</div>
+				</div>
+			</div>
+		</section>
 	</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 	<script src="dist/assets/js/bill.min.js"></script>
 	<script>
 		(function($, document){
+			// display browser not supported message
 			$(document).bill('browserNotice');
 		})(jQuery, document);
 	</script>
