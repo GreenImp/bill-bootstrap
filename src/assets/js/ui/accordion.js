@@ -169,6 +169,7 @@ methods.accordion = function(userOptions){
 								}
 							}else{
 								// no animation - just show
+								panes.hide();
 								pane.show();
 							}
 						}
@@ -177,7 +178,19 @@ methods.accordion = function(userOptions){
 			// if accordion is not collapsible, we must always have one pane open
 			// trigger the click event on the first element
 			if(!options.collapsible){
-				titles.eq(0).triggerHandler('click');
+				var animType = options.animType,					// the current animation type
+					activeTitle = titles.filter('.active:first');	// check for a button with class 'active'
+				// if no tab buttons have a class of active, just go with the first tab
+				activeTitle = (activeTitle.length == 0) ? titles.first() : activeTitle;
+
+				// set no anim type, so that the tab appears immediately
+				options.animType = null;
+
+				// trigger the click event
+				activeTitle.triggerHandler('click');
+
+				// reset the animation type
+				options.animType = animType;
 			}
 		}else if(userOptions){
 			// accordion already exists, but options have been updated

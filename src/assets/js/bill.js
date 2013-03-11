@@ -32,6 +32,7 @@
 /*> browserNotice.js */
 /*> ui/alert.js */
 /*> ui/accordion.js */
+/*> ui/tabs.js */
 /*> ui/modal.js */
 /*> ui/tooltip.js */
 })(jQuery, window, document);
