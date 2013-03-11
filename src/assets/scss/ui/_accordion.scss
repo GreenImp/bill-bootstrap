@@ -3,12 +3,12 @@
  * ========================================================================== */
 
 .accordion{
-	margin:12px 0;
+	margin:$default-vertical-spacing 0;
 	border:1px solid darken($background-colour, 10%);
 
 	.title{
 		margin:0;
-		padding:10px;
+		padding:$default-padding;
 		background:darken($background-colour, 5%);
 		border-top:1px solid darken($background-colour, 10%);
 		cursor:pointer;
@@ -28,12 +28,35 @@
 		&.active{
 			background:darken($background-colour, 10%);
 		}
+
+		// ensure that any elements inside the header don't have a margin
+		> h1, > h2,
+		> h3, > h4,
+		> h5, > h6,
+		> p{
+			margin:0;
+		}
 	}
 
-	.content{
-		padding:0 1em;
+	.pane{
+		margin:0;
+		padding:$default-padding;
 		background:lighten($background-colour, 2%);
-		overflow:hidden; /* fixes margin issues in p tags */
+
+		> h1, > h2,
+		> h3, > h4,
+		> h5, > h6,
+		> p{
+			// ensure that the first elements inside the header doesn't have a top margin
+			&:first-child{
+				margin-top:0;
+			}
+
+			// ensure that the first elements inside the header doesn't have a bottom margin
+			&:last-child{
+				margin-bottom:0;
+			}
+		}
 	}
 }
 
@@ -43,7 +66,7 @@
 ul.accordion,
 ol.accordion{
 	list-style:none;
-	margin:12px 0;
+	margin:$default-vertical-spacing 0;
 	padding:0;
 
 	> li{

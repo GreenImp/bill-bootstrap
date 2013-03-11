@@ -33,4 +33,5 @@
 /*> ui/alert.js */
 /*> ui/accordion.js */
 /*> ui/modal.js */
+/*> ui/tooltip.js */
 })(jQuery, window, document);
