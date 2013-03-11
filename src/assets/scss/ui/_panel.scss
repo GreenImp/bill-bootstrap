@@ -1,0 +1,29 @@
+/* ==========================================================================
+ * Panels
+ * ========================================================================== */
+
+.panel{
+	display:block;
+	margin-bottom:$default-vertical-spacing;
+	padding:$default-padding;
+	background:darken($background-colour, 5%);
+	border:1px solid darken($background-colour, 15%);
+	border-radius:2px;
+	box-shadow:0 1px 0 #fff inset;
+
+	&.feature{
+		color:lighten(#4A8ECE, 50%);
+		font-weight:bold;
+		background:#4A8ECE;
+		border-color:darken(#4A8ECE, 10%);
+	}
+
+
+	> *:first-child{
+		margin-top:0;
+	}
+
+	> p:last-child{
+		margin-bottom:0;
+	}
+}

@@ -13,7 +13,7 @@ span.breadcrumbs{
 }
 
 .breadcrumbs{
-	margin:0 0 12px;
+	margin:0 0 $default-vertical-spacing;
 	padding:0 10px;
 	color:darken($font-colour, 10%);
 	font-size:0.85em;

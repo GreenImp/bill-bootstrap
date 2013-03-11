@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
 <!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js" xmlns="http://www.w3.org/1999/html"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -43,29 +44,20 @@
 			<a href="#alerts">Breadcrumbs</a>
 			|
 			<a href="#pagination">Pagination</a>
+			|
+			<a href="#panels">Panels</a>
 		</nav>
 
 
 		<h2 id="accordion">Accordion</h2>
 
 		<section class="row">
-			<div class="column six">
+			<div class="column four">
 				<p>Accordion with containing div and inner h2/article elements:</p>
-				<pre><code>&lt;div class="accordion"&gt;
-	&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
-	&lt;article class="content"&gt;
-		content...
-	&lt;/article&gt;
-
-	&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
-	&lt;article class="content"&gt;
-		content...
-	&lt;/article&gt;
-&lt;/div&gt;</code></pre>
 
 				<div class="accordion">
 					<h2 class="title">Title 1</h2>
-					<article class="content">
+					<article class="pane">
 						<p>
 							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
 							ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
@@ -75,7 +67,7 @@
 					</article>
 
 					<h2 class="title">Title 2</h2>
-					<article class="content">
+					<article class="pane">
 						<p>
 							Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
 							purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
@@ -85,7 +77,7 @@
 					</article>
 
 					<h2 class="title">Title 3</h2>
-					<article class="content">
+					<article class="pane">
 						<p>
 							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
 							Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
@@ -94,25 +86,25 @@
 						</p>
 					</article>
 				</div>
+
+
+				<h3>Code</h3>
+
+				<pre><code>&lt;div class="accordion"&gt;
+	&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
+	&lt;article class="pane"&gt;
+		content...
+	&lt;/article&gt;
+
+	&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
+	&lt;article class="pane"&gt;
+		content...
+	&lt;/article&gt;
+&lt;/div&gt;</code></pre>
 			</div>
 
-			<div class="column six">
+			<div class="column four">
 				<p>Accordion with containing ul and inner h2/div elements:</p>
-				<pre><code>&lt;ul class="accordion"&gt;
-	&lt;li&gt;
-		&lt;h2&gt;Title 1&lt;/h2&gt;
-		&lt;div&gt;
-			content...
-		&lt;/div&gt;
-	&lt;/li&gt;
-
-	&lt;li&gt;
-		&lt;h2&gt;Title 2&lt;/h2&gt;
-		&lt;div&gt;
-			content...
-		&lt;/div&gt;
-	&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
 
 				<ul class="accordion">
 					<li>
@@ -154,6 +146,81 @@
 						</div>
 					</li>
 				</ul>
+
+
+				<h3>Code</h3>
+
+				<pre><code>&lt;ul class="accordion"&gt;
+	&lt;li&gt;
+		&lt;h2&gt;Title 1&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+
+	&lt;li&gt;
+		&lt;h2&gt;Title 2&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+			</div>
+
+			<div class="column four">
+				<p>Accordion with using a dl list:</p>
+
+				<dl class="accordion">
+					<dt>Title 1</dt>
+					<dd>
+						<p>
+							Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+							ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+							amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+							odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+						</p>
+					</dd>
+
+					<dt>Title 2</dt>
+					<dd>
+						<p>
+							Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+							purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+							velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+							suscipit faucibus urna.
+						</p>
+					</dd>
+
+					<dt>Title 3</dt>
+
+					<dd>
+						<p>
+							Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+							Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+							ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+							lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+						</p>
+					</dd>
+				</dl>
+
+
+				<h3>Code</h3>
+
+				<pre><code>&lt;ul class="accordion"&gt;
+	&lt;li&gt;
+		&lt;h2&gt;Title 1&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+
+	&lt;li&gt;
+		&lt;h2&gt;Title 2&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 			</div>
 		</section>
 
@@ -207,22 +274,22 @@
 		</section>
 
 
-		<h2 id="alerts">Alert Boxes</h2>
-
-		<p>Check the console log to see what value each alert returns.</p>
-
 		<section class="row">
 			<div class="column six">
+				<h2 id="alerts">Alert Boxes</h2>
+
+				<p>Check the console log to see what value each alert returns.</p>
+
 				<p><a href="#" title="Opens a simple alert" onclick="$(document).bill('alert', 'alert', 'this is an alert', function(val){console.log(val)}); return false;">Open an alert</a></p>
 
 				<p><a href="#" title="Opens a confirm dialogue" onclick="$(document).bill('alert', 'confirm', 'confirm me', function(val){console.log(val)}); return false;">Open confirm dialogue</a></p>
-			</div>
 
-			<div class="column six">
 				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest?', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me</a></p>
 
 				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me MORE</a></p>
 			</div>
+
+			<div class="column six"></div>
 		</section>
 
 
@@ -279,11 +346,11 @@
 				</div>
 
 				<ul class="pagination">
-					<li>
-						<span class="first disabled">First</span>
+					<li class="first disabled">
+						<span>First</span>
 					</li>
-					<li>
-						<span class="previous disabled">Prev</span>
+					<li class="previous disabled">
+						<span>Prev</span>
 					</li>
 
 					<li>...</li>
@@ -296,18 +363,18 @@
 					<li>
 						<a href="#">5</a>
 					</li>
-					<li>
-						<span class="disabled">6</span>
+					<li class="disabled">
+						<span>6</span>
 					</li>
 					<li>
 						...
 					</li>
 
-					<li>
-						<span class="next disabled">Next</span>
+					<li class="next disabled">
+						<span>Next</span>
 					</li>
-					<li>
-						<span class="last disabled">Last</span>
+					<li class="last disabled">
+						<span>Last</span>
 					</li>
 				</ul>
 
@@ -325,6 +392,34 @@
 					</a>...<a href="#">
 						10
 					</a><a href="#" class="next">Next</a><a href="#" class="last">Last</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="row">
+			<div class="column six collapse">
+				<div class="column six">
+					<h2 id="panels">Panels</h2>
+
+					<div class="panel">
+						<h3>Normal Panel</h3>
+
+						<p>This is a normal panel.</p>
+
+						<p>Ain't it purdy?</p>
+					</div>
+				</div>
+
+				<div class="column six">
+					<h2>Init Bruv</h2>
+
+					<div class="panel feature">
+						<h3>Feature Panel</h3>
+
+						<p>This is a feature panel.</p>
+
+						<p>Ain't it purdy?</p>
+					</div>
 				</div>
 			</div>
 		</section>
