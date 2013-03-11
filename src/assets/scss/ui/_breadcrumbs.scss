@@ -32,7 +32,7 @@ span.breadcrumbs{
 
 		/* add the separator */
 		&:before{
-			content:'/';
+			content:'\2044';
 			padding-right:8px;
 			color:darken($background-colour, 35%);
 			text-decoration:none;
@@ -60,7 +60,7 @@ span.breadcrumbs{
 		> li, > span,
 		> div, > a{
 			&:before{
-				content:'>';
+				content:'\003E';
 			}
 		}
 	}
