@@ -383,8 +383,13 @@ dl{
 	dt{
 		font-weight:bold;
 	}
+
 	dd{
 		margin-bottom:10px;
+
+		&:last-child{
+			margin-bottom:0;
+		}
 	}
 }
 
@@ -427,9 +432,23 @@ svg:not(:root){
 #map_canvas embed,
 #map_canvas img,
 #map_canvas object,
+.MicrosoftMap img
 object,
 embed{
 	max-width:none;
+}
+
+.MicrosoftMap{
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+
+	&:before, &:after,
+	*, *:before, *:after{
+		-webkit-box-sizing:content-box;
+		-moz-box-sizing:content-box;
+		box-sizing:content-box;
+	}
 }
 
 
