@@ -5,8 +5,7 @@
  */
 methods.tabs = function(userOptions){
 	var defaultOptions = {
-		animSpeed:200,
-		animType:'fade'
+		animSpeed:200
 	};
 	var options = $.extend(defaultOptions, userOptions);
 
@@ -127,8 +126,14 @@ methods.tabs = function(userOptions){
 
 
 				// show an active tab
-				var animType = options.animType,					// the current animation type
-					activeBtn = tabBtns.filter('.active:first');	// check for a button with class 'active'
+				var animType = options.animType,	// the current animation type
+					// check for an active button
+					// if a hash has been defined, check for a button matching it,
+					// otherwise look for a button with class 'active'
+					activeBtn = location.hash ?
+								$(tabBtns.filter('[href="' + location.hash + '"]:first')[0] || tabBtns.filter('.active:first')[0])
+								:
+								tabBtns.filter('.active:first');
 				// if no tab buttons have a class of active, just go with the first tab
 				activeBtn = (activeBtn.length == 0) ? tabBtns.first() : activeBtn;
 
