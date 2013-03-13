@@ -1,20 +1,73 @@
 /* ==========================================================================
- * Accordion
+ * Tabs
  * ========================================================================== */
 
 .tabs{
+	margin:$default-vertical-spacing 0;
 
-}
-
-/**
- * Remove list styles on tab lists
- */
-ul.accordion,
-ol.accordion{
-	list-style:none;
-	padding:0;
-
-	> li{
+	> ul{
+		list-style:none;
 		margin:0;
+		padding:0;
+	}
+
+
+	> .tab,
+	> ul > li.tab{
+		float:left;
+		margin:0;
+		padding:0;
+
+		> a{
+			display:block;
+			margin:0 2px -1px;
+			padding:6px 10px;
+			width:auto;
+			text-decoration:none;
+			background:darken($background-colour, 5%);
+			border:1px solid darken($background-colour, 10%);
+			border-radius:2px 2px 0 0;
+			outline:none;
+
+			&:hover{
+				background:darken($background-colour, 2%);
+			}
+
+			&.active{
+				background:lighten($background-colour, 2%);
+				border-bottom-color:lighten($background-colour, 2%);
+			}
+		}
+
+		&:first-child > a{
+			margin-left:5px;
+		}
+
+		&:last-of-type > a{
+			margin-right:5px;
+		}
+	}
+
+	> .pane{
+		clear:both;
+		margin:0;
+		padding:$default-padding;
+		background:lighten($background-colour, 2%);
+		border:1px solid darken($background-colour, 10%);
+
+		> h1, > h2,
+		> h3, > h4,
+		> h5, > h6,
+		> p{
+			// ensure that the first elements inside the pane doesn't have a top margin
+			&:first-child{
+				margin-top:0;
+			}
+
+			// ensure that the first elements inside the pane doesn't have a bottom margin
+			&:last-child{
+				margin-bottom:0;
+			}
+		}
 	}
 }
