@@ -44,11 +44,13 @@
 			|
 			<a href="#alerts">Alerts</a>
 			|
+			<a href="#panels">Panels</a>
+			|
 			<a href="#alerts">Breadcrumbs</a>
 			|
 			<a href="#pagination">Pagination</a>
 			|
-			<a href="#panels">Panels</a>
+			<a href="#sliders">Slider</a>
 		</nav>
 
 
@@ -369,7 +371,31 @@
 				<p><a href="#" title="Opens a prompt dialogue with little text" onclick="$(document).bill('alert', 'prompt', 'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', 'To seek the holy grail...', function(val){console.log(val)}); return false;">Prompt me MORE</a></p>
 			</div>
 
-			<div class="column six"></div>
+			<div class="column six collapse">
+				<h2 id="panels">Panels</h2>
+
+				<div class="row">
+					<div class="column six">
+						<div class="panel">
+							<h3>Normal Panel</h3>
+
+							<p>This is a normal panel.</p>
+
+							<p>Ain't it purdy?</p>
+						</div>
+					</div>
+
+					<div class="column six">
+						<div class="panel feature">
+							<h3>Feature Panel</h3>
+
+							<p>This is a feature panel.</p>
+
+							<p>Ain't it purdy?</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 
 
@@ -476,30 +502,91 @@
 			</div>
 		</section>
 
+
+		<h2 id="sliders">Sliders</h2>
+
+		<h3>Sliding</h3>
 		<section class="row">
-			<div class="column six collapse">
-				<div class="column six">
-					<h2 id="panels">Panels</h2>
+			<div class="column six">
+				<h4>All images the same size</h4>
 
-					<div class="panel">
-						<h3>Normal Panel</h3>
+				<div class="slider">
+					<ul class="slides">
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
 
-						<p>This is a normal panel.</p>
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
 
-						<p>Ain't it purdy?</p>
-					</div>
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
+					</ul>
 				</div>
+			</div>
 
-				<div class="column six">
-					<h2>Init Bruv</h2>
+			<div class="column six">
+				<h4>Different size images</h4>
 
-					<div class="panel feature">
-						<h3>Feature Panel</h3>
+				<div class="slider">
+					<ul class="slides">
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
 
-						<p>This is a feature panel.</p>
+						<li>
+							<img src="//placehold.it/700x150" />
+						</li>
 
-						<p>Ain't it purdy?</p>
-					</div>
+						<li>
+							<img src="//placehold.it/800x200" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<h3>Fading</h3>
+		<section class="row">
+			<div class="column six">
+				<h4>All images the same size</h4>
+
+				<div class="slider fade">
+					<ul class="slides">
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
+
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
+
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="column six">
+				<h4>Different size images</h4>
+
+				<div class="slider fade">
+					<ul class="slides">
+						<li>
+							<img src="//placehold.it/600x100" />
+						</li>
+
+						<li>
+							<img src="//placehold.it/700x150" />
+						</li>
+
+						<li>
+							<img src="//placehold.it/800x200" />
+						</li>
+					</ul>
 				</div>
 			</div>
 		</section>
