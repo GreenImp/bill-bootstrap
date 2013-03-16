@@ -93,6 +93,7 @@ html[xmlns] .slides {display: block;}
  * ========================================================================== */
 
 .flexslider{
+	margin:0 0 42px;
 	-webkit-box-sizing:content-box;
 	-moz-box-sizing:content-box;
 	box-sizing:content-box;
@@ -103,24 +104,44 @@ html[xmlns] .slides {display: block;}
 		-moz-box-sizing:content-box;
 		box-sizing:content-box;
 	}
-}
 
-.flexslider{
-	margin:0 0 42px;
-}
 
-/**
- * 1. Sets display to none, rather than just hiding with opacity (as FlexSlider does),
- * otherwise we get scroll bars
- * 2. Changes the nav button image URL
- */
-.flex-direction-nav a{
-	display:none;	/* 1 */
-	background-image:url('../images/slider.png');	/* 2 */
-}
+	.slides{
+		> li{
+			position:relative;
 
-/**
- * Ensures that nav buttons are visible, on hover.
- * This is necessary, due to our style above - setting 'dislay:none'
- */
-.flexslider:hover .flex-direction-nav a{display:block;}
+			> .caption{
+				position:absolute;
+				left:0;
+				bottom:0;
+				margin:0;
+				padding:8px 2%;
+				width:96%;
+				color:#fff;
+				font-size:14px;
+				text-align:center;
+				text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+				line-height:18px;
+				background:#000;
+				background:rgba(0,0,0,0.6);
+			}
+		}
+	}
+
+
+	/**
+	 * 1. Sets display to none, rather than just hiding with opacity (as FlexSlider does),
+	 * otherwise we get scroll bars
+	 * 2. Changes the nav button image URL
+	 */
+	> .flex-direction-nav a{
+		display:none;	/* 1 */
+		background-image:url('../images/slider.png');	/* 2 */
+	}
+
+	/**
+	 * Ensures that nav buttons are visible, on hover.
+	 * This is necessary, due to our style above - setting 'dislay:none'
+	 */
+	&:hover .flex-direction-nav a{display:block;}
+}

@@ -9,12 +9,16 @@
 /*> jquery.flexslider-min.js */
 methods.slider = $.fn.flexslider;
 
-// call the slider functionality
-$('.slider').each(function(){
-	var slider = $(this);
-	slider.addClass('flexslider').bill('slider', {
-		animation:slider.hasClass('fade') ? 'fade' : 'slide',
-		slideshowSpeed:4000,
-		smoothHeight:true
+// add the slider initializer to the onLoad call
+// it needs to be onLoad, otherwise it doesn't detect image heights correctly.
+onLoad[onLoad.length] = function(){
+	// call the slider functionality
+	$('.slider').each(function(){
+		var slider = $(this);
+		slider.addClass('flexslider').bill('slider', {
+			animation:slider.hasClass('fade') ? 'fade' : 'slide',
+			slideshowSpeed:4000,
+			smoothHeight:true
+		});
 	});
-});
+};
