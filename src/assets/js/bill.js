@@ -35,4 +35,5 @@
 /*> ui/tabs.js */
 /*> ui/modal.js */
 /*> ui/tooltip.js */
+/*> ui/slider.js */
 })(jQuery, window, document);
