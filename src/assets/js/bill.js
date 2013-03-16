@@ -9,7 +9,8 @@
 		init:function(options){
 			return this;
 		}
-	};
+	},
+	onLoad = [];
 
 	/**
 	 * Base Bill method
@@ -34,6 +35,16 @@
 /*> ui/accordion.js */
 /*> ui/tabs.js */
 /*> ui/modal.js */
-/*> ui/tooltip.js */
 /*> ui/slider.js */
+
+	/**
+	 * Run any UI JS that needs to be run on page load
+	 */
+	if(onLoad.length > 0){
+		$(window).on('load', function(){
+			$.each(onLoad, function(i, loadF){
+				loadF.call(this);
+			});
+		});
+	}
 })(jQuery, window, document);
