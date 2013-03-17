@@ -12,50 +12,62 @@
  * Device specific display of content
  * This allows us to show/hide certain elements depending on the device
  * ========================================================================== */
-.visible-phone{
-  display:none !important;
+.visible-phone,
+.visible-small{
+	display:none !important;
 }
 
-.visible-tablet{
-  display:none !important;
+.visible-tablet,
+.visible-medium{
+	display:none !important;
 }
 
-.hidden-desktop{
-  display:none !important;
+.hidden-desktop,
+.hidden-large{
+	display:none !important;
 }
 
-.visible-desktop{
-  display:inherit !important;
+.visible-desktop,
+.visible-large{
+	display:inherit !important;
 }
 
 @media (min-width: 768px) and (max-width: 979px){
-  .hidden-desktop{
-    display:inherit !important;
-  }
-  .visible-desktop{
-    display:none !important ;
-  }
-  .visible-tablet{
-    display:inherit !important;
-  }
-  .hidden-tablet{
-    display:none !important;
-  }
+	.hidden-desktop,
+	.hidden-large{
+		display:inherit !important;
+	}
+	.visible-desktop,
+	.visible-large{
+		display:none !important ;
+	}
+	.visible-tablet,
+	.visible-medium{
+		display:inherit !important;
+	}
+	.hidden-tablet,
+	.hidden-medium{
+		display:none !important;
+	}
 }
 
 @media (max-width: 767px){
-  .hidden-desktop{
-    display:inherit !important;
-  }
-  .visible-desktop{
-    display:none !important;
-  }
-  .visible-phone{
-    display:inherit !important;
-  }
-  .hidden-phone{
-    display:none !important;
-  }
+	.hidden-desktop,
+	.hidden-large{
+		display:inherit !important;
+	}
+	.visible-desktop,
+	.visible-large{
+		display:none !important;
+	}
+	.visible-phone,
+	.visible-small{
+		display:inherit !important;
+	}
+	.hidden-phone,
+	.hidden-small{
+		display:none !important;
+	}
 }
 
 
