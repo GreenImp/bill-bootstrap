@@ -3,7 +3,7 @@
  * Date Created: 27/01/13 01:42
  */
 
-(function($, window, document){
+;(function($, window, document){
 	// list of available methods
 	var methods = {
 		init:function(options){
@@ -30,7 +30,16 @@
 		}
 	};
 
-/*> browserNotice.js */
+
+/**
+ * Basic functionality
+ */
+/*> base/basic.js */
+/*> base/browserNotice.js */
+
+/**
+ * UI functionality
+ */
 /*> ui/alert.js */
 /*> ui/accordion.js */
 /*> ui/tabs.js */
