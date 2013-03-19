@@ -1,0 +1,87 @@
+/*!
+ * IE7 specific stylesheet for bill-bootstrap
+ *
+ * Author: GreenImp
+ * Date Created: 18/03/2013 20:29:15
+ */
+
+// include the base settings (font sizes, colours etc)
+@import "_settings";
+
+$screenWidth:1000px;
+$padding:1%;
+
+
+htm.lt-ie8 body{
+	max-width:$screenWidth;
+
+	> .container{
+		width:$screenWidth;
+	}
+}
+
+
+
+/* ==========================================================================
+ * Forms
+ * ========================================================================== */
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+textarea,
+select{
+	padding-left:$padding;
+	padding-right:$padding;
+	width:100% - ($padding*2)
+}
+
+
+
+/* ==========================================================================
+ * Row/Column styles
+ * ========================================================================== */
+
+.row,
+.deck{
+	/**
+	 * Columns
+	 */
+	.column, .plank{
+		padding-left:$padding;
+		padding-right:$padding;
+
+		/**
+		 * Setting individual column widths
+		 */
+		@for $i from 1 through $grid-columns {
+			&.#{nth($column-numbers, $i)}{
+				width:(100%/($grid-columns/$i))-($padding*2);
+
+				&.collapse{
+					width:(100%/($grid-columns/$i));
+				}
+			}
+		}
+
+		/**
+		 * Column offsets
+		 */
+		@for $i from 1 through $grid-columns - 1 {
+			&.offset-#{nth($column-numbers, $i)}{
+				margin-left:(100%/($grid-columns/$i))+($padding*2);
+			}
+		}
+
+		&.collapse{
+			padding:0;
+		}
+	}
+}
