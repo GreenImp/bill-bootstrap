@@ -4,20 +4,37 @@
 
 .nav{
 	display:block;
+	color:darken(#fff, 15%);
 	background:darken($background-colour, 50%);
+
+	/**
+	 * Style links
+	 */
+	a{
+		color:#fff;
+		text-decoration:none;
+		-webkit-transition:all 0.15s linear;
+		-moz-transition:all 0.15s linear;
+		-o-transition:all 0.15s linear;
+		transition:all 0.15s linear;
+
+		&:hover{
+			color:darken(#fff, 5%);
+			background:darken($background-colour, 75%);
+		}
+	}
 
 	/**
 	 * Clear the inner floated elements
 	 */
-	&:after,
-	ul{
+	&:after{
 		content:" ";
 		display:table;
 		clear:both;
 	}
 
 	/**
-	 * Remove default list styling
+	 * Basic UL styling
 	 */
 	ul{
 		list-style:none;
@@ -25,30 +42,77 @@
 		padding:0;
 
 		> li{
+			position:relative;
 			margin:0;
+
+			/**
+			 * Show sub-menu, on hover of it's parent
+			 */
+			&:hover{
+				> ul{
+					top:100%;
+					left:0;
+					width:auto;
+					min-width:100%;
+					height:auto;
+				}
+			}
+
+			/**
+			 * give textual elements some styling
+			 */
+			a,
+			span,
+			label,
+			div,
+			h1, h2, h3,
+			h4, h5, h6{
+				display:block;
+				margin:0;
+				padding:12px;
+				min-width:100%;
+			}
 		}
 	}
 
 	/**
-	 * Define root list styles
+	 * Define level specific styling
 	 */
+	/* Root level */
 	> ul{
 		float:left;
-		background:darken($background-colour, 50%);
 
 		/**
-		 * Right-aligned nav elements
+		 * Root level li elements
 		 */
-		&.right{
-			float:right;
-		}
-
 		> li{
 			float:left;
-			padding:8px;
+			margin-left:1px;
+
+			&:before{
+				content:'';
+				position:absolute;
+				top:50%;
+				right:100%;
+				margin-top:-5px;
+				height:10px;
+				border-right:1px solid #fff;
+			}
+
+			&:first-child{
+				margin-left:0px;
+
+				&:before{
+					display:none;
+				}
+			}
+
+			> ul{
+				font-size:0.85em;
+			}
 
 			/**
-			 * Sub menu
+			 * Sub menus
 			 */
 			ul{
 				position:absolute;
@@ -59,23 +123,112 @@
 				background:darken($background-colour, 45%);
 
 				li{
-					padding:2px 8px;
+					margin-bottom:1px;
 					min-width:100%;
 					white-space:nowrap;
+
+					&.divider:after{
+						content:'';
+						position:absolute;
+						top:100%;
+						left:10px;
+						right:10px;
+						border-bottom:1px solid #fff;
+					}
+
+					/**
+					 * Set different offset for 3rd level (and greater) sub menus
+					 */
+					&:hover{
+						> ul{
+							top:0;
+							left:100%;
+							width:auto;
+							min-width:0;
+						}
+					}
+
+					/**
+					 * Sub menu text elements
+					 */
+					a,
+					span,
+					label,
+					div,
+					h1, h2, h3,
+					h4, h5, h6{
+						padding:4px 12px;
+					}
 				}
 			}
+		}
+
+		/**
+		 * Right-aligned nav elements
+		 */
+		&.right{
+			float:right;
 
 			/**
 			 * Show sub-menu, on hover of it's parent
 			 */
-			&:hover{
-				position:relative;
+			> li{
+				&:hover{
+					> ul{
+						left:auto;
+						right:0;
+					}
+				}
 
-				> ul{
-					top:100%;
-					left:0;
-					width:auto;
-					min-width:100%;
+				/**
+				 * position third level (and greater) navigation to the right
+				 */
+				ul > li:hover{
+					> ul{
+						left:auto;
+						right:100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+ * Media Queries
+ * ========================================================================== */
+
+@media handheld, only screen and (max-width: 767px) {
+	.nav{
+		overflow:hidden;
+
+		ul,
+		ul.right{
+			float:none;
+			border-top:1px solid #fff;
+
+			&:first-child,
+			&:first-of-type{
+				border:none;
+			}
+
+			li{
+				float:none;
+				width:100%;
+				white-space:normal;
+
+				&:before{
+					border-left:none;
+					border-right:none;
+				}
+
+				ul{
+					position:static;
+					top:auto;
+					left:auto;
+					right:auto;
+					bottom:auto;
+					width:100%;
 					height:auto;
 				}
 			}
