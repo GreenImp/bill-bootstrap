@@ -3,14 +3,14 @@
  * Date Created: 27/01/13 01:42
  */
 
-;(function($, window, document){
+;
+(function($, window, document){
 	// list of available methods
 	var methods = {
-		init:function(options){
-			return this;
-		}
-	},
-	onLoad = [];
+				init: function(options){
+					return this;
+				}
+			}, onLoad = [];
 
 	/**
 	 * Base Bill method
@@ -25,26 +25,27 @@
 		}else if(typeof method === 'object' || !method){
 			return methods.init.apply(this, arguments);
 		}else{
-			$.error('Method ' +  method + ' does not exist on bill');
+			$.error('Method ' + method + ' does not exist on bill');
 			return this;
 		}
 	};
 
 
-/**
- * Basic functionality
- */
-/*> base/basic.js */
-/*> base/browserNotice.js */
+	/**
+	 * Basic functionality
+	 */
+	/*> base/basic.js */
+	/*> base/browserNotice.js */
 
-/**
- * UI functionality
- */
-/*> ui/alert.js */
-/*> ui/accordion.js */
-/*> ui/tabs.js */
-/*> ui/modal.js */
-/*> ui/slider.js */
+	/**
+	 * UI functionality
+	 */
+	/*> ui/navigation.js */
+	/*> ui/alert.js */
+	/*> ui/accordion.js */
+	/*> ui/tabs.js */
+	/*> ui/modal.js */
+	/*> ui/slider.js */
 
 	/**
 	 * Run any UI JS that needs to be run on page load
