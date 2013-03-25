@@ -10,13 +10,13 @@ methods.navigation = function(){
 		var $nav = $(this);
 
 		// loop through all of the li elements and check if they have children
-		$nav.children('ul').find('li').each(function(){
-			var $item = $(this);
-			if($item.children('ul:first').length){
-				// the item has sub-navigation
-				$item.addClass('hasSub');
-			}
-		});
+		$nav.addClass('dynamic').children('ul').find('li').each(function(){
+					var $item = $(this);
+					if($item.children('ul:first').length){
+						// the item has sub-navigation
+						$item.addClass('hasSub');
+					}
+				});
 	});
 };
 
