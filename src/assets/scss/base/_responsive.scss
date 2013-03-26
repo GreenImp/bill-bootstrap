@@ -164,6 +164,14 @@
 			padding:0;
 		}
 
+		&.collapse-left{
+			padding-left:0;
+		}
+
+		&.collapse-right{
+			padding-right:0;
+		}
+
 		/**
 		 * Allow centering of a column
 		 */
