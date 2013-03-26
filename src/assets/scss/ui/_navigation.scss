@@ -329,7 +329,20 @@
 		}
 
 		&.dynamic{
-			> ul > li{
+			position:relative;
+			overflow:hidden;
+			width:100%;
+			min-height:44px;
+
+			> .inner{
+				position:absolute;
+				top:0;
+				left:0;
+				min-width:100%;
+				height:100%;
+			}
+
+			ul > li{
 				&:hover{
 					> ul{
 						top:0;

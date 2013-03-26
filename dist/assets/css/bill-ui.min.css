@@ -501,13 +501,28 @@ figure figcaption{
 		padding-right:28px
 	}
 
-	.nav.dynamic>ul>li:hover>ul{
+	.nav.dynamic{
+		position:relative;
+		overflow:hidden;
+		width:100%;
+		min-height:44px
+	}
+
+	.nav.dynamic>.inner{
+		position:absolute;
+		top:0;
+		left:0;
+		min-width:100%;
+		height:100%
+	}
+
+	.nav.dynamic ul>li:hover>ul{
 		top:0;
 		left:100%;
 		width:100%
 	}
 
-	.nav.dynamic>ul>li.hasSub:after{
+	.nav.dynamic ul>li.hasSub:after{
 		left:auto;
 		right:12px;
 		top:17px;
@@ -518,12 +533,12 @@ figure figcaption{
 		border-bottom:5px solid transparent
 	}
 
-	.nav.dynamic>ul>li.hasSub>a, .nav.dynamic>ul>li.hasSub>span, .nav.dynamic>ul>li.hasSub>label, .nav.dynamic>ul>li.hasSub>div, .nav.dynamic>ul>li.hasSub>h1, .nav.dynamic>ul>li.hasSub>h2, .nav.dynamic>ul>li.hasSub>h3, .nav.dynamic>ul>li.hasSub>h4, .nav.dynamic>ul>li.hasSub>h5, .nav.dynamic>ul>li.hasSub>h6{
+	.nav.dynamic ul>li.hasSub>a, .nav.dynamic ul>li.hasSub>span, .nav.dynamic ul>li.hasSub>label, .nav.dynamic ul>li.hasSub>div, .nav.dynamic ul>li.hasSub>h1, .nav.dynamic ul>li.hasSub>h2, .nav.dynamic ul>li.hasSub>h3, .nav.dynamic ul>li.hasSub>h4, .nav.dynamic ul>li.hasSub>h5, .nav.dynamic ul>li.hasSub>h6{
 		padding-left:12px;
 		padding-right:28px
 	}
 
-	.nav.dynamic>ul>li ul{
+	.nav.dynamic ul>li ul{
 		position:absolute;
 		top:0;
 		left:100%
