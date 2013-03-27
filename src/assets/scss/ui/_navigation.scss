@@ -24,6 +24,8 @@
 		}
 	}
 
+	.backBtn{display:none;}
+
 	/**
 	 * Clear the inner floated elements
 	 */
@@ -36,7 +38,8 @@
 	/**
 	 * Basic UL styling
 	 */
-	ul{
+	ul,
+	.inner ul{
 		list-style:none;
 		margin:0;
 		padding:0;
@@ -103,7 +106,8 @@
 	 * Define level specific styling
 	 */
 	/* Root level */
-	> ul{
+	> ul,
+	> .inner > ul{
 		float:left;
 
 		/**
@@ -134,7 +138,7 @@
 			/**
 			 * Sub menus
 			 */
-			> ul{
+			> ul > li{
 				font-size:0.85em;
 			}
 
@@ -269,7 +273,9 @@
 		overflow:hidden;
 
 		ul,
-		ul.right{
+		ul.right,
+		.inner ul,
+		.inner ul.right{
 			float:none;
 			text-align:left;
 			border-top:1px solid #fff;
@@ -339,49 +345,69 @@
 				top:0;
 				left:0;
 				min-width:100%;
-				height:100%;
-			}
+				min-height:100%;
 
-			ul > li{
-				&:hover{
-					> ul{
+				ul > li{
+					font-size:1em;
+
+					&:hover{
+						> ul{
+							top:0;
+							left:100%;
+							width:100%;
+						}
+					}
+
+					/**
+					 * give textual elements some styling
+					 */
+					a,
+					span,
+					label,
+					div,
+					h1, h2, h3,
+					h4, h5, h6{
+						padding:12px;
+					}
+
+					/*
+					 * sub li with sub menu
+					 */
+					&.hasSub{
+						&:after{
+							left:auto;
+							right:12px;
+							top:17px;
+							border:none;
+							border-left:5px solid #fff;
+							border-right:none;
+							border-top:5px solid transparent;
+							border-bottom:5px solid transparent;
+						}
+
+						> a,
+						> span,
+						> label,
+						> div,
+						> h1, > h2, > h3,
+						> h4, > h5, > h6{
+							padding-left:12px;
+							padding-right:28px;
+						}
+					}
+
+					ul{
+						position:absolute;
 						top:0;
 						left:100%;
-						width:100%;
 					}
 				}
+			}
 
-				/*
-				 * sub li with sub menu
-				 */
-				&.hasSub{
-					&:after{
-						left:auto;
-						right:12px;
-						top:17px;
-						border:none;
-						border-left:5px solid #fff;
-						border-right:none;
-						border-top:5px solid transparent;
-						border-bottom:5px solid transparent;
-					}
-
-					> a,
-					> span,
-					> label,
-					> div,
-					> h1, > h2, > h3,
-					> h4, > h5, > h6{
-						padding-left:12px;
-						padding-right:28px;
-					}
-				}
-
-				ul{
-					position:absolute;
-					top:0;
-					left:100%;
-				}
+			.backBtn{
+				display:block;
+				padding:12px;
+				cursor:pointer;
 			}
 		}
 	}
