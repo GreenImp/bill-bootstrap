@@ -45,8 +45,7 @@ $.extend({
 				// check if the key is an array
 				if(arrayCheck.test(key)){
 					// key is an array
-					// TODO - I don't think this should overwrite the 'key' variable, defined above
-					var key = RegExp.$1;	// the key
+					key = RegExp.$1;	// the key
 
 					// ensure that they key is initialised as a variable of the cache
 					cache[queryString][key] = cache[queryString][RegExp.$1] || {length: 0};
