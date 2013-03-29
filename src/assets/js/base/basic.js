@@ -18,7 +18,7 @@ $.extend({
 		var queryString = window.location.search.substr(1);
 		if(!queryString){
 			// no query string
-			return {};
+			return name ? null : {};
 		}
 
 		// check for a cached query string
