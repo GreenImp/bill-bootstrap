@@ -12,7 +12,11 @@ methods.navigation = function(){
 		var $nav = $(this);
 
 		// loop through all of the li elements and check if they have children
-		$nav.addClass('dynamic').wrapInner('<div class="inner"></div>').find('.inner > ul').find('li').each(function(){
+		$nav
+			.addClass('dynamic')
+			.wrapInner('<div class="inner"></div>')
+			.find('.inner > ul li')
+				.each(function(){
 					var $item = $(this),					// the li element
 						$children = $item.children('ul');	// any child ul elements
 					if($children.length){
@@ -44,6 +48,7 @@ methods.navigation = function(){
 				var target = $(e.target);
 				if(target.hasClass('hasSub') || ((target.prop('tagName').toUpperCase() != 'UL') && target.parent().hasClass('hasSub'))){
 					// we're on an actual hasSub element
+					$(this).children('ul').show();
 					$inner.stop(true, true).animate({left:'-=' + parseFloat($nav.innerWidth())}, animSpeed);
 					e.preventDefault();
 				}
@@ -53,11 +58,14 @@ methods.navigation = function(){
 
 		$nav.find('.backBtn').on('click', function(e){
 			// get the screen size
-			var viewport = $.viewport() || null;
+			var $parent = $(this).parents('.hasSub:first');
+				viewport = $.viewport() || null;
 
 			if(viewport && (viewport.width <= 767)){
 				// we're on a small screen
-				$inner.stop(true, true).animate({left:'+=' + parseFloat($nav.innerWidth())}, animSpeed);
+				$inner.stop(true, true).animate({left:'+=' + parseFloat($nav.innerWidth())}, animSpeed, function(){
+					$parent.children('ul').hide();
+				});
 
 				e.preventDefault();
 			}
@@ -65,7 +73,7 @@ methods.navigation = function(){
 		});
 
 
-		$(window).on('resize', function(){
+		$(window).on('ready resize', function(){
 			var viewport = $.viewport() || null;
 
 			if(viewport && (viewport.width <= 767)){
