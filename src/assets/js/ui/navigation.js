@@ -48,8 +48,22 @@ methods.navigation = function(){
 				var target = $(e.target);
 				if(target.hasClass('hasSub') || ((target.prop('tagName').toUpperCase() != 'UL') && target.parent().hasClass('hasSub'))){
 					// we're on an actual hasSub element
-					$(this).children('ul').show();
+
+					// get the sub nav and show it
+					var $subs = $(this).children('ul').show();
+					// set the nav container height to that of the sub nav
+					$nav.height($subs.outerHeight());
+					$nav.height((function(){
+						var height = 0;
+						$subs.each(function(){
+							height += $(this).outerHeight(true);
+						});
+						return height;
+					}));
+
+					// slide the sub nav into view
 					$inner.stop(true, true).animate({left:'-=' + parseFloat($nav.innerWidth())}, animSpeed);
+
 					e.preventDefault();
 				}
 			}
@@ -63,7 +77,20 @@ methods.navigation = function(){
 
 			if(viewport && (viewport.width <= 767)){
 				// we're on a small screen
+
+				// set the nav container height to that of the parent nav's parent (so we show all of it's siblings too)
+				$nav.height((function(){
+					var height = 0;
+					// loop through all ul elements at the same level and calculate their height
+					$parent.parent('ul').parent().children('ul').each(function(){
+						height += $(this).outerHeight(true);
+					});
+					return height;
+				}));
+
+				// slide the nav back to show the parent
 				$inner.stop(true, true).animate({left:'+=' + parseFloat($nav.innerWidth())}, animSpeed, function(){
+					// hide the children (this stops them overlapping
 					$parent.children('ul').hide();
 				});
 
@@ -72,15 +99,23 @@ methods.navigation = function(){
 			e.stopPropagation();
 		});
 
-
+		/**
+		 * Ensure that the nav container is
+		 * the correct height on small screens
+		 */
 		$(window).on('ready resize', function(){
 			var viewport = $.viewport() || null;
 
 			if(viewport && (viewport.width <= 767)){
+				// we're on a small screen - define a fixed height
 				$nav.height($inner.outerHeight());
 			}else{
+				// we're not on a small screen - remove any style attributes
 				$nav.removeAttr('style');
-				$inner.removeAttr('style');
+				$inner
+						.removeAttr('style')
+						.find('ul')
+							.removeAttr('style');
 			}
 		});
 	});
