@@ -80,23 +80,24 @@
 			 * li with sub menu
 			 */
 			&.hasSub{
-				&:after{
-					content:'';
-					position:absolute;
-					right:12px;
-					top:20px;
-					border-top:5px solid #fff;
-					border-left:5px solid transparent;
-					border-right:5px solid transparent;
-				}
-
 				> a,
 				> span,
 				> label,
 				> div,
 				> h1, > h2, > h3,
 				> h4, > h5, > h6{
+					position:relative;
 					padding-right:28px;
+
+					&:after{
+						content:'';
+						position:absolute;
+						right:12px;
+						top:20px;
+						border-top:5px solid #fff;
+						border-left:5px solid transparent;
+						border-right:5px solid transparent;
+					}
 				}
 			}
 		}
@@ -192,12 +193,19 @@
 					 * sub li with sub menu
 					 */
 					&.hasSub{
-						&:after{
-							top:8px;
-							border:none;
-							border-left:5px solid #fff;
-							border-top:5px solid transparent;
-							border-bottom:5px solid transparent;
+						a,
+						span,
+						label,
+						div,
+						h1, h2, h3,
+						h4, h5, h6{
+							&:after{
+								top:8px;
+								border:none;
+								border-left:5px solid #fff;
+								border-top:5px solid transparent;
+								border-bottom:5px solid transparent;
+							}
 						}
 					}
 				}
@@ -237,17 +245,6 @@
 					 * sub li with sub menu
 					 */
 					&.hasSub{
-
-						&:after{
-							left:12px;
-							right:auto;
-							border:none;
-							border-left:none;
-							border-right:5px solid #fff;
-							border-top:5px solid transparent;
-							border-bottom:5px solid transparent;
-						}
-
 						> a,
 						> span,
 						> label,
@@ -256,6 +253,16 @@
 						> h4, > h5, > h6{
 							padding-right:12px;
 							padding-left:28px;
+
+							&:after{
+								left:12px;
+								right:auto;
+								border:none;
+								border-left:none;
+								border-right:5px solid #fff;
+								border-top:5px solid transparent;
+								border-bottom:5px solid transparent;
+							}
 						}
 					}
 				}
@@ -300,6 +307,7 @@
 					left:auto;
 					right:auto;
 					bottom:auto;
+					padding-left:8px;
 					width:100%;
 					height:auto;
 
@@ -308,17 +316,6 @@
 						 * sub li with sub menu
 						 */
 						&.hasSub{
-
-							&:after{
-								left:auto;
-								right:12px;
-								border:none;
-								border-left:5px solid #fff;
-								border-right:none;
-								border-top:5px solid transparent;
-								border-bottom:5px solid transparent;
-							}
-
 							> a,
 							> span,
 							> label,
@@ -327,6 +324,16 @@
 							> h4, > h5, > h6{
 								padding-left:12px;
 								padding-right:28px;
+
+								&:after{
+									left:auto;
+									right:12px;
+									border:none;
+									border-left:5px solid #fff;
+									border-right:none;
+									border-top:5px solid transparent;
+									border-bottom:5px solid transparent;
+								}
 							}
 						}
 					}
@@ -347,59 +354,77 @@
 				min-width:100%;
 				min-height:100%;
 
-				ul > li{
-					font-size:1em;
+				ul,
+				ul.right,
+				ul.right ul{
+					padding-left:0;
 
-					&:hover{
-						> ul{
+					> li{
+						position:static;
+						font-size:1em;
+
+						&.divider:after{
+							position:static;
+							top:auto;
+							left:auto;
+							right:auto;
+							display:block;
+							margin:0 10px;
+						}
+
+						/**
+						 * give textual elements some styling
+						 */
+						a,
+						span,
+						label,
+						div,
+						h1, h2, h3,
+						h4, h5, h6{
+							padding:12px;
+						}
+
+						/*
+						 * sub li with sub menu
+						 */
+						&.hasSub{
+							> a,
+							> span,
+							> label,
+							> div,
+							> h1, > h2, > h3,
+							> h4, > h5, > h6{
+								padding-left:12px;
+								padding-right:28px;
+
+								&:after{
+									left:auto;
+									right:12px;
+									top:17px;
+									border:none;
+									border-left:5px solid #fff;
+									border-right:none;
+									border-top:5px solid transparent;
+									border-bottom:5px solid transparent;
+								}
+							}
+						}
+
+						&:hover{
+							> ul{
+								top:0;
+								left:100%;
+								right:auto;
+								width:100%;
+							}
+						}
+
+						ul{
+							position:absolute;
 							top:0;
 							left:100%;
-							width:100%;
+							display:none;
 						}
-					}
-
-					/**
-					 * give textual elements some styling
-					 */
-					a,
-					span,
-					label,
-					div,
-					h1, h2, h3,
-					h4, h5, h6{
-						padding:12px;
-					}
-
-					/*
-					 * sub li with sub menu
-					 */
-					&.hasSub{
-						&:after{
-							left:auto;
-							right:12px;
-							top:17px;
-							border:none;
-							border-left:5px solid #fff;
-							border-right:none;
-							border-top:5px solid transparent;
-							border-bottom:5px solid transparent;
-						}
-
-						> a,
-						> span,
-						> label,
-						> div,
-						> h1, > h2, > h3,
-						> h4, > h5, > h6{
-							padding-left:12px;
-							padding-right:28px;
-						}
-					}
-
-					ul{
-						position:absolute;
-						top:0;
-						left:100%;
 					}
 				}
 			}
