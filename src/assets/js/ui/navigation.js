@@ -92,7 +92,7 @@ methods.navigation = function(){
 				$nav.data('animating', true);
 
 				$inner.find('li.active').removeClass('active');
-				$parent.addClass('active');
+				$parent.parents('li.hasSub').addClass('active');
 
 				// set the nav container height to that of the parent nav's parent (so we show all of it's siblings too)
 				$nav.height((function(){
