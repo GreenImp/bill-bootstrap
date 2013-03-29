@@ -37,7 +37,7 @@ methods.navigation = function(){
 		/**
 		 * Add click handler for showing sub navigation on smaller screens
 		 */
-		$inner.find('li.hasSub').on('click', function(e){
+		$inner.find('li.hasSub').on('click swipeleft', function(e){
 			// get the screen size
 			var viewport = $.viewport() || null;
 
@@ -80,7 +80,7 @@ methods.navigation = function(){
 			e.stopPropagation();
 		});
 
-		$inner.find('li.backBtn').on('click', function(e){
+		$inner.find('li.backBtn').on('click swiperight', function(e){
 			// get the screen size
 			var viewport = $.viewport() || null;
 
