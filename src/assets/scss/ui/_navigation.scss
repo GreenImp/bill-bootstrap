@@ -35,6 +35,12 @@
 		clear:both;
 	}
 
+	> .top{
+		float:left;
+
+		> .menuBtn{display:none;}
+	}
+
 	/**
 	 * Basic UL styling
 	 */
@@ -349,8 +355,19 @@
 			width:100%;
 			min-height:44px;
 
+			> .top{
+				float:none;
+				overflow:hidden;
+
+				> .menuBtn{
+					display:block;
+					float:right;
+					cursor:pointer;
+				}
+			}
+
 			> .inner{
-				position:absolute;
+				position:relative;
 				top:0;
 				left:0;
 				min-width:100%;
