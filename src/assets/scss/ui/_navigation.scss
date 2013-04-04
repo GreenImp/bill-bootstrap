@@ -357,11 +357,17 @@
 
 			> .top{
 				float:none;
+				height:44px;
 				overflow:hidden;
 
 				> .menuBtn{
 					display:block;
 					float:right;
+					width:44px;
+					height:100%;
+					min-height:44px;
+					text-indent:-9999em;
+					background:url('../images/icn-menu.png') center center no-repeat;
 					cursor:pointer;
 				}
 			}
