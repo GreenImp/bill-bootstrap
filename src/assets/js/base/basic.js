@@ -48,7 +48,7 @@ $.extend({
 					key = RegExp.$1;	// the key
 
 					// ensure that they key is initialised as a variable of the cache
-					cache[queryString][key] = cache[queryString][RegExp.$1] || {length: 0};
+					cache[queryString][key] = cache[queryString][key] || {length: 0};
 
 					var arrayNames = '',							// string of previous array key names
 						arrays = RegExp.$2.match(arrayKeyCheck),	// list of array key names
