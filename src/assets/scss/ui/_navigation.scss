@@ -291,23 +291,16 @@
 		.inner ul.right{
 			float:none;
 			text-align:left;
-			border-bottom:1px solid #fff;
 
 			li{
 				float:none;
+				margin:0;
 				width:100%;
 				white-space:normal;
-				border-bottom:1px solid #fff;
-
-				&:last-child{
-					border:none;
-				}
+				border-top:1px solid #999;
+				border-bottom:1px solid #666;
 
 				&:before{
-					display:none;
-				}
-
-				&.divider:after{
 					display:none;
 				}
 
@@ -322,6 +315,7 @@
 					height:auto;
 
 					li{
+						margin:0;
 						white-space:normal;
 
 						/*
@@ -349,6 +343,40 @@
 							}
 						}
 					}
+				}
+			}
+		}
+
+		> ul,
+		.inner > ul{
+			border-top:1px solid #444;
+
+			&:first-child{
+				border-top:none;
+
+				> li:first-child{
+					border-top:none;
+				}
+			}
+
+			&:last-child{
+				> li:last-child{
+					border-bottom:none;
+				}
+			}
+
+
+			> li.divider,
+			> li ul > li.divider{
+				border-bottom-color:#444;
+
+				&:after{
+					position:static;
+					top:auto;
+					left:auto;
+					right:auto;
+					display:block;
+					border-bottom-color:#666;
 				}
 			}
 		}
@@ -405,9 +433,20 @@
 						.backBtn{
 							display:block;
 							padding:12px;
-							font-size:1.2em;
-							border:none;
+							font-size:1.3em;
+							border-top:none;
 							cursor:pointer;
+
+							&:before{
+								content:'\00AB';
+								display:inline;
+								padding-right:5px;
+							}
+
+							&:hover{
+								color:darken(#fff, 5%);
+								background:darken($background-colour, 75%);
+							}
 						}
 
 						/**
