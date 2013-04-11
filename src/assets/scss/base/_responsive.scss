@@ -84,18 +84,7 @@
 	 * and only increase to a max size of 1140px;
 	 */
 	&.constrain{
-		max-width:1440px;
-	}
-
-	/**
-	 * Fixed size for adaptive layouts
-	 */
-	&.adapt{
-		width:960px;
-
-		.row, .deck{
-			min-width:0;
-		}
+		max-width:1140px;
 	}
 }
 
@@ -229,30 +218,10 @@
 /**
  * Media queries for handling smaller screen sizes
  */
-@media (min-width: 1200px) {
-/**
- * Fixed size for adaptive layouts
- */
-	.container.adapt,
-	.ship.adapt{
-		width:1170px;
-	}
-}
-
 @media only screen and (max-width: 1023px) {
 	body{
 		font-size:0.8em;
 		line-height:1.5em;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-/**
- * Fixed size for adaptive layouts
- */
-	.container.adapt,
-	.ship.adapt{
-		width:724px;
 	}
 }
 
@@ -270,14 +239,6 @@
 		margin-right:0;
 		padding-left:0;
 		padding-right:0;
-	}
-
-	/**
-	 * Fixed size for adaptive layouts
-	 */
-	.container.adapt,
-	.ship.adapt{
-		width:auto;
 	}
 
 	.row, .deck{
