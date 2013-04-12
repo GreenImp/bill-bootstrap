@@ -15,38 +15,9 @@
 	<link href="dist/assets/css/bill-ui.min.css" rel="stylesheet" media="all">
 	<script src="dist/assets/resources/modernizr-2.6.2.min.js"></script>
 
-	<style>
-		html{width:100%;}
-
-		body{padding:10px 0;}
-
-		.js-warning{display:none;}
-		.no-js .js-warning{
-			display:block;
-			background:#f0f;
-		}
-
-		/*section{
-			margin:10px 0;
-			border:1px solid #000;
-		}
-		figure{
-			border:1px solid #00f;
-		}
-
-		section .row, .deck{
-			border:1px solid #666;
-			background:#c60f13;
-		}
-
-		section .column, .plank{
-			color:#000;
-			background:#ccc;
-			border:1px dotted #0f0;
-			border-top:none;
-			border-bottom:none;
-		}*/
-	</style>
+	<!--[if lt IE 9]>
+	<script src="dist/assets/resources/html5shiv.js"></script>
+	<![endif]-->
 </head>
 
 <body>
@@ -961,7 +932,8 @@ computer-name:/var/www/ user$ </samp></pre>
 	<script src="dist/assets/js/bill.min.js"></script>
 	<script>
 		(function($, document){
-			$('body').browserNotice();
+			// display browser not supported message
+			$(document).bill('browserNotice');
 		})(jQuery, document);
 	</script>
 </body>
