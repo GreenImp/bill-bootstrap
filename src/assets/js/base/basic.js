@@ -38,37 +38,39 @@ $.extend({
 
 			// loop through each key=>value pair
 			for(var i = 0; i < queryVars.length; i++){
-				var variable = queryVars[i].split('='),
-					key = decodeURIComponent(variable[0]),
-					value = (typeof variable[1] == 'string') ? decodeURIComponent(variable[1].replace(/\+/g, ' ')) : undefined;
+				if(queryVars[i]){
+					var variable = queryVars[i].split('='),
+						key = decodeURIComponent(variable[0]),
+						value = (typeof variable[1] == 'string') ? decodeURIComponent(variable[1].replace(/\+/g, ' ')) : undefined;
 
-				// check if the key is an array
-				if(arrayCheck.test(key)){
-					// key is an array
-					key = RegExp.$1;	// the key
+					// check if the key is an array
+					if(arrayCheck.test(key)){
+						// key is an array
+						key = RegExp.$1;	// the key
 
-					// ensure that they key is initialised as a variable of the cache
-					cache[queryString][key] = cache[queryString][key] || {length: 0};
+						// ensure that they key is initialised as a variable of the cache
+						cache[queryString][key] = cache[queryString][key] || {length: 0};
 
-					var arrayNames = '',							// string of previous array key names
-						arrays = RegExp.$2.match(arrayKeyCheck),	// list of array key names
-						arrayLen = arrays.length;					// count of array key names
-					// loop through the array key names and create the variables
-					$.each(arrays, function(i, subKey){
-						// determine the key name - if it is a string, we use it, if it is empty we calculate the numeric number, from the current array length
-						subKey = (subKey && (subKey != '[]')) ? '"' + subKey.replace(/\[|\]/g, '') + '"' : eval('cache[queryString][key]' + arrayNames + '.length');
+						var arrayNames = '',							// string of previous array key names
+							arrays = RegExp.$2.match(arrayKeyCheck),	// list of array key names
+							arrayLen = arrays.length;					// count of array key names
+						// loop through the array key names and create the variables
+						$.each(arrays, function(i, subKey){
+							// determine the key name - if it is a string, we use it, if it is empty we calculate the numeric number, from the current array length
+							subKey = (subKey && (subKey != '[]')) ? '"' + subKey.replace(/\[|\]/g, '') + '"' : eval('cache[queryString][key]' + arrayNames + '.length');
 
-						// create the variable - I KNOW that using eval is horrible, but it's the best solution I could come up with quickly.
-						eval('cache[queryString][key]' + arrayNames + '[' + subKey + '] = cache[queryString][key]' + arrayNames + '[' + subKey + '] || ' + ((i+1 == arrayLen) ? 'value' : '[]'));
+							// create the variable - I KNOW that using eval is horrible, but it's the best solution I could come up with quickly.
+							eval('cache[queryString][key]' + arrayNames + '[' + subKey + '] = cache[queryString][key]' + arrayNames + '[' + subKey + '] || ' + ((i+1 == arrayLen) ? 'value' : '[]'));
 
-						// add the array key to the list
-						arrayNames += !isNaN(subKey) ? '' : '[' + subKey + ']';
-					});
+							// add the array key to the list
+							arrayNames += !isNaN(subKey) ? '' : '[' + subKey + ']';
+						});
 
-					//cache[queryString][key][RegExp.$2 ? RegExp.$2 : cache[queryString][key].length] = value;
-					cache[queryString][key].length++;
-				}else{
-					cache[queryString][key] = value;
+						//cache[queryString][key][RegExp.$2 ? RegExp.$2 : cache[queryString][key].length] = value;
+						cache[queryString][key].length++;
+					}else{
+						cache[queryString][key] = value;
+					}
 				}
 			}
 
