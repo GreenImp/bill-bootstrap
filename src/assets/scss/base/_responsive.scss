@@ -84,18 +84,7 @@
 	 * and only increase to a max size of 1140px;
 	 */
 	&.constrain{
-		max-width:1440px;
-	}
-
-	/**
-	 * Fixed size for adaptive layouts
-	 */
-	&.adapt{
-		width:960px;
-
-		.row, .deck{
-			min-width:0;
-		}
+		max-width:1140px;
 	}
 }
 
@@ -158,10 +147,17 @@
 		}
 
 		/**
-		 * Allow columns to be collapsed (removes padding)
+		 * Allow columns to be collapsed
 		 */
 		&.collapse{
 			padding:0;
+		}
+		/**
+		 * Allow columns to be collapsed horizontally (removes left/right padding)
+		 */
+		&.collapse-horizontal{
+			padding-left:0;
+			padding-right:0;
 		}
 
 		&.collapse-left{
@@ -171,6 +167,23 @@
 		&.collapse-right{
 			padding-right:0;
 		}
+
+		/**
+		 * Allow columns to be collapsed vertically (removes top/bottom padding)
+		 */
+		&.collapse-vertical{
+			padding-top:0;
+			padding-bottom:0;
+		}
+
+		&.collapse-top{
+			padding-top:0;
+		}
+
+		&.collapse-bottom{
+			padding-bottom:0;
+		}
+
 
 		/**
 		 * Allow centering of a column
@@ -205,30 +218,10 @@
 /**
  * Media queries for handling smaller screen sizes
  */
-@media (min-width: 1200px) {
-/**
- * Fixed size for adaptive layouts
- */
-	.container.adapt,
-	.ship.adapt{
-		width:1170px;
-	}
-}
-
 @media only screen and (max-width: 1023px) {
 	body{
 		font-size:0.8em;
 		line-height:1.5em;
-	}
-}
-
-@media (min-width: 768px) and (max-width: 979px) {
-/**
- * Fixed size for adaptive layouts
- */
-	.container.adapt,
-	.ship.adapt{
-		width:724px;
 	}
 }
 
@@ -248,14 +241,6 @@
 		padding-right:0;
 	}
 
-/**
- * Fixed size for adaptive layouts
- */
-	.container.adapt,
-	.ship.adapt{
-		width:auto;
-	}
-
 	.row, .deck{
 		.column, .plank{
 			width:auto !important;
@@ -267,10 +252,19 @@
 
 
 			&.collapse,
-			.collapse-left,
-			.collapse-right{
+			&.collapse-horizontal,
+			&.collapse-left,
+			&.collapse-right{
 				padding-left:0;
 				padding-right:0;
+			}
+
+			&.collapse,
+			&.collapse-vertical,
+			&.collapse-top,
+			&.collapse-bottom{
+				padding-top:0;
+				padding-bottom:0;
 			}
 		}
 	}
@@ -285,7 +279,7 @@
 only screen and (-moz-min-device-pixel-ratio: 1.25),
 only screen and (min-device-pixel-ratio: 1.25),
 only screen and (min-resolution: 120dpi) {
-/* Retina-specific stuff here */
+	/* Retina-specific stuff here */
 }
 
 /* 1.3 dpr */
@@ -293,7 +287,7 @@ only screen and (min-resolution: 120dpi) {
 only screen and (-moz-min-device-pixel-ratio: 1.3),
 only screen and (min-device-pixel-ratio: 1.3),
 only screen and (min-resolution: 124.8dpi) {
-/* Retina-specific stuff here */
+	/* Retina-specific stuff here */
 }
 
 /* 1.5 dpr */
@@ -301,7 +295,7 @@ only screen and (min-resolution: 124.8dpi) {
 only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (min-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 144dpi) {
-/* Retina-specific stuff here */
+	/* Retina-specific stuff here */
 }
 
 /* 2 dpr */
@@ -309,5 +303,5 @@ only screen and (min-resolution: 144dpi) {
 only screen and (-moz-min-device-pixel-ratio: 2),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
-/* Retina-specific stuff here */
+	/* Retina-specific stuff here */
 }
