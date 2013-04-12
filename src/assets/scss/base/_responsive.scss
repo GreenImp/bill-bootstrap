@@ -10,6 +10,7 @@
  * Device specific display of content
  * This allows us to show/hide certain elements depending on the device
  * ========================================================================== */
+
 .visible-small{
 	display:none !important;
 }
@@ -55,6 +56,8 @@
 		display:none !important;
 	}
 }
+
+
 
 /* ==========================================================================
  * Grid layout
@@ -231,12 +234,12 @@
 
 	.row, .deck{
 		.column, .plank{
-			width:auto !important;
 			float:none !important;
 			margin-left:0 !important;
 			margin-right:0 !important;
 			padding-left:20px;
 			padding-right:20px;
+			width:auto !important;
 
 
 			&.collapse,
@@ -253,6 +256,21 @@
 			&.collapse-bottom{
 				padding-top:0;
 				padding-bottom:0;
+			}
+
+
+			/**
+			 * columns for small screens
+			 */
+			/**
+			 * Setting individual column widths
+			 */
+			@for $i from 1 through $grid-columns{
+				&.#{nth($column-numbers, $i)}-small{
+					float:left !important;
+					padding:0 10px;
+					width:100%/($grid-columns/$i) !important;
+				}
 			}
 		}
 	}
