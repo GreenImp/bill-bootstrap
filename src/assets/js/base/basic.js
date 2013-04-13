@@ -148,3 +148,61 @@ Array.prototype.sum = function(){
 
 	return sum;
 };
+
+
+
+/* ==========================================================================
+ * Object Functions
+ * ========================================================================== */
+
+/**
+ * Checks if the given object is equal
+ * to (same as) the current object.
+ *
+ * @param obj
+ * @returns {boolean}
+ */
+Object.prototype.equals = function(obj){
+	var i;
+	for(i in this){
+		if(typeof(obj[i])=='undefined'){
+			return false;
+		}
+	}
+
+	for(i in this){
+		if(this[i]){
+			switch(typeof(this[i])){
+				case 'object':
+					if(!this[i].equals(obj[i])){
+						return false;
+					}
+				break;
+				case 'function':
+					if(
+						typeof(obj[i]) == 'undefined' ||
+						(i != 'equals' && this[i].toString() != obj[i].toString())
+					){
+						return false;
+					}
+				break;
+				default:
+					if(this[i] != obj[i]){
+						return false;
+					}
+				break;
+			}
+		}else{
+			if (obj[i])
+			return false;
+		}
+	}
+
+	for(i in obj){
+		if(typeof(this[i]) == 'undefined'){
+			return false;
+		}
+	}
+
+	return true;
+};
