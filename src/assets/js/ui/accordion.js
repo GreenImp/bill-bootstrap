@@ -181,7 +181,7 @@ methods.accordion = function(userOptions){
 				var animType = options.animType,					// the current animation type
 					activeTitle = titles.filter('.active:first');	// check for a button with class 'active'
 				// if no tab buttons have a class of active, just go with the first tab
-				activeTitle = (activeTitle.length == 0) ? titles.first() : activeTitle;
+				activeTitle = !activeTitle.length ? titles.first() : activeTitle;
 
 				// set no anim type, so that the tab appears immediately
 				options.animType = null;
