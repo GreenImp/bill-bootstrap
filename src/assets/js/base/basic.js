@@ -1,5 +1,5 @@
 /**
- * Author: leelangley
+ * Author: GreenImp
  * Date Created: 19/03/2013 10:44
  */
 
@@ -94,6 +94,36 @@ $.extend({
 		}
 	}
 });
+
+/**
+ * Console failsafe, to stop errors when console is unavailable
+ * http://paulirish.com/2008/graceful-degredation-of-your-firebug-specific-code/
+ */
+if(!('console' in window)){
+	var names = [
+		'assert',
+		'count',
+		'debug',
+		'dir',
+		'dirxml',
+		'error',
+		'group',
+		'groupEnd',
+		'info',
+		'log',
+		'profile',
+		'profileEnd',
+		'time',
+		'timeEnd',
+		'trace',
+		'warn'
+	];
+    window.console = {};
+    for(var i = 0; i < names.length; i++){
+		window.console[names[i]] = function(){};
+	}
+}
+
 
 
 
