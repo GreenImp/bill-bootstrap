@@ -18,10 +18,12 @@
 	<!--[if lt IE 9]>
 	<script src="../dist/assets/resources/html5shiv.js"></script>
 	<![endif]-->
+
+	<link href="demo.css" rel="stylesheet" media="all">
 </head>
 
 <body>
-<div class="container">
+<div class="container presentation">
 	<h1>Columns</h1>
 
 	<p>Use this to test the columns.</p>
@@ -29,13 +31,15 @@
 	<nav>
 		<a href="#columns">Normal Columns</a>
 		|
-		<a href="#mobileColumns">Mobile Columns</a>
+		<a href="#smallColumns">Small Columns</a>
 		|
 		<a href="#combinedColumns">Both Columns</a>
 	</nav>
 
 
 	<h2 id="columns">Normal Columns</h2>
+
+	<p>These columns only have a size defined for large devices. On small screens they will flow vertically.</p>
 
 	<div class="deck">
 		<article class="column one">1</article>
@@ -119,7 +123,9 @@
 	</div>
 
 
-	<h2 id="mobileColumns">Mobile Columns</h2>
+	<h2 id="smallColumns">Small Columns</h2>
+
+	<p>These columns only have sizes defined for small screens. On large screens they won't look right.</p>
 
 	<div class="deck">
 		<article class="column one-small">1</article>
@@ -204,6 +210,8 @@
 
 
 	<h2 id="combinedColumns">Both Columns</h2>
+
+	<p>These columns have different sizes defined for large screens and small screens.</p>
 
 	<div class="deck">
 		<article class="column one three-small">1</article>
