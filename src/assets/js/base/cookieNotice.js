@@ -23,10 +23,18 @@
 	if(!cookiesEnabled()){
 		// cookies are disabled
 		$('body').append('<div id="cookieNotice" class="notice info fixed">' +
-					'<p>' +
-						'Your browser is blocking cookies. This website requires the use of cookies to work correctly.' +
-						'<a href="http://www.whatarecookies.com/" title="Find out more about cookies" target="_blank" class="button">Find out more' +
-					'</p>' +
+					'<div class="container constrain">' +
+						'<div class="row">' +
+							'<div class="column eight">' +
+								'<p>' +
+									'Your browser is blocking cookies. This website requires the use of cookies to work correctly.' +
+								'</p>' +
+							'</div>' +
+							'<div class="column four">' +
+								'<a href="http://www.whatarecookies.com/" title="Find out more about cookies" target="_blank" class="button">Find out more' +
+							'</div>' +
+						'</div>' +
+					'</div>' +
 				'</div>')
 	}
 };
