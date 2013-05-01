@@ -3,7 +3,7 @@
  *
  * @return {*}
  */
-methods.accordion = function(userOptions){
+;methods.accordion = function(userOptions){
 	var defaultOptions = {
 		animSpeed:200,
 		animType:'slide',

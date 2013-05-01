@@ -7,7 +7,7 @@
 
 
 /*> jquery.flexslider-min.js */
-methods.slider = $.fn.flexslider;
+;methods.slider = $.fn.flexslider;
 
 // add the slider initializer to the onLoad call
 // it needs to be onLoad, otherwise it doesn't detect image heights correctly.

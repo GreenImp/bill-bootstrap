@@ -3,7 +3,7 @@
  *
  * @return {*}
  */
-methods.tabs = function(userOptions){
+;methods.tabs = function(userOptions){
 	var defaultOptions = {
 		animSpeed:200
 	};

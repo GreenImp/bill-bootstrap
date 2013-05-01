@@ -3,7 +3,7 @@
  *
  * @return {*}
  */
-methods.navigation = function(){
+;methods.navigation = function(){
 	var animSpeed = 200,
 		getHeight = function($elm, $top){
 			var height = 0;
