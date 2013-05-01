@@ -1,4 +1,4 @@
-var alertQueue = [];
+;var alertQueue = [];
 
 methods.alert = function(type, msg, val, callback){
 	if(msg){

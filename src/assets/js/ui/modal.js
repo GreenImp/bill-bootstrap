@@ -7,7 +7,7 @@
 
 
 /*> jquery.fancybox-1.3.4_patch.js */
-methods.modal = $.fn.fancybox;
+;methods.modal = $.fn.fancybox;
 
 // call the modal functionality
 $('.modal').bill('modal', {

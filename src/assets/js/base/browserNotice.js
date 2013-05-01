@@ -12,7 +12,7 @@
  * @param options
  * @return {*}
  */
-methods.browserNotice = function(options){
+;methods.browserNotice = function(options){
 	// list of browsers to check for
 	options = $.extend({
 		ie:9,
@@ -67,7 +67,7 @@ methods.browserNotice = function(options){
 					'<p>You should consider upgrading.</p>' +
 				'</div>' +
 				'<div class="column four">' +
-					'<a href="http://browsehappy.com/" title="Upgrade your browser at Browse Happy" target="_blank"  class="button">Find out more</a>' +
+					'<a href="http://browsehappy.com/" title="Upgrade your browser at Browse Happy" target="_blank" class="button">Find out more</a>' +
 				'</div>' +
 			'</div>' +
 		'</div>');

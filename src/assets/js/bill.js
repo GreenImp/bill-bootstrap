@@ -3,8 +3,7 @@
  * Date Created: 27/01/13 01:42
  */
 
-;
-(function($, window, document){
+;(function($, window, document){
 	// list of available methods
 	var methods = {
 				init: function(options){
@@ -36,6 +35,7 @@
 	 */
 	/*> base/basic.js */
 	/*> base/browserNotice.js */
+	/*> base/cookieNotice.js */
 
 	/**
 	 * UI functionality
