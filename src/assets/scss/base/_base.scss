@@ -209,7 +209,10 @@ button,
 /**
  * Old browser notification
  */
-#browserNotice{}
+#browserNotice,
+#cookieNotice{
+	z-index:1000;
+}
 
 
 /**
