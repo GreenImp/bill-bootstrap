@@ -60,17 +60,19 @@
 	if(!supported){
 		// browser not supported
 		var animSpeed = 600,
-			noticeBox = $('<div id="browserNotice" class="container">' +
-			'<div class="row">' +
-				'<div class="column eight">' +
-					'<p>It looks like you\'re using an outdated web browser. We don\'t support old browsers, as they have limited features and security issues.</p>' +
-					'<p>You should consider upgrading.</p>' +
-				'</div>' +
-				'<div class="column four">' +
-					'<a href="http://browsehappy.com/" title="Upgrade your browser at Browse Happy" target="_blank" class="button">Find out more</a>' +
-				'</div>' +
-			'</div>' +
-		'</div>');
+			noticeBox = $('<div id="browserNotice" class="notice info fixed">' +
+					'<div class="container constrain">' +
+						'<div class="row">' +
+							'<div class="column eight">' +
+								'<p>It looks like you\'re using an outdated web browser. We don\'t support old browsers, as they have limited features and security issues.</p>' +
+								'<p>You should consider upgrading.</p>' +
+							'</div>' +
+							'<div class="column four">' +
+								'<a href="http://browsehappy.com/" title="Upgrade your browser at Browse Happy" target="_blank" class="button">Find out more</a>' +
+							'</div>' +
+						'</div>' +
+					'</div>' +
+				'</div>');
 
 		$('body')
 				// add the browser notice

@@ -209,26 +209,7 @@ button,
 /**
  * Old browser notification
  */
-#browserNotice{
-	position:fixed;
-	top:0;
-	left:0;
-	z-index:999;
-	padding:$default-padding 0;
-	width:100%;
-	color:#fff;
-	font-size:1.2em;
-	background:#2B4141;
-	border-bottom:2px solid #3D3939;
-
-	p{
-		margin:0;
-	}
-
-	.button{
-		margin-top:15px;
-	}
-}
+#browserNotice{}
 
 
 /**
