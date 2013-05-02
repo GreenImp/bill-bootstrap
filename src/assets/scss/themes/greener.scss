@@ -1,0 +1,297 @@
+/**
+ * Author: GreenImp
+ * Based on the theme designed by Kieron Marr - kieronmarr.co.uk (Thanks!)
+ * Date Created: 02/05/2013 13:41
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+/* ==========================================================================
+ * Base
+ * ========================================================================== */
+
+body{
+	font-family:Arial, inherit;
+	color:#434343;
+}
+
+h1, h2, h3,
+h4, h5, h6{
+	color:#3f8961;
+	font-family:'Open Sans', inherit;
+	font-weight:300;
+}
+
+a{
+	color:#3f8961;
+}
+
+
+
+/* ==========================================================================
+ * Forms
+ * ========================================================================== */
+
+fieldset{
+	border-radius:0;
+}
+
+label{
+	font-weight:normal;
+}
+
+
+/**
+ * General form fields
+ */
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+input[type=datetime],
+input[type=number],
+input[type=search],
+input[type=tel],
+input[type=time],
+input[type=url],
+textarea,
+select{
+	color:#434343;
+	font-family:Arial, inherit;
+	border:1px solid #e4e4e4;
+	border-radius:0;
+	box-shadow:none;
+	background:#fff;
+
+	&:focus{
+		background:#fff;
+		border-color:#3cb878;
+		box-shadow:0 0 2px #3cb878;
+	}
+
+	&:hover{
+		background:#fff;
+		border-color:#3cb878;
+	}
+
+	&.error{
+		color:#b83c3c;
+		background:#fff;
+		border-color:#b83c3c;
+
+		&:focus,
+		&:hover{
+			background:#fff;
+			border-color:#b83c3c;
+		}
+
+		&:focus{
+			box-shadow:0 0 2px #b83c3c;
+		}
+	}
+
+	&.valid{
+		color:#4ABF4C;
+		background-color:#fff;
+		border-color:#3cb878;
+
+		&:focus,
+		&:hover{
+			background:#fff;
+		}
+	}
+
+	&[disabled]{
+		color:#888;
+		text-shadow:0 1px rgba(255, 255, 255, 0.75);
+		background-color:#e4e4e4;
+		border-color:#e4e4e4;
+		box-shadow:none;
+		cursor:auto;
+
+		&:focus,
+		&:hover{
+			background-color:#e4e4e4;
+			border-color:#e4e4e4;
+		}
+	}
+
+	&[readonly]{
+		color:#989898;
+		border-color:#e4e4e4;
+		box-shadow:none;
+	}
+}
+
+/**
+ * Form buttons
+ */
+input[type=submit],
+input[type=reset],
+input[type=button],
+button,
+.button{
+	border-radius:0;
+}
+
+
+
+/* ==========================================================================
+ * Lists
+ * ========================================================================== */
+
+ul, ol{}
+
+
+
+/* ==========================================================================
+ * Tables
+ * ========================================================================== */
+
+table{}
+
+
+
+/* ==========================================================================
+ * Quotes
+ * ========================================================================== */
+
+blockquote{
+	margin-left:0;
+	margin-right:0;
+	padding:20px;
+	color:#434343;
+	font-family:Arial, inherit;
+	font-size:1em;
+	background:#e4e4e4;
+	border-left:5px solid #3cb878;
+
+	/**
+	 * Remove quotation marks around the quote
+	 */
+	&:before,
+	&:after{
+		content:'';
+		position:static;
+		display:none;
+		content:'';
+		left:auto;
+		top:auto;
+		bottom:auto;
+	}
+
+
+	/**
+	 * Changes background of inner quotes, so more visible
+	 */
+	q{
+		background:darken(#e4e4e4, 10%);
+	}
+
+	&.light{
+		background:#3cb878;
+		border-color:#434343;
+
+		q{
+			background:darken(#3cb878, 10%);
+		}
+	}
+
+	&.dark{
+		color:#3dab72;
+		background:#434343;
+		border-color:#3cb878;
+
+		q{
+			background:darken(#434343, 10%);
+		}
+	}
+}
+
+q{
+	background:#e4e4e4;
+}
+
+
+
+/* ==========================================================================
+ * Classes
+ * ========================================================================== */
+
+p.lead{
+	color:#3dab72;
+	font-size:1em;
+	line-height:inherit;
+}
+
+
+
+/* ==========================================================================
+ * Notice boxes
+ * ========================================================================== */
+
+.notice{}
+
+
+
+/* ==========================================================================
+ * Accordion
+ * ========================================================================== */
+
+.accordion{}
+
+
+
+/* ==========================================================================
+ * Tabs
+ * ========================================================================== */
+
+.tabs{}
+
+
+
+/* ==========================================================================
+ * Alert
+ * ========================================================================== */
+
+.alertBox{}
+
+
+
+/* ==========================================================================
+ * Breadcrumbs
+ * ========================================================================== */
+
+.breadcrumbs{}
+
+
+
+/* ==========================================================================
+ * Pagination
+ * ========================================================================== */
+
+.pagination{}
+
+
+
+/* ==========================================================================
+ * Panel
+ * ========================================================================== */
+
+.panel{}
+
+
+
+/* ==========================================================================
+ * Slider
+ * ========================================================================== */
+
+.flexslider{}
+
+
+
+/* ==========================================================================
+ * Navigation
+ * ========================================================================== */
+
+.navigation{}
