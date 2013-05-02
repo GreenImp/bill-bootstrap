@@ -11,8 +11,9 @@
  * ========================================================================== */
 
 body{
-	font-family:Arial, inherit;
 	color:#434343;
+	font-family:Arial, inherit;
+	line-height:28px;
 }
 
 h1, h2, h3,
@@ -34,9 +35,17 @@ a{
 
 fieldset{
 	border-radius:0;
+
+	legend{
+		font-size:1.1em;
+		font-family:'Open Sans', inherit;
+		font-weight:normal;
+	}
 }
 
 label{
+	font-size:1em;
+	font-family:'Open Sans', inherit;
 	font-weight:normal;
 }
 
@@ -188,6 +197,10 @@ blockquote{
 		background:darken(#e4e4e4, 10%);
 	}
 
+	cite{
+		line-height:1em;
+	}
+
 	&.light{
 		background:#3cb878;
 		border-color:#434343;
@@ -246,7 +259,41 @@ p.lead{
  * Tabs
  * ========================================================================== */
 
-.tabs{}
+.tabs{
+	> .tab,
+	> ul > li.tab{
+		> a{
+			margin:0 1px 0 0;
+			padding:6px 20px;
+			color:#fff;
+			background:#3cb878;
+			border:none;
+			border-radius:0;
+
+			&:hover{
+				background:#d4d4d4;
+			}
+
+			&.active{
+				color:#434343;
+				background:#E4E4E4;
+			}
+		}
+
+		&:first-child > a{
+			margin-left:0;
+		}
+
+		&:last-of-type > a{
+			margin-right:0;
+		}
+	}
+
+	> .pane{
+		background:#e4e4e4;
+		border:1px solid #d4d4d4;
+	}
+}
 
 
 
