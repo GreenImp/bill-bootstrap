@@ -144,5 +144,7 @@ html[xmlns] .slides {display: block;}
 	 * Ensures that nav buttons are visible, on hover.
 	 * This is necessary, due to our style above - setting 'dislay:none'
 	 */
-	&:hover .flex-direction-nav a{display:block;}
+	&:hover .flex-direction-nav a{
+		display:block;
+	}
 }
