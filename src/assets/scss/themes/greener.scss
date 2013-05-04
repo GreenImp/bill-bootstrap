@@ -333,7 +333,16 @@ p.lead{
  * Slider
  * ========================================================================== */
 
-.flexslider{}
+.flexslider{
+	border:none;
+	box-shadow:none;
+
+	> li{
+		> .caption{
+			font-family:$font-OpenSans
+		}
+	}
+}
 
 
 
