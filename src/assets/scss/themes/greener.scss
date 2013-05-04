@@ -301,10 +301,39 @@ p.lead{
 
 
 /* ==========================================================================
+ * Modal
+ * ========================================================================== */
+
+#fancybox-outer{
+	background:none;
+	border-radius:0;
+}
+
+#fancybox-content{
+	background:#fff;
+	border-color:transparent;
+	border-radius:0;
+}
+
+#fancybox-title.fancybox-title-float{
+	#fancybox-title-float{
+		padding:0 15px;
+		font-family:$font-OpenSans;
+		font-weight:normal;
+		background:#434343;
+		border:none;
+		border-radius:0;
+	}
+}
+
+
+
+/* ==========================================================================
  * Alert
  * ========================================================================== */
 
-.alertBox{}
+.alertBox{
+}
 
 
 
@@ -338,6 +367,7 @@ p.lead{
 
 .flexslider{
 	border:none;
+	border-radius:0;
 	box-shadow:none;
 
 	.slides{
