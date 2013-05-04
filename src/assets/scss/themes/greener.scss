@@ -340,9 +340,83 @@ p.lead{
 	border:none;
 	box-shadow:none;
 
-	> li{
-		> .caption{
-			font-family:$font-OpenSans
+	.slides{
+		> li{
+			> .caption{
+				padding-top:11px;
+				padding-bottom:11px;
+				font-size:1.15em;
+				font-family:$font-OpenSans;
+				font-weight:300;
+				text-align:left;
+				background:#434343;
+				background:rgba(67,67,67,0.65);
+			}
+		}
+	}
+
+	/**
+	 * Set colours for the page pips
+	 */
+	.flex-control-paging > li > a{
+		background:#434343;
+		box-shadow:none;
+
+		&.flex-active{
+			background:#3cb878;
+		}
+
+		&:hover{
+			opacity:0.8;
+		}
+	}
+
+	/**
+	 * Style the next/prev buttons
+	 */
+	> .flex-direction-nav a{
+		top:0;
+		margin:0;
+		width:60px;
+		height:100%;
+		background:#434343;
+		background:rgba(67,67,67,0.4);
+		opacity:1 !important;
+
+		&:after{
+			position:absolute;
+			top:50%;
+			display:block;
+			width:100%;
+			margin-top:-0.5em;
+			color:#bbb;
+			font-size:2em;
+			font-family:$font-Arial;
+			font-weight:bold;
+			text-align:center;
+			text-indent:0;
+			line-height:1em;
+			text-shadow:1px 1px 0 #333;
+		}
+
+		&.flex-prev{
+			left:0;
+
+			&:after{
+				content:'\003C';
+			}
+		}
+
+		&.flex-next{
+			right:0;
+
+			&:after{
+				content:'\003E';
+			}
+		}
+
+		&:hover{
+			background:rgba(67,67,67,0.8);
 		}
 	}
 }
