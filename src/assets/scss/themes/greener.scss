@@ -4,6 +4,9 @@
  * Date Created: 02/05/2013 13:41
  */
 
+$font-OpenSans:'Open Sans', Helvetica, Arial, sans-serif;
+$font-Arial:Arial, sans-serif;
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
 
 /* ==========================================================================
@@ -12,14 +15,14 @@
 
 body{
 	color:#434343;
-	font-family:Arial, inherit;
+	font-family:$font-Arial;
 	line-height:28px;
 }
 
 h1, h2, h3,
 h4, h5, h6{
 	color:#3f8961;
-	font-family:'Open Sans', inherit;
+	font-family:$font-OpenSans;
 	font-weight:300;
 }
 
@@ -38,14 +41,14 @@ fieldset{
 
 	legend{
 		font-size:1.1em;
-		font-family:'Open Sans', inherit;
+		font-family:$font-OpenSans;
 		font-weight:normal;
 	}
 }
 
 label{
 	font-size:1em;
-	font-family:'Open Sans', inherit;
+	font-family:$font-Arial;
 	font-weight:normal;
 }
 
@@ -66,7 +69,7 @@ input[type=url],
 textarea,
 select{
 	color:#434343;
-	font-family:Arial, inherit;
+	font-family:$font-Arial;
 	border:1px solid #e4e4e4;
 	border-radius:0;
 	box-shadow:none;
@@ -170,7 +173,7 @@ blockquote{
 	margin-right:0;
 	padding:20px;
 	color:#434343;
-	font-family:Arial, inherit;
+	font-family:$font-Arial;
 	font-size:1em;
 	background:#e4e4e4;
 	border-left:5px solid #3cb878;
