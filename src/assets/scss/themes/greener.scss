@@ -457,4 +457,176 @@ p.lead{
  * Navigation
  * ========================================================================== */
 
-.navigation{}
+.nav{
+	font-size:1.15em;
+	font-family:$font-OpenSans;
+	font-weight:300;
+	background:#434343;
+
+	a{
+		&:hover{
+			color:#3dab72;
+			background:transparent;
+		}
+	}
+
+	> ul,
+	> .inner > ul{
+		> li > a{
+			&:hover:after{
+				content:'';
+				position:absolute;
+				bottom:0;
+				left:12px;
+				right:12px;
+				border-bottom:1px solid #3dab72;
+			}
+		}
+	}
+
+	ul,
+	.inner ul{
+		> li{
+			&:before{
+				display:none;
+			}
+
+			/*
+			 * li with sub menu
+			 */
+			&.hasSub{
+				> a,
+				> span,
+				> label,
+				> div,
+				> h1, > h2, > h3,
+				> h4, > h5, > h6{
+					&:after{
+						top:25px;
+					}
+
+					&:hover{
+						&:after{
+							left:auto;
+							bottom:auto;
+							border-top-color:#3dab72;
+							border-bottom:none;
+						}
+					}
+				}
+			}
+
+			ul{
+				background:#434343;
+
+				li{
+					/*
+					 * sub li with sub menu
+					 */
+					&.hasSub{
+						a,
+						span,
+						label,
+						div,
+						h1, h2, h3,
+						h4, h5, h6{
+							&:after{
+								top:12px;
+							}
+
+							&:hover{
+								&:after{
+									border-left-color:#3dab72;
+									border-top-color:transparent;
+									border-bottom:5px solid transparent;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Right-aligned nav elements
+		 */
+		&.right{
+			/**
+			 * Show sub-menu, on hover of it's parent
+			 */
+			> li{
+				/**
+				 * position third level (and greater) navigation to the right
+				 */
+				ul > li{
+					/*
+					 * sub li with sub menu
+					 */
+					&.hasSub{
+						> a,
+						> span,
+						> label,
+						> div,
+						> h1, > h2, > h3,
+						> h4, > h5, > h6{
+							&:hover{
+								&:after{
+									border-right-color:#3dab72;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media handheld, only screen and (max-width: 767px) {
+	.nav{
+		&.dynamic{
+			> .inner{
+				ul,
+				ul.right,
+				ul.right ul{
+					> li{
+						.backBtn{
+							&:hover{
+								color:#3cb878
+							}
+						}
+
+						/*
+						 * sub li with sub menu
+						 */
+						&.hasSub{
+							> a,
+							> span,
+							> label,
+							> div,
+							> h1, > h2, > h3,
+							> h4, > h5, > h6{
+								&:after{
+									left:auto;
+									right:12px;
+									top:22px;
+									border:none;
+									border-left:5px solid #fff;
+									border-right:none;
+									border-top:5px solid transparent;
+									border-bottom:5px solid transparent;
+								}
+
+								&:hover{
+									&:after{
+										border-left-color:#3cb878;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
