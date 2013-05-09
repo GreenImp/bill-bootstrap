@@ -18,9 +18,11 @@
 		// only add the functionality if it hasn't already been initiated on the object
 		if(!data || !data.notice){
 			// set the option data
-			$elm.data('bill', $.extend(data || {}, {notice:options}));
+			$elm
+				.addClass('closable')
+				.data('bill', $.extend(data || {}, {notice:options}));
 
-			$('<a href="#close" title="Close notice" class="closeBtn">Close</a>').appendTo($elm).on('click', function(e){
+			$('<a href="#close" title="Close notice" class="closeBtn">X</a>').appendTo($elm).on('click', function(e){
 				e.preventDefault();
 
 				var $notice = $(this).parent('.notice').stop(true, true),
