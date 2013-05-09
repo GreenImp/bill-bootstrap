@@ -311,6 +311,7 @@ figure{
 .notice{
 	$notice-background:darken($background-colour, 10%);
 
+	position:relative;
 	display:block;
 	margin-bottom:$default-vertical-spacing;
 	padding:6px;
@@ -347,6 +348,28 @@ figure{
 		border-left:none;
 		border-right:none;
 		border-radius:0;
+	}
+
+
+	> .closeBtn{
+		position:absolute;
+		top:50%;
+		right:$default-padding;
+		margin-top:-0.5em;
+		line-height:1em;
+		text-indent:-9999em;
+		outline:none;
+
+		&:before{
+			content:'X';
+			display:block;
+			float:right;
+			text-indent:0;
+		}
+
+		&:hover{
+			opacity:0.6;
+		}
 	}
 
 
