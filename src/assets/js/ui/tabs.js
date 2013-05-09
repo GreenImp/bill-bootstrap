@@ -21,6 +21,9 @@
 			var tabBtns = null,	// the tab buttons
 				panes = null;	// the tab panes
 
+			// set the accordion data
+			tabs.data('bill', $.extend(data || {}, {tabs:options}));
+
 			if(tabs.get(0).nodeName == 'DL'){
 				// the tab element is a definition list
 				panes = tabs.children('dd');

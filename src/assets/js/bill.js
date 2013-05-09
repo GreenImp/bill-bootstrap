@@ -41,6 +41,7 @@
 	 * UI functionality
 	 */
 	/*> ui/navigation.js */
+	/*> ui/notice.js */
 	/*> ui/alert.js */
 	/*> ui/accordion.js */
 	/*> ui/tabs.js */
