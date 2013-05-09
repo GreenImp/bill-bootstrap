@@ -311,6 +311,7 @@ figure{
 .notice{
 	$notice-background:darken($background-colour, 10%);
 
+	position:relative;
 	display:block;
 	margin-bottom:$default-vertical-spacing;
 	padding:6px;
@@ -349,6 +350,19 @@ figure{
 		border-radius:0;
 	}
 
+	&.closable{
+		padding-right:2.5em;
+
+		> .closeBtn{
+			position:absolute;
+			top:50%;
+			right:0.5em;
+			margin-top:-1em;
+			padding:0.5em;
+			line-height:1em;
+			outline:none;
+		}
+	}
 
 	h1, h2, h3,
 	h4, h5, h6{
