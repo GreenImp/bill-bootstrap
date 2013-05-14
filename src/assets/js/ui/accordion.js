@@ -4,6 +4,8 @@
  * @return {*}
  */
 ;methods.accordion = function(userOptions){
+	'use strict';
+
 	var defaultOptions = {
 		animSpeed:200,
 		animType:'slide',

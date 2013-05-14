@@ -4,6 +4,8 @@
  * @return {*}
  */
 ;methods.notice = function(userOptions){
+	'use strict';
+
 	var defaultOptions = {
 		animSpeed:400
 	};

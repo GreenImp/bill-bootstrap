@@ -4,6 +4,8 @@
  * @return {*}
  */
 ;methods.navigation = function(){
+	'use strict';
+
 	var animSpeed = 200,
 		getHeight = function($elm, $top){
 			var height = 0;
