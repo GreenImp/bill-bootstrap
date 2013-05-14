@@ -840,11 +840,6 @@
 					<img src="http://www.bandbforestofdean.co.uk/communities/5/004/010/267/455/images/4577151720.jpg" />
 					<p class="caption">Carousel text/caption</p>
 				</li>
-
-				<li>
-					<img src="http://skana.com/wp-content/uploads/background/2.jpg" />
-					<p class="caption">Carousel text/caption</p>
-				</li>
 			</ul>
 		</div>
 	</div>
@@ -906,8 +901,7 @@
 	(function($, document){
 		// display browser not supported message
 		$(document).bill('browserNotice');
-
-		$('.nav').find('li.hasSub, li.backBtn').hammer();
+		$('.accordion').bill('accordion');
 	})(jQuery, document);
 </script>
 </body>

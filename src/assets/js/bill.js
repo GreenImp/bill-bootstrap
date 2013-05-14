@@ -17,6 +17,7 @@ if(typeof jQuery === 'undefined'){
 	window.Bill = {
 		name:'Bill-bootstrap',	// framework name
 		version:'0.1.0',		// version number
+		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
 		log:{},
 		/**
@@ -98,7 +99,7 @@ if(typeof jQuery === 'undefined'){
 		},
 		error:function(e){
 			// build the message
-			var msg = e.name + ' ' + e.message + '; ' + e.e + (e.file ? '; ' + e.file + (e.line ? ' - ' + e.line : '') : '');
+			var msg = e.name + ' ' + e.message + (e.e ? '; ' + e.e : '') + (e.file ? '; ' + e.file + (e.line ? ' - ' + e.line : '') : '');
 
 			// add the message to the log
 			this.log.error = this.log.error || [];
@@ -106,6 +107,13 @@ if(typeof jQuery === 'undefined'){
 
 			// return the message
 			return msg;
+		},
+		/**
+		 * De-activates plugins
+		 */
+		off:function(){
+			$(this.scope).off(this.eventNameSpace);
+			$(window).off(this.eventNameSpace);
 		}
 	};
 
@@ -131,3 +139,9 @@ if(typeof jQuery === 'undefined'){
  */
 /*> base/basic.js */
 /*> base/browserNotice.js */
+/*> base/cookieNotice.js */
+
+/**
+ * UI functionality
+ */
+/*> ui/accordion.js */
