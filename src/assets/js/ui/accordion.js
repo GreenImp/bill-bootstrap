@@ -19,8 +19,7 @@
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
-			var lib = this,
-				$elm = $(this.scope),
+			var $elm = $(this.scope),
 				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
 
 			if(typeof method === 'object'){
@@ -30,7 +29,7 @@
 				$.extend(data, options);
 			}
 
-			// only continue if the accordion hasn't already been initialised
+			// only continue if the functionality hasn't already been initialised
 			if(!data.init){
 				var type = $elm.prop('tagName').toUpperCase();	// get the accordion element type
 				data.titles = null;
@@ -121,11 +120,10 @@
 				data.panes.hide();
 
 				// store the options in the element data
+				data.init = true;
 				$elm.data(this.nameSpace, data);
 
 				this.on();
-
-				data.init = true;
 			}else{
 				// store the options in the element data
 				$elm.data(this.nameSpace, data);
