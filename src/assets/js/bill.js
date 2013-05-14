@@ -28,8 +28,8 @@ if(typeof jQuery === 'undefined'){
 		 * @param options
 		 */
 		init:function(scope, libraries, method, options){
-			var libraryList,	// list of libraries to call
-				args = [		// list of arguments to apply to libraries
+			var libraryList = [],	// list of libraries to call
+				args = [			// list of arguments to apply to libraries
 					scope, method, options
 				];
 
@@ -41,13 +41,13 @@ if(typeof jQuery === 'undefined'){
 					// split the libraries by space (to get each supplied library) and loop through them
 					$.each(libraries.split(' '), function(i, lib){
 						// add the library to the list
-						libraryList.push(this.initLibrary(lib, args));
+						libraryList.push(Bill.initLibrary(lib, args));
 					});
 				}else{
 					// no libraries specified - load them all
 					$.each(this.libs, function(i, lib){
 						// add the library to the list
-						libraryList.push(this.initLibrary(lib, args));
+						libraryList.push(Bill.initLibrary(lib, args));
 					});
 
 					if(typeof libraries === 'function'){
@@ -131,15 +131,3 @@ if(typeof jQuery === 'undefined'){
  */
 /*> base/basic.js */
 /*> base/browserNotice.js */
-/*> base/cookieNotice.js */
-
-/**
- * UI functionality
- */
-/*> ui/navigation.js */
-/*> ui/notice.js */
-/*> ui/alert.js */
-/*> ui/accordion.js */
-/*> ui/tabs.js */
-/*> ui/modal.js */
-/*> ui/slider.js */
