@@ -109,6 +109,8 @@
 
 				this.options.init = true;
 			}
+
+			return this.options.init;
 		}
 	};
 })(jQuery, window, document);

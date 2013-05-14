@@ -13,7 +13,7 @@
 		options:{
 			animSpeed:600,
 			infoURL:'http://www.whatarecookies.com/',
-			closable:false
+			closable:true
 		},
 		init:function(scope, method, options){
 			// only continue if cookies aer disabled
@@ -29,7 +29,7 @@
 						$.extend(true, this.options, options);
 					}
 
-					$('<div id="cookieNotice" class="notice info fixed">' +
+					$('<div id="cookieNotice" class="notice info fixed"' + (this.options.closable ? ' data-close="1"' : '') + '>' +
 						'<div class="container constrain">' +
 							'<div class="row">' +
 								'<div class="column ' + (this.options.infoURL ? 'eight' : 'twelve') + '">' +
@@ -53,7 +53,11 @@
 
 					this.options.init = true;
 				}
+			}else{
+				this.options.init = true;
 			}
+
+			return this.options.init;
 		},
 		/**
 		 * Checks if cookies are enabled, in the browser.
