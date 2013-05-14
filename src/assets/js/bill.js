@@ -4,12 +4,15 @@
  */
 
 ;(function($, window, document){
+	'use strict';
+
 	// list of available methods
 	var methods = {
-				init: function(options){
-					return this;
-				}
-			}, onLoad = [];
+			init:function(options){
+				return this;
+			}
+		},
+		onLoad = [];
 
 	/**
 	 * Base Bill method

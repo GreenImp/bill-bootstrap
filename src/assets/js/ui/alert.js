@@ -1,6 +1,8 @@
 ;var alertQueue = [];
 
 methods.alert = function(type, msg, val, callback){
+	'use strict';
+
 	if(msg){
 		callback = $.isFunction(callback) ? callback : ($.isFunction(val) ? val : null);
 		val = !$.isFunction(val) ? val : null;

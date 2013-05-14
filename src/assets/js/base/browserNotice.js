@@ -13,6 +13,8 @@
  * @return {*}
  */
 ;methods.browserNotice = function(options){
+	'use strict';
+
 	// list of browsers to check for
 	options = $.extend({
 		ie:9,

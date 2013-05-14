@@ -6,6 +6,8 @@
  * @return {*}
  */
 ;methods.cookieNotice = function(){
+	'use strict';
+
 	var cookiesEnabled = function(){
 		var cookieName = 'cookieTest',					// test cookie name
 			cookieEnabled = !!navigator.cookieEnabled;	// bas check for cookie functionality

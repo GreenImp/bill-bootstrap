@@ -4,6 +4,8 @@
  * @return {*}
  */
 ;methods.tabs = function(userOptions){
+	'use strict';
+
 	var defaultOptions = {
 		animSpeed:200
 	};
