@@ -145,3 +145,4 @@ if(typeof jQuery === 'undefined'){
  * UI functionality
  */
 /*> ui/accordion.js */
+/*> ui/modal.js */

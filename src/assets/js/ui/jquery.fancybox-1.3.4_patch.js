@@ -1005,7 +1005,6 @@
 			});
 
 		} else {
-			console.log('hide');
 			wrap.fadeOut( currentOpts.transitionOut == 'none' ? 0 : currentOpts.speedOut, _cleanup);
 		}
 	};
