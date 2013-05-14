@@ -34,84 +34,81 @@
 			closable:false
 		},
 		init:function(scope, method, options){
-			return this.each(function(i){
-				this.scope = scope || this.scope;
+			this.scope = scope || this.scope;
 
-				// only continue if the browser notice doesn't exist
-				if((i == 0) && !$('#browserNotice').length){
-					// list of browsers to check for
-					if(typeof method === 'object'){
-						// method is actually options
-						$.extend(true, this.options, method);
-					}else if(typeof method === 'object'){
-						$.extend(true, this.options, options);
-					}
-
-					// check if the browser is supported or not
-					var supported = true,
-						userAgent = navigator.userAgent,
-						browsers = this.options.browsers;
-					if(browsers.ie && !isNaN(browsers.ie) && (/MSIE (\d+\.\d+);/.test(userAgent))){
-						// browser is IE
-						if(parseFloat(RegExp.$1) < parseFloat(browsers.ie)){
-							// version not supported
-							supported = false;
-						}
-					}else if(browsers.ff && !isNaN(browsers.ff) && (/Firefox[\/\s](\d+\.\d+)/.test(userAgent))){
-						// browser is Firefox
-						if(parseFloat(RegExp.$1) < parseFloat(browsers.ff)){
-							// version not supported
-							supported = false;
-						}
-					}else if(browsers.chrome && !isNaN(browsers.chrome) && (/Chrome[\/\s](\d+\.\d+)/.test(userAgent))){
-						// browser is Chrome
-						if(parseFloat(RegExp.$1) < parseFloat(browsers.chrome)){
-							// version not supported
-							supported = false;
-						}
-					}else if(browsers.safari && !isNaN(browsers.safari) && (/Version[\/\s](\d+\.\d+)(.\d+)*\s+Safari/.test(userAgent))){
-						// browser is Safari
-						if(parseFloat(RegExp.$1) < parseFloat(browsers.safari)){
-							// version not supported
-							supported = false;
-						}
-					}else if(browsers.opera && !isNaN(browsers.opera) && (/Opera.*?Version[\/\s](\d+\.\d+)/.test(userAgent))){
-						// browser is Opera
-						if(parseFloat(RegExp.$1) < parseFloat(browsers.opera)){
-							// version not supported
-							supported = false;
-						}
-					}
-
-					if(!supported){
-						// browser not supported
-
-						// build the browser notice
-						$('<div id="browserNotice" class="notice info fixed"' + (this.options.closable ? ' data-close="1"' : '') + '>' +
-							'<div class="container constrain">' +
-								'<div class="row">' +
-									'<div class="column eight">' +
-										'<p>It looks like you\'re using an outdated web browser. We don\'t support old browsers, as they have limited features and security issues.</p>' +
-										'<p>You should consider upgrading.</p>' +
-									'</div>' +
-									(
-									this.options.infoURL ?
-										'<div class="column four">' +
-											'<a href="' + this.options.infoURL + '" title="Upgrade your browser" target="_blank" class="button">Find out more</a>' +
-										'</div>'
-										:
-										''
-									) +
-								'</div>' +
-							'</div>' +
-						'</div>')
-								// add the browser notice and slide it into view
-								.prependTo('body').hide().slideDown(this.options.animSpeed);
-					}
-
-					this.options.init = true;
+			// only continue if the browser notice doesn't exist
+			if(!this.options.init || !$('#browserNotice').length){
+				if(typeof method === 'object'){
+					// method is actually options
+					$.extend(true, this.options, method);
+				}else if(typeof method === 'object'){
+					$.extend(true, this.options, options);
 				}
-			});
+
+				// check if the browser is supported or not
+				var supported = true,
+					userAgent = navigator.userAgent,
+					browsers = this.options.browsers;
+				if(browsers.ie && !isNaN(browsers.ie) && (/MSIE (\d+\.\d+);/.test(userAgent))){
+					// browser is IE
+					if(parseFloat(RegExp.$1) < parseFloat(browsers.ie)){
+						// version not supported
+						supported = false;
+					}
+				}else if(browsers.ff && !isNaN(browsers.ff) && (/Firefox[\/\s](\d+\.\d+)/.test(userAgent))){
+					// browser is Firefox
+					if(parseFloat(RegExp.$1) < parseFloat(browsers.ff)){
+						// version not supported
+						supported = false;
+					}
+				}else if(browsers.chrome && !isNaN(browsers.chrome) && (/Chrome[\/\s](\d+\.\d+)/.test(userAgent))){
+					// browser is Chrome
+					if(parseFloat(RegExp.$1) < parseFloat(browsers.chrome)){
+						// version not supported
+						supported = false;
+					}
+				}else if(browsers.safari && !isNaN(browsers.safari) && (/Version[\/\s](\d+\.\d+)(.\d+)*\s+Safari/.test(userAgent))){
+					// browser is Safari
+					if(parseFloat(RegExp.$1) < parseFloat(browsers.safari)){
+						// version not supported
+						supported = false;
+					}
+				}else if(browsers.opera && !isNaN(browsers.opera) && (/Opera.*?Version[\/\s](\d+\.\d+)/.test(userAgent))){
+					// browser is Opera
+					if(parseFloat(RegExp.$1) < parseFloat(browsers.opera)){
+						// version not supported
+						supported = false;
+					}
+				}
+
+				if(!supported){
+					// browser not supported
+
+					// build the browser notice
+					$('<div id="browserNotice" class="notice info fixed"' + (this.options.closable ? ' data-close="1"' : '') + '>' +
+						'<div class="container constrain">' +
+							'<div class="row">' +
+								'<div class="column ' + (this.options.infoURL ? 'eight' : 'twelve') + '">' +
+									'<p>It looks like you\'re using an outdated web browser. We don\'t support old browsers, as they have limited features and security issues.</p>' +
+									'<p>You should consider upgrading.</p>' +
+								'</div>' +
+								(
+								this.options.infoURL ?
+									'<div class="column four">' +
+										'<a href="' + this.options.infoURL + '" title="Upgrade your browser" target="_blank" class="button">Find out more</a>' +
+									'</div>'
+									:
+									''
+								) +
+							'</div>' +
+						'</div>' +
+					'</div>')
+							// add the notice and slide it into view
+							.prependTo('body').hide().slideDown(this.options.animSpeed);
+				}
+
+				this.options.init = true;
+			}
 		}
 	};
 })(jQuery, window, document);
