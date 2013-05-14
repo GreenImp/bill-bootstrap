@@ -41,7 +41,7 @@
 				if(typeof method === 'object'){
 					// method is actually options
 					$.extend(true, this.options, method);
-				}else if(typeof method === 'object'){
+				}else{
 					$.extend(true, this.options, options);
 				}
 
