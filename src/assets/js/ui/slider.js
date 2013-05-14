@@ -11,7 +11,7 @@
 	Bill.libs.slider = {
 		name:'Notice',
 		version:'0.1.0',
-		nameSpace:Bill.eventNameSpace + '.notice',
+		nameSpace:Bill.eventNameSpace + '.slider',
 		options:{
 			animation:'slide',
 			slideshowSpeed:4000,
