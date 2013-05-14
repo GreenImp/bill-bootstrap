@@ -11,6 +11,7 @@
 	Bill.libs.modal = {
 		name:'Modal',
 		version:'0.1.0',
+		nameSpace:Bill.eventNameSpace + '.modal',
 		options:{
 			cyclic:true,
 			titlePosition:'float'

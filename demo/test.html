@@ -953,6 +953,7 @@ computer-name:/var/www/ user$ </samp></pre>
 			// display browser not supported message
 			$(document).bill('browserNotice');
 			$(document).bill('cookieNotice');
+			$('.notice[data-close="1"], .notice[data-close="true"], .notice[data-close="yes"]').bill('notice');
 		})(jQuery, document);
 	</script>
 </body>
