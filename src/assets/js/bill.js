@@ -28,7 +28,7 @@ if(typeof jQuery === 'undefined'){
 		 * @param options
 		 */
 		init:function(scope, libraries, method, options){
-			var libraryList = [],	// list of libraries to call
+			var libResponse = [],	// list of library load responses
 				args = [			// list of arguments to apply to libraries
 					scope, method, options
 				];
@@ -36,27 +36,27 @@ if(typeof jQuery === 'undefined'){
 			// set global scope (used in the libraries)
 			this.scope = scope || this.scope;
 
-			if(libraries){
-				if(typeof libraries === 'string'){
-					// split the libraries by space (to get each supplied library) and loop through them
-					$.each(libraries.split(' '), function(i, lib){
-						// add the library to the list
-						libraryList.push(Bill.initLibrary(lib, args));
-					});
-				}else{
-					// no libraries specified - load them all
-					$.each(this.libs, function(i, lib){
-						// add the library to the list
-						libraryList.push(Bill.initLibrary(lib, args));
-					});
+			if(libraries && (typeof libraries === 'string')){
+				// split the libraries by space (to get each supplied library) and loop through them
+				$.each(libraries.split(' '), function(i, lib){
+					// add the library to the list
+					libResponse.push(Bill.initLibrary(lib, args));
+				});
+			}else{
+				// no libraries specified - load them all
+				$.each(this.libs, function(i, lib){
+					// add the library to the list
+					libResponse.push(Bill.initLibrary(lib, args));
+				});
 
-					if(typeof libraries === 'function'){
-						// if the first argument is actually a callback (not library),
-						// add to the arguments list
-						args.unshift(libraries);
-					}
+				if(typeof libraries === 'function'){
+					// if the first argument is actually a callback (not library),
+					// add to the arguments list
+					args.unshift(libraries);
 				}
 			}
+
+			// TODO - check responses
 		},
 		/**
 		 * Initialises the given library
@@ -72,7 +72,7 @@ if(typeof jQuery === 'undefined'){
 					// define the correct library scope
 					this.libs[lib].scope = this.scope;
 
-					// initialise the library and return it
+					// initialise the library and return
 					return this.libs[lib].init.apply(this.libs[lib], args);
 				}
 			}.bind(this), lib);
