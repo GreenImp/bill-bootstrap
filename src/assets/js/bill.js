@@ -147,3 +147,4 @@ if(typeof jQuery === 'undefined'){
 /*> ui/accordion.js */
 /*> ui/modal.js */
 /*> ui/notice.js */
+/*> ui/slider.js */
