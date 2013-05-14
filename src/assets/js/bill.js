@@ -8,7 +8,7 @@ if(typeof jQuery === 'undefined'){
 	throw new TypeError('jQuery is not defined', 'bill.js', 8);
 }
 
-(function($, window, document){
+(function($, window, document, undefined){
 	'use strict';
 
 	/**
