@@ -1,16 +1,24 @@
 /**
- * Copyright GreenImp Web - greenimp.co.uk
+ * Bill.modal
  *
- * Author: GreenImp Web
- * Date Created: 24/02/13 01:24
+ * Shows modal dialogue boxes
  */
-
-
 /*> jquery.fancybox-1.3.4_patch.js */
-;methods.modal = $.fn.fancybox;
 
-// call the modal functionality
-$('.modal').bill('modal', {
-	cyclic:true,
-	titlePosition:'float'
-});
+;(function($, window, document, undefined){
+	"use strict";
+
+	Bill.libs.modal = {
+		name:'Modal',
+		version:'0.1.0',
+		options:{
+			cyclic:true,
+			titlePosition:'float'
+		},
+		init:function(scope, method, options){
+			this.scope = scope || this.scope;
+
+			$(this.scope).fancybox($.extend(this.options, (typeof method === 'object') ? method : options));
+		}
+	};
+})(jQuery, window, document);
