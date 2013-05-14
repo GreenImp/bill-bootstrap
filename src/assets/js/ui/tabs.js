@@ -1,8 +1,69 @@
 /**
- * Adds accordion functionality
+ * Bill.tabs
  *
- * @return {*}
+ * Adds tabs functionality
  */
+;(function($, window, document, undefined){
+	"use strict";
+
+	Bill.libs.tabs = {
+		name:'Tabs',
+		version:'0.1.0',
+		nameSpace:Bill.eventNameSpace + '.tabs',
+		options:{
+			animSpeed:200
+		},
+		init:function(scope, method, options){
+			this.scope = scope || this.scope;
+
+			var $elm = $(this.scope),
+				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
+
+			if(typeof method === 'object'){
+				// method is actually options
+				$.extend(data, method);
+			}else{
+				$.extend(data, options);
+			}
+
+			// only continue if the functionality hasn't already been initialised
+			if(!data.init){
+				if($elm.get(0).nodeName == 'DL'){
+					// the tab element is a definition list
+					panes = $elm.children('dd');
+					tabBtns = $elm.children('dt');
+
+					// loop through and ensure that all of them contain links
+					tabBtns.each(function(){
+						var btn = $(this);
+						if(btn.children('a:first').length == 0){
+							// dd contains no link
+							var pane = btn.next('dd:first'),																		// the tab pane
+								id = pane.prop('id') || 'tab-' + (new Date().getTime()) + '-' + Math.floor(Math.random()*10000);	// the pane ID
+							// wrap the dt contents in the link (wrapinner doesn't always work here)
+							btn.html('<a href="#' + id + '">' + btn.text() + '</a>');
+							// assign the ID to the pane
+							pane.prop('id', id);
+						}
+					});
+
+					$elm.prepend(tabBtns);
+				}
+
+				// store the options in the element data
+				data.init = true;
+				$elm.data(this.nameSpace, data);
+			}else{
+				// store the options in the element data
+				$elm.data(this.nameSpace, data);
+			}
+
+			return data.init;
+		}
+	};
+})(jQuery, window, document);
+
+
 ;methods.tabs = function(userOptions){
 	'use strict';
 
