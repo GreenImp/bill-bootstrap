@@ -31,13 +31,8 @@
 			if(!data.init){
 				data.init = true;
 
-				$elm
-					// mark the notice as closable
-					.addClass('closable')
-					// store the options in the element data
-					.data(this.nameSpace, data);
-
-				$('<a href="#close" title="Close notice" class="closeBtn">X</a>').appendTo($elm);
+				// store the options in the element data
+				$elm.data(this.nameSpace, data);
 
 				this.on();
 			}else{
@@ -54,27 +49,37 @@
 			var lib = this,
 				$elm = $(this.scope);
 
-			$elm.find('a.closeBtn').on('click' + this.nameSpace, function(e){
-				e.preventDefault();
+			// mark the notice as closable
+			$elm.addClass('closable');
 
-				var options = $elm.data(lib.nameSpace);
+			$('<a href="#close" title="Close notice" class="closeBtn">X</a>')
+				.appendTo($elm)
+				.on('click' + this.nameSpace, function(e){
+					e.preventDefault();
 
-				if($elm.hasClass('fixed')){
-					$elm.slideUp(options.animSpeed, function(){
-						$elm.remove();
-					});
-				}else{
-					$elm.fadeOut(options.animSpeed, function(){
-						$elm.remove();
-					});
-				}
-			});
+					var options = $elm.data(lib.nameSpace);
+
+					if($elm.hasClass('fixed')){
+						$elm.slideUp(options.animSpeed, function(){
+							$elm.remove();
+						});
+					}else{
+						$elm.fadeOut(options.animSpeed, function(){
+							$elm.remove();
+						});
+					}
+				});
 		},
 		/**
 		 * De-activates the plugin
 		 */
 		off:function(){
-			$(this.scope).find('a.closeBtn').off('click' + this.nameSpace);
+			var $elm = $(this.scope);
+
+			$elm
+				.removeClass('closable')
+				.children('a.closeBtn:first')
+					.remove();
 		}
 	};
 })(jQuery, window, document);
