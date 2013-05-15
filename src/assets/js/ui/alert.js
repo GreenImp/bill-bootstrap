@@ -1,3 +1,159 @@
+/**
+ * Bill.alert
+ *
+ * Replacement for default alert,
+ * confirm and prompt dialogues
+ */
+;(function($, window, document, undefined){
+	"use strict";
+
+	Bill.libs.alert = {
+		name:'Alert',
+		version:'0.1.0',
+		nameSpace:Bill.eventNameSpace + '.alert',
+		options:{
+			animSpeed:400,
+			type:'alert',
+			msg:null,
+			val:null,
+			callback:null,
+			buttons:[]
+		},
+		buttonTemplate:{
+			label:'button',
+			value:true,
+			'class':''
+		},
+		queue:[],
+		dialogueID:'alertPopup',
+		init:function(scope, method, options){
+			this.scope = scope || this.scope;
+
+			var lib = this,
+				$elm = $(this.scope),
+				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
+
+			if(typeof method === 'object'){
+				// method is actually options
+				$.extend(data, method);
+			}else{
+				$.extend(data, options);
+			}
+
+			// only continue if the functionality hasn't already been initialised
+			if(!data.init){
+				if(data.msg){
+					// store the options in the element data
+					data.init = true;
+					$elm.data(this.nameSpace, data);
+
+					if($(this.dialogueID).length > 0){
+						// dialogue already exists - add this to the queue
+						this.queue.push(data);
+
+						return data.init;
+					}
+
+					var dialogueBox = $('<div id="' + this.dialogueID + '" class="alertBox float">' +							// the pop-up box
+											'<div class="content"></div>' +
+											'<div class="buttons"></div>' +
+										'</div>'),
+						overlay = ($('#alertOverlay').length > 0) ? $('#alertOverlay') : $('<div id="alertOverlay"></div>'),	// the overlay
+						buttonBox = dialogueBox.children('.buttons'),															// the button container
+						content = '';																							// the dialogue content
+
+					switch(data.type.toLowerCase()){
+						case 'confirm':
+							// confirmation dialogue
+							dialogueBox.addClass('confirmation');
+							content = '<p>' + data.msg + '</p>';
+
+							data.buttons = [
+								{
+									label:'cancel',
+									value:false,
+									'class':'cancel'
+								},
+								{
+									label:'OK',
+									value:true,
+									'class':'confirm'
+								}
+							];
+						break;
+						case 'prompt':
+							// prompt dialogue
+							dialogueBox.addClass('prompt');
+							content = '<p>' + data.msg + '</p>' +
+									'<input type="text" name="value" value="' + (data.val || '') + '">';
+
+							data.buttons = [
+								{
+									label:'cancel',
+									value:null,
+									'class':'cancel'
+								},
+								{
+									label:'OK',
+									value:true,
+									'class':'confirm'
+								}
+							];
+						break;
+						case 'alert':
+							// alert dialogue
+							dialogueBox.addClass('alert');
+							content = '<p>' + data.msg + '</p>';
+
+							data.buttons = [
+								{
+									label:'OK',
+									value:true,
+									'class':'confirm'
+								}
+							];
+						break;
+						default:
+							// custom dialogue
+							dialogueBox.addClass('custom');
+							content = '<p>' + data.msg + '</p>' +
+									(data.val ? '<input type="text" name="value" value="' + (data.val || '') + '">' : '');
+							$.each(data.buttons, function(i, button){
+								button = $.extend({}, lib.buttonTemplate, button);
+							});
+						break;
+					}
+
+					// add the content to the pop-up
+					dialogueBox.children('.content').html(content);
+
+					// add any buttons to the pop-up
+					$.each(buttons, function(){
+						buttonHtml += '<button type="button" value="' + this.value + '" class="' + (this['class'] || '') + '">' + this.label + '</button>';
+					});
+					buttonBox.append(buttonHtml);
+
+					this.on();
+				}else if($.isFunction(data.callback)){
+					// no message defined, but we have a callback
+					// trigger the callback function, with a return value of null
+					callback.apply(window, [null]);
+				}
+			}else{
+				// store the options in the element data
+				$elm.data(this.nameSpace, data);
+			}
+
+			return data.init;
+		},
+		/**
+		 * Activates the plugin
+		 */
+		on:function(){}
+	};
+})(jQuery, window, document);
+
+
 ;var alertQueue = [];
 
 methods.alert = function(type, msg, val, callback){
