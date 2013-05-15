@@ -650,7 +650,7 @@
 		<p>Check the console log to see what value each alert returns.</p>
 
 		<p><a href="#" title="Opens a simple alert"
-			  onclick="$(document).bill('alert', 'alert', 'this is an alert', function(val){console.log(val)}); return false;">Open
+			  onclick="$(document).bill('alert', {type:'alert', msg:'this is an alert', callback:function(val){console.log(val)}}); return false;">Open
 			an alert</a></p>
 
 		<p><a href="#" title="Opens a confirm dialogue"
