@@ -8,24 +8,25 @@
 // include the base settings (font sizes, colours etc)
 @import "_settings";
 @import "_settings-ui";
-@import "ui/_base";
-// some base styles
-@import "ui/_navigation";
-// Navigation
-@import "ui/_accordion";
-// accordion styles
-@import "ui/_tabs";
-// tab styles
-@import "ui/_modal";
-// modal styles
-@import "ui/_alert";
-// alert box styles
-@import "ui/_breadcrumbs";
-// breadcrumb styles
-@import "ui/_pagination";
-// pagination styles
-@import "ui/_panel";
-// panel styles
-@import "ui/_slider";
 
+// some base styles
+@import "ui/_base";
+
+// accordion styles
+@import "ui/_accordion";
+// breadcrumb styles
+@import "ui/_breadcrumbs";
+// alert box styles
+@import "ui/_dialogue";
+// modal styles
+@import "ui/_modal";
+// navigation
+@import "ui/_navigation";
+// pagination styles
+@import "ui/_pagination";
+// panel styles
+@import "ui/_panel";
 // slider styles
+@import "ui/_slider";
+// tab styles
+@import "ui/_tabs";

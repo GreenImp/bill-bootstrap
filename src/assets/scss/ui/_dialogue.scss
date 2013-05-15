@@ -1,8 +1,8 @@
 /*!
- * Alert Boxes
+ * Dialogue Boxes
  */
 
-.alertBox{
+.dialogueBox{
 	display:block;
 	margin-bottom:$default-vertical-spacing;
 	max-width:600px;
@@ -44,7 +44,7 @@
 	}
 }
 
-#alertOverlay{
+#dialogueOverlay{
 	position:fixed;
 	top:0;
 	left:0;
