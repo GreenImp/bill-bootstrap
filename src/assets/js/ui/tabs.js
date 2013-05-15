@@ -111,6 +111,9 @@
 
 			return data.init;
 		},
+		/**
+		 * Activates the plugin
+		 */
 		on:function(){
 			var data = $(this.scope).data(this.nameSpace);
 
@@ -175,6 +178,9 @@
 			// reset the animation type
 			data.animType = animType;
 		},
+		/**
+		 * De-activates the plugin
+		 */
 		off:function(){
 			var data = $(this.scope).data(this.nameSpace).tabBtns.off('click' + this.nameSpace);
 		}
