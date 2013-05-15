@@ -116,8 +116,8 @@
 					});
 				}
 
-				// hide all of the panes
-				data.panes.hide();
+				data.panes.hide();				// hide all of the panes
+				data.titles.addClass('title');	// ensure that the titles have the `title` class
 
 				// store the options in the element data
 				data.init = true;
@@ -140,9 +140,7 @@
 			/**
 			 * Adds the click handler for title elements
 			 */
-			data.titles
-					.addClass('title')							// ensure that the titles have the `title` class
-					.on('click' + this.nameSpace, function(e){	// add the click event for displaying panes
+			data.titles.on('click' + this.nameSpace, function(e){	// add the click event for displaying panes
 						// stop the default click event
 						e.preventDefault();
 
