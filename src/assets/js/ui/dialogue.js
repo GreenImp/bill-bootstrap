@@ -1,5 +1,5 @@
 /**
- * Bill.alert
+ * Bill.dialogue
  *
  * Replacement for default alert,
  * confirm and prompt dialogues
@@ -7,10 +7,10 @@
 ;(function($, window, document, undefined){
 	"use strict";
 
-	Bill.libs.alert = {
-		name:'Alert',
+	Bill.libs.dialogue = {
+		name:'Dialogue',
 		version:'0.1.0',
-		nameSpace:Bill.eventNameSpace + '.alert',
+		nameSpace:Bill.eventNameSpace + '.dialogue',
 		options:{
 			animSpeed:400,
 			type:'alert',
@@ -25,7 +25,7 @@
 			'class':''
 		},
 		queue:[],
-		dialogueID:'alertPopup',
+		dialogueID:'dialoguePopup',
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
@@ -54,14 +54,14 @@
 						return data.init;
 					}
 
-					var dialogueBox = $('<div id="' + this.dialogueID + '" class="alertBox float">' +							// the pop-up box
+					var dialogueBox = $('<div id="' + this.dialogueID + '" class="dialogueBox float">' +								// the pop-up box
 											'<div class="content"></div>' +
 											'<div class="buttons"></div>' +
 										'</div>'),
-						overlay = ($('#alertOverlay').length > 0) ? $('#alertOverlay') : $('<div id="alertOverlay"></div>'),	// the overlay
-						content = '',																							// the dialogue content
-						buttonBox = dialogueBox.children('.buttons'),															// the button container
-						buttonHTML = '';																						// the markup for outputting the buttons
+						overlay = ($('#dialogueOverlay').length > 0) ? $('#dialogueOverlay') : $('<div id="dialogueOverlay"></div>'),	// the overlay
+						content = '',																									// the dialogue content
+						buttonBox = dialogueBox.children('.buttons'),																	// the button container
+						buttonHTML = '';																								// the markup for outputting the buttons
 
 					switch(data.type.toLowerCase()){
 						case 'confirm':
@@ -168,11 +168,10 @@
 						dialogueBox.stop(true, true).fadeOut(data.animSpeed, function(){
 							dialogueBox.remove();
 
-							// check the alert queue for our next alert
+							// check the queue for our next dialogue
 							if(lib.queue.length > 0){
-								// next alert specified - trigger it
-								var alert = lib.queue.shift();
-								$('body').bill('alert', alert.type, alert.msg, alert.val, alert.callback);
+								// next dialogue specified - trigger it
+								$('body').bill('dialogue', lib.queue.shift());
 							}
 						});
 						// hide and remove the overlay

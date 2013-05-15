@@ -145,7 +145,7 @@ if(typeof jQuery === 'undefined'){
  * UI functionality
  */
 /*> ui/accordion.js */
-/*> ui/alert.js */
+/*> ui/dialogue.js */
 /*> ui/modal.js */
 /*> ui/navigation.js */
 /*> ui/notice.js */
