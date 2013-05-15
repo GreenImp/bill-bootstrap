@@ -148,3 +148,4 @@ if(typeof jQuery === 'undefined'){
 /*> ui/modal.js */
 /*> ui/notice.js */
 /*> ui/slider.js */
+/*> ui/tabs.js */
