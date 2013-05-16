@@ -85,12 +85,28 @@ $.extend({
 	 *
 	 * @returns {{width: number, height: number}}
 	 */
-	viewport:function(){
-		var $window = $(window);
-
-		return {
-			width:Math.max($window.innerWidth(), window.innerWidth),
-			height:Math.max($window.innerHeight(), window.innerHeight)
+	viewport:{
+		width:function(){
+			return Math.max($(window).innerWidth(), window.innerWidth);
+		},
+		height:function(){
+			return Math.max($(window).innerHeight(), window.innerHeight);
+		},
+		size:function(){
+			return {
+				width:this.width(),
+				height:this.height()
+			};
+		},
+		isSmall:function(){
+			return this.width() <= 767;
+		},
+		isMedium:function(){
+			var width = this.width();
+			return (width > 767) && (width < 980);
+		},
+		isLarge:function(){
+			return this.width() >= 980;
 		}
 	}
 });
