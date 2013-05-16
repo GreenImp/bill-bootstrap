@@ -16,7 +16,22 @@
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
-			var lib = this,
+			if(typeof method === 'object'){
+				// method is actually options
+				$.extend(true, this.options, method);
+			}else if (typeof method === 'string'){
+				// call the method and return
+				return this[method].call(this, options);
+			}
+
+			if(!this.options.init){
+				this.on();
+			}
+
+			return this.options.init;
+
+
+			/*var lib = this,
 				$elm = $(this.scope),
 				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
 
@@ -40,13 +55,30 @@
 				$elm.data(this.nameSpace, data);
 			}
 
-			return data.init;
+			return data.init;*/
 		},
 		/**
 		 * Activates the plugin
 		 */
 		on:function(){
-			var lib = this,
+			var lib = this;
+
+			$(this.scope).on('click' + this.nameSpace, '[data-notice] a.closeBtn', function(e){
+				e.preventDefault();
+
+				var $elm = $(this).closest('[data-notice]');
+				if($elm.hasClass('fixed')){
+					$elm.slideUp(lib.options.animSpeed, function(){
+						$elm.remove();
+					});
+				}else{
+					$elm.fadeOut(lib.options.animSpeed, function(){
+						$elm.remove();
+					});
+				}
+			});
+
+			/*var lib = this,
 				$elm = $(this.scope);
 
 			// mark the notice as closable
@@ -68,18 +100,20 @@
 							$elm.remove();
 						});
 					}
-				});
+				});*/
 		},
 		/**
 		 * De-activates the plugin
 		 */
 		off:function(){
-			var $elm = $(this.scope);
+			this.scope.off(this.nameSpace);
+
+			/*var $elm = $(this.scope);
 
 			$elm
 				.removeClass('closable')
 				.children('a.closeBtn:first')
-					.remove();
+					.remove();*/
 		}
 	};
 })(jQuery, window, document);
