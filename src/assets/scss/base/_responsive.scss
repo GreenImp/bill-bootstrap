@@ -1,10 +1,26 @@
 /**
- * Not quite sure what this does - something to do with determining
- * the correct width on the device, in IE
+ * Sets the viewport
+ * This will eventually replace the need
+ * for a viewport declaration meta tag in
+ * the head of the page
  */
+@-moz-viewport{
+	width:device-width;
+}
+@-webkit-viewport{
+	width:device-width;
+}
+@-o-viewport{
+	width:device-width;
+}
 @-ms-viewport{
 	width:device-width;
 }
+@viewport{
+	width:device-width;
+}
+
+
 
 /* ==========================================================================
  * Device specific display of content
