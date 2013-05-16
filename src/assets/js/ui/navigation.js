@@ -87,10 +87,9 @@
 			 */
 			$inner.find('li.hasSub').on('click' + this.nameSpace + ' swipeleft' + this.nameSpace, function(e){
 				// get the screen size
-				var viewport = $.viewport() || null,
-					data = $elm.data(lib.nameSpace);
+				var data = $elm.data(lib.nameSpace);
 
-				if(viewport && (viewport.width <= 767) && !$elm.data('animating')){
+				if($.viewport.isSmall() && !$elm.data('animating')){
 					// we're on a small screen
 
 					// check the clicked element - ensure that it's not a child of hasSub
@@ -127,10 +126,9 @@
 			 */
 			$inner.find('li.backBtn').on('click' + this.nameSpace + ' swiperight' + this.nameSpace, function(e){
 				// get the screen size
-				var viewport = $.viewport() || null,
-					data = $elm.data(lib.nameSpace);
+				var data = $elm.data(lib.nameSpace);
 
-				if(viewport && (viewport.width <= 767) && !$elm.data('animating')){
+				if($.viewport.isSmall() && !$elm.data('animating')){
 					// we're on a small screen
 
 					var $parent = $(this).parents('.hasSub:first');
@@ -162,10 +160,9 @@
 			 */
 			$top.children('span.menuBtn').on('click' + this.nameSpace, function(e){
 				// get the screen size
-				var viewport = $.viewport() || null,
-					data = $elm.data(lib.nameSpace);
+				var data = $elm.data(lib.nameSpace);
 
-				if(viewport && (viewport.width <= 767)){
+				if($.viewport.isSmall()){
 					// we're on a small screen
 					if($elm.hasClass('active')){
 						// nav is visible - hide it
@@ -186,9 +183,7 @@
 			 * the correct height on small screens
 			 */
 			$(window).on('ready' + this.nameSpace + ' resize' + this.nameSpace, function(){
-				var viewport = $.viewport() || null;
-
-				if(viewport && (viewport.width <= 767)){
+				if($.viewport.isSmall()){
 					// we're on a small screen
 
 					// if nav is not active, hide the inner container
