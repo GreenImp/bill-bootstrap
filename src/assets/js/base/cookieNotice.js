@@ -29,7 +29,7 @@
 						$.extend(true, this.options, options);
 					}
 
-					$('<div id="cookieNotice" class="notice info fixed"' + (this.options.closable ? ' data-close="1"' : '') + '>' +
+					$('<div id="cookieNotice" class="notice info fixed" data-notice>' +
 						'<div class="container constrain">' +
 							'<div class="row">' +
 								'<div class="column ' + (this.options.infoURL ? 'eight' : 'twelve') + '">' +
@@ -45,6 +45,7 @@
 									:
 									''
 								) +
+								(this.options.closable ? '<a href="#close" class="closeBtn">X</a>' : '') +
 							'</div>' +
 						'</div>' +
 					'</div>')
