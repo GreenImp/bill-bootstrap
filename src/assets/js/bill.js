@@ -140,6 +140,7 @@ if(typeof jQuery === 'undefined'){
 /*> base/basic.js */
 /*> base/browserNotice.js */
 /*> base/cookieNotice.js */
+/*> base/viewport.js */
 
 /**
  * UI functionality
