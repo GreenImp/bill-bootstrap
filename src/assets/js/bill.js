@@ -58,6 +58,7 @@ if(typeof jQuery === 'undefined'){
 			}
 
 			// TODO - check responses
+			console.log(this.log);
 		},
 		/**
 		 * Initialises the given library
@@ -114,6 +115,7 @@ if(typeof jQuery === 'undefined'){
 		off:function(){
 			$(this.scope).off(this.eventNameSpace);
 			$(window).off(this.eventNameSpace);
+			$(document).off(this.eventNameSpace);
 		}
 	};
 

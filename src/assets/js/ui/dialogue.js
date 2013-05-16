@@ -30,7 +30,21 @@
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
-			var lib = this,
+			if(typeof method === 'object'){
+				// method is actually options
+				$.extend(true, this.options, method);
+			}else if (typeof method === 'string'){
+				// call the method and return
+				return this[method].call(this, options);
+			}
+
+			if(!this.options.init){
+				this.events();
+			}
+
+			return this.options.init;
+
+			/*var lib = this,
 				$elm = $(this.scope),
 				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
 
@@ -56,7 +70,7 @@
 
 				// add the click handler
 				this.on();
-			}
+			}*/
 
 			return true;
 		},

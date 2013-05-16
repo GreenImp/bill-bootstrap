@@ -314,7 +314,8 @@ figure{
 	position:relative;
 	display:block;
 	margin-bottom:$default-vertical-spacing;
-	padding:6px;
+	padding:6px 2.5em 6px 6px;
+	padding-right:2.5em;
 	color:darken($notice-background, 60%);
 	font-weight:bold;
 	text-shadow:0 1px lighten($notice-background, 15%);
@@ -350,18 +351,14 @@ figure{
 		border-radius:0;
 	}
 
-	&.closable{
-		padding-right:2.5em;
-
-		> .closeBtn{
-			position:absolute;
-			top:50%;
-			right:0.5em;
-			margin-top:-1em;
-			padding:0.5em;
-			line-height:1em;
-			outline:none;
-		}
+	> .closeBtn{
+		position:absolute;
+		top:50%;
+		right:0.5em;
+		margin-top:-1em;
+		padding:0.5em;
+		line-height:1em;
+		outline:none;
 	}
 
 	h1, h2, h3,

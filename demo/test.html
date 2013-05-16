@@ -756,21 +756,23 @@
 
 		<section class="deck">
 			<div class="plank six">
-				<div class="notice">
+				<div class="notice" data-notice>
 					<p>This is a notice... <a href="#">Link</a></p>
+					<a href="#close" class="closeBtn">X</a>
 				</div>
 
-				<div class="notice info">
+				<div class="notice info" data-notice>
 					<p>Some information... <a href="#">Link</a></p>
 				</div>
 			</div>
 
 			<div class="plank six">
-				<div class="notice success" data-close="yes">
+				<div class="notice success" data-notice>
 					<p>Success, all is okay, don't worry. <a href="#">Link</a></p>
+					<a href="#close" class="closeBtn">X</a>
 				</div>
 
-				<div class="notice error">
+				<div class="notice error" data-notice>
 					<p>There was an error below, please check it, ya plonker! <a href="#">Link</a></p>
 				</div>
 			</div>
@@ -782,10 +784,11 @@
 			<div class="plank six">
 				<p>The fixed notice, that is stuck to the top of the page, is placed just beneath me...</p>
 
-				<div class="notice fixed" data-close="1">
+				<div class="notice fixed" data-notice>
 					<p>
 						This is a fixed notice that always stays at the top of the screen. In the markup, I'm actually down by the <a href="#notices">notices</a>.
 					</p>
+					<a href="#close" class="closeBtn">X</a>
 				</div>
 			</div>
 
@@ -953,7 +956,7 @@ computer-name:/var/www/ user$ </samp></pre>
 			// display browser not supported message
 			$(document).bill('browserNotice');
 			$(document).bill('cookieNotice');
-			$('.notice[data-close="1"], .notice[data-close="true"], .notice[data-close="yes"]').bill('notice');
+			$(document).bill('notice');
 		})(jQuery, document);
 	</script>
 </body>
