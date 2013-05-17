@@ -1,7 +1,7 @@
 # This software is licensed under the BSD 2-clause license:
 http://opensource.org/licenses/BSD-2-Clause
 
-Copyright (c) 2013, GreenImp Web (Lee Langley)
+Copyright (c) 2013, GreenImp Web (Lee Langley) and Rokk Media ltd.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
