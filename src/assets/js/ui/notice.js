@@ -29,33 +29,6 @@
 			}
 
 			return this.options.init;
-
-
-			/*var lib = this,
-				$elm = $(this.scope),
-				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
-
-			if(typeof method === 'object'){
-				// method is actually options
-				$.extend(data, method);
-			}else{
-				$.extend(data, options);
-			}
-
-			// only continue if the functionality hasn't already been initialised
-			if(!data.init){
-				data.init = true;
-
-				// store the options in the element data
-				$elm.data(this.nameSpace, data);
-
-				this.on();
-			}else{
-				// store the options in the element data
-				$elm.data(this.nameSpace, data);
-			}
-
-			return data.init;*/
 		},
 		/**
 		 * Activates the plugin
@@ -63,57 +36,34 @@
 		on:function(){
 			var lib = this;
 
+			/**
+			 * Add click handler for notice close buttons
+			 */
 			$(this.scope).on('click' + this.nameSpace, '[data-notice] a.closeBtn', function(e){
 				e.preventDefault();
 
+				// get the notice
 				var $elm = $(this).closest('[data-notice]');
 				if($elm.hasClass('fixed')){
+					// this is a fixed notice - slide it up
 					$elm.slideUp(lib.options.animSpeed, function(){
 						$elm.remove();
 					});
 				}else{
+					// this is a normal notice - fade it out
 					$elm.fadeOut(lib.options.animSpeed, function(){
 						$elm.remove();
 					});
 				}
 			});
 
-			/*var lib = this,
-				$elm = $(this.scope);
-
-			// mark the notice as closable
-			$elm.addClass('closable');
-
-			$('<a href="#close" title="Close notice" class="closeBtn">X</a>')
-				.appendTo($elm)
-				.on('click' + this.nameSpace, function(e){
-					e.preventDefault();
-
-					var options = $elm.data(lib.nameSpace);
-
-					if($elm.hasClass('fixed')){
-						$elm.slideUp(options.animSpeed, function(){
-							$elm.remove();
-						});
-					}else{
-						$elm.fadeOut(options.animSpeed, function(){
-							$elm.remove();
-						});
-					}
-				});*/
+			this.options.init = true;
 		},
 		/**
 		 * De-activates the plugin
 		 */
 		off:function(){
-			this.scope.off(this.nameSpace);
-
-			/*var $elm = $(this.scope);
-
-			$elm
-				.removeClass('closable')
-				.children('a.closeBtn:first')
-					.remove();*/
+			$(this.scope).off(this.nameSpace);
 		}
 	};
 })(jQuery, window, document);
