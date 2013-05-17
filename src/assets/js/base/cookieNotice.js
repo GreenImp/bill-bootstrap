@@ -12,53 +12,61 @@
 		version:'0.1.0',
 		options:{
 			animSpeed:600,
+			message:'<p>' +
+						'Your browser is blocking cookies. This website requires the use of cookies to work correctly.' +
+					'</p>',
 			infoURL:'http://www.whatarecookies.com/',
-			closable:true
+			closable:true,
+			selectorID:'cookieNotice',
+			enabled:true
 		},
 		init:function(scope, method, options){
-			// only continue if cookies aer disabled
-			if(!this.cookiesEnabled()){
-				this.scope = scope || this.scope;
+			this.scope = scope || this.scope;
 
-				// only continue if the cookie notice doesn't exist
-				if(!this.options.init || !$('#cookieNotice').length){
-					if(typeof method === 'object'){
-						// method is actually options
-						$.extend(true, this.options, method);
-					}else{
-						$.extend(true, this.options, options);
-					}
+			if(typeof method === 'object'){
+				// method is actually options
+				$.extend(true, this.options, method);
+			}else if (typeof method === 'string'){
+				// call the method and return
+				return this[method].call(this, options);
+			}
 
-					$('<div id="cookieNotice" class="notice info fixed" data-notice>' +
-						'<div class="container constrain">' +
-							'<div class="row">' +
-								'<div class="column ' + (this.options.infoURL ? 'eight' : 'twelve') + '">' +
-									'<p>' +
-										'Your browser is blocking cookies. This website requires the use of cookies to work correctly.' +
-									'</p>' +
-								'</div>' +
-								(
-								this.options.infoURL ?
-									'<div class="column four">' +
-										'<a href="' + this.options.infoURL + '" title="Find out more about cookies" target="_blank" class="button">Find out more</a>' +
-									'</div>'
-									:
-									''
-								) +
-								(this.options.closable ? '<a href="#close" class="closeBtn">X</a>' : '') +
-							'</div>' +
-						'</div>' +
-					'</div>')
-							// add the notice and slide it into view
-							.prependTo('body').hide().slideDown(this.options.animSpeed);
-
-					this.options.init = true;
-				}
-			}else{
+			// only continue if the cookie notice doesn't exist
+			if(!this.options.init){
+				this.cookiesEnabled();
 				this.options.init = true;
 			}
 
+			this.on();
+
 			return this.options.init;
+		},
+		on:function(){
+			if(!this.cookiesEnabled() && !$('#' + this.options.selectorID).length){
+				$('<div id="' + this.options.selectorID + '" class="notice info fixed" data-notice>' +
+					'<div class="container constrain">' +
+						'<div class="row">' +
+							'<div class="column ' + (this.options.infoURL ? 'eight' : 'twelve') + '">' +
+								this.options.message +
+							'</div>' +
+							(
+							this.options.infoURL ?
+								'<div class="column four">' +
+									'<a href="' + this.options.infoURL + '" title="Find out more about cookies" target="_blank" class="button">Find out more</a>' +
+								'</div>'
+								:
+								''
+							) +
+						'</div>' +
+					'</div>' +
+					(this.options.closable ? '<a href="#close" class="closeBtn">X</a>' : '') +
+				'</div>')
+					// add the notice and slide it into view
+					.prependTo('body').hide().slideDown(this.options.animSpeed);
+			}
+		},
+		off:function(){
+			$('#' + this.options.selectorID).remove();
 		},
 		/**
 		 * Checks if cookies are enabled, in the browser.
@@ -67,17 +75,21 @@
 		 * @returns {boolean}
 		 */
 		cookiesEnabled:function(){
-			var cookieName = 'cookieTest',					// test cookie name
-				cookieEnabled = !!navigator.cookieEnabled;	// base check for cookie functionality
+			if(typeof this.options.supported !== 'boolean'){
+				// base check for cookie functionality
+				this.options.enabled = !!navigator.cookieEnabled;
 
-			if(!cookieEnabled){
-				// base check failed - try setting a cookie
-				document.cookie = cookieName;
-				// check if the cookie was set
-				cookieEnabled = (document.cookie.indexOf(cookieName) != -1);
+				if(!this.options.enabled){
+					// base check failed - try setting a cookie
+					var cookieName = 'cookieTest';	// test cookie name
+
+					document.cookie = cookieName;
+					// check if the cookie was set
+					this.options.enabled = (document.cookie.indexOf(cookieName) != -1);
+				}
 			}
 
-			return cookieEnabled;
+			return this.options.enabled;
 		}
 	};
 })(jQuery, window, document);
