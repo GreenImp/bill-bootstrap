@@ -94,13 +94,16 @@ if(typeof jQuery === 'undefined'){
 					name:lib,
 					message:'could not be initialized',
 					file:'bill.js',
-					e:e.name + ' ' + e.message
+					line:97,
+					e:e
 				});
 			}
 		},
 		error:function(e){
 			// build the message
-			var msg = e.name + ' ' + e.message + (e.e ? '; ' + e.e : '') + (e.file ? '; ' + e.file + (e.line ? ' - ' + e.line : '') : '');
+			var msg = e.name + ' ' + e.message +
+						(e.e ? '; ' + e.e.name + ' ' + e.e.message : '') +
+						(e.file ? '; ' + e.file + (e.line ? ' - ' + e.line : '') : '');
 
 			// add the message to the log
 			this.log.error = this.log.error || [];
