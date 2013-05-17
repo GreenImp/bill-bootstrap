@@ -890,16 +890,15 @@
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
-		// display browser not supported message
-		$(document).bill('browserNotice cookieNotice modal slider');
-		/*$('.accordion').bill('accordion');
-		$('.tabs').bill('tabs');
-		$(document).bill('modal');*/
-		/*$('.nav').bill('navigation');
+		$(document).bill('browserNotice cookieNotice modal');
 
 		$(window).on('load', function(){
-			$('.slider').bill('slider');
-		});*/
+			$(document).bill('slider');
+		});
+
+		/*$('.accordion').bill('accordion');
+		$('.tabs').bill('tabs');
+		$('.nav').bill('navigation');*/
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});

@@ -17,7 +17,8 @@
 			msg:null,
 			value:null,
 			callback:null,
-			buttons:[]
+			buttons:[],
+			dialogueID:'dialoguePopup'
 		},
 		buttonTemplate:{
 			label:'button',
@@ -26,69 +27,45 @@
 		},
 		queue:[],
 		active:false,
-		dialogueID:'dialoguePopup',
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
 				// method is actually options
 				$.extend(true, this.options, method);
-			}else if (typeof method === 'string'){
+			}else if(typeof method === 'string'){
 				// call the method and return
 				return this[method].call(this, options);
 			}
 
 			if(!this.options.init){
-				this.events();
+				this.on();
 			}
 
 			return this.options.init;
-
-			/*var lib = this,
-				$elm = $(this.scope),
-				data = $.extend($elm.data(this.nameSpace) || {}, this.options);
-
-			if(typeof method === 'object'){
-				// method is actually options
-				$.extend(data, method);
-			}else{
-				$.extend(data, options);
-			}
-
-			if(data.auto){
-				// show the dialogue automatically (rather than on-click)
-
-				// store the options in the element data
-				$elm.data(this.nameSpace, data);
-
-				// call the dialogue
-				this.doDialogue(data);
-			}else if(!data.init){
-				data.init = true;
-				// store the options in the element data
-				$elm.data(this.nameSpace, data);
-
-				// add the click handler
-				this.on();
-			}*/
-
-			return true;
 		},
 		/**
 		 * Activates the plugin
 		 */
 		on:function(){
 			var lib = this,
-				$elm = $(this.scope);
+				$scope = $(this.scope);
 
 			/**
-			 * Fire the dialogue on-click
+			 * Add the dialogue click handler
 			 */
-			$elm.on('click' + lib.nameSpace, function(e){
+			$scope.on('click' + this.nameSpace, '[data-dialogue]', function(e){
 				e.preventDefault();
 
-				lib.doDialogue($elm.data(lib.nameSpace));
+				lib.doDialogue(lib.options);
 			});
+
+			if(lib.options.auto){
+				// we need to auto-fire the dialogue
+				$scope.triggerHandler('click' + this.nameSpace);
+			}
+
+			this.options.init = true;
 		},
 		/**
 		 * De-activates the plugin
@@ -98,17 +75,18 @@
 			this.queue = [];
 			// remove the click handler
 			$(this.scope).off(this.nameSpace);
+			$(window).off(this.nameSpace);
 		},
-		doDialogue:function(data){
+		doDialogue:function(options){
 			if(this.active){
 				// dialogue already exists - add this to the queue
-				this.queue.push(data);
+				this.queue.push(options);
 
 				return true;
-			}else if(!data.msg){
+			}else if(!options.msg){
 				// no message defined - we can't continue
 
-				if($.isFunction(data.callback)){
+				if($.isFunction(options.callback)){
 					// we have a callback - trigger it, with a return value of null
 					callback.apply(window, [null, null]);
 				}
@@ -121,7 +99,7 @@
 			this.active = true;
 
 			var lib = this,
-				dialogueBox = $('<div id="' + this.dialogueID + '" class="dialogueBox float">' +	// the pop-up box
+				dialogueBox = $('<div id="' + this.options.dialogueID + '" class="dialogueBox float">' +	// the pop-up box
 					'<div class="content"></div>' +
 					'<div class="buttons"></div>' +
 				'</div>'),
@@ -133,13 +111,13 @@
 			// if the overlay doesn't already exist, create it
 			overlay = overlay.length ? overlay : $('<div id="dialogueOverlay"></div>');
 
-			switch(data.type.toLowerCase()){
+			switch(options.type.toLowerCase()){
 				case 'confirm':
 					// confirmation dialogue
 					dialogueBox.addClass('confirmation');
-					content = '<p>' + data.msg + '</p>';
+					content = '<p>' + options.msg + '</p>';
 
-					data.buttons = [
+					options.buttons = [
 						{
 							label:'cancel',
 							value:false,
@@ -155,10 +133,10 @@
 				case 'prompt':
 					// prompt dialogue
 					dialogueBox.addClass('prompt');
-					content = '<p>' + data.msg + '</p>' +
-								'<input type="text" name="value" value="' + (data.value || '') + '"' + (data.placeholder ? ' placeholder="' + data.placeholder + '"' : '') + '>';
+					content = '<p>' + options.msg + '</p>' +
+								'<input type="text" name="value" value="' + (options.value || '') + '"' + (options.placeholder ? ' placeholder="' + options.placeholder + '"' : '') + '>';
 
-					data.buttons = [
+					options.buttons = [
 						{
 							label:'cancel',
 							value:false,
@@ -174,9 +152,9 @@
 				case 'alert':
 					// alert dialogue
 					dialogueBox.addClass('alert');
-					content = '<p>' + data.msg + '</p>';
+					content = '<p>' + options.msg + '</p>';
 
-					data.buttons = [
+					options.buttons = [
 						{
 							label:'OK',
 							value:true,
@@ -187,12 +165,12 @@
 				default:
 					// custom dialogue
 					dialogueBox.addClass('custom');
-					content = '<p>' + data.msg + '</p>' +
-								(data.val ? '<input type="text" name="value" value="' + (data.value || '') + '"' + (data.placeholder ? ' placeholder="' + data.placeholder + '"' : '') + '>' : '');
+					content = '<p>' + options.msg + '</p>' +
+								(options.val ? '<input type="text" name="value" value="' + (options.value || '') + '"' + (options.placeholder ? ' placeholder="' + options.placeholder + '"' : '') + '>' : '');
 
 					// loop through the buttons and ensure that they contain the correct data
-					$.each(data.buttons, function(i, button){
-						data.buttons[i] = $.extend({}, lib.buttonTemplate, button);
+					$.each(options.buttons, function(i, button){
+						options.buttons[i] = $.extend({}, lib.buttonTemplate, button);
 					});
 				break;
 			}
@@ -201,7 +179,7 @@
 			dialogueBox.children('.content').html(content);
 
 			// add any buttons to the pop-up
-			$.each(data.buttons, function(){
+			$.each(options.buttons, function(){
 				if(this.label){
 					buttonHTML += '<button type="button" value="' + ((this.value === undefined) ? null : this.value) + '" class="' + (this['class'] || '') + '">' + this.label + '</button>';
 				}
@@ -218,10 +196,10 @@
 					top:($(window).height()/2) - (dialogueBox.outerHeight()/2)
 				})
 				.hide()
-				.fadeIn(data.animSpeed);
+				.fadeIn(options.animSpeed);
 
 			// add the overlay
-			overlay.appendTo('body').stop(true, true).hide().fadeIn(data.animSpeed/2);
+			overlay.appendTo('body').stop(true, true).hide().fadeIn(options.animSpeed/2);
 
 			/**
 			 * re-position the dialogue when the screen size changes
@@ -241,7 +219,7 @@
 				e.preventDefault();
 
 				// hide the dialogue box and remove it
-				dialogueBox.stop(true, true).fadeOut(data.animSpeed, function(){
+				dialogueBox.stop(true, true).fadeOut(options.animSpeed, function(){
 					dialogueBox.remove();
 
 					// check the queue for our next dialogue
@@ -252,19 +230,19 @@
 				});
 
 				// hide and remove the overlay
-				overlay.fadeOut(data.animSpeed/2, function(){
+				overlay.fadeOut(options.animSpeed/2, function(){
 					overlay.remove();
 				});
 
 				lib.active = false;
 
 				// fire the callback function
-				if($.isFunction(data.callback)){
+				if($.isFunction(options.callback)){
 					var btnVal = $(this).val(),
 						inputVal = dialogueBox.find('> .content input[type=text][name=value]').val() || null;
 					btnVal = (btnVal == 'true') ? true : ((btnVal == 'false') ? false : ((btnVal == 'null') ? null : btnVal));
 
-					data.callback.apply(window, [btnVal, inputVal]);
+					options.callback.apply(window, [btnVal, inputVal]);
 				}
 			});
 		}
