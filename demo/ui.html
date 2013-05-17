@@ -594,11 +594,11 @@
 	<div class="column six">
 		<h3>General Dialogues</h3>
 
-		<p><a href="//cdn.greenimp.co.uk/images/imp.png" title="Green Imp" class="modal">Image Link</a></p>
+		<p><a href="//cdn.greenimp.co.uk/images/imp.png" title="Green Imp" data-modal>Image Link</a></p>
 
-		<p><a href="http://greenimp.co.uk" class="modal iframe">Iframe Link</a></p>
+		<p><a href="http://greenimp.co.uk" class="modal iframe" data-modal>Iframe Link</a></p>
 
-		<p><a href="#modalContent" class="modal">Page Content Link</a></p>
+		<p><a href="#modalContent" class="modal" data-modal>Page Content Link</a></p>
 
 		<div>
 			<p>
@@ -626,17 +626,17 @@
 
 		<div>
 			<p>
-				<a href="http://placehold.it/350x150.png" class="modal" rel="gallery1">Gallery 1 - Image 1</a>
+				<a href="http://placehold.it/350x150.png" rel="gallery1" data-modal>Gallery 1 - Image 1</a>
 				|
-				<a href="http://placehold.it/400x500.png" class="modal" rel="gallery1">Gallery 1 - Image 2</a>
+				<a href="http://placehold.it/400x500.png" rel="gallery1" data-modal>Gallery 1 - Image 2</a>
 			</p>
 
 			<p>
-				<a href="http://placehold.it/100x100.png" class="modal" rel="gallery2">Gallery 2 - Image 1</a>
+				<a href="http://placehold.it/100x100.png" rel="gallery2" data-modal>Gallery 2 - Image 1</a>
 				|
-				<a href="http://placehold.it/200x200.png" class="modal" rel="gallery2">Gallery 2 - Image 2</a>
+				<a href="http://placehold.it/200x200.png" rel="gallery2" data-modal>Gallery 2 - Image 2</a>
 				|
-				<a href="http://placehold.it/300x300.png" class="modal" rel="gallery2">Gallery 2 - Image 3</a>
+				<a href="http://placehold.it/300x300.png" rel="gallery2" data-modal>Gallery 2 - Image 3</a>
 			</p>
 		</div>
 	</div>
@@ -891,25 +891,25 @@
 <script>
 	(function($, window, document){
 		// display browser not supported message
-		$(document).bill('browserNotice');
-		$('.accordion').bill('accordion');
+		$(document).bill('browserNotice modal');
+		/*$('.accordion').bill('accordion');
 		$('.tabs').bill('tabs');
-		$('a.modal').bill('modal');
-		$('.nav').bill('navigation');
+		$(document).bill('modal');*/
+		/*$('.nav').bill('navigation');
 
 		$(window).on('load', function(){
 			$('.slider').bill('slider');
-		});
+		});*/
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});*/
 
-		$('.dialogue.alert').bill('dialogue', {type:'alert', msg:'this is an alert', callback:function(btnVal, val){console.log(btnVal, val)}});
+		/*$('.dialogue.alert').bill('dialogue', {type:'alert', msg:'this is an alert', callback:function(btnVal, val){console.log(btnVal, val)}});
 		$('.dialogue.confirm').bill('dialogue', {type:'confirm', msg:'confirm me', callback:function(btnVal, val){console.log(btnVal, val)}});
 		$('.dialogue.prompt').bill('dialogue', {type:'prompt', msg:'What is your quest?', value:'To seek the holy grail...', placeholder:'blah...', callback:function(btnVal, val){console.log(btnVal, val)}});
-		$('.dialogue.promptLarge').bill('dialogue', {type:'prompt', msg:'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', value:'To seek the holy grail...', callback:function(btnVal, val){console.log(btnVal, val)}});
+		$('.dialogue.promptLarge').bill('dialogue', {type:'prompt', msg:'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', value:'To seek the holy grail...', callback:function(btnVal, val){console.log(btnVal, val)}});*/
 	})(jQuery, window, document);
 </script>
 </body>

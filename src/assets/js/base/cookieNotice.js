@@ -26,7 +26,7 @@
 			if(typeof method === 'object'){
 				// method is actually options
 				$.extend(true, this.options, method);
-			}else if (typeof method === 'string'){
+			}else if(typeof method === 'string'){
 				// call the method and return
 				return this[method].call(this, options);
 			}
