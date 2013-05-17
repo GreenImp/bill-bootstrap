@@ -31,16 +31,13 @@
 				return this[method].call(this, options);
 			}
 
-			// only continue if the cookie notice doesn't exist
-			if(!this.options.init){
-				this.cookiesEnabled();
-				this.options.init = true;
-			}
-
 			this.on();
 
-			return this.options.init;
+			return true;
 		},
+		/**
+		 * Activates the library
+		 */
 		on:function(){
 			if(!this.cookiesEnabled() && !$('#' + this.options.selectorID).length){
 				$('<div id="' + this.options.selectorID + '" class="notice info fixed" data-notice>' +
@@ -65,6 +62,9 @@
 					.prependTo('body').hide().slideDown(this.options.animSpeed);
 			}
 		},
+		/**
+		 * De-activates the library
+		 */
 		off:function(){
 			$('#' + this.options.selectorID).remove();
 		},

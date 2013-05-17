@@ -47,15 +47,9 @@
 				return this[method].call(this, options);
 			}
 
-			if(!this.options.init){
-				// check if the browser is supported or not
-				this.browserSupported();
-				this.options.init = true;
-			}
-
 			this.on();
 
-			return this.options.init;
+			return true;
 		},
 		/**
 		 * Activates the library
