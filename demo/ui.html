@@ -903,13 +903,16 @@
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
-		$(document).bill('browserNotice cookieNotice notice modal tabs accordion');
+		/**
+		 * TODO - dialogue, navigation, slider
+		 */
+
+		$(document).bill('browserNotice cookieNotice accordion modal notice tabs');
 
 		/*$(window).on('load', function(){
 			$(document).bill('slider');
-		});*/
+		});
 
-		/*$('.accordion').bill('accordion');
 		$('.nav').bill('navigation');*/
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
