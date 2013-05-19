@@ -183,7 +183,7 @@
 		 * De-activates the plugin
 		 */
 		off:function(){
-			$(this.scope).off(this.nameSpace)
+			$(this.scope).off(this.nameSpace);
 		}
 	};
 })(jQuery, window, document);

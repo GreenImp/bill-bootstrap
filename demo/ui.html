@@ -137,7 +137,7 @@
 	<div class="column four">
 		<p>Accordion with containing div and inner h2/article elements:</p>
 
-		<div class="accordion">
+		<div class="accordion" data-accordion>
 			<h2 class="title">Title 1</h2>
 			<article class="pane">
 				<p>
@@ -172,23 +172,28 @@
 
 		<h3>Code</h3>
 
-				<pre><code>&lt;div class="accordion"&gt;
-					&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
-					&lt;article class="pane"&gt;
-					content...
-					&lt;/article&gt;
+		<pre><code>&lt;div class="accordion" data-accordion&gt;
+	&lt;h2 class="title"&gt;Title 1&lt;/h2&gt;
+	&lt;article class="pane"&gt;
+		content...
+	&lt;/article&gt;
 
-					&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
-					&lt;article class="pane"&gt;
-					content...
-					&lt;/article&gt;
-					&lt;/div&gt;</code></pre>
+	&lt;h2 class="title"&gt;Title 2&lt;/h2&gt;
+	&lt;article class="pane"&gt;
+		content...
+	&lt;/article&gt;
+
+	&lt;h2 class="title"&gt;Title 3&lt;/h2&gt;
+	&lt;article class="pane"&gt;
+		content...
+	&lt;/article&gt;
+&lt;/div&gt;</code></pre>
 	</div>
 
 	<div class="column four">
 		<p>Accordion with containing ul and inner h2/div elements:</p>
 
-		<ul class="accordion">
+		<ul class="accordion" data-accordion>
 			<li>
 				<h2>Title 1</h2>
 
@@ -232,27 +237,34 @@
 
 		<h3>Code</h3>
 
-				<pre><code>&lt;ul class="accordion"&gt;
-					&lt;li&gt;
-					&lt;h2&gt;Title 1&lt;/h2&gt;
-					&lt;div&gt;
-					content...
-					&lt;/div&gt;
-					&lt;/li&gt;
+		<pre><code>&lt;ul class="accordion" data-accordion&gt;
+	&lt;li&gt;
+		&lt;h2&gt;Title 1&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
 
-					&lt;li&gt;
-					&lt;h2&gt;Title 2&lt;/h2&gt;
-					&lt;div&gt;
-					content...
-					&lt;/div&gt;
-					&lt;/li&gt;
-					&lt;/ul&gt;</code></pre>
+	&lt;li&gt;
+		&lt;h2&gt;Title 2&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+
+	&lt;li&gt;
+		&lt;h2&gt;Title 3&lt;/h2&gt;
+		&lt;div&gt;
+			content...
+		&lt;/div&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
 	</div>
 
 	<div class="column four">
 		<p>Accordion with using a dl list:</p>
 
-		<dl class="accordion">
+		<dl class="accordion" data-accordion>
 			<dt>Title 1</dt>
 			<dd>
 				<p>
@@ -288,21 +300,22 @@
 
 		<h3>Code</h3>
 
-				<pre><code>&lt;ul class="accordion"&gt;
-					&lt;li&gt;
-					&lt;h2&gt;Title 1&lt;/h2&gt;
-					&lt;div&gt;
-					content...
-					&lt;/div&gt;
-					&lt;/li&gt;
+		<pre><code>&lt;dl class="accordion" data-accordion&gt;
+	&lt;dt&gt;Title 1&gt;
+	&lt;dd&gt;
+		content...
+	&lt;/dd&gt;
 
-					&lt;li&gt;
-					&lt;h2&gt;Title 2&lt;/h2&gt;
-					&lt;div&gt;
-					content...
-					&lt;/div&gt;
-					&lt;/li&gt;
-					&lt;/ul&gt;</code></pre>
+	&lt;dt&gt;Title 2&gt;
+	&lt;dd&gt;
+		content...
+	&lt;/dd&gt;
+
+	&lt;dt&gt;Title 3&gt;
+	&lt;dd&gt;
+		content...
+	&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
 	</div>
 </section>
 
@@ -890,14 +903,13 @@
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
-		$(document).bill('browserNotice cookieNotice notice modal tabs');
+		$(document).bill('browserNotice cookieNotice notice modal tabs accordion');
 
 		/*$(window).on('load', function(){
 			$(document).bill('slider');
 		});*/
 
 		/*$('.accordion').bill('accordion');
-		$('.tabs').bill('tabs');
 		$('.nav').bill('navigation');*/
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
