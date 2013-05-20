@@ -8,6 +8,9 @@
  * which are placed separately, at the end of the file.
  * This means that it should be safe to update the CSS,
  * without losing my changes.
+ *
+ * DO NOT CHANGE ANY PART OF THE DEFAULT CSS!
+ * - Any changes should be made at the end of the file.
  */
 /**
  * BxSlider v4.0 - Fully loaded, responsive content slider
@@ -218,6 +221,10 @@
 
 	.bx-viewport{
 		left:0;
+	}
+
+	.bx-pager{
+		line-height:normal;
 	}
 
 	ul{
