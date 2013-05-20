@@ -3,6 +3,9 @@
  *
  * Image slider
  */
+
+/*> vendor/jquery.bxslider.js */
+
 ;(function($, window, document, undefined){
 	"use strict";
 
@@ -10,10 +13,12 @@
 		name:'Slider',
 		version:'0.1.0',
 		nameSpace:Bill.eventNameSpace + '.slider',
-		options:{},
+		options:{
+			adaptiveHeight:true,
+			auto:true,
+			autoHover:true
+		},
 		init:function(scope, method, options){
-			throw new Error('Slider is unavailable in this release of Bill');
-
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
@@ -35,12 +40,15 @@
 		 */
 		on:function(){
 			//$(this.scope).find('[data-slider]').addClass('flexslider').flexslider(this.options);
+			$(this.scope).find('[data-slider]').bxSlider(this.options);
 
 			this.options.init = true;
 		},
 		/**
 		 * De-activates the library
 		 */
-		off:function(){}
+		off:function(){
+			$(this.scope).find('[data-slider]').destroySlider();
+		}
 	};
 })(jQuery, window, document);
