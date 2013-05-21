@@ -451,88 +451,115 @@ p.lead{
  * Slider
  * ========================================================================== */
 
-.flexslider{
-	border:none;
-	border-radius:0;
-	box-shadow:none;
+.bx-wrapper{
+	> .bx-viewport{
+		border:none;
+		border-radius:0;
+		box-shadow:none;
+	}
 
-	.slides{
-		> li{
-			> .caption{
-				padding-top:11px;
-				padding-bottom:11px;
-				font-size:1.15em;
-				font-family:$font-OpenSans;
-				font-weight:300;
-				text-align:left;
-				background:#434343;
-				background:rgba(67,67,67,0.65);
-			}
-		}
+	.bx-caption,
+	.caption{
+		padding-top:11px;
+		padding-bottom:11px;
+		font-size:1.15em;
+		font-family:$font-OpenSans;
+		font-weight:300;
+		text-align:left;
+		background:#434343;
+		background:rgba(67,67,67,0.65);
 	}
 
 	/**
 	 * Set colours for the page pips
 	 */
-	.flex-control-paging > li > a{
-		background:#434343;
-		box-shadow:none;
+	.bx-pager{
+		&.bx-default-pager{
+			a{
+				background:#434343;
 
-		&.flex-active{
-			background:#3cb878;
-		}
+				&:hover{
+					opacity:0.8;
+					background:#434343;
+				}
 
-		&:hover{
-			opacity:0.8;
+				&.active{
+					background:#3cb878;
+				}
+			}
 		}
 	}
 
 	/**
 	 * Style the next/prev buttons
 	 */
-	> .flex-direction-nav a{
-		top:0;
-		margin:0;
-		width:60px;
-		height:100%;
-		background:#434343;
-		background:rgba(67,67,67,0.4);
-		opacity:1 !important;
+	.bx-controls-direction{
+		> a{
+			top:0;
+			margin:0;
+			width:60px;
+			height:100%;
+			background:#434343;
+			background:rgba(67,67,67,0.4);
+			opacity:0;
+			-webkit-transition:all 0.15s linear;
+			-moz-transition:all 0.15s linear;
+			-o-transition:all 0.15s linear;
+			transition:all 0.15s linear;
 
-		&:after{
-			position:absolute;
-			top:50%;
-			display:block;
-			width:100%;
-			margin-top:-0.5em;
-			color:#bbb;
-			font-size:2em;
-			font-family:$font-Arial;
-			font-weight:bold;
-			text-align:center;
-			text-indent:0;
-			line-height:1em;
-			text-shadow:1px 1px 0 #333;
-		}
-
-		&.flex-prev{
-			left:0;
+			&:hover{
+				background:rgba(67,67,67,0.8);
+			}
 
 			&:after{
-				content:'\003C';
+				position:absolute;
+				top:50%;
+				display:block;
+				width:100%;
+				margin-top:-0.5em;
+				color:#bbb;
+				font-size:2em;
+				font-family:$font-OpenSans;
+				font-weight:bold;
+				text-align:center;
+				text-indent:0;
+				line-height:1em;
+				text-shadow:1px 1px 0 #333;
+			}
+
+			&.bx-prev{
+				left:0;
+
+				&:after{
+					content:'\003C';
+				}
+			}
+
+			&.bx-next{
+				right:0;
+
+				&:after{
+					content:'\003E';
+				}
 			}
 		}
+	}
 
-		&.flex-next{
-			right:0;
-
-			&:after{
-				content:'\003E';
+	&:hover{
+		.bx-controls-direction{
+			> a{
+				opacity:1;
 			}
 		}
+	}
+}
 
-		&:hover{
-			background:rgba(67,67,67,0.8);
+@media handheld, only screen and (max-width: 767px) {
+	.bx-wrapper{
+		.bx-controls-direction{
+			> a{
+				width:30px;
+			}
 		}
 	}
 }
