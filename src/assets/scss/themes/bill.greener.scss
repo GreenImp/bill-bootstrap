@@ -326,6 +326,28 @@ p.lead{
 	}
 }
 
+#fancybox-close{
+	color:#fff;
+	background:#434343;
+
+	&:before{
+		content:'X';
+		display:block;
+		font-family:$font-OpenSans;
+		font-size:1.25em;
+		font-weight:300;
+		text-align:center;
+	}
+
+	&:hover{
+		text-decoration:none;
+		opacity:0.9;
+	}
+}
+
+#fancybox-left-ico,
+#fancybox-right-ico{}
+
 
 
 /* ==========================================================================
@@ -349,7 +371,43 @@ p.lead{
  * Pagination
  * ========================================================================== */
 
-.pagination{}
+.pagination{
+	font-size:1em;
+
+	a, span{
+		padding:5px 16px;
+	}
+
+	&.block{
+		color:#434343;
+
+		a, span{
+			color:#434343;
+			border:1px solid #d4d4d4;
+
+			&.current{
+				color:#fff;
+				font-weight:normal;
+				background:#3cb878;
+				border-color:#2ca96e;
+			}
+		}
+
+		&.light{
+			a, span{
+				color:#fff;
+				background:#3cb878;
+				border-color:#2ca96e;
+
+				&.current{
+					color:#3cb878;
+					background:#434343;
+					border-color:#434343;
+				}
+			}
+		}
+	}
+}
 
 
 
@@ -357,7 +415,35 @@ p.lead{
  * Panel
  * ========================================================================== */
 
-.panel{}
+.panel{
+	color:#3dab72;
+	background:#e4e4e4;
+	border:1px solid #d4d4d4;
+	border-radius:0;
+	box-shadow:none;
+
+	h1, h2, h3,
+	h4, h5, hd4d4d46{
+		color:#434343;
+	}
+
+	&.feature{
+		color:#fff;
+		font-weight:normal;
+		background:#3cb878;
+		border:none;
+	}
+
+	&.dark{
+		background:#434343;
+		border:none;
+
+		h1, h2, h3,
+		h4, h5, hd4d4d46{
+			color:#fff;
+		}
+	}
+}
 
 
 
