@@ -28,6 +28,8 @@
 		queue:[],
 		active:false,
 		init:function(scope, method, options){
+			throw new Error(this.name + ' is currently not available, in this release of Bill.js', 'dialogue.js', 31);
+
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
