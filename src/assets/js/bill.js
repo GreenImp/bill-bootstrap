@@ -144,12 +144,15 @@ if(typeof jQuery === 'undefined'){
  * Basic functionality
  */
 /*> base/basic.js */
+
+
+/**
+ * Libraries
+ */
 /*> libraries/base/browserNotice.js */
 /*> libraries/base/cookieNotice.js */
 
-/**
- * UI functionality
- */
+// UI functionality
 /*> libraries/ui/accordion.js */
 /*> libraries/ui/dialogue.js */
 /*> libraries/ui/modal.js */
@@ -157,3 +160,9 @@ if(typeof jQuery === 'undefined'){
 /*> libraries/ui/notice.js */
 /*> libraries/ui/slider.js */
 /*> libraries/ui/tabs.js */
+
+
+/**
+ * Plugins
+ */
+/*> plugins/viewport.js */
