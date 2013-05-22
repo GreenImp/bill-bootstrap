@@ -109,6 +109,8 @@
 							$inner.stop(true, true).animate({left:offset}, lib.options.animSpeed, function(){
 								lib.animating = false;
 							});
+
+							e.preventDefault();
 						}
 					}
 				}
@@ -147,6 +149,8 @@
 
 						lib.animating = false;
 					});
+
+					e.preventDefault();
 				}
 
 				e.stopPropagation();
