@@ -19,6 +19,7 @@ if(typeof jQuery === 'undefined'){
 		version:'0.1.0',		// version number
 		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
+		plugins:{},				// list of available plugins
 		log:{},
 		/**
 		 * Initialises the Framework
@@ -143,16 +144,16 @@ if(typeof jQuery === 'undefined'){
  * Basic functionality
  */
 /*> base/basic.js */
-/*> base/browserNotice.js */
-/*> base/cookieNotice.js */
+/*> libraries/base/browserNotice.js */
+/*> libraries/base/cookieNotice.js */
 
 /**
  * UI functionality
  */
-/*> ui/accordion.js */
-/*> ui/dialogue.js */
-/*> ui/modal.js */
-/*> ui/navigation.js */
-/*> ui/notice.js */
-/*> ui/slider.js */
-/*> ui/tabs.js */
+/*> libraries/ui/accordion.js */
+/*> libraries/ui/dialogue.js */
+/*> libraries/ui/modal.js */
+/*> libraries/ui/navigation.js */
+/*> libraries/ui/notice.js */
+/*> libraries/ui/slider.js */
+/*> libraries/ui/tabs.js */
