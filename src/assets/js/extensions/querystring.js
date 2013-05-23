@@ -1,5 +1,5 @@
 /**
- * Bill.plugins.querystring
+ * Bill.extensions.querystring
  *
  * Adds jQuery function for getting the URL query strings.
  * If `name` is defined, then it will return that named value
@@ -7,7 +7,7 @@
 ;(function($, window, document, undefined){
 	"use strict";
 
-	Bill.plugins.querystring = {
+	Bill.extensions.querystring = {
 		name:'Querystring',
 		version:'0.1.0',
 		init:function(name){

@@ -19,7 +19,7 @@ if(typeof jQuery === 'undefined'){
 		version:'0.1.0',		// version number
 		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
-		plugins:{},				// list of available plugins
+		extensions:{},			// list of available plugins
 		log:{},
 		/**
 		 * Initialises the Framework
@@ -163,6 +163,7 @@ if(typeof jQuery === 'undefined'){
 
 
 /**
- * Plugins
+ * Extensions
  */
-/*> plugins/viewport.js */
+/*> extensions/querystring.js */
+/*> extensions/viewport.js */

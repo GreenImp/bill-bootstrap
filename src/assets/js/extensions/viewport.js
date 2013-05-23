@@ -1,5 +1,5 @@
 /**
- * Bill.plugins.viewport
+ * Bill.extensions.viewport
  *
  * Returns the viewport size and allows checking
  * whether the screen is small, medium or large
@@ -7,7 +7,7 @@
 ;(function($, window, document, undefined){
 	"use strict";
 
-	Bill.plugins.viewport = {
+	Bill.extensions.viewport = {
 		width:function(){
 			return Math.max($(window).innerWidth(), window.innerWidth);
 		},
