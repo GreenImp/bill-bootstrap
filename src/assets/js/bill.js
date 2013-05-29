@@ -45,9 +45,9 @@ if(typeof jQuery === 'undefined'){
 				});
 			}else{
 				// no libraries specified - load them all
-				$.each(this.libs, function(i, lib){
+				$.each(this.libs, function(name, lib){
 					// add the library to the list
-					libResponse.push(Bill.initLibrary(lib, args));
+					libResponse.push(Bill.initLibrary(name, args));
 				});
 
 				if(typeof libraries === 'function'){
