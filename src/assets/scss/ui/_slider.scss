@@ -217,8 +217,6 @@
  * ========================================================================== */
 
 .bx-wrapper{
-	margin-bottom:20px;
-
 	.bx-viewport{
 		left:0;
 	}
@@ -243,6 +241,7 @@
 		}
 	}
 
+	.bx-caption,
 	.caption{
 		position:absolute;
 		bottom:0;

@@ -39,7 +39,6 @@
 		 * Activates the library
 		 */
 		on:function(){
-			//$(this.scope).find('[data-slider]').addClass('flexslider').flexslider(this.options);
 			$(this.scope).find('[data-slider]').bxSlider(this.options);
 
 			this.options.init = true;
