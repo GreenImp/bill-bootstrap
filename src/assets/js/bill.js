@@ -30,10 +30,11 @@ if(typeof jQuery === 'undefined'){
 		 * @param options
 		 */
 		init:function(scope, libraries, method, options){
-			var libResponse = [],	// list of library load responses
-				args = [			// list of arguments to apply to libraries
-					scope, method, options
-				];
+			var libResponse = [];	// list of library load responses
+
+
+			// reset the log
+			this.log = {};
 
 			// set global scope (used in the libraries)
 			this.scope = scope || this.scope;
@@ -42,20 +43,38 @@ if(typeof jQuery === 'undefined'){
 				// split the libraries by space (to get each supplied library) and loop through them
 				$.each(libraries.split(' '), function(i, lib){
 					// add the library to the list
-					libResponse.push(Bill.initLibrary(lib, args));
+					libResponse.push(
+						Bill.initLibrary(
+							lib,
+							[
+								scope,
+								(typeof method === 'object') ? method[lib] || method : method,
+								(typeof options === 'object') ? options[lib] || options : options
+							]
+						)
+					);
 				});
 			}else{
 				// no libraries specified - load them all
 				$.each(this.libs, function(name, lib){
 					// add the library to the list
-					libResponse.push(Bill.initLibrary(name, args));
+					libResponse.push(
+						Bill.initLibrary(
+							name,
+							[
+								scope,
+								(typeof libraries === 'object') ? libraries[name] || libraries : libraries,
+								(typeof method === 'object') ? method[name] || method : options
+							]
+						)
+					);
 				});
 
-				if(typeof libraries === 'function'){
+				/*if(typeof libraries === 'function'){
 					// if the first argument is actually a callback (not library),
 					// add to the arguments list
 					args.unshift(libraries);
-				}
+				}*/
 			}
 
 			// TODO - check responses
