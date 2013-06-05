@@ -18,6 +18,7 @@
 			auto:true,
 			autoHover:true
 		},
+		sliders:$(),
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
@@ -39,7 +40,7 @@
 		 * Activates the library
 		 */
 		on:function(){
-			$(this.scope).find('[data-slider]').bxSlider(this.options);
+			this.sliders = $(this.scope).find('[data-slider]').bxSlider(this.options);
 
 			this.options.init = true;
 		},
@@ -47,7 +48,9 @@
 		 * De-activates the library
 		 */
 		off:function(){
-			$(this.scope).find('[data-slider]').destroySlider();
+			this.sliders.destroySlider();
+
+			this.options.init = false;
 		}
 	};
 })(jQuery, window, document);

@@ -26,6 +26,17 @@
 
 	.backBtn{display:none;}
 
+	.title{
+		float:left;
+		display:block;
+		padding:12px;
+		font-size:1.5em;
+
+		&.right{
+			float:right;
+		}
+	}
+
 	/**
 	 * Clear the inner floated elements
 	 */
@@ -38,7 +49,13 @@
 	> .top{
 		float:left;
 
-		> .menuBtn{display:none;}
+		> .menuBtn{
+			display:none;
+		}
+
+		> .title{
+			float:none;
+		}
 	}
 
 	/**
@@ -344,6 +361,13 @@
 @media handheld, only screen and (max-width: 767px) {
 	.nav{
 		overflow:hidden;
+
+		.title{
+			float:none;
+			padding-top:0;
+			padding-bottom:0;
+			line-height:44px;
+		}
 
 		ul,
 		ul.right,
