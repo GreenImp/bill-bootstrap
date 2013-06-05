@@ -320,6 +320,10 @@
 					&:last-child{
 						border-bottom:none;
 					}
+
+					a{
+						color:darken($background-colour, 55%)
+					}
 				}
 			}
 
@@ -329,6 +333,7 @@
 				padding:$default-padding;
 				color:$font-colour;
 				text-decoration:none;
+				overflow:hidden;
 				-webkit-transition:all 0.15s linear;
 				-moz-transition:all 0.15s linear;
 				-o-transition:all 0.15s linear;
