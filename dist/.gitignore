@@ -11,11 +11,24 @@
 *~
 *.sass-cache
 
-# OS or Editor folders
+# IOS/Mac specific
 .DS_Store
-._*
+*.mode1v3
+*.pbxuser
+*.perspectivev3
+*.xcworkspace
+xcuserdata
+
+# ASP.NET/Windows specific
 Thumbs.db
+Desktop.ini
+[Oo]bj
+[Bb]in
+
+# Other OS or Editor folders/files
+._*
 .cache
+*.Cache
 .project
 .settings
 .tmproj
