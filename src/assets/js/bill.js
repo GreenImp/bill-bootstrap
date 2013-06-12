@@ -19,6 +19,7 @@ if(typeof jQuery === 'undefined'){
 		version:'0.1.0',		// version number
 		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
+		extensions:{},			// list of available plugins
 		log:{},
 		/**
 		 * Initialises the Framework
@@ -29,10 +30,11 @@ if(typeof jQuery === 'undefined'){
 		 * @param options
 		 */
 		init:function(scope, libraries, method, options){
-			var libResponse = [],	// list of library load responses
-				args = [			// list of arguments to apply to libraries
-					scope, method, options
-				];
+			var libResponse = [];	// list of library load responses
+
+
+			// reset the log
+			this.log = {};
 
 			// set global scope (used in the libraries)
 			this.scope = scope || this.scope;
@@ -41,20 +43,38 @@ if(typeof jQuery === 'undefined'){
 				// split the libraries by space (to get each supplied library) and loop through them
 				$.each(libraries.split(' '), function(i, lib){
 					// add the library to the list
-					libResponse.push(Bill.initLibrary(lib, args));
+					libResponse.push(
+						Bill.initLibrary(
+							lib,
+							[
+								scope,
+								(typeof method === 'object') ? method[lib] || method : method,
+								(typeof options === 'object') ? options[lib] || options : options
+							]
+						)
+					);
 				});
 			}else{
 				// no libraries specified - load them all
 				$.each(this.libs, function(name, lib){
 					// add the library to the list
-					libResponse.push(Bill.initLibrary(name, args));
+					libResponse.push(
+						Bill.initLibrary(
+							name,
+							[
+								scope,
+								(typeof libraries === 'object') ? libraries[name] || libraries : libraries,
+								(typeof method === 'object') ? method[name] || method : options
+							]
+						)
+					);
 				});
 
-				if(typeof libraries === 'function'){
+				/*if(typeof libraries === 'function'){
 					// if the first argument is actually a callback (not library),
 					// add to the arguments list
 					args.unshift(libraries);
-				}
+				}*/
 			}
 
 			// TODO - check responses
@@ -143,16 +163,26 @@ if(typeof jQuery === 'undefined'){
  * Basic functionality
  */
 /*> base/basic.js */
-/*> base/browserNotice.js */
-/*> base/cookieNotice.js */
+
 
 /**
- * UI functionality
+ * Libraries
  */
-/*> ui/accordion.js */
-/*> ui/dialogue.js */
-/*> ui/modal.js */
-/*> ui/navigation.js */
-/*> ui/notice.js */
-/*> ui/slider.js */
-/*> ui/tabs.js */
+/*> libraries/base/browserNotice.js */
+/*> libraries/base/cookieNotice.js */
+
+// UI functionality
+/*> libraries/ui/accordion.js */
+/*> libraries/ui/dialogue.js */
+/*> libraries/ui/modal.js */
+/*> libraries/ui/navigation.js */
+/*> libraries/ui/notice.js */
+/*> libraries/ui/slider.js */
+/*> libraries/ui/tabs.js */
+
+
+/**
+ * Extensions
+ */
+/*> extensions/querystring.js */
+/*> extensions/viewport.js */
