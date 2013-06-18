@@ -451,6 +451,22 @@ embed{
 	}
 }
 
+/**
+ * Fixes reCaptcha style issue
+ */
+#recaptcha_container{
+	margin-bottom:12px;
+	line-height:normal;
+
+	input{
+		display:inline-block;
+	}
+
+	a{
+		font-weight:normal !important;
+	}
+}
+
 
 
 /* ==========================================================================
