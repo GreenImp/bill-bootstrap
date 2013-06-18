@@ -160,6 +160,15 @@
 			 * Click handler for the menu show/hide button
 			 */
 			$scope.on('click' + this.nameSpace, '[data-nav] > div.top span.menuBtn', function(e){
+				if(typeof lib.options.menuOnClick === 'function'){
+					// a callback function has been defined for the menu button click
+					if(false === lib.options.menuOnClick.call($scope, $.viewport.isSmall())){
+						// callback function returned false - end the event
+						e.preventDefault();
+						return false;
+					}
+				}
+
 				if($.viewport.isSmall()){
 					// we're on a small screen
 
@@ -169,11 +178,21 @@
 					if($elm.hasClass('active')){
 						// nav is visible - hide it
 						$elm.removeClass('active').height('auto');
-						$inner.stop(true, true).slideUp(lib.options.animSpeed);
+						$inner.stop(true, true).slideUp(lib.options.animSpeed, function(){
+							if(typeof lib.options.menuOnClickEnd === 'function'){
+								// a callback function has been defined for the menu button click
+								lib.options.menuOnClickEnd.call($scope, $elm);
+							}
+						});
 					}else{
 						// nav is hidden - show it
 						$elm.addClass('active').height('auto');
-						$inner.stop(true, true).css('left', 0).slideDown(lib.options.animSpeed);
+						$inner.stop(true, true).css('left', 0).slideDown(lib.options.animSpeed, function(){
+							if(typeof lib.options.menuOnClickEnd === 'function'){
+								// a callback function has been defined for the menu button click
+								lib.options.menuOnClickEnd.call($scope, $elm);
+							}
+						});
 					}
 				}
 
