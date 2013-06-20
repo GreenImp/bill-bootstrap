@@ -14,7 +14,8 @@
 		nameSpace:Bill.eventNameSpace + '.modal',
 		options:{
 			cyclic:true,
-			titlePosition:'float'
+			titlePosition:'float',
+			handle:'[data-modal]'
 		},
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
@@ -37,7 +38,7 @@
 		 * Activates the library
 		 */
 		on:function(){
-			$(this.scope).find('[data-modal]').fancybox(this.options);
+			$(this.scope).find(this.options.handle).fancybox(this.options);
 
 			this.options.init = true;
 		},
