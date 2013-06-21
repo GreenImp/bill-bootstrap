@@ -167,9 +167,9 @@
 					$container = $title.closest('[data-accordion]'),			// the container element
 					$pane = $title.next('.' + lib.options.paneSelector);		// the corresponding pane element
 
-
+				// check for a callback on the click event
 				if(typeof lib.options.onClick === 'function'){
-					// a callback function has been defined for the click
+					// a callback function has been defined
 					if(false === lib.options.onClick.call(lib.scope, $title, $container)){
 						// callback function returned false - end the event
 						e.preventDefault();
