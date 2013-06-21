@@ -30,10 +30,7 @@
 		}
 
 		// ensure that any elements inside the header don't have a margin
-		> h1, > h2,
-		> h3, > h4,
-		> h5, > h6,
-		> p{
+		> *{
 			margin:0;
 		}
 	}
@@ -43,10 +40,7 @@
 		padding:$default-padding;
 		background:lighten($background-colour, 2%);
 
-		> h1, > h2,
-		> h3, > h4,
-		> h5, > h6,
-		> p{
+		> *{
 			// ensure that the first elements inside the header doesn't have a top margin
 			&:first-child{
 				margin-top:0;
