@@ -162,7 +162,7 @@
 			$scope.on('click' + this.nameSpace, '[data-nav] > div.top span.menuBtn', function(e){
 				if(typeof lib.options.menuOnClick === 'function'){
 					// a callback function has been defined for the menu button click
-					if(false === lib.options.menuOnClick.call($scope, $.viewport.isSmall())){
+					if(false === lib.options.menuOnClick.call(lib.scope, $.viewport.isSmall())){
 						// callback function returned false - end the event
 						e.preventDefault();
 						return false;
@@ -181,7 +181,7 @@
 						$inner.stop(true, true).slideUp(lib.options.animSpeed, function(){
 							if(typeof lib.options.menuOnClickEnd === 'function'){
 								// a callback function has been defined for the menu button click
-								lib.options.menuOnClickEnd.call($scope, $elm);
+								lib.options.menuOnClickEnd.call(lib.scope, $elm);
 							}
 						});
 					}else{
@@ -190,7 +190,7 @@
 						$inner.stop(true, true).css('left', 0).slideDown(lib.options.animSpeed, function(){
 							if(typeof lib.options.menuOnClickEnd === 'function'){
 								// a callback function has been defined for the menu button click
-								lib.options.menuOnClickEnd.call($scope, $elm);
+								lib.options.menuOnClickEnd.call(lib.scope, $elm);
 							}
 						});
 					}
