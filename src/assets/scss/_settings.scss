@@ -2,7 +2,7 @@
 $font-colour:#333;
 $font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-size:14px;
-$line-height:20px;
+$line-height:1.429em;
 $background-colour:#fff;
 
 
@@ -12,7 +12,10 @@ $default-padding:12px;
 
 
 // settings for responsive grid layout
-$grid-columns: 12;
-$row-names: row, deck;
-$column-names: column, plank;
-$column-numbers: one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve;
+$grid-columns:12;
+$row-names:row, deck;
+$column-names:column, plank;
+$column-numbers:one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve;
+
+$column-padding-horizontal:10px;
+$column-padding-horizontal-small:20px;

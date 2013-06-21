@@ -455,7 +455,7 @@ embed{
  * Fixes reCaptcha style issue
  */
 #recaptcha_container{
-	margin-bottom:12px;
+	margin-bottom:$default-vertical-spacing;
 	line-height:normal;
 
 	input{
@@ -637,7 +637,7 @@ table{
  * ========================================================================== */
 
 progress,
-	meter{
+meter{
 	width:100%;
-	font-size:12px;
+	font-size:0.857em;
 }
