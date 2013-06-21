@@ -167,6 +167,16 @@
 					$container = $title.closest('[data-accordion]'),			// the container element
 					$pane = $title.next('.' + lib.options.paneSelector);		// the corresponding pane element
 
+
+				if(typeof lib.options.onClick === 'function'){
+					// a callback function has been defined for the click
+					if(false === lib.options.onClick.call(lib.scope, $title, $container)){
+						// callback function returned false - end the event
+						e.preventDefault();
+						return false;
+					}
+				}
+
 				if($title.hasClass('active')){
 					// panel is already active - collapse, if we are allowed
 
