@@ -150,6 +150,16 @@
 					$panes = $container.find('.' + lib.options.paneSelector),		// list of panes
 					$pane = $panes.filter($tab.attr('href'));						// pane the clicked tab corresponds to
 
+				// check for a callback on the click event
+				if(typeof lib.options.onClick === 'function'){
+					// a callback function has been defined
+					if(false === lib.options.onClick.call(lib.scope, $tab, $container)){
+						// callback function returned false - end the event
+						e.preventDefault();
+						return false;
+					}
+				}
+
 				// stop any active animation
 				$panes.stop(true, true);
 
