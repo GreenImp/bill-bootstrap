@@ -44,6 +44,17 @@
 
 				// get the notice
 				var $elm = $(this).closest('[data-notice]');
+
+				// check for a callback on the click event
+				if(typeof lib.options.onClick === 'function'){
+					// a callback function has been defined
+					if(false === lib.options.onClick.call(lib.scope, $elm)){
+						// callback function returned false - end the event
+						e.preventDefault();
+						return false;
+					}
+				}
+
 				if($elm.hasClass('fixed')){
 					// this is a fixed notice - slide it up
 					$elm.slideUp(lib.options.animSpeed, function(){
