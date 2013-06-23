@@ -1,0 +1,239 @@
+/*!
+ * RTL (right-to-left) stylesheet for bill-bootstrap
+ *
+ * Author: GreenImp Web
+ * Date Created: 24/01/13 23:05
+ */
+
+// include the base settings (font sizes, colours etc)
+@import "_settings";
+
+[dir="RTL"]{
+	/* ==========================================================================
+	 * Forms
+	 * ========================================================================== */
+
+	fieldset{
+		legend{
+			margin-right:-4px;
+		}
+	}
+
+	input,
+	select,
+	textarea{
+		text-align:right;
+	}
+
+	/**
+	 * Adds an asterisk on labels for required fields
+	 */
+	label.required:after{
+		content:'*';
+		position:relative;
+		left:auto;
+		right:0.25em;
+		margin-left:0.25em;
+	}
+
+
+
+	/* ==========================================================================
+	 * Lists
+	 * ========================================================================== */
+
+	ul, ol{
+		margin-left:0;
+		margin-right:20px;
+	}
+
+	dl.inline{
+		dt{
+			paddng-right:0;
+			padding-left:10px;
+		}
+	}
+
+
+
+	/* ==========================================================================
+	 * Tables
+	 * ========================================================================== */
+
+	table{
+		td{
+			text-align:right;
+		}
+
+		> tbody > tr{
+			> th{
+				text-align:right;
+			}
+		}
+	}
+
+
+
+	/* ==========================================================================
+	 * Quotes
+	 * ========================================================================== */
+
+	blockquote{
+		&:before{
+			content:'\201D';
+			right:auto;
+			left:99%
+		}
+
+		&:after{
+			content:'\201C';
+			left:auto;
+			right:99%
+		}
+
+
+		cite{
+			margin-left:0;
+			margin-right:5px;
+		}
+	}
+
+
+
+	/* ==========================================================================
+	 * Notice boxes
+	 * ========================================================================== */
+
+	.notice{
+		padding-right:6px;
+		padding-left:2.5em;
+
+		> .closeBtn{
+			right:auto;
+			left:0.5em;
+		}
+	}
+
+
+
+	/* ==========================================================================
+	 * Responsive
+	 * ========================================================================== */
+
+	/**
+	 * Columns
+	 */
+	.column, .plank{
+		float:right;
+
+		/**
+		 * Float the last column left.
+		 * This fixes rounding issues in browsers, where
+		 * the last column doesn't line up with the left-hand-side
+		 */
+		&:last-child{
+			float:left;
+		}
+
+		/**
+		 * Column offsets
+		 */
+		@for $i from 1 through $grid-columns - 1 {
+			&.offset-#{nth($column-numbers, $i)}{
+				margin-left:0;
+				margin-right:100%/($grid-columns/$i);
+			}
+		}
+	}
+
+	/**
+	 * Media queries for handling smaller screen sizes
+	 */
+	@media handheld, only screen and (max-width: 767px) {
+		/**
+		 * columns for small screens
+		 */
+		/**
+		 * Setting individual column widths
+		 */
+			@for $i from 1 through $grid-columns{
+				&.#{nth($column-numbers, $i)}-small{
+					float:right !important;
+				}
+			}
+	}
+
+
+
+	/* ==========================================================================
+	 * Libraries
+	 * ========================================================================== */
+
+	/*!
+	 * Breadcrumbs
+	 */
+	.breadcrumbs{
+		margin-right:0;
+
+		/* the inner items */
+		> li, > span,
+		> div, > a{
+			float:right;
+			padding-right:0;
+			padding-left:8px;
+
+			/* add the separator */
+			&:before{
+				content:'\005C';
+				padding-right:0;
+				padding-left:8px;
+			}
+		}
+
+		&.arrow,
+		&.chevron{
+			> li, > span,
+			> div, > a{
+				&:before{
+					content:'\003E';
+				}
+			}
+		}
+	}
+
+	/*!
+	 * Modal Dialogue
+	 */
+	#fancybox-close{
+		right:auto;
+		left:-15px;
+	}
+
+	#fancybox-left{
+		left:auto;
+		right:0;
+
+		&:hover > span{
+			left:auto;
+			right:20px;
+		}
+	}
+
+	#fancybox-right{
+		right:auto;
+		left:0;
+
+		&:hover > span{
+			right:auto;
+			left:20px;
+		}
+	}
+
+	#fancybox-left-ico{
+		background-position:-40px -60px;
+	}
+
+	#fancybox-right-ico{
+		background-position:-40px -30px;
+	}
+}

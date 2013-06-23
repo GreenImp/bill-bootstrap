@@ -164,7 +164,7 @@
 }
 
 #fancybox-left{
-	left:0px;
+	left:0;
 
 	&:hover > span{
 		left:20px;
@@ -172,10 +172,9 @@
 }
 
 #fancybox-right{
-	right:0px;
+	right:0;
 
 	&:hover > span{
-		left:auto;
 		right:20px;
 	}
 }
