@@ -2,7 +2,7 @@
 <!--[if lt IE 8]><html lang="en" class="no-js lt-ie8"><![endif]-->
 <!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
 <!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
-<!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
+<!--[if gt IE 9]><!--><html lang="en" class="no-js" dir="RTL"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
@@ -92,7 +92,7 @@
 				</li>
 			</ul>
 
-			<ul class="right">
+			<ul class="left">
 				<li>
 					<a href="#">Item 1</a>
 
@@ -936,7 +936,12 @@
 		/**
 		 * TODO - dialogue
 		 */
-		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs');
+		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs', {
+			// if rtl, autoDirection should (possibly) be set to 'prev', so that it goes in reverse
+			slider:{
+				autoDirection:'prev'
+			}
+		});
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
