@@ -238,6 +238,271 @@
 		background-position:-40px -30px;
 	}
 
+	#fancybox-left-ico,
+	#fancybox-right-ico{
+		left:auto;
+		right:-9999px;
+	}
+
+
+	/*!
+	 * Navigation
+	 */
+	.nav{
+		.title{
+			float:right;
+		}
+
+		> .top{
+			float:right;
+
+			> .title{
+				float:none;
+			}
+		}
+
+		ul{margin:0;}
+
+		> ul,
+		> .inner > ul{
+			float:right;
+
+			> li{
+				&:hover{
+					> ul{
+						left:auto;
+						right:0;
+					}
+				}
+
+				&.hasSub{
+					> a,
+					> span,
+					> label,
+					> div,
+					> h1, > h2, > h3,
+					> h4, > h5, > h6{
+						padding-right:12px;
+						padding-left:28px;
+
+						&:after{
+							right:auto;
+							left:12px;
+						}
+					}
+				}
+
+				ul{
+					left:auto;
+					right:-9999em;
+
+					> li{
+						&:hover{
+							> ul{
+								left:auto;
+								right:100%;
+							}
+						}
+					}
+
+					li{
+						&.hasSub{
+							> a,
+							> span,
+							> label,
+							> div,
+							> h1, > h2, > h3,
+							> h4, > h5, > h6{
+								padding-right:12px;
+								padding-left:28px;
+
+								&:after{
+									left:12px;
+									right:auto;
+									border:none;
+									border-right:5px solid #fff;
+									border-top:5px solid transparent;
+									border-bottom:5px solid transparent;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			/**
+			 * Left-aligned nav elements
+			 */
+			&.left{
+				float:left;
+				text-align:left;
+
+				/**
+				 * Show sub-menu, on hover of it's parent
+				 */
+				> li{
+					&:hover{
+						> ul{
+							right:auto;
+							left:0;
+						}
+					}
+
+					/**
+					 * position third level (and greater) navigation to the right
+					 */
+					ul > li{
+						&:hover{
+							> ul{
+								right:auto;
+								left:100%;
+							}
+						}
+
+						/*
+						 * sub li with sub menu
+						 */
+						&.hasSub{
+							> a,
+							> span,
+							> label,
+							> div,
+							> h1, > h2, > h3,
+							> h4, > h5, > h6{
+								padding-left:12px;
+								padding-right:28px;
+
+								&:after{
+									right:12px;
+									left:auto;
+									border:none;
+									border-left:5px solid #fff;
+									border-top:5px solid transparent;
+									border-bottom:5px solid transparent;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media handheld, only screen and (max-width: 767px) {
+		.nav{
+			ul,
+			ul.left,
+			.inner ul,
+			.inner ul.left{
+				float:none;
+				text-align:right;
+
+				li{
+					float:none;
+
+					ul{
+						padding-left:0;
+						padding-right:8px;
+
+						li{
+							/*
+							 * sub li with sub menu
+							 */
+							&.hasSub{
+								> a,
+								> span,
+								> label,
+								> div,
+								> h1, > h2, > h3,
+								> h4, > h5, > h6{
+									padding-right:12px;
+									padding-left:28px;
+
+									&:after{
+										right:auto;
+										left:12px;
+										border:none;
+										border-right:5px solid #fff;
+										border-top:5px solid transparent;
+										border-bottom:5px solid transparent;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			&.dynamic{
+				> .top{
+					float:none;
+
+					> .menuBtn{
+						float:left;
+					}
+				}
+
+
+				> .inner{
+					ul,
+					ul.left,
+					ul.left ul{
+						> li{
+							.backBtn{
+								&:before{
+									padding-right:0;
+									padding-left:5px;
+								}
+							}
+
+							/*
+							 * sub li with sub menu
+							 */
+							&.hasSub{
+								> a,
+								> span,
+								> label,
+								> div,
+								> h1, > h2, > h3,
+								> h4, > h5, > h6{
+									padding-right:12px;
+									padding-left:28px;
+
+									&:after{
+										right:auto;
+										left:12px;
+										border:none;
+										border-right:5px solid #fff;
+										border-top:5px solid transparent;
+										border-bottom:5px solid transparent;
+									}
+								}
+							}
+
+							&:hover{
+								> ul{
+									right:100%;
+									left:auto;
+								}
+							}
+
+							ul{
+								left:0;
+								right:100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sideNav{
+		ul{
+			margin:0;
+		}
+	}
+
 
 	/*!
 	 * Pagination
@@ -264,6 +529,13 @@
 		.bx-caption,
 		.caption{
 			direction:rtl;
+		}
+
+		.bx-pager.bx-default-pager a,
+		.bx-controls-direction a,
+		.bx-controls-auto .bx-start,
+		.bx-controls-auto .bx-stop{
+			text-indent:9999em;
 		}
 	}
 
