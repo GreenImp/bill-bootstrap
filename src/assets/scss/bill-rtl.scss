@@ -201,6 +201,7 @@
 		}
 	}
 
+
 	/*!
 	 * Modal Dialogue
 	 */
@@ -235,5 +236,40 @@
 
 	#fancybox-right-ico{
 		background-position:-40px -30px;
+	}
+
+
+	/*!
+	 * Pagination
+	 */
+	ul.pagination{
+		li{
+			float:right;
+		}
+	}
+
+
+	/*!
+	 * Tabs
+	 */
+	.tabs{
+		> ul{
+			margin:0;
+		}
+
+		> .tab,
+		> ul > li.tab{
+			float:right;
+
+			&:first-child > a{
+				margin-left:0;
+				margin-right:5px;
+			}
+
+			&:last-of-type > a{
+				margin-right:0;
+				margin-left:5px;
+			}
+		}
 	}
 }
