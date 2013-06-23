@@ -936,7 +936,12 @@
 		/**
 		 * TODO - dialogue
 		 */
-		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs');
+		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs', {
+			// if rtl, autoDirection should (possibly) be set to 'prev', so that it goes in reverse
+			slider:{
+				autoDirection:'prev'
+			}
+		});
 
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});

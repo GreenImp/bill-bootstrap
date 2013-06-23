@@ -250,6 +250,25 @@
 
 
 	/*!
+	 * Slider
+	 */
+	.bx-wrapper{
+		// force ltr direction, otherwise images don't show
+		direction:ltr;
+
+		ul{
+			margin:0;
+		}
+
+		// set captions back to rtl
+		.bx-caption,
+		.caption{
+			direction:rtl;
+		}
+	}
+
+
+	/*!
 	 * Tabs
 	 */
 	.tabs{
