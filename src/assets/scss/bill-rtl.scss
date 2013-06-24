@@ -169,7 +169,7 @@
 	 * Libraries
 	 * ========================================================================== */
 
-	/*!
+	/**
 	 * Breadcrumbs
 	 */
 	.breadcrumbs{
@@ -201,8 +201,26 @@
 		}
 	}
 
+	/**
+	 * Dialogue Boxes
+	 */
+	.dialogueBox{
+		> .buttons{
+			text-align:left;
 
-	/*!
+			input[type=submit],
+			input[type=reset],
+			input[type=button],
+			button,
+			.button{
+				margin-left:0;
+				margin-right:10px;
+			}
+		}
+	}
+
+
+	/**
 	 * Modal Dialogue
 	 */
 	#fancybox-close{
@@ -245,7 +263,7 @@
 	}
 
 
-	/*!
+	/**
 	 * Navigation
 	 */
 	.nav{
@@ -506,7 +524,7 @@
 	}
 
 
-	/*!
+	/**
 	 * Pagination
 	 */
 	ul.pagination{
@@ -516,7 +534,7 @@
 	}
 
 
-	/*!
+	/**
 	 * Slider
 	 */
 	.bx-wrapper{
@@ -542,7 +560,7 @@
 	}
 
 
-	/*!
+	/**
 	 * Tabs
 	 */
 	.tabs{
