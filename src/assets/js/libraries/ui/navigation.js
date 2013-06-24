@@ -84,16 +84,17 @@
 					// we're on a small screen
 
 					// check the clicked element - ensure that it's not a child of hasSub
-					var $target = $(e.target),
-						$elm = $target.closest('[data-nav]'),
-						$inner = $elm.children('div.inner:first'),
-						$top = $elm.children('div.top:first');
-
+					var $target = $(e.target);	// the click target
 					if($target.hasClass('hasSub') || (($target.prop('tagName').toUpperCase() != 'UL') && $target.parent().hasClass('hasSub'))){
 						// we're on an actual hasSub element
 
-						var $parent = $(this),						// get the holder li element
-							$subs = $parent.children('ul').show();	// get the sub nav and show it
+						var $parent = $(this),							// get the holder li element
+							$subs = $parent.children('ul').show(),		// get the sub nav and show it
+							$elm = $parent.closest('[data-nav]'),		// the nav element
+							$inner = $elm.children('div.inner:first'),	// the nav inner
+							$top = $elm.children('div.top:first'),		// the nav top
+							isRTL = Bill.isRTL($elm);					// flag - whether the nav is in RTL mode
+
 						// ensure that we have a sub nav
 						if($subs.length){
 							lib.animating = true;
@@ -105,8 +106,9 @@
 							$elm.height(lib.getHeight($subs, $top));
 
 							// slide the sub nav into view
-							var offset = (((parseFloat($inner.css('left')) / $elm.width()) * 100) - 100) + '%';
-							$inner.stop(true, true).animate({left:offset}, lib.options.animSpeed, function(){
+							var offset = (((parseFloat($inner.css(isRTL ? 'right' : 'left')) / $elm.width()) * 100) - 100) + '%';
+							offset = isRTL ? {right:offset} : {left:offset};
+							$inner.stop(true, true).animate(offset, lib.options.animSpeed, function(){
 								lib.animating = false;
 							});
 
@@ -125,15 +127,14 @@
 				if($.viewport.isSmall() && !lib.animating){
 					// we're on a small screen
 
-					var $parent = $(this).closest('li.hasSub'),
-						$elm = $parent.closest('[data-nav]'),
-						$inner = $elm.children('div.inner:first'),
-						$top = $elm.children('div.top:first');
+					var $parent = $(this).closest('li.hasSub'),		// get the holder li element
+						$elm = $parent.closest('[data-nav]'),		// the nav element
+						$inner = $elm.children('div.inner:first'),	// the nav inner
+						$top = $elm.children('div.top:first'),		// the nav top
+						isRTL = Bill.isRTL($elm);					// flag - whether the nav is in RTL mode
 
 					lib.animating = true;
 
-					//$inner.find('li.active').removeClass('active');
-					//$parent.parents('li.hasSub').addClass('active');
 					$parent.removeClass('active');
 					$parent.closest('li.hasSub').addClass('active');
 
@@ -141,9 +142,10 @@
 					$elm.height(lib.getHeight($parent.parent('ul').parent().children('ul'), $top));
 
 					// slide the nav back to show the parent
-					var offset = (((parseFloat($inner.css('left')) / $elm.width()) * 100) + 100);
+					var offset = (((parseFloat($inner.css(isRTL ? 'right' : 'left')) / $elm.width()) * 100) + 100);
 					offset = (offset > 0) ? 0 : offset + '%';
-					$inner.stop(true, true).animate({left:offset}, lib.options.animSpeed, function(){
+					offset = isRTL ? {right:offset} : {left:offset};
+					$inner.stop(true, true).animate(offset, lib.options.animSpeed, function(){
 						// hide the children (this stops them overlapping
 						$parent.children('ul').hide();
 
@@ -173,7 +175,8 @@
 					// we're on a small screen
 
 					var $elm = $(this).closest('[data-nav]'),
-						$inner = $elm.children('div.inner:first');
+						$inner = $elm.children('div.inner:first'),
+						isRTL = Bill.isRTL($elm);					// flag - whether the nav is in RTL mode
 
 					if($elm.hasClass('active')){
 						// nav is visible - hide it
@@ -187,7 +190,7 @@
 					}else{
 						// nav is hidden - show it
 						$elm.addClass('active').height('auto');
-						$inner.stop(true, true).css('left', 0).slideDown(lib.options.animSpeed, function(){
+						$inner.stop(true, true).css(isRTL ? 'right' : 'left', 0).slideDown(lib.options.animSpeed, function(){
 							if(typeof lib.options.menuOnClickEnd === 'function'){
 								// a callback function has been defined for the menu button click
 								lib.options.menuOnClickEnd.call(lib.scope, $elm);
