@@ -447,6 +447,8 @@
 					ul,
 					ul.left,
 					ul.left ul{
+						padding-right:0;
+
 						> li{
 							.backBtn{
 								&:before{
@@ -487,7 +489,7 @@
 							}
 
 							ul{
-								left:0;
+								left:auto;
 								right:100%;
 							}
 						}

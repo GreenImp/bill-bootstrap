@@ -21,7 +21,7 @@ if(typeof jQuery === 'undefined'){
 		libs:{},				// list of available libraries
 		extensions:{},			// list of available plugins
 		log:{},
-		isRTL:false,			// return whether the site is RTL (Right To Left)
+		rtl:false,			// return whether the site is RTL (Right To Left)
 		/**
 		 * Initialises the Framework
 		 *
@@ -38,7 +38,7 @@ if(typeof jQuery === 'undefined'){
 			this.log = {};
 
 			// check RTL
-			this.isRTL = dir && ((dir == 'rtl') || (dir == 'RTL'));
+			this.rtl = dir && ((dir == 'rtl') || (dir == 'RTL'));
 
 			// set global scope (used in the libraries)
 			this.scope = scope || this.scope;
@@ -143,6 +143,9 @@ if(typeof jQuery === 'undefined'){
 			$(this.scope).off(this.eventNameSpace);
 			$(window).off(this.eventNameSpace);
 			$(document).off(this.eventNameSpace);
+		},
+		isRTL:function(scope){
+			return this.rtl || ($(scope).closest('[dir="rtl"], [dir="RTL"]').length > 0);
 		}
 	};
 
