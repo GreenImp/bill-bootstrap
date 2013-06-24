@@ -8,7 +8,7 @@
 	"use strict";
 
 	Bill.exts.viewport = {
-		name:'viewport',
+		name:'Viewport',
 		version:'0.1.0',
 		init:function(method){
 			if(typeof method === 'string'){

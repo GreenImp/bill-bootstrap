@@ -941,6 +941,9 @@
 		console.log(Bill.extension('querystring', 'foo'));
 		console.log(Bill.extension('viewport'));
 
+		console.log($.getQueryString('foo'));
+		console.log($.viewport('isSmall'));
+
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});

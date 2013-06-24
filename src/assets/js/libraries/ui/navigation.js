@@ -80,7 +80,7 @@
 			 * Handles click/swipes on elements that have sub navigation
 			 */
 			$scope.on('click' + this.nameSpace + ' swipeleft' + this.nameSpace, '[data-nav] li.hasSub', function(e){
-				if($.viewport.isSmall() && !lib.animating){
+				if(Bill.extension('viewport', 'isSmall') && !lib.animating){
 					// we're on a small screen
 
 					// check the clicked element - ensure that it's not a child of hasSub
@@ -124,7 +124,7 @@
 			 * Handles clicks/swipes on navigation back buttons
 			 */
 			$scope.on('click' + this.nameSpace + ' swiperight' + this.nameSpace, '[data-nav] li.backBtn', function(e){
-				if($.viewport.isSmall() && !lib.animating){
+				if(Bill.extension('viewport', 'isSmall') && !lib.animating){
 					// we're on a small screen
 
 					var $parent = $(this).closest('li.hasSub'),		// get the holder li element
@@ -162,16 +162,18 @@
 			 * Click handler for the menu show/hide button
 			 */
 			$scope.on('click' + this.nameSpace, '[data-nav] > div.top span.menuBtn', function(e){
+				var isSmall = Bill.extension('viewport', 'isSmall');
+
 				if(typeof lib.options.menuOnClick === 'function'){
 					// a callback function has been defined for the menu button click
-					if(false === lib.options.menuOnClick.call(lib.scope, $.viewport.isSmall())){
+					if(false === lib.options.menuOnClick.call(lib.scope,isSmall)){
 						// callback function returned false - end the event
 						e.preventDefault();
 						return false;
 					}
 				}
 
-				if($.viewport.isSmall()){
+				if(isSmall){
 					// we're on a small screen
 
 					var $elm = $(this).closest('[data-nav]'),
@@ -207,7 +209,7 @@
 			 * the correct height on small screens
 			 */
 			$(window).on('ready' + this.nameSpace + ' resize' + this.nameSpace, function(){
-				var isSmall = $.viewport.isSmall();
+				var isSmall = Bill.extension('viewport', 'isSmall');
 				$('[data-nav]').each(function(){
 					var $elm = $(this),
 						$top = $elm.children('div.top:first'),
