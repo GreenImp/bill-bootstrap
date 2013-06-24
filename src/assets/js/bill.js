@@ -21,6 +21,7 @@ if(typeof jQuery === 'undefined'){
 		libs:{},				// list of available libraries
 		extensions:{},			// list of available plugins
 		log:{},
+		isRTL:false,			// return whether the site is RTL (Right To Left)
 		/**
 		 * Initialises the Framework
 		 *
@@ -30,11 +31,14 @@ if(typeof jQuery === 'undefined'){
 		 * @param options
 		 */
 		init:function(scope, libraries, method, options){
-			var libResponse = [];	// list of library load responses
-
+			var libResponse = [],				// list of library load responses
+				dir = $('html').attr('dir');	// stores the html direction (LTR | RTL | BIDI)
 
 			// reset the log
 			this.log = {};
+
+			// check RTL
+			this.isRTL = dir && ((dir == 'rtl') || (dir == 'RTL'));
 
 			// set global scope (used in the libraries)
 			this.scope = scope || this.scope;
