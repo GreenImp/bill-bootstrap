@@ -7,7 +7,17 @@
 ;(function($, window, document, undefined){
 	"use strict";
 
-	Bill.extensions.viewport = {
+	Bill.exts.viewport = {
+		name:'viewport',
+		version:'0.1.0',
+		init:function(method){
+			if(typeof method === 'string'){
+				// call the method and return
+				return this[method].call(this);
+			}
+
+			return this;
+		},
 		width:function(){
 			return Math.max($(window).innerWidth(), window.innerWidth);
 		},

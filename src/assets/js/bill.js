@@ -19,7 +19,7 @@ if(typeof jQuery === 'undefined'){
 		version:'0.1.0',		// version number
 		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
-		extensions:{},			// list of available plugins
+		exts:{},				// list of available exetensions
 		log:{},
 		rtl:false,			// return whether the site is RTL (Right To Left)
 		/**
@@ -44,6 +44,10 @@ if(typeof jQuery === 'undefined'){
 			this.scope = scope || this.scope;
 
 			if(libraries && (typeof libraries === 'string')){
+				if(libraries == 'off'){
+					return this.off();
+				}
+
 				// split the libraries by space (to get each supplied library) and loop through them
 				$.each(libraries.split(' '), function(i, lib){
 					// add the library to the list
@@ -92,33 +96,48 @@ if(typeof jQuery === 'undefined'){
 		 * @returns {*}
 		 */
 		initLibrary:function(lib, args){
-			return this.catchLib(function(){
-				// check if the library exists
-				if(this.libs.hasOwnProperty(lib)){
-					// define the correct library scope
-					this.libs[lib].scope = this.scope;
+			return this.catchLib(
+				function(){
+					// check if the library exists
+					if(this.libs.hasOwnProperty(lib)){
+						// define the correct library scope
+						this.libs[lib].scope = this.scope;
 
-					// initialise the library and return
-					return this.libs[lib].init.apply(this.libs[lib], args);
-				}
-			}.bind(this), lib);
+						// initialise the library and return
+						return this.libs[lib].init.apply(this.libs[lib], args);
+					}
+				}.bind(this),
+				lib
+			);
+		},
+		extension:function(ext, method, options){
+			return this.catchLib(
+				function(){
+					// check if the extension exists
+					if(this.exts.hasOwnProperty(ext)){
+						// initialise the extension and return
+						return this.exts[ext].init.call(this.exts[ext], method, options);
+					}
+				}.bind(this),
+				ext
+			);
 		},
 		/**
 		 * Error handling for library loading
 		 *
 		 * @param func
-		 * @param lib
+		 * @param name
 		 * @returns {*}
 		 */
-		catchLib:function(func, lib){
+		catchLib:function(func, name){
 			try{
 				return func();
 			}catch(e){
 				return this.error({
-					name:lib,
+					name:name,
 					message:'could not be initialized',
 					file:'bill.js',
-					line:97,
+					line:136,
 					e:e
 				});
 			}
