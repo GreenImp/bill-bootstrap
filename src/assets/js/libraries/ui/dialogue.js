@@ -28,8 +28,6 @@
 		queue:[],
 		active:false,
 		init:function(scope, method, options){
-			throw new Error(this.name + ' is currently not available, in this release of Bill.js', 'dialogue.js', 31);
-
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
@@ -59,7 +57,18 @@
 			$scope.on('click' + this.nameSpace, '[data-dialogue]', function(e){
 				e.preventDefault();
 
-				lib.doDialogue(lib.options);
+				var $btn = $(this),
+					availableData = ['msg', 'type', 'value', 'placeholder'],
+					options = {};
+
+				// loop through and check if any custom data attributes have been defined for this dialogue
+				$.each(availableData, function(i, attr){
+					if($btn.attr('data-' + attr)){
+						options[attr] = $btn.attr('data-' + attr);
+					}
+				});
+
+				lib.doDialogue($.extend({}, lib.options, options));
 			});
 
 			if(lib.options.auto){
