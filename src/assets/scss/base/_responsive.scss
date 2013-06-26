@@ -286,6 +286,45 @@
 					float:left !important;
 					padding:0 $column-padding-horizontal;
 					width:100%/($grid-columns/$i) !important;
+
+
+					/**
+					 * Allow columns to be collapsed
+					 */
+					&.collapse-small{
+						padding:0;
+					}
+					/**
+					 * Allow columns to be collapsed horizontally (removes left/right padding)
+					 */
+					&.collapse-horizontal-small{
+						padding-left:0;
+						padding-right:0;
+					}
+
+					&.collapse-left-small{
+						padding-left:0;
+					}
+
+					&.collapse-right-small{
+						padding-right:0;
+					}
+
+					/**
+					 * Allow columns to be collapsed vertically (removes top/bottom padding)
+					 */
+					&.collapse-vertical-small{
+						padding-top:0;
+						padding-bottom:0;
+					}
+
+					&.collapse-top-small{
+						padding-top:0;
+					}
+
+					&.collapse-bottom-small{
+						padding-bottom:0;
+					}
 				}
 			}
 		}
