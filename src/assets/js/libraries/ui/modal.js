@@ -3,7 +3,6 @@
  *
  * Shows modal dialogue boxes
  */
-/*> vendor/jquery.fancybox-1.3.4_patch.js */
 
 ;(function($, window, document, undefined){
 	"use strict";
@@ -21,10 +20,14 @@
 			hideOnContentClick:false,	// hide on click of the content
 			hideOnEscape:true,			// hide on press of the esc button
 			showCloseButton:true,		// show the close button
+			ajax:{},
 			swf:{
 				quality:'high'
 			}
 		},
+		overlay:null,
+		modal:null,
+		modalContent:null,
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
@@ -37,24 +40,34 @@
 			}
 
 			if(!this.options.init){
-				$('body').append(
-					'<div id="modalWrapper">' +
-						'<div id="modalInner">' +
-							'<a href="#" title="Close" id="modalClose" class="closeBtn">Close</a>' +
+				if(this.options.modal){
+					// true modal
+					this.options.overlayShow = true;
+					this.options.hideOnOverlayClick = false;
+					this.options.hideOnContentClick = false;
+					this.options.showCloseButton= true;
+				}
 
-							'<div class="controls">' +
-								'<a href="#" title="Previous" class="page left">Prev</a>' +
-								'<a href="#" title="Next" class="page right">Next</a>' +
-							'</div>' +
-						'</div>' +
+				// build the modal elements and add them to the page
+				this.overlay = $('<div id="modalOverlay"></div>').appendTo('body');
+				this.modal = $('<section id="modalWrapper" tabindex="-1">' +
+					'<div class="inner">' +
+						'<header id="modalLabel"></header>' +
 
-						'<div class="caption"></div>' +
-					'</div>'
-				);
+						'<div id="modalContent"></div>' +
+					'</div>' +
 
-				$('#modalWrapper').hide();
+					'<div class="controls">' +
+						'<a href="#" title="Previous" class="page prev">Prev</a>' +
+						'<a href="#" title="Next" class="page next">Next</a>' +
+					'</div>' +
 
-				//this.on();
+					'<a href="#" title="Close" id="modalClose" class="closeBtn">Close</a>' +
+				'</section>').appendTo('body');
+
+				this.modalContent = $('#modalContent');
+
+				this.on();
 				this.options.init = true;
 			}
 
@@ -69,14 +82,16 @@
 			/**
 			 * Handles click of the modal link
 			 */
-			$(this.scope).on('click', '[data-modal]', function(e){
+			$(this.scope).on('click' + this.nameSpace, '[data-modal]', function(e){
 				e.preventDefault();
 
-				if(lib.busy){
+				if(lib.__isBusy()){
+					// modal already busy - return
 					return false;
 				}
 
-				lib.busy = true;
+				// flag modal as busy
+				lib.__setBusy();
 
 				var $link = $(this),	// the link object
 					url,				// link URL
@@ -92,7 +107,7 @@
 				}
 
 				// get the title
-				title = lib.options.title || $link.attr('data-title') || $link.attr('title');
+				title = lib.options.title || $link.attr('data-title') || $link.attr('title') || $link.attr('alt');
 
 				// check for pre-defined content
 				content = lib.options.content || $link.attr('data-content');
@@ -137,44 +152,101 @@
 				switch(type){
 					case 'inline':
 						// check if the content is already in the modal
-						if(true === $(url).parent().is('#modalInner')){
+						var $obj = $(url);
+						if(true === $obj.parent().is('#modalContent')){
 							// content is already in the modal
 							lib.busy = false;
 							return;
 						}
 
-						// TODO - add content to modal
+						// TODO - store previous location, so we can put it back where it belongs when modal is closed
+						lib.__setIdle();
+						lib.show($obj, type);
 					break;
 					case 'ajax':
-						$.get(url, function(data){
-							// TODO - add content to modal
-						});
+						var ajaxLoader = $.ajax($.extend({}, lib.options.ajax, {
+							url:url,
+							data:lib.options.ajax.data || {},
+							error:function(XMLHttpRequest, textStatus, errorThrown){
+								if(XMLHttpRequest.status > 0){
+									// TODO - throw error
+									lib.__setIdle();
+								}
+							},
+							success:function(data, textStatus, XMLHttpRequest){
+								// get the XMLHttp request object
+								var o = typeof XMLHttpRequest == 'object' ? XMLHttpRequest : ajaxLoader;
+
+								// check the status
+								if(o.status == 200){
+									// check if a callback function has been defined
+									if(typeof lib.options.ajax.onSuccess == 'function'){
+										var r = lib.options.ajax.onSuccess.call(lib.scope, url, data, textStatus, XMLHttpRequest);
+
+										if(false === r){
+											// callback function returned false
+											return false;
+										}else if((typeof r == 'string') || (typeof r == 'object')){
+											data = r;
+										}
+									}
+
+									lib.__setIdle();
+									lib.show(data, type);
+								}else{
+									// status not 200 - okay
+									// TODO - throw error
+									lib.__setIdle();
+								}
+							}
+						}));
 					break;
 					case 'swf':
-						// TODO - output swf
 						content = '<object type="application/x-shockwave-flash" data="' + url + '" width="100%" height="100%">' +
 							'<param name="movie" value="' + url + '" />';
-
 						$.each(lib.options.swf, function(name, val){
 							content += '<param name="' + name + '" value="' + val + '" />';
 						});
-
 						content += '</object>';
+
+						lib.__setIdle();
+						lib.show(content, type);
 					break;
 					case 'image':
-						// TODO - add image to modal
+						lib.show(
+							lib.__loadImage(
+								url,
+								title,
+								function(){
+									lib.__setIdle();
+								},
+								function(e){
+									// TODO - throw error
+									lib.__setIdle();
+								}
+							), type
+						);
 					break;
 					case 'iframe':
-						// TODO - add iframe, set URL and add to modal
+						lib.__setIdle();
+						lib.show('<iframe src="' + url + '"></iframe>', type);
 					break;
 					// video and audio currently not supported
 					case 'video':
 					case 'audio':
+						return false;
+					break;
 					default:
 						// default is html
-						// TODO - add content to modal
+						lib.__setIdle();
+						lib.show(content, type);
 					break;
 				}
+			});
+
+			$('#modalClose' + (this.options.hideOnOverlayClick ? ', #modalOverlay' : '')).on('click' + this.nameSpace, function(e){
+				e.preventDefault();
+				lib.close();
 			});
 		},
 		/**
@@ -226,6 +298,58 @@
 		 */
 		isSWF:function(string){
 			return string && /\.swf\s*$/i.test(string);
+		},
+
+		__setBusy:function(){
+			this.busy = true;
+			this.modal.addClass('loading');
+		},
+		__setIdle:function(){
+			this.busy = false;
+			this.modal.removeClass('loading');
+		},
+		__isBusy:function(){
+			return !!this.busy;
+		},
+		__addContent:function(content){
+			this.modalContent.empty().append(content);
+		},
+		__loadImage:function(src, title, load, error){
+			var $img = $('<img alt="' + (title || 'Image') + '">');
+
+			if(typeof load == 'function'){
+				// image has an on load callback
+				$img.on('load' + this.nameSpace, load);
+			}
+
+			if(typeof error == 'function'){
+				// image has an on error callback
+				$img.on('error' + this.nameSpace, error);
+			}
+
+			// set the image src and return the image
+			return $img.attr('src', src);
+		},
+		__setType:function(type){
+			this.modal.removeClass('image inline html ajax swf iframe video audio').addClass(type);
+		},
+		show:function(content, type){
+			if(content){
+				this.__addContent(content);
+			}
+
+			if(type){
+				this.__setType(type);
+			}
+
+			this.overlay.addClass('visible');
+			this.modal.addClass('visible');
+		},
+		close:function(){
+			this.__setIdle();
+			this.overlay.removeClass('visible');
+			this.modal.removeClass('visible');
+			this.modalContent.empty();
 		}
 	};
 })(jQuery, window, document);
