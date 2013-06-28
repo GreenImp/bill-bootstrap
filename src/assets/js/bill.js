@@ -188,27 +188,34 @@ if(typeof jQuery === 'undefined'){
 /**
  * Basic functionality
  */
-/*> base/basic.js */
+/* @depend base/basic.js */
+
 
 
 /**
  * Libraries
  */
-/*> libraries/base/browserNotice.js */
-/*> libraries/base/cookieNotice.js */
+/*
+@depend libraries/base/browserNotice.js
+@depend libraries/base/cookieNotice.js
+*/
 
 // UI functionality
-/*> libraries/ui/accordion.js */
-/*> libraries/ui/dialogue.js */
-/*> libraries/ui/modal.js */
-/*> libraries/ui/navigation.js */
-/*> libraries/ui/notice.js */
-/*> libraries/ui/slider.js */
-/*> libraries/ui/tabs.js */
+/*
+@depend libraries/ui/accordion.js
+@depend libraries/ui/dialogue.js
+@depend libraries/ui/modal.js
+@depend libraries/ui/navigation.js
+@depend libraries/ui/notice.js
+@depend libraries/ui/slider.js
+@depend libraries/ui/tabs.js
+*/
 
 
 /**
  * Extensions
  */
-/*> extensions/querystring.js */
-/*> extensions/viewport.js */
+/*
+@depend extensions/querystring.js
+@depend extensions/viewport.js
+*/
