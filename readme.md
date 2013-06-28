@@ -48,4 +48,4 @@ Combining files is as easy as:
 		$ juicer install yui_compressor
 
 2. You also need Java installed (to run the YUI compressor, which minifies the JS)
-3. Run the following `juicer merge -sf -o dist/assets/js/bill.min.js src/assets/js/bill.js`
+3. Run the following `juicer merge -sf src/assets/js/bill.js -o dist/assets/js/bill.min.js`
