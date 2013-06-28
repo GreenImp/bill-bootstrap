@@ -38,9 +38,14 @@ This can be done easily, via the command line:
 # JS
 Although the JS is perfectly valid as separate files, for distribution, we want to compile it all into a single file.
 
-For this, we're using a JS pre-processor aptly called, 'Javascript Preprocessor' (http://js-preprocessor.com/), although it doesn't appear to minify code too, so may be replaced at a later date.
+For this, we're using Juicer, a CSS and JS minifier (https://github.com/cjohansen/juicer)
 
 Combining files is as easy as:
 
-1. Install JS Preprocessor first: `gem install jspp`
-2. Run the following `jspp src/assets/js/bill.js > dist/assets/js/bill.min.js`
+1. Install Juicer (and the YUI compressor) first:
+
+		$ gem install juicer
+		$ juicer install yui_compressor
+
+2. You also need Java installed (to run the YUI compressor, which minifies the JS)
+3. Run the following `juicer merge -sf -o dist/assets/js/bill.min.js src/assets/js/bill.js`
