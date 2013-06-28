@@ -3,8 +3,7 @@
  *
  * Image slider
  */
-
-/*> vendor/jquery.bxslider.js */
+/* @depend vendor/jquery.bxslider.js */
 
 ;(function($, window, document, undefined){
 	"use strict";
