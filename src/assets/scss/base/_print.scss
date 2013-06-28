@@ -8,6 +8,7 @@
 
 	a{
 		text-decoration:underline;
+		word-wrap:break-word;
 
 		&:visited{
 			text-decoration:underline;
@@ -33,21 +34,28 @@
 		page-break-inside:avoid;
 	}
 
+	pre{
+		code,
+		samp{
+			margin:0 !important;
+			padding:0 !important;
+			border:none !important;
+		}
+	}
+
 	thead{
 		display:table-header-group;
 	}
 
 	tr,
-	img{
+	img,
+	ul,
+	ol{
 		page-break-inside:avoid;
 	}
 
 	img{
 		max-width:100% !important;
-	}
-
-	@page{
-		margin: 0.5cm;
 	}
 
 	p,
@@ -60,5 +68,57 @@
 	h2,
 	h3{
 		page-break-after:avoid;
+	}
+
+	@page{
+		margin:1cm 0.5cm;
+	}
+
+
+
+	/* ==========================================================================
+	 * UI
+	 * ========================================================================== */
+
+	/**
+	 * Navigation
+	 */
+	.nav{
+		li{
+			&.hasSub{
+				> a,
+				> span,
+				> label,
+				> div,
+				> h1, > h2, > h3,
+				> h4, > h5, > h6{
+					padding-right:12px !important;
+
+					&:after{
+						display:none !important;
+					}
+				}
+			}
+		}
+	}
+
+
+	/**
+	 * Breadcrumbs
+	 */
+	.breadcrumbs{
+		a:after{
+			content:'';
+		}
+	}
+
+
+	/**
+	 * Pagination
+	 */
+	.pagination{
+		a:after{
+			content:'';
+		}
 	}
 }
