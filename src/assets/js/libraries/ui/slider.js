@@ -17,7 +17,7 @@
 			auto:true,
 			autoHover:true
 		},
-		sliders:$(),
+		sliders:[],
 		init:function(scope, method, options){
 			this.scope = scope || this.scope;
 
@@ -39,7 +39,12 @@
 		 * Activates the library
 		 */
 		on:function(){
-			this.sliders = $(this.scope).find('[data-slider]').bxSlider(this.options);
+			var lib = this;
+
+			// we have to loop through and action each separately, to get a proper reference of them
+			$(this.scope).find('[data-slider]').each(function(){
+				lib.sliders.push($(this).bxSlider(lib.options));
+			});
 
 			this.options.init = true;
 		},
@@ -47,7 +52,10 @@
 		 * De-activates the library
 		 */
 		off:function(){
-			this.sliders.destroySlider();
+			// loop through the sliders and disable them
+			$.each(this.sliders, function(){
+				this.destroySlider();
+			});
 
 			this.options.init = false;
 		}

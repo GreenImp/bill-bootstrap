@@ -158,9 +158,19 @@ if(typeof jQuery === 'undefined'){
 		 * De-activates plugins
 		 */
 		off:function(){
+			var scope = this.scope;
+
 			$(this.scope).off(this.eventNameSpace);
 			$(window).off(this.eventNameSpace);
 			$(document).off(this.eventNameSpace);
+
+			// loop through the libraries and call their `off` function
+			$.each(this.libs, function(name, lib){
+				// check if the extension exists
+				if(lib.hasOwnProperty('off')){
+					lib.off.call(lib, scope);
+				}
+			});
 		},
 		isRTL:function(scope){
 			return this.rtl || ($(scope).closest('[dir="rtl"], [dir="RTL"]').length > 0);
