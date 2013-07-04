@@ -270,6 +270,8 @@ if(hasDefineProperty){
 /**
  * Allows the basic use of 'bind()' on function calls
  * for browsers that don't natively support it
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind#Compatibility
  */
 if(!Function.prototype.bind){
 	Function.prototype.bind = function(oThis){
