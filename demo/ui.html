@@ -702,13 +702,13 @@
 
 		<p>Check the console log to see what value each alert returns.</p>
 
-		<p><a href="#" title="Opens a simple alert" class="dialogue alert">Open an alert</a></p>
+		<p><a href="#" title="Opens a simple alert" data-dialogue data-msg="this is an alert">Open an alert</a></p>
 
-		<p><a href="#" title="Opens a confirm dialogue" class="dialogue confirm">Open confirm dialogue</a></p>
+		<p><a href="#" title="Opens a confirm dialogue" data-dialogue data-type="confirm" data-msg="confirm me">Open confirm dialogue</a></p>
 
-		<p><a href="#" title="Opens a prompt dialogue with little text" class="dialogue prompt">Prompt me</a></p>
+		<p><a href="#" title="Opens a prompt dialogue with little text" data-dialogue data-type="prompt" data-msg="What is your quest?" data-value="To seek the holy grail..." data-placeholder="Blah...">Prompt me</a></p>
 
-		<p><a href="#" title="Opens a prompt dialogue with lots of text" class="dialogue promptLarge">Prompt me MORE</a></p>
+		<p><a href="#" title="Opens a prompt dialogue with lots of text" data-dialogue data-type="prompt" data-msg="What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg" data-value="To seek the holy grail...">Prompt me MORE</a></p>
 	</div>
 
 	<div class="column six collapse">
@@ -938,7 +938,13 @@
 		/**
 		 * TODO - dialogue
 		 */
-		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs');
+		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs dialogue', {
+			dialogue:{
+				callback:function(type, btnVal, val){
+					console.log(type, btnVal, val);
+				}
+			}
+		});
 
 		console.log(Bill.extension('querystring', 'foo'));
 		console.log(Bill.extension('viewport'));
@@ -946,15 +952,10 @@
 		console.log($.getQueryString('foo'));
 		console.log($.viewport('isSmall'));
 
+		$(document).bill('dialogue', {type:'alert', msg:'banana', auto:true, noHandle:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
-		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});*/
-
-		/*$('.dialogue.alert').bill('dialogue', {type:'alert', msg:'this is an alert', callback:function(btnVal, val){console.log(btnVal, val)}});
-		$('.dialogue.confirm').bill('dialogue', {type:'confirm', msg:'confirm me', callback:function(btnVal, val){console.log(btnVal, val)}});
-		$('.dialogue.prompt').bill('dialogue', {type:'prompt', msg:'What is your quest?', value:'To seek the holy grail...', placeholder:'blah...', callback:function(btnVal, val){console.log(btnVal, val)}});
-		$('.dialogue.promptLarge').bill('dialogue', {type:'prompt', msg:'What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg ', value:'To seek the holy grail...', callback:function(btnVal, val){console.log(btnVal, val)}});*/
 	})(jQuery, window, document);
 </script>
 </body>
