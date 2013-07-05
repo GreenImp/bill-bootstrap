@@ -270,3 +270,30 @@
 	background:transparent;
 	z-index:1101;
 }
+
+
+
+/* ==========================================================================
+ * Media Queries
+ * ========================================================================== */
+
+@media handheld, only screen and (max-width: 767px) {
+	#fancybox-left{
+		left:-34px;
+
+		> span,
+		&:hover > span{
+			left:0;
+		}
+	}
+
+	#fancybox-right{
+		right:-34px;
+
+		> span,
+		&:hover > span{
+			left:auto;
+			right:0;
+		}
+	}
+}

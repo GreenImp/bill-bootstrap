@@ -3,7 +3,7 @@
  *
  * Shows modal dialogue boxes
  */
-/*> vendor/jquery.fancybox-1.3.4_patch.js */
+/* @depend vendor/jquery.fancybox-1.3.4_patch.js */
 
 ;(function($, window, document, undefined){
 	"use strict";
