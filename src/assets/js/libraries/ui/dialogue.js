@@ -28,8 +28,6 @@
 		queue:[],
 		active:false,
 		init:function(scope, method, options){
-			throw new Error(this.name + ' is currently not available, in this release of Bill.js', 'dialogue.js', 31);
-
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
@@ -40,7 +38,7 @@
 				return this[method].call(this, options);
 			}
 
-			if(!this.options.init){
+			if(!this.options.init || this.options.noHandle){
 				this.on();
 			}
 
@@ -53,18 +51,41 @@
 			var lib = this,
 				$scope = $(this.scope);
 
+			if(this.options.noHandle){
+				// noHandle has been defined - his means that we don't attach the event handlers.
+				// instead we just throw out the dialogues immediately
+
+				// output the dialogue
+				lib.doDialogue(lib.options);
+				return;
+			}
+
 			/**
 			 * Add the dialogue click handler
 			 */
 			$scope.on('click' + this.nameSpace, '[data-dialogue]', function(e){
 				e.preventDefault();
 
-				lib.doDialogue(lib.options);
+				var $btn = $(this),
+					availableData = ['msg', 'type', 'value', 'placeholder'],
+					options = {};
+
+				// loop through and check if any custom data attributes have been defined for this dialogue
+				$.each(availableData, function(i, attr){
+					if($btn.attr('data-' + attr)){
+						options[attr] = $btn.attr('data-' + attr);
+					}
+				});
+
+				lib.doDialogue($.extend({}, lib.options, options));
 			});
 
 			if(lib.options.auto){
 				// we need to auto-fire the dialogue
-				$scope.triggerHandler('click' + this.nameSpace);
+				$scope.find('[data-dialogue]').click();
+			}else{
+				// loop through each dialogue, that is set to auto, and trigger the dialogue
+				$scope.find('[data-dialogue][data-auto]').click();
 			}
 
 			this.options.init = true;
@@ -90,7 +111,7 @@
 
 				if($.isFunction(options.callback)){
 					// we have a callback - trigger it, with a return value of null
-					callback.apply(window, [null, null]);
+					options.callback.apply(window, [options.type, null, null]);
 				}
 
 				return false;
@@ -244,7 +265,8 @@
 						inputVal = dialogueBox.find('> .content input[type=text][name=value]').val() || null;
 					btnVal = (btnVal == 'true') ? true : ((btnVal == 'false') ? false : ((btnVal == 'null') ? null : btnVal));
 
-					options.callback.apply(window, [btnVal, inputVal]);
+					// TODO - get type for first callback argument
+					options.callback.apply(window, [null, btnVal, inputVal]);
 				}
 			});
 		}
