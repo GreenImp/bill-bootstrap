@@ -935,9 +935,6 @@
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
-		/**
-		 * TODO - dialogue
-		 */
 		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs dialogue', {
 			dialogue:{
 				callback:function(type, btnVal, val){
@@ -952,7 +949,7 @@
 		console.log($.getQueryString('foo'));
 		console.log($.viewport('isSmall'));
 
-		$(document).bill('dialogue', {type:'alert', msg:'banana', auto:true, noHandle:true, callback:function(btnVal, val){console.log(btnVal, val)}});
+		$(document).bill('dialogue', {type:'alert', msg:'banana', auto:true, noHandle:true, callback:function(type, btnVal, val){console.log(type, btnVal, val)}});
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});*/

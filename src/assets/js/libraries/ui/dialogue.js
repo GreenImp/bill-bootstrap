@@ -32,13 +32,23 @@
 
 			if(typeof method === 'object'){
 				// method is actually options
-				$.extend(true, this.options, method);
+				if(!method.noHandle){
+					// don't save options if using noHandle
+					$.extend(true, this.options, method);
+				}
 			}else if(typeof method === 'string'){
 				// call the method and return
 				return this[method].call(this, options);
 			}
 
-			if(!this.options.init || this.options.noHandle){
+			if(method.noHandle){
+				// noHandle has been defined - this means that we don't attach the event handlers.
+				// instead we just throw out the dialogues immediately
+
+				// output the dialogue
+				this.doDialogue(method);
+				return;
+			}else if(!this.options.init){
 				this.on();
 			}
 
@@ -50,15 +60,6 @@
 		on:function(){
 			var lib = this,
 				$scope = $(this.scope);
-
-			if(this.options.noHandle){
-				// noHandle has been defined - his means that we don't attach the event handlers.
-				// instead we just throw out the dialogues immediately
-
-				// output the dialogue
-				lib.doDialogue(lib.options);
-				return;
-			}
 
 			/**
 			 * Add the dialogue click handler
@@ -265,8 +266,7 @@
 						inputVal = dialogueBox.find('> .content input[type=text][name=value]').val() || null;
 					btnVal = (btnVal == 'true') ? true : ((btnVal == 'false') ? false : ((btnVal == 'null') ? null : btnVal));
 
-					// TODO - get type for first callback argument
-					options.callback.apply(window, [null, btnVal, inputVal]);
+					options.callback.apply(window, [options.type, btnVal, inputVal]);
 				}
 			});
 		}
