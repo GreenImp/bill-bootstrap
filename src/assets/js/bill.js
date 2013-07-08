@@ -28,6 +28,7 @@
 @depend libraries/ui/notice.js
 @depend libraries/ui/slider.js
 @depend libraries/ui/tabs.js
+@depend libraries/ui/tooltip.js
 */
 
 

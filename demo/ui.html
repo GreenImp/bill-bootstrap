@@ -713,6 +713,22 @@
 		<p><a href="#" title="Opens a prompt dialogue with lots of text" data-dialogue data-type="prompt" data-msg="What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg" data-value="To seek the holy grail...">Prompt me MORE</a></p>
 	</div>
 
+	<div class="column six">
+		<h2 id="tooltips">Tooltips</h2>
+
+		<p>Check the console log to see what value each alert returns.</p>
+
+		<p><span data-tooltip title="Hello<br>my name is<br>Bill">A normal tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="bottom">Bottom tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="left">Left tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="right">Right tooltip</span></p>
+	</div>
+</section>
+
+<section class="row">
 	<div class="column six collapse">
 		<h2 id="panels">Panels</h2>
 
@@ -738,6 +754,8 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="column six"></div>
 </section>
 
 
@@ -937,7 +955,7 @@
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
-		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs dialogue', {
+		$(document).bill('browserNotice cookieNotice accordion modal navigation notice slider tabs dialogue tooltip', {
 			dialogue:{
 				callback:function(type, btnVal, val){
 					console.log(type, btnVal, val);
@@ -951,7 +969,7 @@
 		console.log($.getQueryString('foo'));
 		console.log($.viewport('isSmall'));
 
-		$(document).bill('dialogue', {type:'alert', msg:'banana', auto:true, noHandle:true, callback:function(type, btnVal, val){console.log(type, btnVal, val)}});
+		//$(document).bill('dialogue', {type:'alert', msg:'banana', auto:true, noHandle:true, callback:function(type, btnVal, val){console.log(type, btnVal, val)}});
 		/*$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});
 		$(document).bill('dialogue', {type:'alert', msg:'this is an alert', auto:true, callback:function(btnVal, val){console.log(btnVal, val)}});*/
