@@ -96,8 +96,11 @@
 		 */
 		browserSupported:function(){
 			if(typeof this.options.supported !== 'boolean'){
-				var userAgent = navigator.userAgent,
-					browsers = this.options.browsers;
+				// default support to true
+				this.options.supported = true;
+
+				var userAgent = navigator.userAgent,	// user agent
+					browsers = this.options.browsers;	// browser support
 				if(browsers.ie && !isNaN(browsers.ie) && (/MSIE (\d+\.\d+);/.test(userAgent))){
 					// browser is IE
 					if(parseFloat(RegExp.$1) < parseFloat(browsers.ie)){
