@@ -50,17 +50,15 @@
 						// top of container is out of view - place the nav in the correct place
 						$nav.css('position', 'fixed');
 
-						var margin = {																				// margin offsets for the nav, taken from the container padding
+						var margin = {																					// margin offsets for the nav, taken from the container padding
 								top:parseInt($container.css('padding-top')),
 								bottom:parseInt($container.css('padding-bottom'))
 							},
-							height = $container.height() ||	$container.parent().height(),							// height of container
-							maxOffset = ($nav.attr('data-contain') || ($nav.attr('data-contain') !== undefined)) ?	// maximum allowed offset
-											cOffset + height - margin.bottom - $nav.outerHeight()
+							height = ($container.height() > 1) ? $container.height() : $container.parent().height(),	// height of container
+							maxOffset = ($nav.attr('data-contain') || ($nav.attr('data-contain') !== undefined)) ?		// maximum allowed offset
+											cOffset + height - margin.bottom - $nav.outerHeight(true)
 										:
 											$('body').height();
-
-						console.log($nav.attr('data-contain'));
 
 						// set the css on the nav element
 						$nav.css({
