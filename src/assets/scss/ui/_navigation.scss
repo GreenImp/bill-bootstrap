@@ -18,7 +18,8 @@
 		-o-transition:all 0.15s linear;
 		transition:all 0.15s linear;
 
-		&:hover{
+		&:hover,
+		&.active{
 			color:darken(#fff, 5%);
 			background:darken($background-colour, 75%);
 		}
