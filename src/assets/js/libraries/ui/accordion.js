@@ -128,13 +128,18 @@
 					if($panes && $panes.length){
 						$panes.hide();	// hide all of the panes
 
-						// if accordion is not collapsible, we must always have one pane open
-						// trigger the click event on the first element
-						if(!lib.options.collapsible){
-							var animType = lib.options.animType,				// the current animation type
-								activeTitle = $titles.filter('.active:first');	// check for a button with class 'active'
-							// if no tab buttons have a class of active, just go with the first tab
+						// check if a hash exists for an accordion title/pane
+						var activeTitle = location.hash ? $titles.filter(location.hash) : null;
+						if((!activeTitle || !activeTitle.length) && !lib.options.collapsible){
+							// no assigned hash, but the accordion is not collapsible - we must always have at least one pane open
+							// get either an active pane or the first pane in the list
+							activeTitle = $titles.filter('.active:first');
 							activeTitle = !activeTitle.length ? $titles.first() : activeTitle;
+						}
+
+						if(activeTitle.length){
+							// trigger the click event on the active element
+							var animType = lib.options.animType;	// the current animation type
 
 							// set no animation type, so that the tab appears immediately
 							lib.options.animType = null;
