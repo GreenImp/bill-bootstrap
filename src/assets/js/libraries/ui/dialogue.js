@@ -9,7 +9,7 @@
 
 	Bill.libs.dialogue = {
 		name:'Dialogue',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.dialogue',
 		options:{
 			animSpeed:400,

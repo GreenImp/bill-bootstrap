@@ -9,7 +9,7 @@
 
 	Bill.libs.tooltip = {
 		name:'Tooltip',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.tooltip',
 		options:{},
 		init:function(scope, method, options){

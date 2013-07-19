@@ -8,7 +8,7 @@
 
 	Bill.libs.tabs = {
 		name:'Tabs',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.tabs',
 		options:{
 			animSpeed:200,
