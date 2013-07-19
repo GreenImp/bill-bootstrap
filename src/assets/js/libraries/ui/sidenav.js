@@ -9,7 +9,7 @@
 
 	Bill.libs.sidenav = {
 		name:'Side Navigation',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.sidenav',
 		options:{},
 		init:function(scope, method, options){

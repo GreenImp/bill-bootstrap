@@ -9,7 +9,7 @@
 
 	Bill.libs.cookieNotice = {
 		name:'Cookie Notice',
-		version:'0.1.0',
+		version:'0.0.1',
 		options:{
 			animSpeed:600,
 			message:'<p>' +

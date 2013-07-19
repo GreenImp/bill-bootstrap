@@ -8,7 +8,7 @@
 
 	Bill.libs.navigation = {
 		name:'Navigation',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.navigation',
 		options:{
 			animSpeed:200,

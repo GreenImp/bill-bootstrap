@@ -15,7 +15,7 @@ if(typeof jQuery === 'undefined'){
 	 */
 	window.Bill = {
 		name:'Bill-bootstrap',	// framework name
-		version:'0.1.0',		// version number
+		version:'0.0.1',		// version number
 		eventNameSpace:'.bill',	// namespace used for events
 		libs:{},				// list of available libraries
 		exts:{},				// list of available exetensions
