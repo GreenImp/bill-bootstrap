@@ -8,7 +8,7 @@
 
 	Bill.libs.notice = {
 		name:'Notice',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.notice',
 		options:{
 			animSpeed:400

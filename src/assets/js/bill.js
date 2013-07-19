@@ -26,8 +26,10 @@
 @depend libraries/ui/modal.js
 @depend libraries/ui/navigation.js
 @depend libraries/ui/notice.js
+@depend libraries/ui/sidenav.js
 @depend libraries/ui/slider.js
 @depend libraries/ui/tabs.js
+@depend libraries/ui/tooltip.js
 */
 
 
