@@ -18,7 +18,8 @@
 		-o-transition:all 0.15s linear;
 		transition:all 0.15s linear;
 
-		&:hover{
+		&:hover,
+		&.active{
 			color:darken(#fff, 5%);
 			background:darken($background-colour, 75%);
 		}
@@ -120,7 +121,11 @@
 						content:'';
 						position:absolute;
 						right:12px;
-						top:20px;
+						top:50%;
+						-moz-transform:translateY(-50%);
+						-webkit-transform:translateY(-50%);
+						-o-transform:translateY(-50%);
+						transform:translateY(-50%);
 						border-top:5px solid #fff;
 						border-left:5px solid transparent;
 						border-right:5px solid transparent;
@@ -227,7 +232,11 @@
 						h1, h2, h3,
 						h4, h5, h6{
 							&:after{
-								top:8px;
+								top:50%;
+								-moz-transform:translateY(-50%);
+								-webkit-transform:translateY(-50%);
+								-o-transform:translateY(-50%);
+								transform:translateY(-50%);
 								border:none;
 								border-left:5px solid #fff;
 								border-top:5px solid transparent;
@@ -575,7 +584,6 @@
 								&:after{
 									left:auto;
 									right:12px;
-									top:17px;
 									border:none;
 									border-left:5px solid #fff;
 									border-top:5px solid transparent;

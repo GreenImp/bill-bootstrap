@@ -8,7 +8,7 @@
 
 	Bill.libs.tabs = {
 		name:'Tabs',
-		version:'0.1.0',
+		version:'0.0.1',
 		nameSpace:Bill.eventNameSpace + '.tabs',
 		options:{
 			animSpeed:200,
@@ -109,14 +109,14 @@
 						// show an active tab
 						var animType = lib.options.animType,	// the current animation type
 							// check for an active button
-							// if a hash has been defined, check for a button matching it,
-							// otherwise look for a button with class 'active'
-							activeBtn = location.hash ?
-								$($tabs.filter('[href="' + location.hash + '"]:first')[0] || $tabs.filter('.active:first')[0])
-								:
-								$tabs.filter('.active:first');
-						// if no tab buttons have a class of active, just go with the first tab
-						activeBtn = !activeBtn.length ? $tabs.first() : activeBtn;
+							// if a hash has been defined, check for a button matching it, otherwise set to null
+							activeBtn = location.hash ? $tabs.filter('[href="' + location.hash + '"]:first') : null;
+
+						if(!activeBtn || !activeBtn.length){
+							// no active button found, from hash
+							activeBtn = $tabs.filter('.active:first');
+							activeBtn = !activeBtn.length ? $tabs.first() : activeBtn;
+						}
 
 						// set no animation type, so that the tab appears immediately
 						lib.options.animType = null;

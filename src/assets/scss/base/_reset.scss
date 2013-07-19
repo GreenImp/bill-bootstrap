@@ -30,6 +30,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
+main,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video,
@@ -102,7 +103,8 @@ hr{
  */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section,
-summary, figure img, object{
+summary, figure img, object,
+main{
 	display:block;
 }
 

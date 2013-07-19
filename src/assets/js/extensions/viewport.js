@@ -9,7 +9,7 @@
 
 	Bill.exts.viewport = {
 		name:'Viewport',
-		version:'0.1.0',
+		version:'0.0.1',
 		init:function(method){
 			if(typeof method === 'string'){
 				// call the method and return
