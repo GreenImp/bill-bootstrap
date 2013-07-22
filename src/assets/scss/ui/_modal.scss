@@ -39,12 +39,10 @@
 	overflow:hidden;
 
 	div{
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 40px;
-		height: 480px;
-		background-image:url('../images/fancybox.png');
+		-moz-box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		box-sizing:border-box;
 	}
 }
 
@@ -123,14 +121,30 @@
 /* close button */
 #fancybox-close {
 	position:absolute;
-	top:-15px;
-	right:-15px;
-	width:30px;
-	height:30px;
-	background:url('../images/fancybox.png') -40px 0px transparent;
-	cursor:pointer;
+	top:-13px;
+	right:-13px;
 	z-index:1103;
 	display:none;
+	width:20px;
+	height:20px;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	line-height:17px;
+	background:#000;
+	background:rgba(0,0,0,0.9);
+	border:2px solid #fff;
+	border-radius:50%;
+	box-shadow:0 1px 4px #000;
+	cursor:pointer;
+
+	&:before{
+		content:'x';
+	}
+
+	&:hover{
+		opacity:0.8;
+	}
 }
 
 /* error message */
@@ -187,19 +201,31 @@
 	left:-9999px;
 	z-index:1102;
 	display:block;
-	margin-top:-15px;
-	width:30px;
-	height:30px;
-	background-image:url('../images/fancybox.png');
+	margin-top:-10px;
+	width:20px;
+	height:20px;
+	color:#fff;
+	text-align:center;
+	text-decoration:none;
+	line-height:17px;
+	background:#000;
+	background:rgba(0,0,0,0.9);
+	border:2px solid #fff;
+	border-radius:50%;
+	box-shadow:0 1px 4px #000;
 	cursor:pointer;
 }
 
 #fancybox-left-ico{
-	background-position:-40px -30px;
+	&:before{
+		content:'\003C';
+	}
 }
 
 #fancybox-right-ico{
-	background-position:-40px -60px;
+	&:before{
+		content:'\003E';
+	}
 }
 
 
@@ -260,7 +286,7 @@
 
 
 
-/* Possibly only used in IE6 */
+/* Only used in IE6 */
 #fancybox-hide-sel-frame{
 	position:absolute;
 	top:0;
