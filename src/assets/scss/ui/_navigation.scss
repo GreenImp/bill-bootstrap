@@ -498,6 +498,7 @@
 				overflow:hidden;
 
 				> .menuBtn{
+					position:relative;
 					display:block;
 					float:right;
 					width:44px;
@@ -505,9 +506,21 @@
 					min-height:44px;
 					text-indent:100%;
 					white-space:nowrap;
-					background:url('../images/icn-menu.png') center center no-repeat;
 					overflow:hidden;
 					cursor:pointer;
+
+					&:before{
+						content:'';
+						position:absolute;
+						top:12px;
+						right:10px;
+						bottom:12px;
+						left:10px;
+						margin:0.15em 0;
+						border-top:0.7em double #fff;
+						border-bottom:0.25em solid #fff;
+					}
+
 
 					&:hover{
 						opacity:0.6;
