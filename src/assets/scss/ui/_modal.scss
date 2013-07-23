@@ -204,27 +204,39 @@
 	margin-top:-10px;
 	width:20px;
 	height:20px;
-	color:#fff;
-	text-align:center;
-	text-decoration:none;
-	line-height:17px;
 	background:#000;
 	background:rgba(0,0,0,0.9);
 	border:2px solid #fff;
 	border-radius:50%;
 	box-shadow:0 1px 4px #000;
 	cursor:pointer;
+
+	&:after{
+		content:'';
+		position:absolute;
+		top:50%;
+		border-top:5px solid transparent;
+		border-bottom:5px solid transparent;
+		-moz-transform:translateY(-50%);
+		-webkit-transform:translateY(-50%);
+		-o-transform:translateY(-50%);
+		transform:translateY(-50%);
+	}
 }
 
 #fancybox-left-ico{
-	&:before{
-		content:'\003C';
+	&:after{
+		left:50%;
+		margin-left:-3px;
+		border-right:5px solid #fff;
 	}
 }
 
 #fancybox-right-ico{
-	&:before{
-		content:'\003E';
+	&:after{
+		right:50%;
+		margin-right:-3px;
+		border-left:5px solid #fff;
 	}
 }
 
