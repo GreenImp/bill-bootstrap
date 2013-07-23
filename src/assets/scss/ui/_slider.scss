@@ -266,10 +266,44 @@
 		background-image:url('../images/slider/bx_loader.gif');
 	}
 
-	.bx-prev,
-	.bx-next,
 	.bx-controls-auto .bx-start,
 	.bx-controls-auto .bx-stop{
 		background-image:url('../images/slider/controls.png');
+	}
+
+
+	.bx-controls-direction a{
+		background:#777;
+		background:rgba(119,119,119,0.8);
+		border-radius:50%;
+
+		&:hover{
+			opacity:0.8;
+		}
+
+
+		&:after{
+			content:'';
+			position:absolute;
+			top:50%;
+			border-top:8px solid transparent;
+			border-bottom:8px solid transparent;
+			-moz-transform:translateY(-50%);
+			-webkit-transform:translateY(-50%);
+			-o-transform:translateY(-50%);
+			transform:translateY(-50%);
+		}
+
+		&.bx-prev:after{
+			left:50%;
+			margin-left:-6px;
+			border-right:8px solid #ccc;
+		}
+
+		&.bx-next:after{
+			right:50%;
+			margin-right:-6px;
+			border-left:8px solid #ccc;
+		}
 	}
 }
