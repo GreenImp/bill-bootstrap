@@ -112,12 +112,10 @@
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(images/controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(images/controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
@@ -155,7 +153,6 @@
 	width: 10px;
 	height: 11px;
 	outline: 0;
-	background: url(images/controls.png) -86px -11px no-repeat;
 	margin: 0 3px;
 }
 
@@ -170,7 +167,6 @@
 	width: 9px;
 	height: 11px;
 	outline: 0;
-	background: url(images/controls.png) -86px -44px no-repeat;
 	margin: 0 3px;
 }
 
@@ -266,12 +262,45 @@
 		background-image:url('../images/slider/bx_loader.gif');
 	}
 
-	.bx-controls-auto .bx-start,
-	.bx-controls-auto .bx-stop{
-		background-image:url('../images/slider/controls.png');
+
+	/**
+	 * Style controls without images
+	 */
+
+	// start button
+	.bx-controls-auto .bx-start{
+		position:relative;
+
+		&:after{
+			content:'';
+			position:absolute;
+			top:0;
+			left:0;
+			border-top:5px solid transparent;
+			border-bottom:5px solid transparent;
+			border-left:10px solid #676767;
+		}
+
+		&.active,
+		&:hover{
+			&:after{
+				border-left-color:#000;
+			}
+		}
 	}
 
+	// stop/pause button
+	.bx-controls-auto .bx-stop{
+		border-left:3px solid #676767;
+		border-right:3px solid #676767;
 
+		&.active,
+		&:hover{
+			border-color:#000;
+		}
+	}
+
+	 // prev/next
 	.bx-controls-direction a{
 		background:#777;
 		background:rgba(119,119,119,0.8);
