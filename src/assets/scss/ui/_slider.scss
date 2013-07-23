@@ -63,7 +63,6 @@
 
 .bx-wrapper .bx-loading {
 	min-height: 50px;
-	background: url(images/bx_loader.gif) center center no-repeat #fff;
 	height: 100%;
 	width: 100%;
 	position: absolute;
@@ -213,6 +212,17 @@
  * ========================================================================== */
 
 .bx-wrapper{
+	.bx-loading{
+		background:#fff;
+
+		> .loader{
+			top:50%;
+			margin-top:-16px;
+			width:32px;
+			height:32px;
+		}
+	}
+
 	.bx-viewport{
 		left:0;
 	}
@@ -252,14 +262,6 @@
 		line-height:18px;
 		background:#000;
 		background:rgba(0,0,0,0.6);
-	}
-
-
-	/**
-	 * Define correct image locations
-	 */
-	.bx-loading{
-		background-image:url('../images/slider/bx_loader.gif');
 	}
 
 
