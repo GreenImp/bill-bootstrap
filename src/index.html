@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if lt IE 8]><html lang="en" class="no-js lt-ie8"><![endif]-->
-<!--[if IE 8]><html lang="en" class="no-js ie8"><![endif]-->
-<!--[if IE 9]><html lang="en" class="no-js ie9"><![endif]-->
+<!--[if lt IE 8]><html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="no-js ie8 lt-ie10 lt-ie9"><![endif]-->
+<!--[if IE 9]><html lang="en" class="no-js ie9 lt-ie10"><![endif]-->
 <!--[if gt IE 9]><!--><html lang="en" class="no-js"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
@@ -14,18 +14,15 @@
 	<link href="assets/css/bill.min.css" rel="stylesheet" media="all">
 	<link href="assets/css/bill-ui.min.css" rel="stylesheet" media="all">
 
-	<!--[if lt IE 9]>
-	<script src="assets/vendor/html5shiv.js"></script>
-	<![endif]-->
+	<script src="assets/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-	<script src="assets/vendor/modernizr-2.6.2.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="assets/js/bill.min.js"></script>
 	<script>
 		(function($, document){
-			$(document).bill('browserNotice');
+			$(document).bill();
 		})(jQuery, document);
 	</script>
 </body>
