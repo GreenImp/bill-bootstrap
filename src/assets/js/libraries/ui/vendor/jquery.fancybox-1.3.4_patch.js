@@ -1045,7 +1045,7 @@
 
 		$('body').append(
 			tmp	= $('<div id="fancybox-tmp"></div>'),
-			loading	= $('<div id="fancybox-loading"><div class="loader spin"></div></div>'),
+			loading	= $('<div id="fancybox-loading"><div class="loader"></div></div>'),
 			overlay	= $('<div id="fancybox-overlay"></div>'),
 			wrap = $('<div id="fancybox-wrap"></div>')
 		);
