@@ -338,3 +338,14 @@
 		}
 	}
 }
+
+
+html.lt-ie9{
+	.bx-wrapper{
+		.bx-controls-direction a{
+			&:after{
+				margin-top:-8px;
+			}
+		}
+	}
+}
