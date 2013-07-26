@@ -626,3 +626,30 @@
 		}
 	}
 }
+
+
+html.lt-ie9{
+	.nav{
+		> ul,
+		> .inner > ul{
+			> li{
+				ul{
+					li{
+						&.hasSub{
+							> a,
+							> span,
+							> label,
+							> div,
+							> h1, > h2, > h3,
+							> h4, > h5, > h6{
+								&:after{
+									margin-top:-5px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

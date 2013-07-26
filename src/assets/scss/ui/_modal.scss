@@ -169,10 +169,8 @@
 	height:100%;
 	/*
 	 * IE requires a background on the link, otherwise it isn't clickable.
-	 * In IE 8 we need to use an image, whereas newer versions we can use rgba colours
 	 */
-	/*background:url('../images/blank.gif') transparent;	/* IE8 only*/
-	background:rgba(0,0,0,0);							/* IE9+ */
+	background:rgba(0,0,0,0);
 	outline:none;
 	cursor:pointer;
 }
@@ -307,6 +305,18 @@
 	height:100%;
 	background:transparent;
 	z-index:1101;
+}
+
+
+html.lt-ie9{
+	#fancybox-left-ico{
+		left:20px;
+	}
+
+	#fancybox-right-ico{
+		left:auto;
+		right:20px;
+	}
 }
 
 
