@@ -410,3 +410,12 @@ figure{
 		}
 	}
 }
+
+
+html.lt-ie9{
+	.notice{
+		> .closeBtn{
+			margin-top:-1em;
+		}
+	}
+}
