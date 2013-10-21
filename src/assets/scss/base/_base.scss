@@ -206,6 +206,7 @@ button,
  * Range input field
  */
 input[type=range]{
+	margin-bottom:$default-vertical-spacing;
 	width:100%;
 }
 
