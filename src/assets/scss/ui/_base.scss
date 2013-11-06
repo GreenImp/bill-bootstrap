@@ -132,27 +132,38 @@ label.error{
 	color:#DD1115;
 }
 
-/**
- * Adds an asterisk on labels for required fields
- */
-label.required:after{
-	content:'*';
-	position:relative;
-	left:0.25em;
-	margin-right:0.25em;
-}
+label{
+	&.required{
+		/**
+		 * Adds an asterisk on labels for required fields
+		 */
+		&:after{
+			content:'*';
+			position:relative;
+			left:0.25em;
+			margin-right:0.25em;
+		}
+	}
 
-/**
- * allows labels to be right-aligned
- */
-label.right{
-	text-align:right;
-}
-/**
- * allows labels to be left-aligned
- */
-label.left{
-	text-align:left;
+	/**
+	 * allows labels to be right-aligned
+	 */
+	&.right{
+		text-align:right;
+	}
+	/**
+	 * allows labels to be left-aligned
+	 */
+	&.left{
+		text-align:left;
+	}
+
+	/**
+	 * allows labels to be displayed inline
+	 */
+	&.inline{
+		display:inline-block;
+	}
 }
 
 
