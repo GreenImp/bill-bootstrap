@@ -1155,8 +1155,5 @@
 		onError : function(){}
 	};
 
-	$(document).ready(function() {
-		$.fancybox.init();
-	});
-
+	$.fancybox.init();
 })(jQuery);
