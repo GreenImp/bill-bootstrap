@@ -87,6 +87,13 @@ select{
 	}
 }
 
+
+input[type=radio],
+input[type=checkbox]{
+	vertical-align:baseline;
+	margin-bottom:$default-vertical-spacing;
+}
+
 [placeholder]{
 	&::-webkit-input-placeholder{
 		color:#a9a9a9;
