@@ -511,7 +511,7 @@ input{
 	* Addresses Firefox 3+ setting 'line-height' on 'input' using '!important' in
 	* the UA stylesheet.
 	*/
-	line-height:normal;
+	line-height:1em;
 
 	/**
 	 * Re-set default cursor for disabled elements.
