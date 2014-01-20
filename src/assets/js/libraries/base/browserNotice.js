@@ -101,7 +101,18 @@
 
 				var userAgent = navigator.userAgent,	// user agent
 					browsers = this.options.browsers;	// browser support
-				if(browsers.ie && !isNaN(browsers.ie) && (/MSIE (\d+\.\d+);/.test(userAgent))){
+
+
+				if(
+					browsers.ie && !isNaN(browsers.ie) && 								// detection for IE is on AND
+					(
+						/MSIE (\d+\.\d+);/.test(userAgent) ||							// Old style IE useragent (IE9<) OR
+						(
+							(navigator.appName == 'Netscape') &&						// user agent is Netscaoe AND
+							/Trident\/.*rv[ :]*([0-9]{1,}[\.0-9]{0,})/.test(userAgent)	// Browser uses Trident (IE specific)
+						)
+					)
+				){
 					// browser is IE
 					if(parseFloat(RegExp.$1) < parseFloat(browsers.ie)){
 						// version not supported
