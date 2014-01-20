@@ -258,19 +258,53 @@
 			width:auto !important;
 
 
+			/**
+			 * Put the vertical padding back on collapse columns,
+			 * otherwise we can get style issues
+			 */
 			&.collapse,
 			&.collapse-horizontal,
 			&.collapse-left,
 			&.collapse-right{
+				padding-left:$column-padding-horizontal-small;
+				padding-right:$column-padding-horizontal-small;
+			}
+
+			/**
+			 * Allow columns to be collapsed on small devices
+			 */
+			&.collapse-small{
+				padding:0;
+			}
+			/**
+			 * Allow columns to be collapsed horizontally (removes left/right padding)
+			 */
+			&.collapse-small-horizontal{
 				padding-left:0;
 				padding-right:0;
 			}
 
-			&.collapse,
-			&.collapse-vertical,
-			&.collapse-top,
-			&.collapse-bottom{
+			&.collapse-small-left{
+				padding-left:0;
+			}
+
+			&.collapse-small-right{
+				padding-right:0;
+			}
+
+			/**
+			 * Allow columns to be collapsed vertically (removes top/bottom padding)
+			 */
+			&.collapse-small-vertical{
 				padding-top:0;
+				padding-bottom:0;
+			}
+
+			&.collapse-small-top{
+				padding-top:0;
+			}
+
+			&.collapse-small-bottom{
 				padding-bottom:0;
 			}
 

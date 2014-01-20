@@ -87,6 +87,24 @@ select{
 	}
 }
 
+
+input[type=radio],
+input[type=checkbox]{
+	vertical-align:baseline;
+	margin-bottom:$default-vertical-spacing;
+}
+
+/**
+ * Remove the margin on checkboxes and radios inside labels
+ */
+label{
+	> input[type=radio],
+	> input[type=checkbox]{
+		margin-bottom:0;
+	}
+}
+
+
 [placeholder]{
 	&::-webkit-input-placeholder{
 		color:#a9a9a9;
@@ -200,6 +218,14 @@ button,
 		border-left-color:#ccc;
 		cursor:auto;
 	}
+}
+
+/**
+ * Range input field
+ */
+input[type=range]{
+	margin-bottom:$default-vertical-spacing;
+	width:100%;
 }
 
 

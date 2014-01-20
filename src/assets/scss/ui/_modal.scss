@@ -8,19 +8,12 @@
  */
 #fancybox-tmp,
 #fancybox-loading,
-#fancybox-overlay,
-#fancybox-wrap{
+#fancybox-wrap,
+#fancybox-content{
 	-moz-box-sizing:content-box;
 	-webkit-box-sizing:content-box;
 	-o-box-sizing:content-box;
 	box-sizing:content-box;
-
-	*{
-		-moz-box-sizing:content-box;
-		-webkit-box-sizing:content-box;
-		-o-box-sizing:content-box;
-		box-sizing:content-box;
-	}
 }
 
 
