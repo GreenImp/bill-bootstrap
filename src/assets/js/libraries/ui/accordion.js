@@ -137,7 +137,7 @@
 							activeTitle = !activeTitle.length ? $titles.first() : activeTitle;
 						}
 
-						if(activeTitle.length){
+						if(activeTitle && activeTitle.length){
 							// trigger the click event on the active element
 							var animType = lib.options.animType;	// the current animation type
 
