@@ -270,6 +270,22 @@
 				padding-right:$column-padding-horizontal-small;
 			}
 
+
+			/**
+			 * columns for small screens
+			 */
+			/**
+			 * Setting individual column widths
+			 */
+			@for $i from 1 through $grid-columns{
+				&.#{nth($column-numbers, $i)}-small{
+					float:left !important;
+					padding:0 $column-padding-horizontal;
+					width:100%/($grid-columns/$i) !important;
+				}
+			}
+
+
 			/**
 			 * Allow columns to be collapsed on small devices
 			 */
@@ -306,21 +322,6 @@
 
 			&.collapse-small-bottom{
 				padding-bottom:0;
-			}
-
-
-			/**
-			 * columns for small screens
-			 */
-			/**
-			 * Setting individual column widths
-			 */
-			@for $i from 1 through $grid-columns{
-				&.#{nth($column-numbers, $i)}-small{
-					float:left !important;
-					padding:0 $column-padding-horizontal;
-					width:100%/($grid-columns/$i) !important;
-				}
 			}
 		}
 	}
