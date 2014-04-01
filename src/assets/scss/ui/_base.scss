@@ -183,6 +183,13 @@ dl.inline{
 	dt{
 		padding-right:10px;
 	}
+
+
+	&.middle{
+		dt, dd{
+			vertical-align:middle;
+		}
+	}
 }
 
 
