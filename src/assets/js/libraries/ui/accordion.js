@@ -53,6 +53,7 @@
 								file:'accordion.js',
 								line:54
 							});
+
 							return;
 						}
 
@@ -97,6 +98,7 @@
 									file:'accordion.js',
 									line:98
 								});
+
 								return false;
 							}
 						}
@@ -118,6 +120,7 @@
 										queryPrefixPane + 'aside:not(.title)'
 								)
 								.addClass(lib.options.paneSelector);
+
 							// add the pane to the list
 							$panes = $panes ? $panes.add($pane) : $pane;
 						});
