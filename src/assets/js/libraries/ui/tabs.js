@@ -64,13 +64,18 @@
 
 						if(firstType == 'UL'){
 							// first element is a list - we assume it's a list of tab links
+
+              // add the `tab-list` class
+              $tabs.addClass('tab-list');
+
 							// get a list of the panes
 							$panes = $elm.children().not($tabs);
+
 							// set the tabs to the li elements
 							$tabs = $tabs.children('li');
 						}else{
 							// first element isn't a list - assume that tab titles will come from within the content
-							var tabHtml = '<ul>';
+							var tabHtml = '<ul class="tab-list">';
 
 							// loop through each tabs child and get their headers
 							$elm.children().each(function(i){
