@@ -34,8 +34,8 @@
 
 				$(this.scope).find('[data-tabs]').each(function(){
 					var $elm = $(this),
-						$tabs,
-						$panes;
+              $tabs,
+              $panes;
 
 					if($elm.get(0).nodeName == 'DL'){
 						// the tab element is a definition list
@@ -149,11 +149,14 @@
 			 * Adds click handler for tab titles
 			 */
 			$(this.scope).on('click' + this.nameSpace, '[data-tabs] .' + lib.options.tabSelector + ' a', function(e){
-				var $tab = $(this),	// the clicked tab
-					$container = $tab.closest('[data-tabs]'),						// the tab/pane container
-					$tabs = $container.find('.' + lib.options.tabSelector + ' a'),	// list of tabs
-					$panes = $container.find('.' + lib.options.paneSelector),		// list of panes
-					$pane = $panes.filter($tab.attr('href'));						// pane the clicked tab corresponds to
+				var $tab = $(this),                                           // the clicked tab
+					$container = $tab.closest('[data-tabs]'),                   // the tab/pane container
+					$tabs = $container.find(                                    // list of tabs
+              '> .tab-list .' + lib.options.tabSelector + ' a,' +
+              '> .' + lib.options.tabSelector + ' a'
+          ),
+					$panes = $container.find('> .' + lib.options.paneSelector), // list of panes
+					$pane = $panes.filter($tab.attr('href'));                   // pane the clicked tab corresponds to
 
 				// check for a callback on the click event
 				if(typeof lib.options.onClick === 'function'){
