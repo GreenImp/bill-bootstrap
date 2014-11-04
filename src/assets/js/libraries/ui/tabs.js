@@ -62,7 +62,7 @@
 						$tabs = $elm.children(':first');
 						var firstType = $tabs.get(0).nodeName;
 
-						if(firstType == 'UL'){
+						if((firstType == 'UL') || (firstType == 'OL')){
 							// first element is a list - we assume it's a list of tab links
 
               // add the `tab-list` class
