@@ -10,6 +10,7 @@
 *.vi
 *~
 *.sass-cache
+!.gitkeep
 
 # IOS/Mac specific
 .DS_Store
@@ -34,10 +35,12 @@ Desktop.ini
 .tmproj
 *.esproj
 nbproject
+
+# Sublime Text
 *.sublime-project
 *.sublime-workspace
 
-# Komodo
+# Komodo IDE
 *.komodoproject
 .komodotools
 
@@ -48,3 +51,6 @@ nbproject
 .idea
 node_modules
 dist
+
+# Bower
+bower_components

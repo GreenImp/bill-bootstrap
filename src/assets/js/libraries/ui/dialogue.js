@@ -31,17 +31,20 @@
 			this.scope = scope || this.scope;
 
 			if(typeof method === 'object'){
-				// method is actually options
+				// method is actually options (which means `options` is ignored)
 				if(!method.noHandle){
-					// don't save options if using noHandle
+					// only save options if NOT using noHandle
 					$.extend(true, this.options, method);
 				}
 			}else if(typeof method === 'string'){
 				// call the method and return
 				return this[method].call(this, options);
+			}else{
+				// store the options
+				$.extend(true, this.options, options);
 			}
 
-			if(method.noHandle){
+			if(this.options.noHandle){
 				// noHandle has been defined - this means that we don't attach the event handlers.
 				// instead we just throw out the dialogues immediately
 

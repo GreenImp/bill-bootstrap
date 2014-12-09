@@ -218,45 +218,59 @@ if(hasDefineProperty){
 	 * @param obj
 	 * @returns {boolean}
 	 */
-	Object.defineProperty(Object.prototype, 'equals', {
+	Object.defineProperty(Object.prototype, 'sameAs', {
 		value:function(obj){
+			// if objisn't an object return false
+			if(typeof obj !== 'object'){
+				return false;
+			}
+
+			// loop through all values in `this` and check that they exist in obj
 			var i;
 			for(i in this){
 				if(typeof(obj[i])=='undefined'){
+					// property doesn't exist in obj
 					return false;
 				}
 			}
 
 			for(i in this){
 				if(this[i]){
-					switch(typeof(this[i])){
+					switch(typeof this[i]){
 						case 'object':
-							if(!this[i].equals(obj[i])){
+							// property is an object
+							if((typeof this[i].sameAs !== 'function') || !this[i].sameAs(obj[i])){
+								// object has no comparison function or they are not the same
 								return false;
 							}
 						break;
 						case 'function':
+								// property is a function
 							if(
 								typeof(obj[i]) == 'undefined' ||
-								(i != 'equals' && this[i].toString() != obj[i].toString())
+								(i != 'sameAs' && this[i].toString() != obj[i].toString())
 							){
+								// property is undefined in obj or functions are not the same (ignoring the comparison function)
 								return false;
 							}
 						break;
 						default:
 							if(this[i] != obj[i]){
+								// properties aren't equal (lazy comparison)
 								return false;
 							}
 						break;
 					}
-				}else{
-					if (obj[i])
+				}else if(obj[i]){
+					// property set in obj, but not in `this`
 					return false;
 				}
 			}
 
+			// loop through all values in obj and check that they exist in `this`
 			for(i in obj){
 				if(typeof(this[i]) == 'undefined'){
+					// property doesn't exist in `this`
 					return false;
 				}
 			}
