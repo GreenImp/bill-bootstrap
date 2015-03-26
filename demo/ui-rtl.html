@@ -649,6 +649,8 @@
 
 		<p><a href="#modalContent" class="modal" data-modal>Page Content Link</a></p>
 
+		<p><a href="#modalContentColumns" class="modal" data-modal>Page Content Link (Columns)</a></p>
+
 		<div>
 			<p>
 				<em>
@@ -666,6 +668,24 @@
 						Nullam massa massa, rutrum tempus tincidunt dignissim, suscipit et justo. Sed vitae arcu lacus,
 						non varius lectus. Sed hendrerit lectus sed nisl gravida varius. Praesent eu sagittis ante.</p>
 				</blockquote>
+			</div>
+		</div>
+
+		<div>
+			<p>
+				<em>
+					The quote beneath this paragraph is the content used in the 'Page Content Link (Columns)' above.<br>
+					Clicking the link will place the content into the modal dialogue.<br>
+					Usually the content will be placed inside another contain that is hidden.
+				</em>
+			</p>
+
+			<div id="modalContentColumns" class="presentation">
+				<div class="row">
+					<div class="column two">Two columns</div>
+					<div class="column four">Four columns</div>
+					<div class="column six">Six columns</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -698,15 +718,31 @@
 
 		<p>Check the console log to see what value each alert returns.</p>
 
-		<p><a href="#" title="Opens a simple alert" class="dialogue alert">Open an alert</a></p>
+		<p><a href="#" title="Opens a simple alert" data-dialogue data-msg="this is an alert">Open an alert</a></p>
 
-		<p><a href="#" title="Opens a confirm dialogue" class="dialogue confirm">Open confirm dialogue</a></p>
+		<p><a href="#" title="Opens a confirm dialogue" data-dialogue data-type="confirm" data-msg="confirm me">Open confirm dialogue</a></p>
 
-		<p><a href="#" title="Opens a prompt dialogue with little text" class="dialogue prompt">Prompt me</a></p>
+		<p><a href="#" title="Opens a prompt dialogue with little text" data-dialogue data-type="prompt" data-msg="What is your quest?" data-value="To seek the holy grail..." data-placeholder="Blah...">Prompt me</a></p>
 
-		<p><a href="#" title="Opens a prompt dialogue with lots of text" class="dialogue promptLarge">Prompt me MORE</a></p>
+		<p><a href="#" title="Opens a prompt dialogue with lots of text" data-dialogue data-type="prompt" data-msg="What is your quest? gk hjf jf jg djg dhdg h gh h jdjgh d ghdj dhjdg hjf ghjf khgf jd ghjdjh djhf ghf j gj  gj gj dfgf hjgk hf jgf jj fjg" data-value="To seek the holy grail...">Prompt me MORE</a></p>
 	</div>
 
+	<div class="column six">
+		<h2 id="tooltips">Tooltips</h2>
+
+		<p>Check the console log to see what value each alert returns.</p>
+
+		<p><span data-tooltip title="Hello<br>my name is<br>Bill">A normal tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="bottom">Bottom tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="left">Left tooltip</span></p>
+
+		<p><span data-tooltip="Hello<br>my name is<br>Bill" data-position="right">Right tooltip</span></p>
+	</div>
+</section>
+
+<section class="row">
 	<div class="column six collapse">
 		<h2 id="panels">Panels</h2>
 
@@ -732,6 +768,8 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="column six"></div>
 </section>
 
 
@@ -848,17 +886,23 @@
 
 		<ul data-slider>
 			<li>
-				<img src="//placehold.it/600x100" />
+				<img src="http://noimage.com/none.png">
 
 				<p class="caption">A caption</p>
 			</li>
 
 			<li>
-				<img src="//placehold.it/600x100" />
+				<img src="//placehold.it/600x100">
+
+				<p class="caption">A caption</p>
 			</li>
 
 			<li>
-				<img src="//placehold.it/600x100" />
+				<img src="//placehold.it/600x100">
+			</li>
+
+			<li>
+				<img src="//placehold.it/600x100">
 
 				<p class="caption">Another caption</p>
 			</li>
@@ -926,7 +970,7 @@
 </section>
 </div>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="../dist/assets/js/bill.min.js"></script>
 <script>
 	(function($, window, document){
