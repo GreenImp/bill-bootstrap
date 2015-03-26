@@ -1,0 +1,16 @@
+/**
+ * Copyright GreenImp Web - greenimp.co.uk
+ * 
+ * Author: GreenImp Web
+ * Date Created: 23/04/13 23:28
+ */
+
+.presentation .column,
+.presentation .plank{
+	background:#ccc;
+	border:1px solid#999;
+}
+
+pre code{
+	max-height:200px;
+}

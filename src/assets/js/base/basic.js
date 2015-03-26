@@ -3,29 +3,34 @@
  * Date Created: 19/03/2013 10:44
  */
 
-/**
- * jQuery extension functions
- */
-$.extend({
+;(function($, window, document, undefined){
+	"use strict";
+
 	/**
-	 * Adds jQuery function for getting the URL query strings.
-	 * If `name` is defined, then it will return that named value
-	 *
-	 * @param name
-	 * @returns {*}
+	 * jQuery extension functions
 	 */
-	getQueryString:function(name){
-		return Bill.extension('querystring', name);
-	},
-	/**
-	 * Returns the viewport size
-	 *
-	 * @returns {{width: number, height: number}}
-	 */
-	viewport:function(method){
-		return Bill.extension('viewport', method);
-	}
-});
+	$.extend({
+		/**
+		 * Adds jQuery function for getting the URL query strings.
+		 * If `name` is defined, then it will return that named value
+		 *
+		 * @param name
+		 * @returns {*}
+		 */
+		getQueryString:function(name){
+			return Bill.extension('querystring', name);
+		},
+		/**
+		 * Returns the viewport size
+		 *
+		 * @returns {{width: number, height: number}}
+		 */
+		viewport:function(method){
+			return Bill.extension('viewport', method);
+		}
+	});
+}(jQuery, window, document));
+
 
 /**
  * Console failsafe, to stop errors when console is unavailable
