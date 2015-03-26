@@ -259,10 +259,13 @@ p.lead{
  * Assign this class to the parent of a floated element,
  * to make it encapsulated it properly.
  */
-.clearfix:after{
-	content:" ";
-	display:table;
-	clear:both;
+.clearfix{
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+    clear: both;
+  }
 }
 
 /**

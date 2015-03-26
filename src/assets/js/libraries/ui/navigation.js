@@ -64,6 +64,8 @@
 							});
 				});
 
+				$(window).trigger('ready' + this.nameSpace);
+
 				this.options.init = true;
 			}
 

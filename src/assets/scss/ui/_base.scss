@@ -183,6 +183,38 @@ dl.inline{
 	dt{
 		padding-right:10px;
 	}
+
+
+	&.middle{
+		dt, dd{
+			vertical-align:middle;
+		}
+	}
+}
+/**
+ * allows labels to be left-aligned
+ */
+label.left{
+	text-align:left;
+}
+
+
+
+/* ==========================================================================
+ * Lists
+ * ========================================================================== */
+
+dl.inline{
+	dt, dd{
+		display:inline-block;
+		vertical-align:top;
+		margin-bottom:0;
+		width:50%;
+	}
+
+	dt{
+		padding-right:10px;
+	}
 }
 
 
@@ -212,23 +244,28 @@ table{
 		padding:4px 8px;
 	}
 
-	> thead > tr > th,
-	> tfoot > tr > th{
-		font-size:1.1em;
-		background:darken($background-colour, 10%);
-	}
+  thead, tfoot{
+    th{
+      font-size:1.1em;
+      background:darken($background-colour, 10%);
+    }
+  }
 
-	> tbody > tr{
-		> th{
-			text-align:left;
-			background:darken($background-colour, 8%);
-		}
+	tbody{
+    // Zebra striping
+    tr{
+      &:nth-child(even){
+        td{
+          background:darken($background-colour, 4%);
+        }
+      }
+    }
 
-		// Zebra striping
-		&:nth-child(even) td{
-			background:darken($background-colour, 4%);
-		}
-	}
+    th{
+      text-align:left;
+      background:darken($background-colour, 8%);
+    }
+  }
 }
 
 

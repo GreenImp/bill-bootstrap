@@ -36,7 +36,7 @@
 
 				$(this.scope).find('[data-accordion]').each(function(){
 					var $elm = $(this),
-						type = $elm.prop('tagName').toUpperCase(),	// get the 6accordion element type
+						type = $elm.prop('tagName').toUpperCase(),	// get the accordion element type
 						$titles,
 						$panes;
 
@@ -53,6 +53,7 @@
 								file:'accordion.js',
 								line:54
 							});
+
 							return;
 						}
 
@@ -97,6 +98,7 @@
 									file:'accordion.js',
 									line:98
 								});
+
 								return false;
 							}
 						}
@@ -118,6 +120,7 @@
 										queryPrefixPane + 'aside:not(.title)'
 								)
 								.addClass(lib.options.paneSelector);
+
 							// add the pane to the list
 							$panes = $panes ? $panes.add($pane) : $pane;
 						});
@@ -128,16 +131,21 @@
 					if($panes && $panes.length){
 						$panes.hide();	// hide all of the panes
 
-						// check if a hash exists for an accordion title/pane
-						var activeTitle = location.hash ? $titles.filter(location.hash) : null;
-						if((!activeTitle || !activeTitle.length) && !lib.options.collapsible){
-							// no assigned hash, but the accordion is not collapsible - we must always have at least one pane open
-							// get either an active pane or the first pane in the list
-							activeTitle = $titles.filter('.active:first');
-							activeTitle = !activeTitle.length ? $titles.first() : activeTitle;
+						// check for an active tab
+            var activeTitle = $titles.filter('.active').first().removeClass('active');
+
+            // check if a hash (in the URL) exists for an accordion title/pane and use that over a pre-defined active tab
+            if(location.hash && $titles.filter(location.hash).length){
+              activeTitle = $titles.filter(location.hash);
+            }
+
+            if(!activeTitle.length && !lib.options.collapsible){
+							// no active tab found, but the accordion is not collapsible - we must always have at least one pane open
+							// get the first pane in the list
+							activeTitle = $titles.first();
 						}
 
-						if(activeTitle && activeTitle.length){
+            if(activeTitle.length){
 							// trigger the click event on the active element
 							var animType = lib.options.animType;	// the current animation type
 
@@ -145,7 +153,7 @@
 							lib.options.animType = null;
 
 							// trigger the click event
-							activeTitle.click();
+							activeTitle.trigger('click');
 
 							// reset the animation type
 							lib.options.animType = animType;
@@ -168,9 +176,9 @@
 			 * Adds the click handler for title elements
 			 */
 			$(this.scope).on('click' + this.nameSpace, '[data-accordion] .' + lib.options.titleSelector, function(e){
-				var $title = $(this),											// the title element
-					$container = $title.closest('[data-accordion]'),			// the container element
-					$pane = $title.next('.' + lib.options.paneSelector);		// the corresponding pane element
+				var $title = $(this),											                              // the title element
+					$container = $title.closest('[data-accordion]'),                      // the container element
+					$pane = $title.next('.' + lib.options.paneSelector).stop(true, true); // the corresponding pane element
 
 				// check for a callback on the click event
 				if(typeof lib.options.onClick === 'function'){
@@ -185,7 +193,7 @@
 				if($title.hasClass('active')){
 					// panel is already active - collapse, if we are allowed
 
-					$pane.stop(true, true).show();
+					$pane.show();
 
 					if(lib.options.collapsible){
 						// remove the active class from the title
@@ -209,7 +217,7 @@
 					// panel not active
 
 					// get a list of all the panes (and stop any animations)
-					var $panes = $container.find('.' + lib.options.paneSelector).stop(true, true);
+					var $panes = $container.find('> .' + lib.options.paneSelector).not($pane).stop(true, true);
 
 					if(lib.options.accordion){
 						// this is a true accordion - remove active class on all titles
@@ -227,18 +235,20 @@
 								// the position of the active pane
 								$panes.hide();
 							}
+
 							$pane.fadeIn(lib.options.animSpeed);
 						break;
 						case 'slide':
 							if(lib.options.accordion){
 								// true accordion - hide the other panes
-								$panes.not($pane).slideUp(lib.options.animSpeed);
+								$panes.slideUp(lib.options.animSpeed);
 							}
+
 							$pane.slideDown(lib.options.animSpeed);
 						break;
 						default:
 							// no animation - just show
-							$panes.hide();
+              //$panes.hide();
 							$pane.show();
 						break;
 					}
